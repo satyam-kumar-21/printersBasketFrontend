@@ -17,6 +17,7 @@ const ShopMain = () => {
   const [selectedRating, setSelectedRating] = useState(0);
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
 
   const productList = useSelector((state) => state.productList);
   const { products = [], loading, error, page, pages, total } = productList;
@@ -34,11 +35,19 @@ const ShopMain = () => {
   ];
   const ratings = [5, 4, 3, 2, 1];
 
-  // Fetch products when filters change
+  // Debounce search term (wait 500ms after user stops typing)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  // Fetch products when filters change (using debounced search)
   useEffect(() => {
     dispatch(
       listProducts(
-        searchTerm,
+        debouncedSearchTerm,
         selectedCategory,
         currentPage,
         sortBy,
@@ -54,7 +63,7 @@ const ShopMain = () => {
     dispatch,
     currentPage,
     sortBy,
-    searchTerm,
+    debouncedSearchTerm,
     selectedBrand,
     selectedCategory,
     selectedTechnology,

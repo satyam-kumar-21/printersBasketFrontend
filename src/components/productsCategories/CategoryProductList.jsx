@@ -4,7 +4,7 @@ import { listProducts } from "../../redux/actions/productActions";
 import ProductGrid from "./ProductGrid";
 
 
-const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false }) => {
+const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false, itemLimit = null }) => {
     const dispatch = useDispatch();
 
     const productList = useSelector((state) => state.productList);
@@ -21,7 +21,8 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false }
     };
 
     const safeProducts = Array.isArray(products) ? products : [];
-    const formattedProducts = safeProducts.map(product => ({
+    const displayProducts = itemLimit ? safeProducts.slice(0, itemLimit) : safeProducts;
+    const formattedProducts = displayProducts.map(product => ({
         ...product,
         image: product.image 
             ? (product.image.startsWith('http') ? product.image : `${import.meta.env.VITE_API_URL?.replace('/api', '') || ''}${product.image}`)
@@ -49,26 +50,30 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false }
          <div className="flex flex-col">
             <ProductGrid
                 heading={heading || categoryName}
-                products={formattedProducts.slice(0, 12)}
+                products={formattedProducts}
                 enableFlowLayout={enableFlowLayout}
             />
             
-            {/* {loading && page >= 1 && (
-                <div className="py-8 text-center font-black uppercase text-[10px] tracking-[0.3em] text-slate-400 animate-pulse">
-                    Loading More Items...
-                </div>
-            )}
+            {!itemLimit && (
+                <>
+                    {loading && page >= 1 && (
+                        <div className="py-8 text-center font-black uppercase text-[10px] tracking-[0.3em] text-slate-400 animate-pulse">
+                            Loading More Items...
+                        </div>
+                    )}
 
-            {!loading && page < pages && (
-                <div className="flex justify-center mb-16">
-                    <button 
-                        onClick={loadMoreHandler}
-                        className="px-8 py-3 bg-slate-900 text-white rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-blue-600 transition-colors shadow-lg"
-                    >
-                        See More Products
-                    </button>
-                </div>
-            )} */}
+                    {!loading && page < pages && (
+                        <div className="flex justify-center mb-16">
+                            <button 
+                                onClick={loadMoreHandler}
+                                className="px-8 py-3 bg-slate-900 text-white rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-blue-600 transition-colors shadow-lg"
+                            >
+                                See More Products ({page}/{pages})
+                            </button>
+                        </div>
+                    )}
+                </>
+            )}
         </div>
     );
 };
