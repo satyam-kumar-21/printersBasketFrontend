@@ -3,8 +3,8 @@ import printer from "../../../public/assets/printer.png"; // replace with your i
 
 const Hero = () => {
   return (
-    <section className="w-full  px-4">
-      <div className="md:max-w-[90%] max-w-[100%] mx-auto rounded-2xl overflow-hidden relative">
+    <section className="w-full mt-2  px-4">
+      <div className="md:max-w-[80%] max-w-[100%] mx-auto rounded-2xl overflow-hidden relative">
 
         {/* BACKGROUND */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1c4d] via-[#0d2a7a] to-[#2364EB]"></div>
@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="relative z-10 grid md:grid-cols-2 items-center p-8 md:p-14">
 
           {/* LEFT CONTENT */}
-          <div className="text-white space-y-5">
+          <div className="text-white  space-y-5">
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
               Smart Printing <br /> Starts Here
             </h1>

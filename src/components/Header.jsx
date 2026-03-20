@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ShoppingCart, Search, User, X, Menu } from "lucide-react";
+import { ShoppingCart, Search, User, X, Menu, Link } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import logo from "../../public/logo.png";
 
@@ -17,7 +17,9 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
           {/* LOGO */}
-          <img src={logo} alt="logo" className="h-10" />
+          <NavLink to="/">
+            <img src={logo} alt="Prints Basket Logo" className="w-32 object-contain" />
+          </NavLink>
 
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex gap-10 text-gray-700 font-medium text-[15px]">

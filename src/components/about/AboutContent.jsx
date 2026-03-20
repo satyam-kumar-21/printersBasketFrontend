@@ -26,7 +26,7 @@ const AboutContent = () => {
     {/* Text Section */}
     <div className="md:w-1/2 text-center md:text-left">
       <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-        About Us – Smart ePrinting
+        About Prints Basket
       </h2>
       <h3 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6">
         Your Trusted Online Store for Printing Essentials
