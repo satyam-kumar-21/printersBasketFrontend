@@ -1,31 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
     title: "Home Printers",
     image: "/categories/homePrinter.jpg",
+    filterType: "usage",
+    filterValue: "Home"
   },
   {
     title: "Office Printers",
     image: "/categories/officePrinter.jpg",
+    filterType: "usage",
+    filterValue: "Office"
   },
   {
     title: "Inkjet Printers",
     image: "/categories/inkjetPrinter.jpg",
+    filterType: "technology",
+    filterValue: "Inkjet"
   },
   {
     title: "Laser Printers",
     image: "/categories/laserPrinter.jpg",
+    filterType: "technology",
+    filterValue: "Laser"
   },
 ];
 
-// 🔥 convert title → slug (inkjet printers → inkjet-printers)
-const createSlug = (text) => {
-  return text.toLowerCase().replace(/\s+/g, "-");
-};
-
 const Categories = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (filterType, filterValue) => {
+    if (filterType === "usage") {
+      navigate(`/shop?usageCategory=${filterValue}`);
+    } else if (filterType === "technology") {
+      navigate(`/shop?technology=${filterValue}`);
+    }
+  };
+
   return (
     <section className="bg-[#f5f6f8] py-20">
 
@@ -47,13 +60,11 @@ const Categories = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
 
           {categories.map((item, index) => {
-            const slug = createSlug(item.title);
-
             return (
-              <Link
-                to={`/product-category/${slug}`}
+              <button
+                onClick={() => handleCategoryClick(item.filterType, item.filterValue)}
                 key={index}
-                className="text-center group cursor-pointer"
+                className="text-center group cursor-pointer bg-transparent border-none p-0"
               >
 
                 {/* IMAGE CARD */}
@@ -84,7 +95,7 @@ const Categories = () => {
                                 group-hover:w-12">
                 </div>
 
-              </Link>
+              </button>
             );
           })}
 

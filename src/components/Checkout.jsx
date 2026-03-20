@@ -215,15 +215,21 @@ const Checkout = () => {
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 py-12">
-            <div className="max-w-5xl mx-auto px-4">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 py-12">
+            {/* Background Patterns */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/10 to-transparent rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="relative z-10 max-w-5xl mx-auto px-4">
 
                 {/* Progress */}
                 <div className="flex items-center justify-center mb-12 space-x-4">
                     {[1, 2].map((s) => (
                         <div key={s} className="flex items-center gap-2">
                             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black ${
-                                step >= s ? 'bg-slate-900 text-white' : 'bg-white border text-slate-300'
+                                step >= s ? 'bg-gradient-to-r from-orange-600 to-blue-600 text-white' : 'bg-white border-2 border-slate-200 text-slate-300'
                             }`}>
                                 {s}
                             </div>
@@ -236,9 +242,9 @@ const Checkout = () => {
                     {/* LEFT */}
                     <div className="lg:col-span-3">
                         {step === 1 ? (
-                            <form onSubmit={submitShippingHandler} className="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-slate-100">
-                                <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-900">
+                            <form onSubmit={submitShippingHandler} className="bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm">
+                                <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-8 flex items-center gap-3 uppercase tracking-tighter">
+                                    <div className="w-10 h-10 bg-gradient-to-br from-orange-100 to-blue-100 rounded-full flex items-center justify-center text-orange-600">
                                         <Truck size={20} />
                                     </div>
                                     Shipping Details
@@ -353,7 +359,7 @@ const Checkout = () => {
                                      </div>
                                 )}
 
-                                <button type="submit" disabled={loading} className="w-full mt-10 bg-slate-900 text-white py-4 rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-lg shadow-slate-200 disabled:opacity-70 disabled:cursor-wait">
+                                <button type="submit" disabled={loading} className="w-full mt-10 bg-gradient-to-r from-orange-600 to-blue-600 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest hover:shadow-lg hover:shadow-orange-200/50 transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-70 disabled:cursor-wait hover:from-orange-700 hover:to-blue-700">
                                      {loading ? <Loader2 className="animate-spin" /> : (
                                         shippingRates.length > 0 ? (
                                             <>Proceed to Payment <ChevronRight size={16} /></>
@@ -364,14 +370,14 @@ const Checkout = () => {
                                 </button>
                             </form>
                         ) : (
-                            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-slate-100 space-y-8">
+                            <div className="bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
                                 {/* Payment Header */}
                                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-900">
+                                        <div className="w-10 h-10 bg-gradient-to-br from-orange-100 to-blue-100 rounded-full flex items-center justify-center text-orange-600">
                                             <CreditCard size={20} />
                                         </div>
-                                        <h2 className="text-2xl font-black text-slate-900">Payment</h2>
+                                        <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Payment</h2>
                                     </div>
                                     <button onClick={() => setStep(1)} className="text-xs font-bold text-slate-400 hover:text-slate-600 whitespace-nowrap">
                                         Edit Shipping
@@ -441,7 +447,7 @@ const Checkout = () => {
                                 <button
                                     onClick={initPayment}
                                     disabled={loading}
-                                    className="w-full mt-6 bg-indigo-600 text-white py-4 rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 shadow-xl shadow-indigo-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full mt-6 bg-gradient-to-r from-orange-600 to-blue-600 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest hover:shadow-lg hover:shadow-orange-200/50 transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:from-orange-700 hover:to-blue-700"
                                 >
                                     {loading ? <Loader2 className="animate-spin" size={18} /> : <>Pay Now <ShieldCheck size={18} /></>}
                                 </button>
@@ -450,42 +456,42 @@ const Checkout = () => {
                     </div>
 
                     {/* RIGHT */}
-                    <div className="lg:col-span-2 bg-slate-900 text-white p-10 rounded-3xl h-fit">
-                        <h3 className="text-xl font-black mb-6">Summary</h3>
+                    <div className="lg:col-span-2 bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 p-10 rounded-3xl h-fit shadow-lg shadow-blue-100/30 backdrop-blur-sm">
+                        <h3 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-8 uppercase tracking-tighter">Summary</h3>
                         
-                        <div className="space-y-4 text-slate-300 font-medium">
-                            <div className="flex justify-between">
-                                <span>Subtotal:</span>
-                                <span>${subtotal.toFixed(2)}</span>
+                        <div className="space-y-4 font-medium">
+                            <div className="flex justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <span className="text-slate-600">Subtotal:</span>
+                                <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent font-bold">${subtotal.toFixed(2)}</span>
                             </div>
 
                             {distance && (
-                                <div className="flex justify-between text-indigo-400">
-                                    <span>Distance:</span>
-                                    <span>{distance} miles</span>
+                                <div className="flex justify-between py-3 px-4 bg-gradient-to-r from-orange-50 to-blue-50 rounded-xl border border-orange-100">
+                                    <span className="text-orange-600 font-semibold">Distance:</span>
+                                    <span className="text-orange-600 font-bold">{distance} miles</span>
                                 </div>
                             )}
 
-                            <div className="flex justify-between">
-                                <span>Tax:</span>
-                                <span>${taxPrice.toFixed(2)}</span>
+                            <div className="flex justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <span className="text-slate-600">Tax:</span>
+                                <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent font-bold">${taxPrice.toFixed(2)}</span>
                             </div>
 
-                            <div className="flex justify-between">
-                                <span>Shipping:</span>
-                                <span>${shippingPrice.toFixed(2)}</span>
+                            <div className="flex justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <span className="text-slate-600">Shipping:</span>
+                                <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent font-bold">${shippingPrice.toFixed(2)}</span>
                             </div>
                         </div>
 
-                        <hr className="my-6 border-slate-800" />
+                        <div className="my-6 h-[2px] bg-gradient-to-r from-orange-200 via-transparent to-blue-200" />
                         
-                        <div className="flex justify-between items-center text-white">
-                            <span className="font-bold text-lg">Total:</span>
-                            <span className="text-3xl font-black">${totalPrice.toFixed(2)}</span>
+                        <div className="flex justify-between items-center">
+                            <span className="font-bold text-slate-600 text-lg">Total:</span>
+                            <span className="text-5xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">${totalPrice.toFixed(2)}</span>
                         </div>
 
-                        <p className="text-xs text-slate-500 mt-8 font-medium leading-relaxed">
-                            Payments are securely processed via Clover (PCI-DSS compliant).
+                        <p className="text-xs text-slate-500 mt-8 font-medium leading-relaxed px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">
+                            🔒 Payments are securely processed via Clover (PCI-DSS compliant).
                         </p>
                     </div>
 

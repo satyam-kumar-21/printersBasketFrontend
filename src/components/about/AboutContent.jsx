@@ -1,223 +1,240 @@
 import React from "react";
-const aboutUsHero = "/assets/aboutUsHero.png";
-const whoweare = "/assets/whoweare.png";
-const inktoner = "/assets/inktoner.png";
-const printingacceseries = "/assets/printingacceseries.png";
-const printer = "/assets/printer.png";
+import { CheckCircle2, Truck, Headphones, Info, Shield, Zap } from "lucide-react";
+import aboutImage from "../../../public/assets/aboutOrange.jpg"
+import { Link } from "react-router-dom";
 
 const AboutContent = () => {
   return (
     <section className="w-full bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-        {/* Header with Image */}
-       <div className="mb-16">
-  <div className="flex flex-col md:flex-row items-center md:items-start max-w-6xl mx-auto gap-8">
-    
-    {/* Image Section */}
-    <div className="md:w-1/2 flex justify-center md:justify-start">
-      <img
-        src={aboutUsHero}
-        alt="Smart ePrinting Team"
-        className="w-full max-w-2xl h-64 object-cover rounded-xl shadow-lg"
-      />
-    </div>
+        {/* Main Story Section */}
+        <div className="mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Text Section */}
+            <div className="order-2 lg:order-1">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Who We Are
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                Prints Basket is an independent online retailer dedicated to providing a reliable and transparent shopping experience for printers and printing essentials. Our goal is simple: to help customers find the right printing products with clarity, convenience, and confidence.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                We offer a carefully selected range of home, office, and small-business printers, along with compatible ink, toner, and accessories. All products listed on our platform are sourced through authorized distributors, ensuring authenticity and standard manufacturer warranties where applicable.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                We present product information accurately and clearly so customers can make well-informed purchase decisions. Whether you are setting up a home workspace or managing everyday office printing needs, Prints Basket provides a straightforward and stress-free shopping experience.
+              </p>
+            </div>
 
-    {/* Text Section */}
-    <div className="md:w-1/2 text-center md:text-left">
-      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-        About Prints Basket
-      </h2>
-      <h3 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6">
-        Your Trusted Online Store for Printing Essentials
-      </h3>
-      <p className="text-gray-600 text-base sm:text-lg">
-        Welcome to Smart ePrinting — an independent online retailer dedicated to making it easy for individuals, families, and businesses to shop for reliable printers, ink, toner, and essential printing supplies. Our mission is simple: to provide a clear, honest, and customer-friendly shopping experience where you can confidently choose products that match your everyday printing needs.
-      </p>
-    </div>
-
-  </div>
-</div>
-
-
-        {/* Who We Are - Two Column */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Who We Are
-            </h3>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Smart ePrinting was created with the goal of helping customers understand and find the right printing products without confusion. In a world where technology and options continue to grow, we wanted to build a space that feels simple, transparent, and human-centered.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              We operate independently and are not affiliated with or endorsed by any printer manufacturer. Our selections come from trusted suppliers, and every brand name or trademark used on our website belongs to its respective owner and is used strictly for identification purposes.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              At Smart ePrinting, we combine accurate product information, clear communication, and dependable service to support customers in making informed decisions every day.
-            </p>
-          </div>
-          <div>
-            <img
-              src={whoweare}
-              alt="Our Story"
-              className="w-full h-80 object-cover rounded-xl shadow-lg"
-            />
+            {/* Image Section */}
+            <div className="order-1 lg:order-2">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-200 to-orange-100 rounded-3xl blur-2xl opacity-30"></div>
+                <img
+                  src={aboutImage}
+                  alt="About Prints Basket"
+                  className="relative w-full rounded-2xl shadow-xl"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* What We Offer - Three Column Cards */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
+        {/* Mission & Vision - Two Column */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+          {/* Mission */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-orange-500 hover:shadow-xl transition-shadow">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                <Zap className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
+            </div>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              To make purchasing printing products simple, trustworthy, and efficient by offering accurate product information, reliable delivery, and responsive customer support for product and order-related inquiries.
+            </p>
+          </div>
+
+          {/* Vision */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-blue-500 hover:shadow-xl transition-shadow">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <Info className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
+            </div>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              To become a trusted online destination for printers and printing essentials by consistently maintaining transparency, product reliability, and a customer-centered approach.
+            </p>
+          </div>
+        </div>
+
+        {/* What We Offer - Four Columns */}
+        <div className="mb-20">
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">
             What We Offer
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <img
-                src={printer}
-                alt="Printers"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                  <span className="text-green-600 mr-2">✔</span> Printers for Home & Office
-                </h4>
-                <p className="text-gray-600">
-                  A curated selection of printers designed for personal use, schoolwork, small business environments, and everyday printing tasks.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <img
-                src={inktoner}
-                alt="Ink & Toner"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                  <span className="text-green-600 mr-2">✔</span> Ink & Toner Cartridges
-                </h4>
-                <p className="text-gray-600">
-                  A wide variety of genuine-quality ink and toner supplies with detailed compatibility information so you can choose the right fit with confidence.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <img
-                src={printingacceseries}
-                alt="Printing Accessories"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                  <span className="text-green-600 mr-2">✔</span> Printing Accessories
-                </h4>
-                <p className="text-gray-600">
-                  Paper, specialty supplies, and everyday essentials that support your home or office printing setup.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Our Commitment to Customers - Grid */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
-            Our Commitment to Customers
-          </h3>
-          <p className="text-gray-600 leading-relaxed mb-8 text-center max-w-3xl mx-auto">
-            At Smart ePrinting, we believe trust is built through clarity, consistency, and respect. That's why we focus on:
-          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-400 mx-auto rounded-full mb-12"></div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔍</span>
+            {/* Curated Products */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mb-4">
+                <CheckCircle2 className="w-7 h-7 text-orange-600" />
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Transparency</h4>
-              <p className="text-gray-600 text-sm">Clear product details, honest descriptions, and straightforward communication without complexity.</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                A Curated Product Range
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                A wide selection of printers, ink, toner, and related accessories designed to meet personal, home-office, and business printing requirements.
+              </p>
             </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🤝</span>
+
+            {/* Clear Info */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-4">
+                <Info className="w-7 h-7 text-blue-600" />
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Customer Respect</h4>
-              <p className="text-gray-600 text-sm">Every question matters. Our support team is here to help with product inquiries, order updates, and general shopping assistance.</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                Clear & Accurate Information
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Detailed descriptions, specifications, and compatibility information so you can confidently select the right product for your needs.
+              </p>
             </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔒</span>
+
+            {/* Reliable Delivery */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mb-4">
+                <Truck className="w-7 h-7 text-green-600" />
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Security & Safety</h4>
-              <p className="text-gray-600 text-sm">We use secure checkout processes and industry-standard systems to protect your information.</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                Reliable Delivery
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Orders processed through trusted fulfillment channels with clear delivery timelines communicated during checkout.
+              </p>
             </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⭐</span>
+
+            {/* Customer Support */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mb-4">
+                <Headphones className="w-7 h-7 text-purple-600" />
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Quality Choices</h4>
-              <p className="text-gray-600 text-sm">We offer products sourced through reliable channels so you can enjoy a dependable shopping experience.</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                Responsive Support
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Available via email and live chat to help with product questions, order updates, and purchase-related inquiries.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Independent Retailer Statement - Highlighted */}
-        <div className="mb-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl border-l-4 border-blue-500">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Independent Retailer Statement
+        {/* Why Choose Us - Grid */}
+        <div className="mb-20">
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">
+            Why Customers Choose Prints Basket
           </h3>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            Smart ePrinting operates as an independent online retailer. We are not affiliated with, sponsored by, or endorsed by any printer or technology manufacturer.
-          </p>
-          <p className="text-gray-600 leading-relaxed">
-            All trademarks, brand names, product images, and labels belong to their respective owners and are used solely to help customers identify and select compatible products. Our role is to make shopping easier — not to represent or replace official brand support.
-          </p>
-        </div>
-
-        {/* Why Customers Choose Smart ePrinting - Cards */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
-            Why Customers Choose Smart ePrinting
-          </h3>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-400 mx-auto rounded-full mb-12"></div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                <span className="text-green-600 mr-2">✔</span> Simple & Easy Shopping
-              </h4>
-              <p className="text-gray-600">A clean, intuitive website that helps you browse and compare products quickly.</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                <span className="text-green-600 mr-2">✔</span> Professional & Responsive Support
-              </h4>
-              <p className="text-gray-600">We provide assistance with product-related questions, order status updates, and general shopping needs.</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                <span className="text-green-600 mr-2">✔</span> Accurate Product Information
-              </h4>
-              <p className="text-gray-600">Each product page includes clear specifications and compatibility details to support well-informed decisions.</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                <span className="text-green-600 mr-2">✔</span> Dependable Customer Experience
-              </h4>
-              <p className="text-gray-600">Safe checkout, reliable delivery partners, and respectful communication every step of the way.</p>
-            </div>
+            {[
+              { icon: "🏢", title: "Trusted Independent Retailer", desc: "An independent online business focused on your satisfaction" },
+              { icon: "🔍", title: "Transparent Product Information", desc: "No misleading claims - only accurate, honest details" },
+              { icon: "📦", title: "Wide Product Selection", desc: "Complete range of printers and printing supplies" },
+              { icon: "⚡", title: "Fast & Dependable Delivery", desc: "Quick processing through reliable fulfillment partners" },
+              { icon: "🔒", title: "Secure Checkout", desc: "Easy shopping with secure payment processing" },
+              { icon: "💬", title: "Helpful Customer Support", desc: "Expert assistance for product and order inquiries" },
+              { icon: "✨", title: "Honest Representation", desc: "Aligned with advertising guidelines and best practices" },
+              { icon: "⭐", title: "Customer-Centered Approach", desc: "Your needs and satisfaction are our priority" }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+                <div className="flex gap-4">
+                  <span className="text-3xl">{item.icon}</span>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h4>
+                    <p className="text-gray-600 text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Our Vision - Hero Style */}
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-8 rounded-xl">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-semibold mb-6">
-              Our Vision
+        {/* Independent Retailer Notice */}
+        <div className="mb-20 bg-gradient-to-r from-blue-50 via-blue-50 to-indigo-50 rounded-2xl p-10 border-2 border-blue-200">
+          <div className="flex items-start gap-4 mb-6">
+            <Shield className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+            <h3 className="text-2xl font-bold text-gray-900">
+              Independent Retailer Notice
             </h3>
-            <p className="leading-relaxed mb-4">
-              To be a trusted and customer-focused retailer that helps people shop for printing essentials confidently and comfortably. We continuously improve our platform with better transparency, clearer navigation, and a more helpful shopping experience.
+          </div>
+          
+          <div className="space-y-4 text-gray-700">
+            <p className="text-lg leading-relaxed">
+              <strong>Prints Basket operates as an independent online retail platform.</strong> We are not affiliated with, endorsed by, or an authorized reseller of any printer manufacturer or brand.
             </p>
-            <p className="leading-relaxed">
-              As printing needs evolve, our commitment to honesty, reliability, and customer care remains the foundation of everything we do.
+            <p className="text-lg leading-relaxed">
+              All trademarks, logos, and product identifiers displayed on our website belong to their respective owners. They are used solely for identification and comparison purposes and do not indicate any partnership or endorsement.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Products are fulfilled through authorized distribution partners and include standard manufacturer warranties where applicable. All communication, retail policies, and customer service are provided exclusively by Prints Basket.
             </p>
           </div>
+        </div>
+
+        {/* Microsoft Ads Compliance */}
+        <div className="mb-20 bg-gradient-to-r from-amber-50 via-amber-50 to-orange-50 rounded-2xl p-10 border-2 border-amber-200">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            Our Commitment to Compliance
+          </h3>
+          
+          <div className="space-y-4 text-gray-700">
+            <p className="text-lg leading-relaxed">
+              To ensure full compliance with advertising guidelines and customer protection standards, the following principles are reflected throughout our operations:
+            </p>
+            <ul className="space-y-3">
+              <li className="flex gap-3 text-lg">
+                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <span>We do not claim special pricing, affiliation, or guaranteed performance unless verifiable</span>
+              </li>
+              <li className="flex gap-3 text-lg">
+                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <span>We clearly identify ourselves as an independent retailer</span>
+              </li>
+              <li className="flex gap-3 text-lg">
+                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <span>All product descriptions are accurate and based on manufacturer-provided information</span>
+              </li>
+              <li className="flex gap-3 text-lg">
+                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <span>No services are offered beyond what is explicitly stated (no repair, setup, or troubleshooting)</span>
+              </li>
+              <li className="flex gap-3 text-lg">
+                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <span>Customer support is limited to product and order-related inquiries only</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-orange-600 to-orange-500 rounded-2xl shadow-xl p-12 text-center text-white">
+          <h3 className="text-3xl font-bold mb-4">
+            Ready to Find Your Perfect Printer?
+          </h3>
+          <p className="text-lg mb-8 opacity-95">
+            Explore our curated selection of printing products with confidence.
+          </p>
+          <Link
+            to="/shop"
+            className="inline-block bg-white text-orange-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            Start Shopping
+          </Link>
         </div>
 
       </div>

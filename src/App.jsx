@@ -45,6 +45,9 @@ import CookiePolicy from './components/privacyPolicy/CookiePolicy';
 import CCPAPrivacyPolicy from './components/privacyPolicy/CCPAPrivacyPolicy';
 import AccessibilityStatement from './components/privacyPolicy/AccessibilityStatement';
 import Disclaimer from './components/privacyPolicy/Disclaimer';
+import ContactMain from './components/contact/ContactMain';
+import EULA from './components/policies/EULA';
+import DoNotSell from './components/policies/DoNotSell';
 
 // Blog Imports
 import BlogsMain from './components/blogs/BlogsMain';
@@ -108,6 +111,9 @@ function App() {
                     <Route path="/ccpa-privacy-policy" element={<CCPAPrivacyPolicy />} />
                     <Route path="/accessibility-statement" element={<AccessibilityStatement />} />
                     <Route path="/disclaimer" element={<Disclaimer />} />
+                    <Route path="/contact-us" element={<ContactMain />} />
+                    <Route path="/eula" element={<EULA />} />
+                    <Route path="/do-not-sell" element={<DoNotSell />} />
 
                     {/* Admin Routes */}
                     <Route path="/admin/login" element={<AdminLogin />} />
@@ -125,7 +131,7 @@ function App() {
                     </Route>
 
                     {/* Placeholder Routes for Public Site */}
-                    <Route path="/shop" element={<AllInOne />} />
+                    <Route path="/shop" element={<ShopMain />} />
                     <Route path="/about" element={<UnderConstruction />} />
                     <Route path="/support" element={<UnderConstruction />} />
                     <Route path="/account" element={<UnderConstruction />} />

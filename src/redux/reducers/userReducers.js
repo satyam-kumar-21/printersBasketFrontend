@@ -26,6 +26,7 @@ import {
     USER_UPDATE_PROFILE_SUCCESS,
     USER_UPDATE_PROFILE_FAIL,
     USER_UPDATE_PROFILE_RESET,
+    USER_AUTH_CLEAR_MESSAGES,
 } from '../constants/userConstants';
 
 export const userLoginReducer = (state = {}, action) => {
@@ -38,6 +39,8 @@ export const userLoginReducer = (state = {}, action) => {
             return { loading: false, error: action.payload };
         case USER_LOGOUT:
             return {};
+        case USER_AUTH_CLEAR_MESSAGES:
+            return { ...state, error: null };
         default:
             return state;
     }
@@ -66,6 +69,8 @@ export const userSendOTPReducer = (state = {}, action) => {
             return { loading: false, success: true, message: action.payload.message };
         case USER_SEND_OTP_FAIL:
             return { loading: false, error: action.payload };
+        case USER_AUTH_CLEAR_MESSAGES:
+            return { ...state, error: null, success: false };
         default:
             return state;
     }
@@ -79,6 +84,8 @@ export const userVerifyOTPReducer = (state = {}, action) => {
             return { loading: false, success: true, message: action.payload.message };
         case USER_VERIFY_OTP_FAIL:
             return { loading: false, error: action.payload };
+        case USER_AUTH_CLEAR_MESSAGES:
+            return { ...state, error: null, success: false };
         default:
             return state;
     }
@@ -92,6 +99,8 @@ export const userForgotPasswordReducer = (state = {}, action) => {
             return { loading: false, success: true, message: action.payload.message };
         case USER_FORGOT_PASSWORD_FAIL:
             return { loading: false, error: action.payload };
+        case USER_AUTH_CLEAR_MESSAGES:
+            return { ...state, error: null, success: false };
         default:
             return state;
     }
@@ -105,6 +114,8 @@ export const userResetPasswordReducer = (state = {}, action) => {
             return { loading: false, success: true, message: action.payload.message };
         case USER_RESET_PASSWORD_FAIL:
             return { loading: false, error: action.payload };
+        case USER_AUTH_CLEAR_MESSAGES:
+            return { ...state, error: null, success: false };
         default:
             return state;
     }

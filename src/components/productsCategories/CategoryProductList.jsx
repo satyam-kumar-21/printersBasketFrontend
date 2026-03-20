@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../redux/actions/productActions";
 import ProductGrid from "./ProductGrid";
@@ -6,36 +6,18 @@ import ProductGrid from "./ProductGrid";
 
 const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false }) => {
     const dispatch = useDispatch();
-    const [sort, setSort] = useState('');
-    const [brand, setBrand] = useState('');
-    // Structured attribute filters
-    const [technology, setTechnology] = useState('');
-    const [usageCategory, setUsageCategory] = useState([]);
-    const [allInOneType, setAllInOneType] = useState('');
-    const [wireless, setWireless] = useState('');
-    const [mainFunction, setMainFunction] = useState([]);
 
     const productList = useSelector((state) => state.productList);
     const { loading, error, products, page, pages } = productList;
 
     useEffect(() => {
-        dispatch(listProducts('', categoryName, 1, sort, brand, technology, usageCategory, allInOneType, wireless, mainFunction));
-    }, [dispatch, categoryName, sort, brand, technology, usageCategory, allInOneType, wireless, mainFunction]);
+        dispatch(listProducts('', categoryName, 1, '', '', '', [], '', '', []));
+    }, [dispatch, categoryName]);
 
     const loadMoreHandler = () => {
         if (page < pages) {
-            dispatch(listProducts('', categoryName, page + 1, sort, brand, technology, usageCategory, allInOneType, wireless, mainFunction));
+            dispatch(listProducts('', categoryName, page + 1, '', '', '', [], '', '', []));
         }
-    };
-
-    const handleFilterChange = (filters) => {
-        setSort(filters.sort || '');
-        setBrand(filters.brand || '');
-        setTechnology(filters.technology || '');
-        setUsageCategory(filters.usageCategory || []);
-        setAllInOneType(filters.allInOneType || '');
-        setWireless(filters.wireless || '');
-        setMainFunction(filters.mainFunction || []);
     };
 
     const safeProducts = Array.isArray(products) ? products : [];
@@ -49,10 +31,9 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false }
         link: `/product/${product.slug || product._id}`
     }));
 
-    // if (loading && safeProducts.length === 0) return <div className="py-20 text-center font-black uppercase text-[10px] tracking-[0.3em] text-slate-400 animate-pulse">Synchronizing Inventory...</div>;
     if (error) return <div className="py-20 text-center font-black uppercase text-[10px] tracking-[0.3em] text-red-500">{error}</div>;
 
-    if (!loading && safeProducts.length === 0 && !sort && !brand) {
+    if (!loading && safeProducts.length === 0) {
         return (
             <div className="max-w-7xl mx-auto px-4 py-20 text-center">
                 <h2 className="text-3xl font-semibold text-gray-900 mb-6">{heading || categoryName}</h2>
@@ -63,17 +44,16 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false }
             </div>
         );
     }
-    
+
     return (
          <div className="flex flex-col">
             <ProductGrid
                 heading={heading || categoryName}
-                products={formattedProducts}
-                onFilterChange={handleFilterChange}
+                products={formattedProducts.slice(0, 12)}
                 enableFlowLayout={enableFlowLayout}
             />
             
-            {loading && page >= 1 && (
+            {/* {loading && page >= 1 && (
                 <div className="py-8 text-center font-black uppercase text-[10px] tracking-[0.3em] text-slate-400 animate-pulse">
                     Loading More Items...
                 </div>
@@ -88,7 +68,7 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false }
                         See More Products
                     </button>
                 </div>
-            )}
+            )} */}
         </div>
     );
 };

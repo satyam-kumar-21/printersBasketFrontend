@@ -1,191 +1,187 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CookiePolicy = () => {
   return (
-    <section className="w-full bg-gray-50 min-h-screen py-16">
+    <section className="w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+        {/* Breadcrumb Navigation */}
+        <div className="flex justify-center items-center gap-2 text-sm text-gray-600">
+          <Link to="/" className="hover:text-orange-600 transition">Home</Link>
+          <span>/</span>
+          <span className="text-gray-900 font-medium">Cookie Policy</span>
+        </div>
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Cookie Policy — Smart ePrinting
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+            Cookie Policy
           </h1>
-          <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
-            Last Updated: January 31, 2026
-          </p>
-          <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
-            This Cookie Policy explains how Smart ePrinting (“we,” “us,” “our”) uses cookies and similar technologies on <a href="https://www.smarteprinting.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline">www.smarteprinting.com</a>. By continuing to use our Website, you acknowledge and agree to the use of cookies as described below. You may manage your preferences at any time through our Cookie Consent Banner.
+          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full mx-auto"></div>
+          <p className="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+            Last Updated: January 21, 2026
           </p>
         </div>
 
         <div className="space-y-10">
 
-          {/* 1. Use of Cookie Consent Banner */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">1. Use of Cookie Consent Banner</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Our Website displays a Cookie Consent Banner to provide transparency and user control. Through this banner, you may:
-            </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Accept all cookies</li>
-              <li>Reject non-essential cookies</li>
-              <li>Allow only essential cookies</li>
-              <li>Adjust or withdraw consent at any time</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed">
-              This is required for compliance with applicable privacy laws and industry standards.
+          {/* Introduction */}
+          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-orange-500">
+            <p className="text-gray-700 leading-relaxed text-lg">
+              This Cookie Policy explains how Prints Basket ("we", "our", "us") uses cookies and similar technologies to operate, secure, and enhance our website and online services. By using our website, you acknowledge and agree to the use of cookies as described in this policy. You may control or disable cookies at any time through your browser settings.
             </p>
           </div>
 
-          {/* 2. What Are Cookies? */}
+          {/* 1. What Are Cookies */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">2. What Are Cookies?</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Cookies are small data files stored on your device when you visit our Website. They help ensure secure, stable, and efficient operation of key website features. Cookies used on this Website do not collect personally sensitive information.
-            </p>
-          </div>
-
-          {/* 3. Types of Cookies We Use */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">3. Types of Cookies We Use</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Smart ePrinting uses only the following categories of cookies:
-            </p>
-
-            {/* A. Essential Cookies */}
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900">A. Essential Cookies (Strictly Necessary)</h3>
-              <p className="text-gray-600 leading-relaxed">
-                These cookies are required for the Website to function properly. Without them, core features such as checkout and account login would not work. They are used for:
+            <h2 className="text-2xl font-semibold text-gray-900">1. What Are Cookies?</h2>
+            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+              <p className="text-gray-600 leading-relaxed mb-3">
+                Cookies are small text files stored on your device (computer, smartphone, or tablet) when you visit a website. They help websites function properly, remember basic preferences, and keep sessions secure.
               </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Shopping cart functionality</li>
-                <li>Checkout and payment processing</li>
-                <li>Website security and fraud prevention</li>
-                <li>Load balancing and uptime stability</li>
-                <li>Basic session management</li>
-              </ul>
-              <p className="text-gray-600 leading-relaxed">
-                Essential cookies do not require user consent but are disclosed for transparency.
-              </p>
-            </div>
-
-            {/* B. Functional Cookies */}
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900">B. Functional Cookies (Optional)</h3>
-              <p className="text-gray-600 leading-relaxed">
-                These cookies improve your shopping experience by remembering preferences such as:
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Language and region selection</li>
-                <li>Display options</li>
-                <li>Basic user settings</li>
-              </ul>
-              <p className="text-gray-600 leading-relaxed">
-                They do not track browsing across other websites and do not collect behavioral data. Functional cookies are activated only if you consent through the Cookie Banner.
-              </p>
+              <div className="bg-white rounded p-3 border border-blue-200">
+                <p className="text-gray-700 font-medium text-sm mb-1">Important:</p>
+                <p className="text-gray-600 text-sm">
+                  Cookies do not store personal information such as your name or payment details unless you explicitly provide that information during checkout or account setup.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* 4. How Smart ePrinting Uses Cookies */}
+          {/* 2. Types of Cookies We Use */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">4. How Smart ePrinting Uses Cookies</h2>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Secure checkout</li>
-              <li>Cart retention</li>
-              <li>Order processing</li>
-              <li>Website reliability and performance</li>
-              <li>Fraud detection and prevention</li>
-              <li>Basic user convenience</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed">
-              We do not use cookies for tracking users across sites, profiling, or targeted advertising.
-            </p>
-          </div>
-
-          {/* 5. Third-Party Cookies */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">5. Third-Party Cookies</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Smart ePrinting does not allow third-party advertising, retargeting, or behavioral cookies on our Website. However, certain trusted service providers may use essential, security-related cookies when necessary, such as:
-            </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Payment processors</li>
-              <li>Hosting providers</li>
-              <li>Security and firewall systems</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed">
-              These cookies support secure transactions and compliance with fraud-prevention standards. We do not permit any third-party to use cookie data for their own marketing or analytics purposes.
-            </p>
-          </div>
-
-          {/* 6. Managing & Disabling Cookies */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">6. Managing & Disabling Cookies</h2>
-            <p className="text-gray-600 leading-relaxed">
-              You can manage your cookie preferences in two ways:
-            </p>
-
-            {/* A. Cookie Consent Banner */}
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900">A. Through Our Cookie Consent Banner</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Accept all</li>
-                <li>Reject non-essential</li>
-                <li>Change preferences anytime</li>
-              </ul>
+            <h2 className="text-2xl font-semibold text-gray-900">2. Types of Cookies We Use</h2>
+            <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-500 mb-4">
+              <p className="text-gray-600 leading-relaxed">
+                Prints Basket uses only <strong>essential and functional cookies</strong> required for safe operation of our website.
+              </p>
+              <p className="text-gray-600 leading-relaxed mt-2">
+                We do <strong>not</strong> use advertising, tracking, analytics, or behavioral profiling cookies.
+              </p>
             </div>
 
-            {/* B. Browser Settings */}
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-gray-900">B. Through Browser Settings</h3>
-              <p className="text-gray-600 leading-relaxed">
-                You may block or delete cookies at any time. Common browser paths:
-              </p>
+            <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
+              <table className="w-full text-sm">
+                <thead className="bg-orange-100 border-b border-gray-200">
+                  <tr>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-800">Cookie Type</th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-800">Purpose</th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-800">Examples</th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-800">Consent?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-200">
+                    <td className="px-4 py-3 text-gray-600 font-medium">Strictly Necessary</td>
+                    <td className="px-4 py-3 text-gray-600">Ensure website operates safely & supports e-commerce</td>
+                    <td className="px-4 py-3 text-gray-600 text-xs">Session identifiers, checkout auth, cart</td>
+                    <td className="px-4 py-3 text-gray-600 font-medium text-green-600">No – Required</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 text-gray-600 font-medium">Functional</td>
+                    <td className="px-4 py-3 text-gray-600">Remember user preferences for usability</td>
+                    <td className="px-4 py-3 text-gray-600 text-xs">Language, region preference</td>
+                    <td className="px-4 py-3 text-gray-600 font-medium text-orange-600">Implied</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-red-50 rounded-lg p-4 border-l-4 border-red-400 mt-4">
+              <p className="text-gray-700 font-medium mb-2">We Do NOT Use:</p>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Chrome: Settings → Privacy & Security → Cookies</li>
-                <li>Firefox: Options → Privacy & Security → Cookies</li>
-                <li>Safari: Preferences → Privacy → Cookies</li>
-                <li>Edge: Settings → Site Permissions → Cookies</li>
+                <li>Tracking or behavioral advertising cookies</li>
+                <li>Third-party retargeting cookies</li>
+                <li>Social media tracking pixels</li>
+                <li>Analytics or data profiling tools</li>
               </ul>
-              <p className="text-gray-600 leading-relaxed">
-                Disabling essential cookies may affect checkout, cart functionality, account access, and website stability.
+            </div>
+          </div>
+
+          {/* 3. Why These Cookies Are Important */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold text-gray-900">3. Why These Cookies Are Important</h2>
+            <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
+              <p className="text-gray-600 leading-relaxed mb-3">
+                Our essential cookies are required for:
+              </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <li>Saving your shopping cart, even if you leave the site temporarily</li>
+                <li>Securing your login sessions and account information</li>
+                <li>Processing orders and enabling encrypted checkout</li>
+                <li>Remembering basic preferences (language, region)</li>
+                <li>Maintaining overall site performance and reliability</li>
+              </ul>
+            </div>
+            <div className="bg-yellow-50 rounded-lg p-4 border-l-4 border-yellow-500">
+              <p className="text-gray-600">
+                <strong>Important:</strong> Disabling these cookies may result in loss of key features such as cart storage, account access, and checkout functionality.
               </p>
             </div>
           </div>
 
-          {/* 7. Data Privacy & Cookies */}
+          {/* 4. How to Control or Disable Cookies */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">7. Data Privacy & Cookies</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Any personal information collected through cookies is processed in accordance with our Privacy Policy. Key commitments:
-            </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>We do not sell personal information</li>
-              <li>We do not share cookie data for advertising</li>
-              <li>We do not use analytics or marketing cookies</li>
-              <li>We protect all cookie-based information with appropriate security controls</li>
-            </ul>
+            <h2 className="text-2xl font-semibold text-gray-900">4. How to Control or Disable Cookies</h2>
+            <div className="bg-indigo-50 rounded-lg p-4 border-l-4 border-indigo-500">
+              <p className="text-gray-600 leading-relaxed mb-4">
+                You can manage cookie preferences through your browser settings. Please note that disabling essential cookies may limit your ability to use certain features of our website.
+              </p>
+              <p className="text-gray-700 font-medium mb-3">Browser Instructions:</p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <li><strong>Google Chrome:</strong> Settings → Privacy and Security → Cookies and Other Site Data</li>
+                <li><strong>Mozilla Firefox:</strong> Options → Privacy & Security → Cookies and Site Data</li>
+                <li><strong>Safari (macOS/iOS):</strong> Preferences → Privacy → Cookies</li>
+                <li><strong>Microsoft Edge:</strong> Settings → Cookies and Site Permissions → Manage Cookies</li>
+              </ul>
+              <p className="text-gray-600 text-sm mt-3 italic">
+                You may delete existing cookies or block future cookies, but certain website functions may no longer work as intended.
+              </p>
+            </div>
           </div>
 
-          {/* 8. Changes to This Cookie Policy */}
+          {/* 5. Do We Use Third-Party Cookies */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">8. Changes to This Cookie Policy</h2>
-            <p className="text-gray-600 leading-relaxed">
-              We may update this policy to reflect changes in legal requirements, updates to our cookie banner, or website enhancements. The “Last Updated” date indicates the latest version.
-            </p>
+            <h2 className="text-2xl font-semibold text-gray-900">5. Do We Use Third-Party Cookies?</h2>
+            <div className="bg-white rounded-lg p-4 border border-gray-200">
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <li>Currently, Prints Basket does <strong>not</strong> use any third-party advertising, analytics, or remarketing cookies.</li>
+                <li>If future integrations (such as additional payment or chat tools) require third-party cookies, we will update this policy and clearly notify users.</li>
+              </ul>
+            </div>
           </div>
 
-          {/* 9. Contact Us */}
+          {/* 6. Data Privacy and Cookies */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">9. Contact Us</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Smart ePrinting<br />
-              17807 Lakecrest View Drive, #1205<br />
-              Cypress, TX 77433, United States<br />
-              Email: <a href="mailto:support@smarteprinting.com" className="text-indigo-600 underline">support@smarteprinting.com</a><br />
-              Website: <a href="https://www.smarteprinting.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline">www.smarteprinting.com</a>
+            <h2 className="text-2xl font-semibold text-gray-900">6. Data Privacy and Cookies</h2>
+            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+              <p className="text-gray-600 leading-relaxed">
+                Any information collected through cookies—such as session identifiers or limited preference data—is processed according to our <Link to="/privacy-policy" className="text-orange-600 underline hover:text-orange-700">Privacy Policy</Link>. We do not use cookies to collect sensitive personal information.
+              </p>
+            </div>
+          </div>
+
+          {/* 7. Updates to This Cookie Policy */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold text-gray-900">7. Updates to This Cookie Policy</h2>
+            <div className="bg-white rounded-lg p-4 border border-gray-200">
+              <p className="text-gray-600 leading-relaxed">
+                We may update this Cookie Policy from time to time to reflect changes in legal requirements or our website functionality. When updates occur, the "Last Updated" date at the top of this page will be revised. We encourage users to review this policy periodically.
+              </p>
+            </div>
+          </div>
+
+          {/* 8. Contact Us */}
+          <div className="space-y-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-6 text-white">
+            <h2 className="text-2xl font-semibold">8. Contact Us</h2>
+            <p className="leading-relaxed">
+              If you have questions about our Cookie Policy or how cookies are used on our website, please contact us:
             </p>
+            <div className="space-y-2 text-orange-50">
+              <p>📧 <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
+              <p>📍 <strong>Address:</strong> 95 Broadacre Dr, Kitchener, ON N2R 0S5, Canada</p>
+            </div>
           </div>
 
         </div>
@@ -194,4 +190,4 @@ const CookiePolicy = () => {
   );
 };
 
-export default CookiePolicy
+export default CookiePolicy;

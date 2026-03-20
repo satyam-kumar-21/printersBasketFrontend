@@ -25,31 +25,38 @@ const Cart = () => {
     };
 
     return (
-        <div className="w-full bg-slate-50 min-h-screen py-10">
-            <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="w-full min-h-screen py-10 bg-gradient-to-br from-slate-50 via-white to-blue-50/20">
+            {/* Background Patterns */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/10 to-transparent rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8">
 
                 {/* Header */}
-                <section className="w-full bg-white rounded-3xl border border-slate-100 p-8 md:p-12 mb-8 shadow-sm">
-                    <div className="text-center">
-                        <h1 className="text-4xl font-black text-slate-900 uppercase tracking-tighter">Shopping Hub</h1>
-                        <p className="mt-4 text-xs font-black text-slate-400 uppercase tracking-[0.3em]">
-                            You have <span className="text-slate-900">{cartItems.reduce((acc, item) => acc + item.qty, 0)}</span> items in your inventory
+                <section className="w-full bg-gradient-to-br from-white to-blue-50/30 rounded-3xl border-2 border-slate-100 p-8 md:p-12 mb-12 shadow-lg shadow-blue-100/30 backdrop-blur-sm">
+                    <div className="text-center space-y-3">
+                        <h1 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Shopping Hub</h1>
+                        <div className="h-1 w-16 mx-auto bg-gradient-to-r from-orange-500 to-blue-600 rounded-full"></div>
+                        <p className="text-sm font-bold text-slate-600 uppercase tracking-widest">
+                            You have <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent font-black text-lg">{cartItems.reduce((acc, item) => acc + item.qty, 0)}</span> items in your inventory
                         </p>
                     </div>
                 </section>
 
                 {cartItems.length === 0 ? (
-                    <div className="bg-white border border-dashed border-slate-200 rounded-[3rem] p-20 text-center flex flex-col items-center justify-center space-y-6">
-                        <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center">
-                            <svg className="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="bg-white border-2 border-dashed border-slate-200 rounded-3xl p-20 text-center flex flex-col items-center justify-center space-y-6 shadow-lg">
+                        <div className="w-28 h-28 bg-gradient-to-br from-orange-50 to-blue-50 rounded-full flex items-center justify-center border-2 border-slate-100">
+                            <svg className="w-12 h-12 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
                         </div>
-                        <div className="space-y-2">
-                            <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Your Cart is Empty</h2>
-                            <p className="text-slate-400 font-medium">Ready to start printing? Explore our premium hardware collection.</p>
+                        <div className="space-y-3">
+                            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Your Cart is Empty</h2>
+                            <p className="text-slate-500 font-medium text-base">Ready to start printing? Explore our premium hardware collection.</p>
                         </div>
-                        <Link to="/" className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-black uppercase text-[10px] tracking-widest hover:bg-black transition-all">
+                        <Link to="/" className="px-8 py-4 bg-gradient-to-r from-orange-600 to-blue-600 text-white rounded-2xl font-black uppercase text-[11px] tracking-widest hover:shadow-lg hover:shadow-orange-200/50 transition-all hover:scale-105">
                             Browse Inventory
                         </Link>
                     </div>
@@ -57,50 +64,50 @@ const Cart = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* LEFT : Cart Items */}
                         <div className="lg:col-span-2 space-y-6">
-                            <div className="bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm">
-                                <div className="hidden md:grid grid-cols-5 gap-4 p-6 bg-slate-50 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b border-slate-100">
+                            <div className="bg-white border-2 border-slate-100 rounded-3xl overflow-hidden shadow-lg shadow-blue-100/20 hover:shadow-xl transition-all">
+                                <div className="hidden md:grid grid-cols-5 gap-4 p-6 bg-gradient-to-r from-slate-50 to-blue-50/50 text-[11px] font-black text-slate-600 uppercase tracking-widest border-b-2 border-slate-100">
                                     <span className="col-span-2">Product Details</span>
                                     <span className="text-center">Price</span>
-                                    <span className="text-center">Quantity</span>
+                                    <span className="text-center">Qty</span>
                                     <span className="text-right">Action</span>
                                 </div>
 
                                 <div className="divide-y divide-slate-50">
                                     {cartItems.map((item) => (
-                                        <div key={item.product} className="p-6 grid grid-cols-1 md:grid-cols-5 gap-6 items-center hover:bg-slate-50/50 transition-colors">
+                                        <div key={item.product} className="p-6 grid grid-cols-1 md:grid-cols-5 gap-4 items-center hover:bg-gradient-to-r hover:from-orange-50/20 hover:to-blue-50/20 transition-all duration-300">
                                             {/* Product */}
-                                            <div className="col-span-1 md:col-span-2 flex gap-6 items-center">
-                                                <div className="w-20 h-20 bg-white border border-slate-100 rounded-2xl p-2 flex-shrink-0">
+                                            <div className="col-span-1 md:col-span-2 flex gap-4 items-center">
+                                                <div className="w-20 h-20 bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-100 rounded-2xl p-2 flex-shrink-0 flex items-center justify-center shadow-md">
                                                     <img
                                                         src={item.image ? (item.image.startsWith('http') ? item.image : `http://localhost:5000${item.image}`) : printerImg}
                                                         alt={item.title}
                                                         className="w-full h-full object-contain"
                                                     />
                                                 </div>
-                                                <div className="space-y-1">
-                                                    <Link to={`/product/${item.slug}`} className="text-sm font-black text-slate-900 uppercase tracking-tight hover:text-indigo-600 transition-colors line-clamp-1">
+                                                <div className="space-y-2 flex-1">
+                                                    <Link to={`/product/${item.slug}`} className="text-sm font-black text-slate-900 uppercase tracking-tight hover:bg-gradient-to-r hover:from-orange-600 hover:to-blue-600 hover:bg-clip-text hover:text-transparent transition-all line-clamp-2">
                                                         {item.title}
                                                     </Link>
-                                                    <p className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">In Stock</p>
+                                                    <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded-full w-fit">✓ In Stock</p>
                                                 </div>
                                             </div>
 
                                             {/* Price */}
-                                            <div className="text-center">
-                                                <p className="text-slate-900 font-black tracking-tight">${item.price.toFixed(2)}</p>
+                                            <div className="text-center hidden md:block">
+                                                <p className="text-lg font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">${item.price.toFixed(2)}</p>
                                             </div>
 
                                             {/* Quantity */}
                                             <div className="flex justify-center">
-                                                <div className="flex items-center border border-slate-200 rounded-xl bg-white overflow-hidden h-10">
+                                                <div className="flex items-center border-2 border-slate-200 rounded-xl bg-white overflow-hidden h-10 shadow-sm">
                                                     <button 
                                                         onClick={() => dispatch(addToCart(item.product, Math.max(1, item.qty - 1)))}
-                                                        className="px-3 hover:bg-slate-50 text-slate-400"
-                                                    >-</button>
-                                                    <span className="px-3 text-[10px] font-black text-slate-900">{item.qty}</span>
+                                                        className="px-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-blue-50 text-slate-500 hover:text-orange-600 font-bold transition-all"
+                                                    >−</button>
+                                                    <span className="px-3 text-sm font-black text-slate-900">{item.qty}</span>
                                                     <button 
                                                         onClick={() => dispatch(addToCart(item.product, Math.min(item.countInStock, item.qty + 1)))}
-                                                        className="px-3 hover:bg-slate-50 text-slate-400"
+                                                        className="px-3 hover:bg-gradient-to-r hover:from-orange-50 hover:to-blue-50 text-slate-500 hover:text-orange-600 font-bold transition-all"
                                                     >+</button>
                                                 </div>
                                             </div>
@@ -109,10 +116,10 @@ const Cart = () => {
                                             <div className="text-right">
                                                 <button 
                                                     onClick={() => removeFromCartHandler(item.product)}
-                                                    className="p-3 text-rose-500 hover:bg-rose-50 rounded-xl transition-all"
+                                                    className="p-3 text-rose-500 hover:bg-gradient-to-r hover:from-rose-50 hover:to-red-50 rounded-xl transition-all hover:shadow-md"
                                                 >
                                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-4v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-4v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                     </svg>
                                                 </button>
                                             </div>
@@ -124,44 +131,44 @@ const Cart = () => {
 
                         {/* RIGHT : Summary */}
                         <div className="space-y-6">
-                            <div className="bg-white border border-slate-100 rounded-[2.5rem] p-8 shadow-sm space-y-8 h-fit lg:sticky lg:top-24">
-                                <h3 className="text-xl font-black text-slate-900 uppercase tracking-tighter">Order Intelligence</h3>
+                            <div className="bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 rounded-3xl p-8 shadow-lg shadow-blue-100/30 backdrop-blur-sm space-y-6 h-fit lg:sticky lg:top-24 hover:shadow-xl transition-all">
+                                <h3 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Order Summary</h3>
                                 
-                                <div className="space-y-4">
-                                    <div className="flex items-center justify-between py-4 border-b border-slate-100">
-                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Subtotal</span>
-                                        <span className="text-slate-900 font-black tracking-tight">${subtotal.toFixed(2)}</span>
+                                <div className="space-y-3">
+                                    <div className="flex items-center justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
+                                        <span className="text-[11px] font-black text-slate-600 uppercase tracking-widest">Subtotal</span>
+                                        <span className="text-lg font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">${subtotal.toFixed(2)}</span>
                                     </div>
 
-                                    <div className="flex items-center justify-between group cursor-pointer" onClick={() => setGiftWrap(!giftWrap)}>
+                                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-orange-50 to-blue-50 rounded-xl border-2 border-orange-100 group cursor-pointer hover:border-orange-200 hover:shadow-md transition-all" onClick={() => setGiftWrap(!giftWrap)}>
                                         <div className="flex items-center gap-3">
-                                            <div className={`w-5 h-5 rounded-md border-2 transition-all flex items-center justify-center ${giftWrap ? 'bg-indigo-600 border-indigo-600' : 'border-slate-200'}`}>
-                                                {giftWrap && <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>}
+                                            <div className={`w-6 h-6 rounded-lg border-2 transition-all flex items-center justify-center flex-shrink-0 ${giftWrap ? 'bg-gradient-to-r from-orange-500 to-blue-500 border-transparent' : 'border-slate-300 hover:border-orange-400'}`}>
+                                                {giftWrap && <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>}
                                             </div>
-                                            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Premium Gift Packing</span>
+                                            <span className="text-[11px] font-black text-slate-700 uppercase tracking-widest">🎁 Premium Gift Packing</span>
                                         </div>
-                                        <span className="text-[10px] font-black text-slate-900">$10.00</span>
+                                        <span className="text-sm font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">$10.00</span>
                                     </div>
                                 </div>
 
-                                <div className="pt-4">
-                                    <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-black text-slate-900 uppercase tracking-tight">Invoice Total</span>
-                                        <span className="text-3xl font-black text-slate-900 tracking-tighter">${totalWithGift.toFixed(2)}</span>
+                                <div className="pt-2 border-t-2 border-slate-100">
+                                    <div className="flex items-center justify-between mb-3">
+                                        <span className="text-xs font-black text-slate-600 uppercase tracking-widest">Invoice Total</span>
+                                        <span className="text-5xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent tracking-tighter">${totalWithGift.toFixed(2)}</span>
                                     </div>
-                                    <p className="text-[9px] font-bold text-slate-300 uppercase tracking-[0.3em] text-center">Taxes and Logistics calculated at next stage</p>
+                                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center bg-slate-50 py-2 rounded-lg">Taxes & Logistics at checkout</p>
                                 </div>
 
-                                <div className="space-y-4 pt-4">
+                                <div className="space-y-3 pt-4">
                                     <button 
                                         onClick={checkoutHandler}
-                                        className="w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:bg-black transition-all shadow-xl shadow-slate-200 active:scale-95"
+                                        className="w-full bg-gradient-to-r from-orange-600 to-blue-600 text-white py-5 rounded-2xl font-black uppercase text-[12px] tracking-widest hover:shadow-lg hover:shadow-orange-200/50 transition-all shadow-lg active:scale-95 hover:from-orange-700 hover:to-blue-700"
                                     >
-                                        Proceed to Secure Checkout
+                                        ✓ Proceed to Checkout
                                     </button>
-                                    <div className="flex items-center justify-center gap-6 py-4 px-4 bg-slate-50 rounded-2xl border border-slate-100">
-                                        <img src="https://razorpay.com/assets/razorpay-glyph.svg" alt="Razorpay" className="h-4 opacity-50" />
-                                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em]">Verified Secure Terminal</span>
+                                    <div className="flex flex-col items-center justify-center gap-3 py-4 px-4 bg-gradient-to-r from-slate-50 to-blue-50/30 rounded-2xl border-2 border-slate-100 hover:border-slate-200 transition-all">
+                                        <img src="https://razorpay.com/assets/razorpay-glyph.svg" alt="Razorpay" className="h-4 opacity-70" />
+                                        <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">🔒 Verified Secure Payment</span>
                                     </div>
                                 </div>
                             </div>

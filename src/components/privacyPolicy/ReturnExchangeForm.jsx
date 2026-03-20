@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Loader2 } from "lucide-react";
+import { Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
 
 const ReturnExchangeForm = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [agree, setAgree] = useState(false);
 
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
     orderNumber: "",
-    orderDate: "",
-    deliveryDate: "",
-    productName: "",
-    
+    email: "",
     reason: "",
-    itemCondition: "",
     resolution: "",
     additionalDetails: "",
   });
@@ -29,6 +23,12 @@ const ReturnExchangeForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!agree) {
+      setError("Please agree to the data collection policy");
+      return;
+    }
+
     setLoading(true);
     setError("");
     setSuccess(false);
@@ -36,24 +36,19 @@ const ReturnExchangeForm = () => {
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/contact`, {
         type: "return-exchange",
-        ...formData
+        ...formData,
       });
 
       setSuccess(true);
       setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
         orderNumber: "",
-        orderDate: "",
-        deliveryDate: "",
-        productName: "",
+        email: "",
         reason: "",
-        itemCondition: "",
         resolution: "",
         additionalDetails: "",
       });
-      alert("Return/Exchange request submitted successfully!");
+      setAgree(false);
+      setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong. Please try again.");
     } finally {
@@ -63,156 +58,149 @@ const ReturnExchangeForm = () => {
 
   return (
     <form
-      className="bg-white border border-gray-200 rounded p-6 space-y-6"
+      className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm"
       onSubmit={handleSubmit}
     >
-      <h3 className="text-lg font-semibold text-gray-900">Customer Information</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Full Name"
-          value={formData.fullName}
-          onChange={handleChange}
-          required
-          className="border border-gray-300 rounded px-3 py-2 w-full"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="border border-gray-300 rounded px-3 py-2 w-full"
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone Number (optional)"
-          value={formData.phone}
-          onChange={handleChange}
-          className="border border-gray-300 rounded px-3 py-2 w-full"
-        />
+      {/* Form Header */}
+      <div className="mb-8">
+        <h3 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-2">Quick Return Request</h3>
+        <p className="text-slate-600 text-sm">Fill in the details below and we'll process your request within 24 hours</p>
       </div>
 
-      <h3 className="text-lg font-semibold text-gray-900">Order Information</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input
-          type="text"
-          name="orderNumber"
-          placeholder="Order Number"
-          value={formData.orderNumber}
-          onChange={handleChange}
-          required
-          className="border border-gray-300 rounded px-3 py-2 w-full"
-        />
-        <input
-          type="date"
-          name="orderDate"
-          placeholder="Order Date"
-          value={formData.orderDate}
-          onChange={handleChange}
-          required
-          className="border border-gray-300 rounded px-3 py-2 w-full"
-        />
-        <input
-          type="date"
-          name="deliveryDate"
-          placeholder="Delivery Date"
-          value={formData.deliveryDate}
-          onChange={handleChange}
-          required
-          className="border border-gray-300 rounded px-3 py-2 w-full"
-        />
+      {/* Row 1: Order & Email */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div>
+          <label className="block text-xs font-black text-slate-900 uppercase tracking-wider mb-3">Order Number *</label>
+          <input
+            type="text"
+            name="orderNumber"
+            placeholder="e.g., ORD-2026-001234"
+            value={formData.orderNumber}
+            onChange={handleChange}
+            required
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-black text-slate-900 uppercase tracking-wider mb-3">Email Address *</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="your.email@example.com"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium"
+          />
+        </div>
       </div>
 
-      <h3 className="text-lg font-semibold text-gray-900">Product Details</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input
-          type="text"
-          name="productName"
-          placeholder="Product Name / Model"
-          value={formData.productName}
-          onChange={handleChange}
-          required
-          className="border border-gray-300 rounded px-3 py-2 w-full"
-        />
-        
+      {/* Row 2: Reason & Resolution */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div>
+          <label className="block text-xs font-black text-slate-900 uppercase tracking-wider mb-3">Reason for Return *</label>
+          <select
+            name="reason"
+            value={formData.reason}
+            onChange={handleChange}
+            required
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium"
+          >
+            <option value="">Select a reason</option>
+            <option value="wrongItem">Received the wrong item</option>
+            <option value="damaged">Item arrived damaged</option>
+            <option value="defective">Item is defective</option>
+            <option value="missingParts">Missing parts</option>
+            <option value="orderedByMistake">Ordered by mistake</option>
+            <option value="other">Other reason</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-xs font-black text-slate-900 uppercase tracking-wider mb-3">Preferred Resolution *</label>
+          <select
+            name="resolution"
+            value={formData.resolution}
+            onChange={handleChange}
+            required
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium"
+          >
+            <option value="">Select an option</option>
+            <option value="refund">Refund</option>
+            <option value="replacement">Replacement</option>
+            <option value="storeCredit">Store Credit</option>
+          </select>
+        </div>
       </div>
 
-      <h3 className="text-lg font-semibold text-gray-900">Reason for Return</h3>
-      <select
-        name="reason"
-        value={formData.reason}
-        onChange={handleChange}
-        required
-        className="border border-gray-300 rounded px-3 py-2 w-full"
-      >
-        <option value="">Select Reason</option>
-        <option value="wrongItem">Received the wrong item</option>
-        <option value="damaged">Item arrived damaged</option>
-        <option value="defective">Item is defective / not functioning</option>
-        <option value="missingParts">Missing parts or accessories</option>
-        <option value="orderedByMistake">Ordered by mistake</option>
-        <option value="noLongerNeeded">No longer needed</option>
-        <option value="other">Other</option>
-      </select>
-
-      <h3 className="text-lg font-semibold text-gray-900">Item Condition</h3>
-      <select
-        name="itemCondition"
-        value={formData.itemCondition}
-        onChange={handleChange}
-        required
-        className="border border-gray-300 rounded px-3 py-2 w-full"
-      >
-        <option value="">Select Condition</option>
-        <option value="unopened">Unopened / sealed</option>
-        <option value="openedUnused">Opened but unused</option>
-        <option value="used">Used</option>
-        <option value="damaged">Damaged</option>
-      </select>
-
-      <h3 className="text-lg font-semibold text-gray-900">Preferred Resolution</h3>
-      <select
-        name="resolution"
-        value={formData.resolution}
-        onChange={handleChange}
-        required
-        className="border border-gray-300 rounded px-3 py-2 w-full"
-      >
-        <option value="">Select Resolution</option>
-        <option value="refund">Refund</option>
-        <option value="replacement">Replacement (only for defective/incorrect items)</option>
-        <option value="storeCredit">Store Credit</option>
-      </select>
-
+      {/* Additional Details */}
       <div>
-        <label className="block font-medium text-gray-700 mb-1">Additional Details (optional)</label>
+        <label className="block text-xs font-black text-slate-900 uppercase tracking-wider mb-3">Additional Details</label>
         <textarea
           name="additionalDetails"
           value={formData.additionalDetails}
           onChange={handleChange}
-          placeholder="Additional details..."
-          className="border border-gray-300 rounded px-3 py-2 w-full"
+          placeholder="Provide any helpful information such as packaging condition, issue details, or notes for our support team."
+          className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium resize-none"
           rows="4"
         ></textarea>
       </div>
 
-      <div className="flex flex-col gap-2">
-      {error && <div className="text-red-500 text-sm ">{error}</div>}
-      {success && <div className="text-green-600 text-sm ">Request sent successfully!</div>}
-      
+      {/* Checkbox */}
+      <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border-2 border-slate-100">
+        <input
+          type="checkbox"
+          id="dataAgree"
+          checked={agree}
+          onChange={(e) => setAgree(e.target.checked)}
+          className="w-5 h-5 mt-0.5 rounded cursor-pointer accent-orange-600"
+          required
+        />
+        <label htmlFor="dataAgree" className="text-sm text-slate-700 font-medium cursor-pointer">
+          I agree that my data is collected and stored according to the privacy policy for processing this return request.
+        </label>
+      </div>
+
+      {/* Status Messages */}
+      {error && (
+        <div className="flex items-start gap-3 p-4 bg-red-50 rounded-2xl border-2 border-red-200">
+          <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="font-bold text-red-700 text-sm">Error</p>
+            <p className="text-red-600 text-sm">{error}</p>
+          </div>
+        </div>
+      )}
+
+      {success && (
+        <div className="flex items-start gap-3 p-4 bg-green-50 rounded-2xl border-2 border-green-200">
+          <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="font-bold text-green-700 text-sm">Success!</p>
+            <p className="text-green-600 text-sm">Your return request has been submitted successfully. We'll contact you within 24 hours.</p>
+          </div>
+        </div>
+      )}
+
+      {/* Submit Button */}
       <button
         type="submit"
-        disabled={loading}
-        className="bg-indigo-600 text-white font-semibold px-6 py-2 rounded hover:bg-indigo-700 transition flex items-center justify-center gap-2 disabled:bg-indigo-400"
+        disabled={loading || !agree}
+        className="w-full bg-gradient-to-r from-orange-600 to-blue-600 text-white font-black py-4 px-6 rounded-2xl hover:shadow-lg hover:shadow-orange-200/50 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide text-sm"
       >
-        {loading ? <Loader2 className="w-5 h-5 animate-spin"/> : null}
-        Submit Return Request
+        {loading ? (
+          <>
+            <Loader2 className="w-5 h-5 animate-spin" />
+            Processing...
+          </>
+        ) : (
+          "Submit Return Request"
+        )}
       </button>
-      </div>
+
+      {/* Footer Note */}
+      <p className="text-xs text-slate-500 text-center">
+        We typically respond to return requests within 24 hours during business days.
+      </p>
     </form>
   );
 };

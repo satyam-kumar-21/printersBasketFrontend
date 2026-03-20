@@ -30,11 +30,11 @@ const Footer = () => {
           <h3 className="font-semibold mb-4">Policies</h3>
           <ul className="space-y-2 text-gray-300 text-sm">
             <li><Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
-            <li><Link to="/terms" className="hover:text-white transition">Terms & Conditions</Link></li>
-            <li><Link to="/return-policy" className="hover:text-white transition">Return Policy</Link></li>
+            <li><Link to="/terms-and-conditions" className="hover:text-white transition">Terms & Conditions</Link></li>
+            <li><Link to="/return-exchange-policy" className="hover:text-white transition">Return & Exchange</Link></li>
             <li><Link to="/shipping-policy" className="hover:text-white transition">Shipping Policy</Link></li>
-            <li><Link to="/cookies-policy" className="hover:text-white transition">Cookies Policy</Link></li>
-            <li><Link to="/refund-policy" className="hover:text-white transition">Refund Policy</Link></li>
+            <li><Link to="/cookie-policy" className="hover:text-white transition">Cookie Policy</Link></li>
+            <li><Link to="/refund-return-policy" className="hover:text-white transition">Refund Policy</Link></li>
           </ul>
         </div>
 
@@ -42,12 +42,14 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold mb-4">Links</h3>
           <ul className="space-y-2 text-gray-300 text-sm">
-            <li><Link to="/exchange-policy" className="hover:text-white transition">Return & Exchange Policy</Link></li>
+            <li><Link to="/shop" className="hover:text-white transition">Shop</Link></li>
+            <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
             <li><Link to="/disclaimer" className="hover:text-white transition">Disclaimer</Link></li>
-            <li><Link to="/blog" className="hover:text-white transition">Blog</Link></li>
+            <li><Link to="/ccpa-privacy-policy" className="hover:text-white transition">CCPA Privacy</Link></li>
             <li><Link to="/faq" className="hover:text-white transition">FAQ</Link></li>
             <li><Link to="/track-order" className="hover:text-white transition">Track Your Order</Link></li>
-            <li><Link to="/support" className="hover:text-white transition">Customer Support</Link></li>
+            <li><Link to="/contact-us" className="hover:text-white transition">Customer Service</Link></li>
+            {/* <li><Link to="/accessibility-statement" className="hover:text-white transition">Accessibility</Link></li> */}
           </ul>
         </div>
 

@@ -1,13 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import officePrinter from "/assets/officePrinter.png"; // replace with your office printer image
 import laserPrinter from "/assets/laserPrinter.png"; // replace with your laser printer image
 
 const PrinterBanners = () => {
+    const navigate = useNavigate();
+
     const banners = [
         {
             title: "Office Printer",
             subtitle: "NEW COLLECTION",
-            link: "/product-category/office-printers",
+            filter: "Office",
+            filterType: "usage",
             bgClass: "bg-black",
             image: officePrinter, // Replace with your office printer image
             textColor: "text-white",
@@ -16,7 +20,8 @@ const PrinterBanners = () => {
         {
             title: "Laser Printer",
             subtitle: "NEW COLLECTION",
-            link: "/product-category/laser-printers",
+            filter: "Laser",
+            filterType: "technology",
             // Gradient matching the orange/warm tone in the screenshot
             bgClass: "bg-gradient-to-r from-[#e67e22] to-[#f39c12]",
             image: laserPrinter, // Replace with your laser printer image
@@ -24,6 +29,14 @@ const PrinterBanners = () => {
             buttonBorder: "border-white",
         }
     ];
+
+    const handleShopNowClick = (filter, filterType) => {
+        if (filterType === "usage") {
+            navigate(`/shop?usageCategory=${filter}`);
+        } else if (filterType === "technology") {
+            navigate(`/shop?technology=${filter}`);
+        }
+    };
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-10">
@@ -41,12 +54,12 @@ const PrinterBanners = () => {
                             <h2 className={`text-3xl md:text-4xl font-semibold mb-6 ${banner.textColor}`}>
                                 {banner.title}
                             </h2>
-                            <a
-                                href={banner.link}
-                                className={`inline-block border ${banner.buttonBorder} ${banner.textColor} px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white hover:text-black`}
+                            <button
+                                onClick={() => handleShopNowClick(banner.filter, banner.filterType)}
+                                className={`inline-block border ${banner.buttonBorder} ${banner.textColor} px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white hover:text-black bg-transparent cursor-pointer`}
                             >
                                 Shop Now
-                            </a>
+                            </button>
                         </div>
 
                         {/* Product Image */}
