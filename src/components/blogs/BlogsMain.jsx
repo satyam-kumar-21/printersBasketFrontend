@@ -1,102 +1,113 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Printer } from 'lucide-react';
-const smallbusiness = "/assets/printerforsmallbusiness.png";
-const savecosts = "/assets/savemoney.png";
-const printingmistakes = "/assets/top7Printingmistakes.png";
-const printermaintenance = "/assets/printersmaintenence.png";
-const printerguide = "/assets/ultimateguide.png";
-
+import howtochooseblog from "../../assets/howtochooseblog.jpg";
+import importanttobuy from "../../assets/importanttobuy.jpg";
+import inkjetvslaser from "../../assets/inkjetvslaser.jpg";
+import tipstoextendblog from "../../assets/tipstoextendblog.jpg";
+import understandingprintyields from "../../assets/understandingprintyields.jpg";
+import printerguide1 from "../../assets/wirelesssblogs.jpg";
 
 const BlogsMain = () => {
-    // You can add more blogs here later
+    // New 6 blogs for 2026
     const blogs = [
         {
             id: 1,
-            title: "The Ultimate Guide to Choosing the Right Printer for Your Home Office",
-            excerpt: "Setting up a productive home office requires the right tools, and one essential device you cannot overlook is your printer...",
-            date: "February 12, 2026",
-            author: "Smart ePrinting Team",
-            image: printerguide,
-            slug: "choosing-right-printer-home-office",
+            title: "How to Choose the Right Printer for Your Home or Office: The Complete 2026 Buying Guide",
+            excerpt: "Selecting the right printer for your home or office can feel overwhelming with so many options available. This complete 2026 guide walks you through essential factors, printer types, and expert recommendations to help you make the perfect choice.",
+            date: "January 26, 2026",
+            image: howtochooseblog,
+            slug: "how-choose-right-printer-2026-guide",
             category: "Buying Guide"
         },
         {
             id: 2,
-            title: "Why Printer Maintenance Matters — And How to Do It Right",
-            excerpt: "Printers play a crucial role in home offices and professional environments. Yet many users only pay attention when something goes wrong. Learn how care for your device...",
-            date: "February 11, 2026",
-            image: printermaintenance,
-            slug: "printer-maintenance-guide",
-            category: "Maintenance Guide"
+            title: "Inkjet vs. Laser Printers: What's the Difference and Which One Fits Your Needs in 2026?",
+            excerpt: "Should you buy an inkjet or laser printer? Learn the key differences between these two printer types, their advantages and disadvantages, and which one is best for your specific printing needs in 2026.",
+            date: "January 26, 2026",
+            image: inkjetvslaser,
+            slug: "inkjet-vs-laser-printers-2026",
+            category: "Comparison Guide"
         },
         {
             id: 3,
-            title: "How to Save on Printing Costs Without Compromising Quality",
-            excerpt: "Printing is essential but expense. Learn smart cost-saving methods, printer settings, cartridge strategies, and best practices that help you save money...",
-            date: "February 11, 2026",
-            image: savecosts,
-            slug: "save-printing-costs-guide",
-            category: "Cost Saving Tips"
+            title: "Understanding Print Yields: What Page Counts Really Mean for Everyday Users (2026 Guide)",
+            excerpt: "Ever confused by terms like '150 pages' or '500 pages' on ink cartridges? Discover what page yields mean, how they're calculated, and how to choose cartridges that give you the best value in 2026.",
+            date: "January 26, 2026",
+            image: understandingprintyields,
+            slug: "understanding-print-yields-page-counts-2026",
+            category: "Technical Guide"
         },
         {
             id: 4,
-            title: "Top 7 Printing Mistakes Everyone Makes (And How to Avoid Them)",
-            excerpt: "Printing should be simple—but errors and wasted ink often get in the way. Discover the 7 most common printing mistakes and exactly how to fix them...",
-            date: "February 11, 2026",
-            image: printingmistakes,
-            slug: "top-7-printing-mistakes",
-            category: "Troubleshooting"
+            title: "Wireless Printing Made Easy: How Modern Printers Connect to Your Devices (2026 Guide)",
+            excerpt: "Wireless printing has become essential in 2026. Learn how modern printers connect to your devices, setup instructions for different platforms, troubleshooting tips, and security best practices for wireless printing.",
+            date: "January 26, 2026",
+            image: printerguide1,
+            slug: "wireless-printing-easy-modern-printers-2026",
+            category: "Setup Guide"
         },
         {
             id: 5,
-            title: "Printing for Small Business: Essential Tools for Productivity",
-            excerpt: "Running a small business requires efficiency. Discover the best printer types, essential tools, cost-saving strategies, and productivity tips to keep your operations flowing smoothly...",
-            date: "February 11, 2026",
-            image: smallbusiness,
-            slug: "small-business-printing-essential-tools",
-            category: "Business Productivity"
+            title: "Tips to Extend the Life of Your Printer and Keep It Running Smoothly (2026 Guide)",
+            excerpt: "A printer is an investment. Maximize its lifespan with our comprehensive guide to maintenance, cleaning tips, proper usage habits, and preventive care strategies that keep your printer performing like new.",
+            date: "January 26, 2026",
+            image: tipstoextendblog,
+            slug: "tips-extend-printer-life-running-smoothly-2026",
+            category: "Maintenance Guide"
         },
-
-
-
-
+        {
+            id: 6,
+            title: "Why It's Important to Buy Printing Supplies from Trusted Retailers (2026 Guide)",
+            excerpt: "Quality matters when buying printing supplies. Discover why trusted retailers matter, how to spot counterfeit cartridges, benefits of genuine products, and tips for finding the best deals on authentic supplies.",
+            date: "January 26, 2026",
+            image: importanttobuy,
+            slug: "buy-printing-supplies-trusted-retailers-2026",
+            category: "Shopping Guide"
+        }
     ];
 
     return (
-        <div className="bg-slate-50 min-h-screen pt-24 pb-12">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen pt-24 pb-12">
+            {/* Background Patterns */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/10 to-transparent rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tight">
-                        Latest Insights & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Guides</span>
+                <div className="text-center mb-12 md:mb-16">
+                    <h1 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-4 uppercase tracking-tight">
+                        Latest Insights & Guides
                     </h1>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                    <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto my-4"></div>
+                    <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
                         Expert advice, buying guides, and tips to help you get the most out of your printing experience.
                     </p>
                 </div>
 
                 {/* Blog Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {blogs.map((blog) => (
-                        <article key={blog.id} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group">
+                        <article key={blog.id} className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl overflow-hidden shadow-lg shadow-blue-100/30 border-2 border-slate-100 hover:shadow-2xl hover:border-orange-200 transition-all duration-300 group backdrop-blur-sm">
                             {/* Image */}
-                            <div className="relative h-64 overflow-hidden">
+                            <div className="relative h-56 md:h-64 overflow-hidden">
                                 <Link to={`/blogs/${blog.slug}`}>
                                     <img
                                         src={blog.image}
                                         alt={blog.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                     />
-                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-600 uppercase tracking-widest">
+                                    <div className="absolute top-3 left-4 bg-gradient-to-r from-orange-600 to-blue-600 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-widest shadow-md">
                                         {blog.category}
                                     </div>
                                 </Link>
                             </div>
 
                             {/* Content */}
-                            <div className="p-8">
+                            <div className="p-6 md:p-8">
                                 <div className="flex items-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
                                     <span className="flex items-center gap-1">
                                         <Calendar size={14} /> {blog.date}
@@ -107,18 +118,18 @@ const BlogsMain = () => {
                                 </div>
 
                                 <Link to={`/blogs/${blog.slug}`}>
-                                    <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+                                    <h2 className="text-lg md:text-xl font-black text-slate-900 mb-3 group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent transition-all line-clamp-2">
                                         {blog.title}
                                     </h2>
                                 </Link>
 
-                                <p className="text-slate-500 mb-6 line-clamp-3 leading-relaxed text-sm">
+                                <p className="text-slate-600 mb-6 line-clamp-3 leading-relaxed text-sm font-medium">
                                     {blog.excerpt}
                                 </p>
 
                                 <Link
                                     to={`/blogs/${blog.slug}`}
-                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 uppercase tracking-widest group-hover:gap-4 transition-all"
+                                    className="inline-flex items-center gap-2 text-sm font-bold text-orange-600 hover:text-orange-700 uppercase tracking-widest group-hover:gap-4 transition-all"
                                 >
                                     Read Article <ArrowRight size={16} />
                                 </Link>

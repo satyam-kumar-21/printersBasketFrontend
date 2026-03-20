@@ -51,11 +51,12 @@ import DoNotSell from './components/policies/DoNotSell';
 
 // Blog Imports
 import BlogsMain from './components/blogs/BlogsMain';
-import ChoosingPrinterGuide from './components/blogs/posts/ChoosingPrinterGuide';
-import PrinterMaintenanceGuide from './components/blogs/posts/PrinterMaintenanceGuide';
-import SavePrintingCostsGuide from './components/blogs/posts/SavePrintingCostsGuide';
-import PrintingMistakesGuide from './components/blogs/posts/PrintingMistakesGuide';
-import SmallBusinessPrintingGuide from './components/blogs/posts/SmallBusinessPrintingGuide';
+import HowChoosePrinter2026 from './components/blogs/posts/HowChoosePrinter2026';
+import InkjetVsLaser2026 from './components/blogs/posts/InkjetVsLaser2026';
+import PrintYields2026 from './components/blogs/posts/PrintYields2026';
+import WirelessPrinting2026 from './components/blogs/posts/WirelessPrinting2026';
+import ExtendPrinterLife2026 from './components/blogs/posts/ExtendPrinterLife2026';
+import TrustedRetailers2026 from './components/blogs/posts/TrustedRetailers2026';
 import ShopMain from './components/shop/ShopMain';
 
 function App() {
@@ -85,11 +86,12 @@ function App() {
                     
                     {/* Blogs */}
                     <Route path="/blogs" element={<BlogsMain />} />
-                    <Route path="/blogs/choosing-right-printer-home-office" element={<ChoosingPrinterGuide />} />
-                    <Route path="/blogs/printer-maintenance-guide" element={<PrinterMaintenanceGuide />} />
-                    <Route path="/blogs/top-7-printing-mistakes" element={<PrintingMistakesGuide />} />
-                    <Route path="/blogs/save-printing-costs-guide" element={<SavePrintingCostsGuide />} />
-                    <Route path="/blogs/small-business-printing-essential-tools" element={<SmallBusinessPrintingGuide />} />
+                    <Route path="/blogs/how-choose-right-printer-2026-guide" element={<HowChoosePrinter2026 />} />
+                    <Route path="/blogs/inkjet-vs-laser-printers-2026" element={<InkjetVsLaser2026 />} />
+                    <Route path="/blogs/understanding-print-yields-page-counts-2026" element={<PrintYields2026 />} />
+                    <Route path="/blogs/wireless-printing-easy-modern-printers-2026" element={<WirelessPrinting2026 />} />
+                    <Route path="/blogs/tips-extend-printer-life-running-smoothly-2026" element={<ExtendPrinterLife2026 />} />
+                    <Route path="/blogs/buy-printing-supplies-trusted-retailers-2026" element={<TrustedRetailers2026 />} />
 
                     <Route path="/product/:productSlug" element={<ProductDetails />} />
 

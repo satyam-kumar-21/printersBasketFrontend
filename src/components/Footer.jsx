@@ -45,7 +45,8 @@ const Footer = () => {
             <li><Link to="/shop" className="hover:text-white transition">Shop</Link></li>
             <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
             <li><Link to="/disclaimer" className="hover:text-white transition">Disclaimer</Link></li>
-            <li><Link to="/ccpa-privacy-policy" className="hover:text-white transition">CCPA Privacy</Link></li>
+             <li><Link to="/blogs" className="hover:text-white transition">Blogs</Link></li>
+            {/* <li><Link to="/ccpa-privacy-policy" className="hover:text-white transition">CCPA Privacy</Link></li> */}
             <li><Link to="/faq" className="hover:text-white transition">FAQ</Link></li>
             <li><Link to="/track-order" className="hover:text-white transition">Track Your Order</Link></li>
             <li><Link to="/contact-us" className="hover:text-white transition">Customer Service</Link></li>
