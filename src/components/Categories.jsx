@@ -16,7 +16,7 @@ const categories = [
   },
   {
     title: "Inkjet Printers",
-    image: "/categories/inkjetPrinter.jpg",
+    image: "/assets/inkjet.png",
     filterType: "technology",
     filterValue: "Inkjet"
   },

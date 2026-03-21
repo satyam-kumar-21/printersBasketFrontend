@@ -3,7 +3,7 @@ import { ShoppingCart, Search, User, X, Menu } from "lucide-react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/actions/userActions";
-import logo from "../../public/logo.png";
+import logo from "../../public/logo-bgremove.png";
 import AuthDrawer from "./AuthDrawer";
 
 const Header = () => {

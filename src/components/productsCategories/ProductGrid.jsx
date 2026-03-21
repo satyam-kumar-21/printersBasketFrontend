@@ -68,7 +68,7 @@ const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = f
                             className="group bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                         >
                             {/* Product Image Container */}
-                            <div className="relative bg-gray-100 h-48 overflow-hidden">
+                            <div className="relative bg-gray-100 w-full aspect-square overflow-hidden flex items-center justify-center">
                                 <img
                                     src={
                                         product.image || 
@@ -79,7 +79,7 @@ const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = f
                                             : '/assets/placeholder.png')
                                     }
                                     alt={product.title}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 p-4"
                                     onError={(e) => e.target.src = '/assets/placeholder.png'}
                                 />
 

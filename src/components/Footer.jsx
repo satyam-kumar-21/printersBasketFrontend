@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone } from "lucide-react";
-import logo from "../../public/logo.png";
+import logo from "../../public/logo-bgremove.png";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
           <img
             src={logo}
             alt="Prints Basket"
-            className="h-12 mb-4 bg-white rounded-md p-1"
+            className="h-12 mb-4  rounded-md p-1"
           />
 
           <p className="text-gray-300 text-sm leading-relaxed">

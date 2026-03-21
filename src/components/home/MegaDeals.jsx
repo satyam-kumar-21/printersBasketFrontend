@@ -46,11 +46,11 @@ const MegaDeals = () => {
                         className="group border border-slate-100 rounded-3xl p-6 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 bg-white relative cursor-pointer overflow-hidden"
                     >
                         {/* Image */}
-                        <div className="h-44 flex items-center justify-center mb-6 relative overflow-hidden bg-slate-50/50 rounded-2xl">
+                        <div className="w-full aspect-square flex items-center justify-center mb-6 relative overflow-hidden bg-slate-50/50 rounded-2xl">
                             <img
                                 src={deal.image ? (deal.image.startsWith('http') ? deal.image : `http://localhost:5000${deal.image}`) : printerImg}
                                 alt={deal.title}
-                                className="h-32 object-contain transition-transform duration-700 group-hover:scale-110"
+                                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 p-4"
                                 onError={(e) => e.target.src = printerImg}
                             />
 

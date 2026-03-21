@@ -67,11 +67,11 @@ const SpecialOffersSlider = () => {
             {/* Offer Card */}
             <div className="relative border border-slate-100 rounded-xl overflow-hidden bg-white">
                 {/* Image (clickable) */}
-                <Link to={offer.link} className="h-56 block overflow-hidden relative group">
+                <Link to={offer.link} className="w-full aspect-square block overflow-hidden relative group flex items-center justify-center bg-slate-50">
                     <img
                         src={offer.image}
                         alt={offer.name}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 p-4"
                     />
                     {/* Badge */}
                     {offer.badge && (
