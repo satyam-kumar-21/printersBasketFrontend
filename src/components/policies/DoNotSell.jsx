@@ -6,7 +6,7 @@ const DoNotSell = () => {
     <section className="w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen py-16">
       {/* Background Patterns */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
       </div>
 
@@ -15,17 +15,17 @@ const DoNotSell = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-slate-600 mb-4 text-sm">
-            <Link to="/" className="text-orange-600 hover:text-orange-700 font-bold">
+            <Link to="/" className="text-blue-600 hover:text-blue-700 font-bold">
               Home
             </Link>
             {' / '}
             <span className="text-slate-800 font-medium">Do Not Sell</span>
           </p>
-          <h1 className="text-5xl sm:text-6xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl sm:text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-4">
             Do Not Sell or Share
           </h1>
           <p className="text-2xl font-black text-slate-900">My Personal Information</p>
-          <div className="h-1 w-32 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto my-8"></div>
+          <div className="h-1 w-32 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto my-8"></div>
           <p className="text-slate-600 text-sm font-medium uppercase tracking-widest">CCPA/CPRA Notice</p>
           <p className="text-slate-700 mt-6 max-w-2xl mx-auto text-base leading-relaxed">Last Updated: January 21, 2026</p>
         </div>
@@ -50,22 +50,22 @@ const DoNotSell = () => {
 
           {/* Your CCPA/CPRA Rights */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Your CCPA/CPRA Rights</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Your CCPA/CPRA Rights</h2>
             <p className="text-slate-700 leading-relaxed font-medium">As a California resident, you have the right to:</p>
             <ul className="space-y-3 ml-4">
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">✓</span> Opt out of the sale or sharing of your personal information</li>
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">✓</span> Know what personal information we collect, use, or disclose</li>
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">✓</span> Request deletion of your personal information (with legal exceptions)</li>
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">✓</span> Correct inaccurate personal information</li>
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">✓</span> Limit the use of sensitive personal information</li>
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">✓</span> Non-discrimination for exercising your rights</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span> Opt out of the sale or sharing of your personal information</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span> Know what personal information we collect, use, or disclose</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span> Request deletion of your personal information (with legal exceptions)</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span> Correct inaccurate personal information</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span> Limit the use of sensitive personal information</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span> Non-discrimination for exercising your rights</li>
             </ul>
             <p className="text-sm text-slate-600 italic mt-4">These rights may be exercised at any time.</p>
           </div>
 
           {/* Our Policy on Selling or Sharing Data */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Our Policy on Selling or Sharing Data</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Our Policy on Selling or Sharing Data</h2>
             <p className="text-slate-700 leading-relaxed font-medium">Prints Basket:</p>
             <ul className="space-y-3 ml-4">
               <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-red-600 font-bold">✘</span> Does NOT sell personal information to third parties</li>
@@ -80,26 +80,26 @@ const DoNotSell = () => {
 
           {/* How to Submit a Request */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">How to Submit a Request</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">How to Submit a Request</h2>
             <p className="text-slate-700 leading-relaxed font-medium">You may submit an opt-out or data request using the methods below.</p>
 
             <div className="space-y-4 mt-6">
               <h3 className="text-xl font-black text-slate-900 mb-4">Opt-Out Request Form</h3>
               <p className="text-slate-700 font-medium">Include the following information:</p>
               <ul className="space-y-2 ml-4">
-                <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600">•</span> Full name</li>
-                <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600">•</span> Email address</li>
-                <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600">•</span> Order number (optional)</li>
-                <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600">•</span> Type of request (Opt-Out, Delete Data, Access Data, Correct Data)</li>
+                <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600">•</span> Full name</li>
+                <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600">•</span> Email address</li>
+                <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600">•</span> Order number (optional)</li>
+                <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600">•</span> Type of request (Opt-Out, Delete Data, Access Data, Correct Data)</li>
               </ul>
 
-              <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-4 border-2 border-orange-200 mt-6">
+              <div className="bg-gradient-to-r from-blue-50 to-yellow-50 rounded-2xl p-4 border-2 border-blue-200 mt-6">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">📧</span>
                   <div>
                     <p className="font-black text-slate-900">Email us with subject line:</p>
                     <p className="text-slate-700 font-medium mb-2">"CCPA Opt-Out Request"</p>
-                    <a href="mailto:support@printsbasket.com" className="text-orange-600 hover:text-orange-700 font-bold">support@printsbasket.com</a>
+                    <a href="mailto:support@printsbasket.com" className="text-blue-600 hover:text-blue-700 font-bold">support@printsbasket.com</a>
                   </div>
                 </div>
               </div>
@@ -108,7 +108,7 @@ const DoNotSell = () => {
 
           {/* Verification Process */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Verification Process</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Verification Process</h2>
             <p className="text-slate-700 leading-relaxed font-medium">To protect your data, we may verify your identity by asking for:</p>
             <ul className="space-y-3 ml-4">
               <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">1.</span> Email confirmation</li>
@@ -122,7 +122,7 @@ const DoNotSell = () => {
 
           {/* Categories of Personal Information */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Categories of Personal Information We Collect</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Categories of Personal Information We Collect</h2>
             <p className="text-slate-700 leading-relaxed font-medium">We collect limited information necessary for e-commerce operations, including:</p>
             <ul className="space-y-2 ml-4">
               <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Contact information (name, email, phone)</li>
@@ -131,14 +131,14 @@ const DoNotSell = () => {
               <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Customer support communications</li>
               <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Essential cookie/session data</li>
             </ul>
-            <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-4 border-2 border-amber-200 mt-6">
+            <div className="bg-gradient-to-r from-amber-50 to-blue-50 rounded-2xl p-4 border-2 border-amber-200 mt-6">
               <p className="text-slate-700 font-medium"><strong>Note:</strong> We do not collect or share sensitive information for advertising purposes. All information is used only for order processing, fraud prevention, and customer support.</p>
             </div>
           </div>
 
           {/* No Selling or Sharing */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">No Selling or Sharing of Personal Information</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">No Selling or Sharing of Personal Information</h2>
             <p className="text-slate-700 leading-relaxed font-medium">In the previous 12 months, Prints Basket has:</p>
             <ul className="space-y-2 ml-4">
               <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-green-600 font-bold">✓</span> NOT sold personal information</li>
@@ -152,7 +152,7 @@ const DoNotSell = () => {
 
           {/* Cookies & Tracking Technologies */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Cookies & Tracking Technologies</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Cookies & Tracking Technologies</h2>
             <p className="text-slate-700 leading-relaxed font-medium">Prints Basket does not use:</p>
             <ul className="space-y-2 ml-4">
               <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-red-600 font-bold">✘</span> Analytics pixels</li>
@@ -167,26 +167,26 @@ const DoNotSell = () => {
 
           {/* Authorized Agents */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Authorized Agents</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Authorized Agents</h2>
             <p className="text-slate-700 leading-relaxed font-medium">You may designate an authorized agent to submit a CCPA request on your behalf. We may require written authorization or identity verification to protect your data.</p>
           </div>
 
           {/* Non-Discrimination Statement */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Non-Discrimination Statement</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Non-Discrimination Statement</h2>
             <p className="text-slate-700 leading-relaxed font-medium">Prints Basket will not:</p>
             <ul className="space-y-2 ml-4">
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Deny goods or services</li>
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Charge different prices</li>
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Offer different service levels</li>
-              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Retaliate in any way</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Deny goods or services</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Charge different prices</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Offer different service levels</li>
+              <li className="text-slate-700 font-medium flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Retaliate in any way</li>
             </ul>
             <p className="text-slate-700 font-medium mt-4">...for exercising your privacy rights under the CCPA/CPRA.</p>
           </div>
 
           {/* Contact Us */}
-          <div className="bg-gradient-to-br from-orange-50 to-blue-50 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-orange-200 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Questions or Concerns?</h2>
+          <div className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-blue-200 space-y-6 backdrop-blur-sm">
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Questions or Concerns?</h2>
             <p className="text-slate-700 leading-relaxed font-medium">For questions about your privacy rights or this CCPA Notice, please reach out:</p>
 
             <div className="space-y-4 mt-6">
@@ -194,7 +194,7 @@ const DoNotSell = () => {
                 <span className="text-2xl flex-shrink-0">📧</span>
                 <div>
                   <p className="font-black text-slate-900 mb-1">Email</p>
-                  <a href="mailto:support@printsbasket.com" className="text-orange-600 hover:text-orange-700 font-bold">support@printsbasket.com</a>
+                  <a href="mailto:support@printsbasket.com" className="text-blue-600 hover:text-blue-700 font-bold">support@printsbasket.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">

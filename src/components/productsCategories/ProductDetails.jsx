@@ -153,7 +153,7 @@ const handleWriteReview = () => {
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20">
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/10 to-transparent rounded-full blur-3xl"></div>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
             </div>
 
@@ -170,7 +170,7 @@ const handleWriteReview = () => {
                                     onClick={() => setActiveImage(index)}
                                     className={`aspect-square min-w-[70px] max-w-[70px] md:min-w-0 md:max-w-none md:w-full rounded-xl border-2 transition-all overflow-hidden bg-white p-2 flex-shrink-0 group
                     ${activeImage === index 
-                        ? 'border-orange-500 shadow-lg shadow-orange-200' 
+                        ? 'border-blue-500 shadow-lg shadow-blue-200' 
                         : 'border-slate-100 hover:border-slate-300 hover:shadow-md'}`}
                                 >
                                     <img src={img} alt={`${product.title} ${index}`} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
@@ -180,7 +180,7 @@ const handleWriteReview = () => {
 
                         {/* Main Image */}
                         <div className="flex-1 aspect-[4/5] bg-white rounded-3xl border border-slate-100 shadow-2xl shadow-slate-200/50 flex items-center justify-center p-8 overflow-hidden group order-1 md:order-2 relative backdrop-blur-sm">
-                            <div className="absolute inset-0 bg-gradient-to-br from-orange-100/5 to-blue-100/5 z-0"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-100/5 to-blue-100/5 z-0"></div>
                             <img
                                 src={productImages[activeImage]}
                                 alt={product.title}
@@ -190,7 +190,7 @@ const handleWriteReview = () => {
                             {/* Zoom Effects */}
                             {isZooming && (
                                 <div
-                                    className="hidden lg:block absolute w-32 h-32 border-3 border-orange-500 rounded-full pointer-events-none z-20 shadow-xl bg-white/80 backdrop-blur-sm overflow-hidden"
+                                    className="hidden lg:block absolute w-32 h-32 border-3 border-blue-500 rounded-full pointer-events-none z-20 shadow-xl bg-white/80 backdrop-blur-sm overflow-hidden"
                                     style={{
                                         left: `${zoomPosition.x}%`,
                                         top: `${zoomPosition.y}%`,
@@ -252,25 +252,25 @@ const handleWriteReview = () => {
                         {/* Title */}
                         <div className="space-y-4">
                             <div className="space-y-2">
-                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-orange-600 via-orange-500 to-blue-600 bg-clip-text text-transparent leading-tight tracking-tighter uppercase drop-shadow-lg">
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent leading-tight tracking-tighter uppercase drop-shadow-lg">
                                     {product.title}
                                 </h1>
-                                <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full"></div>
+                                <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
                             </div>
                             <div className="flex items-center gap-4 pt-2">
                                 <div className="flex gap-1">
                                     {[1, 2, 3, 4, 5].map(star => (
-                                        <Star key={star} size={20} className={`${product.rating >= star ? 'fill-orange-400 text-orange-400' : 'text-slate-200'}`} />
+                                        <Star key={star} size={20} className={`${product.rating >= star ? 'fill-blue-400 text-blue-400' : 'text-slate-200'}`} />
                                     ))}
                                 </div>
-                                <span className="text-sm font-bold text-slate-700 bg-orange-50/50 px-3 py-1 rounded-full border border-orange-200">{product.rating?.toFixed(1) || '0.0'} / 5.0 ({product.numReviews || 0} reviews)</span>
+                                <span className="text-sm font-bold text-slate-700 bg-blue-50/50 px-3 py-1 rounded-full border border-blue-200">{product.rating?.toFixed(1) || '0.0'} / 5.0 ({product.numReviews || 0} reviews)</span>
                             </div>
                         </div>
 
                         {/* Short Details */}
                         {product.shortDetails && (
                             <div className="space-y-4 pb-6 border-b-2 border-slate-100">
-                                <h3 className="text-[11px] font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-[0.3em]">Key Highlights</h3>
+                                <h3 className="text-[11px] font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-[0.3em]">Key Highlights</h3>
                                 <div
                                     dangerouslySetInnerHTML={{ __html: product.shortDetails }}
                                     className="text-slate-600 text-sm font-medium leading-relaxed space-y-2 prose-sm prose-slate list-disc list-inside"
@@ -283,7 +283,7 @@ const handleWriteReview = () => {
                             {/* Price */}
                             <div className="space-y-3">
                                 <div className="flex items-baseline gap-4">
-                                    <span className="text-6xl font-black bg-gradient-to-r from-orange-600 via-orange-500 to-blue-600 bg-clip-text text-transparent tracking-tighter">
+                                    <span className="text-6xl font-black bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent tracking-tighter">
                                         ${product.price?.toFixed(2)}
                                     </span>
                                     {product.oldPrice > 0 && product.oldPrice > product.price && (
@@ -339,7 +339,7 @@ const handleWriteReview = () => {
                                 {product.countInStock > 0 && (
                                     <button
                                         onClick={buyNowHandler}
-                                        className="flex-1 py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-2xl hover:from-orange-600 hover:to-orange-700 transition-all font-black uppercase text-[11px] tracking-widest shadow-lg hover:shadow-xl shadow-orange-200 active:scale-95"
+                                        className="flex-1 py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-2xl hover:from-blue-600 hover:to-blue-700 transition-all font-black uppercase text-[11px] tracking-widest shadow-lg hover:shadow-xl shadow-blue-200 active:scale-95"
                                     >
                                         Buy Now
                                     </button>
@@ -349,7 +349,7 @@ const handleWriteReview = () => {
                             {/* Trust Badges */}
                             <div className="grid grid-cols-3 gap-3 pt-4 border-t border-slate-100">
                                 <div className="flex flex-col items-center gap-2">
-                                    <Truck className="text-orange-500" size={20} />
+                                    <Truck className="text-blue-500" size={20} />
                                     <span className="text-[9px] font-bold text-slate-600 text-center">Fast Delivery</span>
                                 </div>
                                 <div className="flex flex-col items-center gap-2">
@@ -366,7 +366,7 @@ const handleWriteReview = () => {
                         {/* Key Specs */}
                         {(product.technology || product.mainFunction || product.wireless || product.shortSpecification) && (
                             <div className="space-y-4">
-                                <h3 className="text-[11px] font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-[0.3em]">Specifications</h3>
+                                <h3 className="text-[11px] font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-[0.3em]">Specifications</h3>
                                 <div className="flex flex-col gap-3">
                                     {Array.isArray(product.technology) && product.technology.length > 0 && (
                                         <div className="p-3 bg-gradient-to-r from-blue-50 to-blue-100/50 border border-blue-200 rounded-xl">
@@ -401,12 +401,12 @@ const handleWriteReview = () => {
                                 onClick={() => setActiveTab(tab)}
                                 className={`py-4 text-sm font-black uppercase tracking-[0.2em] transition-all relative whitespace-nowrap pb-4
                                     ${activeTab === tab 
-                                        ? 'bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent' 
+                                        ? 'bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent' 
                                         : 'text-slate-400 hover:text-slate-600'}`}
                             >
                                 {tab}
                                 {activeTab === tab && (
-                                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full" />
+                                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" />
                                 )}
                             </button>
                         ))}
@@ -457,14 +457,14 @@ const handleWriteReview = () => {
                             <div className="space-y-8 animate-fadeIn">
                                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b-2 border-slate-100">
                                     <div>
-                                        <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-4">Verified Feedback</h2>
+                                        <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-4">Verified Feedback</h2>
                                         <div className="flex items-center gap-4">
                                             <div className="flex gap-1">
                                                 {[1, 2, 3, 4, 5].map(star => (
-                                                    <Star key={star} size={22} className={`${product.rating >= star ? 'fill-orange-400 text-orange-400' : 'text-slate-200'}`} />
+                                                    <Star key={star} size={22} className={`${product.rating >= star ? 'fill-blue-400 text-blue-400' : 'text-slate-200'}`} />
                                                 ))}
                                             </div>
-                                            <span className="text-lg font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase">{product.rating ? product.rating.toFixed(1) : '0.0'} / 5.0</span>
+                                            <span className="text-lg font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase">{product.rating ? product.rating.toFixed(1) : '0.0'} / 5.0</span>
                                         </div>
                                     </div>
                                     <div className="w-full md:w-auto flex flex-col items-end gap-2">
@@ -474,13 +474,13 @@ const handleWriteReview = () => {
                                             </div>
                                         )}
                                         {showEligibilityMessage && (
-                                            <div className="p-3 bg-gradient-to-r from-orange-50 to-amber-50 text-orange-600 rounded-xl text-[10px] font-bold border border-orange-200 animate-pulse text-center w-full">
+                                            <div className="p-3 bg-gradient-to-r from-blue-50 to-amber-50 text-blue-600 rounded-xl text-[10px] font-bold border border-blue-200 animate-pulse text-center w-full">
                                                 Please purchase and receive this item to review
                                             </div>
                                         )}
                                         <button 
                                             onClick={handleWriteReview}
-                                            className="w-full md:w-auto px-6 py-3 border-2 border-slate-900 text-slate-900 rounded-2xl font-black uppercase text-[11px] tracking-widest hover:bg-gradient-to-r hover:from-orange-600 hover:to-blue-600 hover:text-white hover:shadow-lg transition-all hover:shadow-slate-900/30 hover:border-transparent"
+                                            className="w-full md:w-auto px-6 py-3 border-2 border-slate-900 text-slate-900 rounded-2xl font-black uppercase text-[11px] tracking-widest hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-600 hover:text-white hover:shadow-lg transition-all hover:shadow-slate-900/30 hover:border-transparent"
                                         >
                                             Write a Review
                                         </button>
@@ -496,7 +496,7 @@ const handleWriteReview = () => {
                                                         <span className="font-black text-[11px] uppercase tracking-widest text-slate-900 block">{review.name}</span>
                                                         <div className="flex gap-1 mt-2">
                                                             {[1, 2, 3, 4, 5].map(s => (
-                                                                <Star key={s} size={14} className={`${review.rating >= s ? 'fill-orange-400 text-orange-400' : 'text-slate-200'}`} />
+                                                                <Star key={s} size={14} className={`${review.rating >= s ? 'fill-blue-400 text-blue-400' : 'text-slate-200'}`} />
                                                             ))}
                                                         </div>
                                                     </div>
@@ -519,7 +519,7 @@ const handleWriteReview = () => {
                 {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
                     <div className="mt-24 pt-16 border-t-2 border-slate-100">
                         <div className="mb-12">
-                            <h3 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-2">You Might Also Like</h3>
+                            <h3 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-2">You Might Also Like</h3>
                             <p className="text-slate-600 text-base font-medium">Explore other products in the same category</p>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -527,7 +527,7 @@ const handleWriteReview = () => {
                                 <Link 
                                     to={`/product/${item.slug || item._id}`} 
                                     key={item._id}
-                                    className="group bg-white border-2 border-slate-100 rounded-3xl p-4 hover:shadow-lg hover:shadow-orange-200/30 hover:border-orange-200 transition-all duration-300 block"
+                                    className="group bg-white border-2 border-slate-100 rounded-3xl p-4 hover:shadow-lg hover:shadow-blue-200/30 hover:border-blue-200 transition-all duration-300 block"
                                     onClick={() => window.scrollTo(0, 0)}
                                 >
                                     <div className="aspect-square bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl mb-4 overflow-hidden p-4 flex items-center justify-center">
@@ -537,11 +537,11 @@ const handleWriteReview = () => {
                                             className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                                         />
                                     </div>
-                                    <h4 className="font-bold text-slate-900 text-sm line-clamp-2 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h4>
+                                    <h4 className="font-bold text-slate-900 text-sm line-clamp-2 mb-2 group-hover:text-blue-600 transition-colors">{item.title}</h4>
                                     <div className="flex items-center justify-between">
-                                        <span className="text-lg font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">${item.price?.toFixed(2)}</span>
+                                        <span className="text-lg font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">${item.price?.toFixed(2)}</span>
                                         <div className="flex items-center gap-1">
-                                            <Star size={14} className="fill-orange-400 text-orange-400" />
+                                            <Star size={14} className="fill-blue-400 text-blue-400" />
                                             <span className="text-xs font-bold text-slate-600">{item.rating?.toFixed(1) || '0'}</span>
                                         </div>
                                     </div>

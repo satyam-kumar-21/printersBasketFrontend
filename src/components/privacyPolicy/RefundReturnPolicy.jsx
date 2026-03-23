@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 
 const RefundReturnPolicy = () => {
   return (
-    <section className="w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 min-h-screen py-16">
+    <section className="w-full bg-gradient-to-b from-blue-50 via-white to-blue-50 min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb Navigation */}
         <div className="flex justify-center items-center gap-2 text-sm text-gray-600">
-          <Link to="/" className="hover:text-orange-600 transition">Home</Link>
+          <Link to="/" className="hover:text-blue-600 transition">Home</Link>
           <span>/</span>
           <span className="text-gray-900 font-medium">Refund Policy</span>
         </div>
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
             Refund Policy
           </h1>
-          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full mx-auto"></div>
+          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full mx-auto"></div>
           <p className="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
             Last Updated: January 21, 2026
           </p>
@@ -27,7 +27,7 @@ const RefundReturnPolicy = () => {
         <div className="space-y-10">
 
           {/* Introduction */}
-          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-orange-500">
+          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-blue-500">
             <p className="text-gray-700 leading-relaxed text-lg">
               Your satisfaction matters to us. Prints Basket offers a transparent and customer-friendly return and refund process designed to protect your rights and ensure a smooth shopping experience.
             </p>
@@ -110,7 +110,7 @@ const RefundReturnPolicy = () => {
             <div className="space-y-4">
               <div className="bg-white rounded-lg p-4 border border-gray-200">
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">Step 1: Submit a Return Request</h3>
-                <p className="text-gray-600 mb-2">Email us at <a href="mailto:support@printsbasket.com" className="text-orange-600 underline">support@printsbasket.com</a> and include:</p>
+                <p className="text-gray-600 mb-2">Email us at <a href="mailto:support@printsbasket.com" className="text-blue-600 underline">support@printsbasket.com</a> and include:</p>
                 <ul className="list-disc list-inside text-gray-600 space-y-1">
                   <li>Order number and purchase date</li>
                   <li>Product name and condition</li>
@@ -159,7 +159,7 @@ const RefundReturnPolicy = () => {
             <h2 className="text-2xl font-semibold text-gray-900">6. Refund Types & Processing Times</h2>
             <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
               <table className="w-full">
-                <thead className="bg-orange-100 border-b border-gray-200">
+                <thead className="bg-blue-100 border-b border-gray-200">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold text-gray-800">Payment Method</th>
                     <th className="px-4 py-3 text-left font-semibold text-gray-800">Refund Timeframe</th>
@@ -287,7 +287,7 @@ const RefundReturnPolicy = () => {
           {/* 11. International Returns */}
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold text-gray-900">11. International Returns</h2>
-            <div className="bg-orange-50 rounded-lg p-4 border-l-4 border-orange-400">
+            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-400">
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>30-day return window</li>
                 <li>Customer is responsible for return shipping</li>
@@ -299,12 +299,12 @@ const RefundReturnPolicy = () => {
           </div>
 
           {/* 12. Need Help */}
-          <div className="space-y-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-6 text-white">
+          <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
             <h2 className="text-2xl font-semibold">Need Help With a Return?</h2>
             <p className="leading-relaxed">
               We're here to assist you with any return or refund questions.
             </p>
-            <div className="space-y-2 text-orange-50">
+            <div className="space-y-2 text-blue-50">
               <p>📧 <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
               <p>💬 <strong>Live Chat:</strong> Available on <a href="https://www.printsbasket.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">www.printsbasket.com</a></p>
             </div>

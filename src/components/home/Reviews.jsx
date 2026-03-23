@@ -48,7 +48,7 @@ const Reviews = () => {
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} className="text-orange-400 w-4 h-4" />
+                  <FaStar key={i} className="text-blue-400 w-4 h-4" />
                 ))}
               </div>
               <h4 className="text-gray-700 font-bold mb-2">{review.title}</h4>
@@ -68,7 +68,7 @@ const Reviews = () => {
               key={i}
               onClick={() => handleScrollTo(i)}
               className={`h-2.5 rounded-full transition-all duration-500 ${
-                activeDot === i ? 'bg-orange-500 w-8' : 'bg-gray-200 w-2.5'
+                activeDot === i ? 'bg-blue-500 w-8' : 'bg-gray-200 w-2.5'
               }`}
             />
           ))}

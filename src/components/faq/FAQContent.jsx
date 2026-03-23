@@ -122,8 +122,8 @@ const FAQContent = () => {
         </div>
 
         {/* Contact Section */}
-        <div className="mt-8 bg-gradient-to-r from-orange-50 to-blue-50 border border-orange-200 p-6 rounded-lg text-center">
-          <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600 mb-3">
+        <div className="mt-8 bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-200 p-6 rounded-lg text-center">
+          <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-3">
             Still Need Help?
           </h3>
           <p className="text-gray-700 mb-4">

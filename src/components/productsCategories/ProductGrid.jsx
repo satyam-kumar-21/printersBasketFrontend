@@ -93,7 +93,7 @@ const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = f
 
                             {/* Product Info */}
                             <div className="p-4">
-                                <h3 className="font-bold text-gray-900 text-sm mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
+                                <h3 className="font-bold text-gray-900 text-sm mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
                                     {product.title}
                                 </h3>
 
@@ -116,7 +116,7 @@ const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = f
 
                                 {/* Price */}
                                 <div className="flex items-center justify-between">
-                                    <span className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+                                    <span className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
                                         ${product.price?.toFixed(2) || '0.00'}
                                     </span>
                                     {(product.oldPrice || product.originalPrice) && (product.oldPrice || product.originalPrice) > product.price && (

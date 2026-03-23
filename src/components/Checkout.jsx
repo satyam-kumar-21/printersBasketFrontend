@@ -218,7 +218,7 @@ const Checkout = () => {
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 py-12">
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/10 to-transparent rounded-full blur-3xl"></div>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
             </div>
 
@@ -229,7 +229,7 @@ const Checkout = () => {
                     {[1, 2].map((s) => (
                         <div key={s} className="flex items-center gap-2">
                             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black ${
-                                step >= s ? 'bg-gradient-to-r from-orange-600 to-blue-600 text-white' : 'bg-white border-2 border-slate-200 text-slate-300'
+                                step >= s ? 'bg-gradient-to-r from-blue-600 to-blue-600 text-white' : 'bg-white border-2 border-slate-200 text-slate-300'
                             }`}>
                                 {s}
                             </div>
@@ -243,8 +243,8 @@ const Checkout = () => {
                     <div className="lg:col-span-3">
                         {step === 1 ? (
                             <form onSubmit={submitShippingHandler} className="bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm">
-                                <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-8 flex items-center gap-3 uppercase tracking-tighter">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-orange-100 to-blue-100 rounded-full flex items-center justify-center text-orange-600">
+                                <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-8 flex items-center gap-3 uppercase tracking-tighter">
+                                    <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-100 rounded-full flex items-center justify-center text-blue-600">
                                         <Truck size={20} />
                                     </div>
                                     Shipping Details
@@ -359,7 +359,7 @@ const Checkout = () => {
                                      </div>
                                 )}
 
-                                <button type="submit" disabled={loading} className="w-full mt-10 bg-gradient-to-r from-orange-600 to-blue-600 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest hover:shadow-lg hover:shadow-orange-200/50 transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-70 disabled:cursor-wait hover:from-orange-700 hover:to-blue-700">
+                                <button type="submit" disabled={loading} className="w-full mt-10 bg-gradient-to-r from-blue-600 to-blue-600 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest hover:shadow-lg hover:shadow-blue-200/50 transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-70 disabled:cursor-wait hover:from-blue-700 hover:to-blue-700">
                                      {loading ? <Loader2 className="animate-spin" /> : (
                                         shippingRates.length > 0 ? (
                                             <>Proceed to Payment <ChevronRight size={16} /></>
@@ -374,10 +374,10 @@ const Checkout = () => {
                                 {/* Payment Header */}
                                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-gradient-to-br from-orange-100 to-blue-100 rounded-full flex items-center justify-center text-orange-600">
+                                        <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-100 rounded-full flex items-center justify-center text-blue-600">
                                             <CreditCard size={20} />
                                         </div>
-                                        <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Payment</h2>
+                                        <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Payment</h2>
                                     </div>
                                     <button onClick={() => setStep(1)} className="text-xs font-bold text-slate-400 hover:text-slate-600 whitespace-nowrap">
                                         Edit Shipping
@@ -447,7 +447,7 @@ const Checkout = () => {
                                 <button
                                     onClick={initPayment}
                                     disabled={loading}
-                                    className="w-full mt-6 bg-gradient-to-r from-orange-600 to-blue-600 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest hover:shadow-lg hover:shadow-orange-200/50 transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:from-orange-700 hover:to-blue-700"
+                                    className="w-full mt-6 bg-gradient-to-r from-blue-600 to-blue-600 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest hover:shadow-lg hover:shadow-blue-200/50 transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-700 hover:to-blue-700"
                                 >
                                     {loading ? <Loader2 className="animate-spin" size={18} /> : <>Pay Now <ShieldCheck size={18} /></>}
                                 </button>
@@ -457,37 +457,37 @@ const Checkout = () => {
 
                     {/* RIGHT */}
                     <div className="lg:col-span-2 bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 p-10 rounded-3xl h-fit shadow-lg shadow-blue-100/30 backdrop-blur-sm">
-                        <h3 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-8 uppercase tracking-tighter">Summary</h3>
+                        <h3 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-8 uppercase tracking-tighter">Summary</h3>
                         
                         <div className="space-y-4 font-medium">
                             <div className="flex justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
                                 <span className="text-slate-600">Subtotal:</span>
-                                <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent font-bold">${subtotal.toFixed(2)}</span>
+                                <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent font-bold">${subtotal.toFixed(2)}</span>
                             </div>
 
                             {distance && (
-                                <div className="flex justify-between py-3 px-4 bg-gradient-to-r from-orange-50 to-blue-50 rounded-xl border border-orange-100">
-                                    <span className="text-orange-600 font-semibold">Distance:</span>
-                                    <span className="text-orange-600 font-bold">{distance} miles</span>
+                                <div className="flex justify-between py-3 px-4 bg-gradient-to-r from-blue-50 to-blue-50 rounded-xl border border-blue-100">
+                                    <span className="text-blue-600 font-semibold">Distance:</span>
+                                    <span className="text-blue-600 font-bold">{distance} miles</span>
                                 </div>
                             )}
 
                             <div className="flex justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
                                 <span className="text-slate-600">Tax:</span>
-                                <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent font-bold">${taxPrice.toFixed(2)}</span>
+                                <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent font-bold">${taxPrice.toFixed(2)}</span>
                             </div>
 
                             <div className="flex justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
                                 <span className="text-slate-600">Shipping:</span>
-                                <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent font-bold">${shippingPrice.toFixed(2)}</span>
+                                <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent font-bold">${shippingPrice.toFixed(2)}</span>
                             </div>
                         </div>
 
-                        <div className="my-6 h-[2px] bg-gradient-to-r from-orange-200 via-transparent to-blue-200" />
+                        <div className="my-6 h-[2px] bg-gradient-to-r from-blue-200 via-transparent to-blue-200" />
                         
                         <div className="flex justify-between items-center">
                             <span className="font-bold text-slate-600 text-lg">Total:</span>
-                            <span className="text-5xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">${totalPrice.toFixed(2)}</span>
+                            <span className="text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">${totalPrice.toFixed(2)}</span>
                         </div>
 
                         <p className="text-xs text-slate-500 mt-8 font-medium leading-relaxed px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">

@@ -8,16 +8,16 @@ const EULA = () => {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 py-12 text-center">
           <p className="text-gray-600 mb-2">
-            <Link to="/" className="text-orange-600 hover:text-orange-700 font-medium">
+            <Link to="/" className="text-blue-600 hover:text-blue-700 font-medium">
               Home
             </Link>
             {' / '}
             <span className="text-gray-800 font-medium">End User License Agreement</span>
           </p>
-          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600 mb-4">
+          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-4">
             End User License Agreement (EULA)
           </h1>
-          <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto"></div>
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto"></div>
           <p className="text-gray-600 mt-4">Last Updated: January 21, 2026</p>
         </div>
       </div>
@@ -35,7 +35,7 @@ const EULA = () => {
 
           {/* License Grant */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               License Grant
             </h2>
             <div className="space-y-3 text-gray-700">
@@ -50,33 +50,33 @@ const EULA = () => {
 
           {/* User Responsibilities */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               User Responsibilities
             </h2>
             <p className="text-gray-700 mb-4">By using the Platform, you agree to:</p>
             <ul className="space-y-2 text-gray-700 ml-6">
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Use the Platform only for lawful purposes</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Provide accurate, truthful, and complete account or order information</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Keep your login credentials confidential</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Not attempt to breach, reverse-engineer, or modify the Platform</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Not upload harmful, fraudulent, or malicious content</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Not interfere with the operation, security, or performance of the Platform</span>
               </li>
             </ul>
@@ -85,7 +85,7 @@ const EULA = () => {
 
           {/* Prohibited Activities */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               Prohibited Activities
             </h2>
             <p className="text-gray-700 mb-4">You agree NOT to:</p>
@@ -122,7 +122,7 @@ const EULA = () => {
 
           {/* Ownership & Intellectual Property */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               Ownership & Intellectual Property
             </h2>
             <div className="space-y-3 text-gray-700">
@@ -147,25 +147,25 @@ const EULA = () => {
 
           {/* Suspension & Termination */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               Suspension & Termination of Access
             </h2>
             <p className="text-gray-700 mb-4">Prints Basket reserves the right to suspend or terminate access to the Platform without notice if:</p>
             <ul className="space-y-2 text-gray-700 ml-6">
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>You violate this Agreement</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Fraudulent, harmful, or suspicious activity is detected</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>Required by law, regulation, or government request</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-600 font-bold">•</span>
+                <span className="text-blue-600 font-bold">•</span>
                 <span>The Platform undergoes maintenance or discontinuation</span>
               </li>
             </ul>
@@ -174,7 +174,7 @@ const EULA = () => {
 
           {/* Limitation of Liability */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               Limitation of Liability
             </h2>
             <p className="text-gray-700 mb-4">To the maximum extent permitted by law, Prints Basket is not liable for:</p>
@@ -203,7 +203,7 @@ const EULA = () => {
 
           {/* Disclaimer of Warranties */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               Disclaimer of Warranties
             </h2>
             <p className="text-gray-700 mb-4">
@@ -232,7 +232,7 @@ const EULA = () => {
 
           {/* Governing Law */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               Governing Law
             </h2>
             <p className="text-gray-700 mb-4">This Agreement is governed by the laws of:</p>
@@ -251,7 +251,7 @@ const EULA = () => {
 
           {/* Changes to This Agreement */}
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               Changes to This Agreement
             </h2>
             <div className="space-y-3 text-gray-700">
@@ -263,8 +263,8 @@ const EULA = () => {
           </section>
 
           {/* Contact Information */}
-          <section className="bg-gradient-to-r from-orange-50 to-blue-50 rounded-lg p-6 border border-orange-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+          <section className="bg-gradient-to-r from-blue-50 to-blue-50 rounded-lg p-6 border border-blue-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
               Contact Information
             </h2>
             <p className="text-gray-700 mb-4">If you have questions or concerns regarding this Agreement, please contact us:</p>
@@ -273,7 +273,7 @@ const EULA = () => {
                 <span className="text-lg">📧</span>
                 <div>
                   <p className="font-semibold">Email</p>
-                  <a href="mailto:support@printsbasket.com" className="text-orange-600 hover:text-orange-700 font-medium">
+                  <a href="mailto:support@printsbasket.com" className="text-blue-600 hover:text-blue-700 font-medium">
                     support@printsbasket.com
                   </a>
                 </div>

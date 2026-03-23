@@ -294,7 +294,7 @@ const AdminCustomers = () => {
                                             ) : (
                                                 <button
                                                     onClick={() => handleBlockUser(customer._id)}
-                                                    className="px-3 py-1.5 rounded-lg text-xs font-bold transition-colors border bg-orange-50 text-orange-600 border-orange-200 hover:bg-orange-100 flex items-center gap-2"
+                                                    className="px-3 py-1.5 rounded-lg text-xs font-bold transition-colors border bg-blue-50 text-blue-600 border-blue-200 hover:bg-blue-100 flex items-center gap-2"
                                                 >
                                                     <ShieldOff size={14} /> Block
                                                 </button>
@@ -330,9 +330,9 @@ const AdminCustomers = () => {
             {confirmModal.show && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
                     <div className="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 m-4">
-                        <div className={`p-6 ${confirmModal.type === 'delete' ? 'bg-red-50' : confirmModal.type === 'block' ? 'bg-orange-50' : 'bg-green-50'}`}>
+                        <div className={`p-6 ${confirmModal.type === 'delete' ? 'bg-red-50' : confirmModal.type === 'block' ? 'bg-blue-50' : 'bg-green-50'}`}>
                             <div className="flex items-center gap-4">
-                                <div className={`w-12 h-12 rounded-full flex items-center justify-center ${confirmModal.type === 'delete' ? 'bg-red-100 text-red-600' : confirmModal.type === 'block' ? 'bg-orange-100 text-orange-600' : 'bg-green-100 text-green-600'}`}>
+                                <div className={`w-12 h-12 rounded-full flex items-center justify-center ${confirmModal.type === 'delete' ? 'bg-red-100 text-red-600' : confirmModal.type === 'block' ? 'bg-blue-100 text-blue-600' : 'bg-green-100 text-green-600'}`}>
                                     <AlertTriangle size={24} />
                                 </div>
                                 <div>
@@ -362,7 +362,7 @@ const AdminCustomers = () => {
                                 </button>
                                 <button
                                     onClick={handleConfirm}
-                                    className={`flex-1 px-4 py-2.5 text-white rounded-lg font-semibold transition-colors ${confirmModal.type === 'delete' ? 'bg-red-600 hover:bg-red-700' : confirmModal.type === 'block' ? 'bg-orange-600 hover:bg-orange-700' : 'bg-green-600 hover:bg-green-700'}`}
+                                    className={`flex-1 px-4 py-2.5 text-white rounded-lg font-semibold transition-colors ${confirmModal.type === 'delete' ? 'bg-red-600 hover:bg-red-700' : confirmModal.type === 'block' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-green-600 hover:bg-green-700'}`}
                                 >
                                     {confirmModal.type === 'delete' ? 'Delete' : confirmModal.type === 'block' ? 'Block' : 'Unblock'}
                                 </button>

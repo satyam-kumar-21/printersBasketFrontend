@@ -63,7 +63,7 @@ const ReturnExchangeForm = () => {
     >
       {/* Form Header */}
       <div className="mb-8">
-        <h3 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-2">Quick Return Request</h3>
+        <h3 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-2">Quick Return Request</h3>
         <p className="text-slate-600 text-sm">Fill in the details below and we'll process your request within 24 hours</p>
       </div>
 
@@ -78,7 +78,7 @@ const ReturnExchangeForm = () => {
             value={formData.orderNumber}
             onChange={handleChange}
             required
-            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium"
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all font-medium"
           />
         </div>
         <div>
@@ -90,7 +90,7 @@ const ReturnExchangeForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium"
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all font-medium"
           />
         </div>
       </div>
@@ -104,7 +104,7 @@ const ReturnExchangeForm = () => {
             value={formData.reason}
             onChange={handleChange}
             required
-            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium"
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all font-medium"
           >
             <option value="">Select a reason</option>
             <option value="wrongItem">Received the wrong item</option>
@@ -122,7 +122,7 @@ const ReturnExchangeForm = () => {
             value={formData.resolution}
             onChange={handleChange}
             required
-            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium"
+            className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all font-medium"
           >
             <option value="">Select an option</option>
             <option value="refund">Refund</option>
@@ -140,7 +140,7 @@ const ReturnExchangeForm = () => {
           value={formData.additionalDetails}
           onChange={handleChange}
           placeholder="Provide any helpful information such as packaging condition, issue details, or notes for our support team."
-          className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-100 transition-all font-medium resize-none"
+          className="w-full bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition-all font-medium resize-none"
           rows="4"
         ></textarea>
       </div>
@@ -152,7 +152,7 @@ const ReturnExchangeForm = () => {
           id="dataAgree"
           checked={agree}
           onChange={(e) => setAgree(e.target.checked)}
-          className="w-5 h-5 mt-0.5 rounded cursor-pointer accent-orange-600"
+          className="w-5 h-5 mt-0.5 rounded cursor-pointer accent-blue-600"
           required
         />
         <label htmlFor="dataAgree" className="text-sm text-slate-700 font-medium cursor-pointer">
@@ -185,7 +185,7 @@ const ReturnExchangeForm = () => {
       <button
         type="submit"
         disabled={loading || !agree}
-        className="w-full bg-gradient-to-r from-orange-600 to-blue-600 text-white font-black py-4 px-6 rounded-2xl hover:shadow-lg hover:shadow-orange-200/50 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide text-sm"
+        className="w-full bg-gradient-to-r from-blue-600 to-blue-600 text-white font-black py-4 px-6 rounded-2xl hover:shadow-lg hover:shadow-blue-200/50 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide text-sm"
       >
         {loading ? (
           <>

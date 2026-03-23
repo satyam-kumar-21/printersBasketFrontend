@@ -6,7 +6,7 @@ const ReturnExchangePolicy = () => {
     <section className="w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen py-16">
       {/* Background Patterns */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
       </div>
 
@@ -14,10 +14,10 @@ const ReturnExchangePolicy = () => {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-3">
+          <h1 className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-3">
             Return & Exchange Policy – Prints Basket
           </h1>
-          <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto mb-8"></div>
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto mb-8"></div>
         </div>
 
         <div className="space-y-10">
@@ -45,24 +45,24 @@ const ReturnExchangePolicy = () => {
 
           {/* Form Section */}
           <div>
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-8">Start a Return or Exchange</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-8">Start a Return or Exchange</h2>
             <ReturnExchangeForm />
           </div>
 
           {/* Return Guidelines */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-8 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Return Guidelines</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Return Guidelines</h2>
 
             {/* Eligible Items */}
             <div>
               <h3 className="text-xl font-black text-slate-900 mb-4">✔ Eligible Items</h3>
               <p className="text-slate-700 leading-relaxed mb-3 font-medium">The following products may be returned if they are unopened, unused, and in their original packaging:</p>
               <ul className="space-y-2 ml-4">
-                <li className="text-slate-700 flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Printers</li>
-                <li className="text-slate-700 flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Ink cartridges</li>
-                <li className="text-slate-700 flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Toner cartridges</li>
-                <li className="text-slate-700 flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Paper packs</li>
-                <li className="text-slate-700 flex items-start gap-2"><span className="text-orange-600 font-bold">•</span> Printing accessories (if unopened)</li>
+                <li className="text-slate-700 flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Printers</li>
+                <li className="text-slate-700 flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Ink cartridges</li>
+                <li className="text-slate-700 flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Toner cartridges</li>
+                <li className="text-slate-700 flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Paper packs</li>
+                <li className="text-slate-700 flex items-start gap-2"><span className="text-blue-600 font-bold">•</span> Printing accessories (if unopened)</li>
               </ul>
             </div>
 
@@ -98,26 +98,26 @@ const ReturnExchangePolicy = () => {
               <h3 className="text-xl font-black text-slate-900 mb-4">📦 Packaging Requirements</h3>
               <p className="text-slate-700 leading-relaxed mb-4 font-medium">To ensure safe transit and successful inspection:</p>
               <ul className="space-y-2 ml-4">
-                <li className="text-slate-700 flex items-start gap-2"><span className="text-orange-600 font-bold">✓</span> Items must be returned in their original box, with all accessories, manuals, and protective materials.</li>
-                <li className="text-slate-700 flex items-start gap-2"><span className="text-orange-600 font-bold">✓</span> Products must be packaged securely to avoid damage during shipping.</li>
+                <li className="text-slate-700 flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span> Items must be returned in their original box, with all accessories, manuals, and protective materials.</li>
+                <li className="text-slate-700 flex items-start gap-2"><span className="text-blue-600 font-bold">✓</span> Products must be packaged securely to avoid damage during shipping.</li>
               </ul>
             </div>
           </div>
 
           {/* Exchange Policy */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Exchange Policy</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Exchange Policy</h2>
             
             <p className="text-slate-700 leading-relaxed font-medium">If you received the wrong item or a defective product, we may offer an exchange for the same model (subject to availability). If the exact item is unavailable, a refund may be issued instead.</p>
           </div>
 
           {/* How Returns Work */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">How Returns Work</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">How Returns Work</h2>
             
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="text-2xl font-bold text-orange-600 flex-shrink-0">1</div>
+                <div className="text-2xl font-bold text-blue-600 flex-shrink-0">1</div>
                 <p className="text-slate-700 font-medium pt-1">Submit a return request using your order number.</p>
               </div>
               <div className="flex items-start gap-4">
@@ -137,7 +137,7 @@ const ReturnExchangePolicy = () => {
 
           {/* Need Help */}
           <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 space-y-6 backdrop-blur-sm">
-            <h2 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Need Help?</h2>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Need Help?</h2>
             
             <p className="text-slate-700 leading-relaxed font-medium">If you need assistance with a return or have questions about eligibility, our support team is available via:</p>
 
@@ -146,7 +146,7 @@ const ReturnExchangePolicy = () => {
                 <span className="text-xl">📧</span>
                 <div>
                   <p className="font-black text-slate-900">Email:</p>
-                  <a href="mailto:support@printsbasket.com" className="text-orange-600 hover:text-orange-700 font-bold transition-colors">support@printsbasket.com</a>
+                  <a href="mailto:support@printsbasket.com" className="text-blue-600 hover:text-blue-700 font-bold transition-colors">support@printsbasket.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">

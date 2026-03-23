@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 
 const CookiePolicy = () => {
   return (
-    <section className="w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 min-h-screen py-16">
+    <section className="w-full bg-gradient-to-b from-blue-50 via-white to-blue-50 min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb Navigation */}
         <div className="flex justify-center items-center gap-2 text-sm text-gray-600">
-          <Link to="/" className="hover:text-orange-600 transition">Home</Link>
+          <Link to="/" className="hover:text-blue-600 transition">Home</Link>
           <span>/</span>
           <span className="text-gray-900 font-medium">Cookie Policy</span>
         </div>
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
             Cookie Policy
           </h1>
-          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full mx-auto"></div>
+          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full mx-auto"></div>
           <p className="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
             Last Updated: January 21, 2026
           </p>
@@ -27,7 +27,7 @@ const CookiePolicy = () => {
         <div className="space-y-10">
 
           {/* Introduction */}
-          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-orange-500">
+          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-blue-500">
             <p className="text-gray-700 leading-relaxed text-lg">
               This Cookie Policy explains how Prints Basket ("we", "our", "us") uses cookies and similar technologies to operate, secure, and enhance our website and online services. By using our website, you acknowledge and agree to the use of cookies as described in this policy. You may control or disable cookies at any time through your browser settings.
             </p>
@@ -63,7 +63,7 @@ const CookiePolicy = () => {
 
             <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
               <table className="w-full text-sm">
-                <thead className="bg-orange-100 border-b border-gray-200">
+                <thead className="bg-blue-100 border-b border-gray-200">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold text-gray-800">Cookie Type</th>
                     <th className="px-4 py-3 text-left font-semibold text-gray-800">Purpose</th>
@@ -82,7 +82,7 @@ const CookiePolicy = () => {
                     <td className="px-4 py-3 text-gray-600 font-medium">Functional</td>
                     <td className="px-4 py-3 text-gray-600">Remember user preferences for usability</td>
                     <td className="px-4 py-3 text-gray-600 text-xs">Language, region preference</td>
-                    <td className="px-4 py-3 text-gray-600 font-medium text-orange-600">Implied</td>
+                    <td className="px-4 py-3 text-gray-600 font-medium text-blue-600">Implied</td>
                   </tr>
                 </tbody>
               </table>
@@ -157,7 +157,7 @@ const CookiePolicy = () => {
             <h2 className="text-2xl font-semibold text-gray-900">6. Data Privacy and Cookies</h2>
             <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
               <p className="text-gray-600 leading-relaxed">
-                Any information collected through cookies—such as session identifiers or limited preference data—is processed according to our <Link to="/privacy-policy" className="text-orange-600 underline hover:text-orange-700">Privacy Policy</Link>. We do not use cookies to collect sensitive personal information.
+                Any information collected through cookies—such as session identifiers or limited preference data—is processed according to our <Link to="/privacy-policy" className="text-blue-600 underline hover:text-blue-700">Privacy Policy</Link>. We do not use cookies to collect sensitive personal information.
               </p>
             </div>
           </div>
@@ -173,12 +173,12 @@ const CookiePolicy = () => {
           </div>
 
           {/* 8. Contact Us */}
-          <div className="space-y-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-6 text-white">
+          <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
             <h2 className="text-2xl font-semibold">8. Contact Us</h2>
             <p className="leading-relaxed">
               If you have questions about our Cookie Policy or how cookies are used on our website, please contact us:
             </p>
-            <div className="space-y-2 text-orange-50">
+            <div className="space-y-2 text-blue-50">
               <p>📧 <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
               <p>📍 <strong>Address:</strong> 95 Broadacre Dr, Kitchener, ON N2R 0S5, Canada</p>
             </div>

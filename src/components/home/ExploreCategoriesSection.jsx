@@ -47,7 +47,7 @@ const ExploreCategoriesSection = () => {
         {/* Section Header */}
         <div className="mb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Explore Printer<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600"> Categories</span>
+            Explore Printer<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600"> Categories</span>
           </h2>
           <p className="text-gray-600 text-lg">
             Browse commonly requested printer-related categories to quickly find relevant information and options.
@@ -66,7 +66,7 @@ const ExploreCategoriesSection = () => {
               <div className="text-5xl mb-4">🏠</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Home Printers</h3>
               <p className="text-gray-700 text-sm mb-4">Perfect for personal use and small tasks</p>
-              <div className="flex items-center text-orange-600 font-semibold text-sm group-hover:text-blue-600 transition">
+              <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:text-blue-600 transition">
                 Explore <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
@@ -82,7 +82,7 @@ const ExploreCategoriesSection = () => {
               <div className="text-5xl mb-4">💼</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Office Printers</h3>
               <p className="text-gray-700 text-sm mb-4">Built for productivity and efficiency</p>
-              <div className="flex items-center text-orange-600 font-semibold text-sm group-hover:text-purple-600 transition">
+              <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:text-purple-600 transition">
                 Explore <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
@@ -98,7 +98,7 @@ const ExploreCategoriesSection = () => {
               <div className="text-5xl mb-4">🖨️</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Inkjet Printers</h3>
               <p className="text-gray-700 text-sm mb-4">Color quality and detail in every print</p>
-              <div className="flex items-center text-orange-600 font-semibold text-sm group-hover:text-rose-600 transition">
+              <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:text-rose-600 transition">
                 Explore <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
@@ -114,7 +114,7 @@ const ExploreCategoriesSection = () => {
               <div className="text-5xl mb-4">⚡</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Laser Printers</h3>
               <p className="text-gray-700 text-sm mb-4">Speed and efficiency for high volume</p>
-              <div className="flex items-center text-orange-600 font-semibold text-sm group-hover:text-amber-600 transition">
+              <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:text-amber-600 transition">
                 Explore <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>

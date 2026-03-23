@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 
 const ShippingPolicy = () => {
   return (
-    <section className="w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 min-h-screen py-16">
+    <section className="w-full bg-gradient-to-b from-blue-50 via-white to-blue-50 min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb Navigation */}
         <div className="flex justify-center items-center gap-2 text-sm text-gray-600">
-          <Link to="/" className="hover:text-orange-600 transition">Home</Link>
+          <Link to="/" className="hover:text-blue-600 transition">Home</Link>
           <span>/</span>
           <span className="text-gray-900 font-medium">Shipping Policy</span>
         </div>
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
             Shipping Policy
           </h1>
-          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full mx-auto"></div>
+          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full mx-auto"></div>
           <p className="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
             Last Updated: January 21, 2026
           </p>
@@ -27,7 +27,7 @@ const ShippingPolicy = () => {
         <div className="space-y-10">
 
           {/* Introduction */}
-          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-orange-500">
+          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-blue-500">
             <p className="text-gray-700 leading-relaxed text-lg">
               At Prints Basket, we aim to provide clear, reliable, and timely shipping services for all customers in the United States and Canada. This Shipping Policy explains how orders are processed, shipped, delivered, and handled to ensure transparency and a smooth shopping experience.
             </p>
@@ -78,7 +78,7 @@ const ShippingPolicy = () => {
             </p>
             <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
               <table className="w-full">
-                <thead className="bg-orange-100 border-b border-gray-200">
+                <thead className="bg-blue-100 border-b border-gray-200">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold text-gray-800">Location</th>
                     <th className="px-4 py-3 text-left font-semibold text-gray-800">Standard Shipping</th>
@@ -192,7 +192,7 @@ const ShippingPolicy = () => {
                 <li>With the wrong item shipped</li>
               </ul>
               <p className="text-gray-600 font-medium mb-2">Please contact us within 48 hours of delivery at:</p>
-              <p className="text-gray-600">📧 <a href="mailto:support@printsbasket.com" className="text-orange-600 underline">support@printsbasket.com</a></p>
+              <p className="text-gray-600">📧 <a href="mailto:support@printsbasket.com" className="text-blue-600 underline">support@printsbasket.com</a></p>
             </div>
             <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
               <p className="text-gray-700 font-medium mb-2">Include:</p>
@@ -210,7 +210,7 @@ const ShippingPolicy = () => {
           {/* 9. Customs, Duties & Taxes */}
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold text-gray-900">9. Customs, Duties & Taxes (For Canada and Cross-Border Shipments)</h2>
-            <div className="bg-orange-50 rounded-lg p-4 border-l-4 border-orange-400">
+            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-400">
               <p className="text-gray-600 leading-relaxed mb-3">
                 For Canadian shipments:
               </p>
@@ -256,18 +256,18 @@ const ShippingPolicy = () => {
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>Orders can be canceled <strong>only if they have not yet shipped</strong>.</li>
                 <li>Once a package has been dispatched, cancellations cannot be processed.</li>
-                <li>You may return the item after receiving it by following our <Link to="/refund-return-policy" className="text-orange-600 underline hover:text-orange-700">Return & Refund Policy</Link>.</li>
+                <li>You may return the item after receiving it by following our <Link to="/refund-return-policy" className="text-blue-600 underline hover:text-blue-700">Return & Refund Policy</Link>.</li>
               </ul>
             </div>
           </div>
 
           {/* 12. Contact Us */}
-          <div className="space-y-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-6 text-white">
+          <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
             <h2 className="text-2xl font-semibold">Contact Us</h2>
             <p className="leading-relaxed">
               If you have questions about shipping, delivery, or order status, we are here to help.
             </p>
-            <div className="space-y-2 text-orange-50">
+            <div className="space-y-2 text-blue-50">
               <p>📧 <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
               <p>🌐 <strong>Website:</strong> <a href="https://www.printsbasket.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">www.printsbasket.com</a></p>
             </div>

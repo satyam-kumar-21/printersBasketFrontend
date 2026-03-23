@@ -244,8 +244,8 @@ const AdminAnalytics = () => {
                                 : formatCurrency(0),
                             change: '+0.0%',
                             icon: TrendingUp,
-                            color: 'text-orange-600',
-                            bg: 'bg-orange-100'
+                            color: 'text-blue-600',
+                            bg: 'bg-blue-100'
                         }
                     ].map((stat, i) => (
                         <div key={i} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start justify-between">

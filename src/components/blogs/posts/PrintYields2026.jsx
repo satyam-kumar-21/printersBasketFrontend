@@ -6,20 +6,20 @@ const PrintYields2026 = () => {
     return (
         <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen md:pt-24 pt-5 md:pb-12 pb-5 relative overflow-hidden">
             {/* Fixed blur patterns */}
-            <div className="fixed top-0 right-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl -z-10"></div>
+            <div className="fixed top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             <div className="fixed bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 {/* Back Link */}
                 <div className="mb-8">
-                    <Link to="/blogs" className="inline-flex items-center gap-2 text-sm font-bold text-orange-600 hover:text-orange-700 uppercase tracking-widest transition-colors">
+                    <Link to="/blogs" className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 uppercase tracking-widest transition-colors">
                         <ArrowLeft size={16} /> Back to Insights
                     </Link>
                 </div>
 
                 {/* Header */}
                 <header className="mb-12 text-center md:text-left">
-                    <div className="inline-block bg-gradient-to-r from-orange-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-200/30">
+                    <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-blue-200/30">
                         Technical Guide
                     </div>
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
@@ -28,15 +28,15 @@ const PrintYields2026 = () => {
                     
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-slate-500 border-b border-slate-200 pb-8">
                         <div className="flex items-center gap-2">
-                            <Calendar size={16} className="text-orange-600" />
+                            <Calendar size={16} className="text-blue-600" />
                             <span>January 26, 2026</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Clock size={16} className="text-orange-600" />
+                            <Clock size={16} className="text-blue-600" />
                             <span>Updated: January 28, 2026</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <User size={16} className="text-orange-600" />
+                            <User size={16} className="text-blue-600" />
                             <span>By Smart ePrinting</span>
                         </div>
                     </div>
@@ -49,16 +49,16 @@ const PrintYields2026 = () => {
                         If you've ever compared ink or toner cartridges while shopping, you've probably seen terms like "150 pages," "500 pages," "1,500 pages," or "high-yield (XL)" printed on the packaging. These numbers refer to something called print yield, which is an estimated number of pages a cartridge can produce. However, many users quickly notice that the actual number of pages they print rarely matches the number printed on the box. This in-depth, 2,000-word guide explains everything you need to know about print yields in 2026, written in simple and accurate language to help everyday users make smarter printing decisions.
                     </p>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">What Is Print Yield?</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">What Is Print Yield?</h2>
                     <p>Print yield—also called page yield—is the estimated number of pages a printer cartridge can produce before the ink or toner runs out. It is a standardized measurement used to give consumers a consistent way to compare cartridge capacities across brands and models.</p>
                     
-                    <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4 my-8">
+                    <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4 my-8">
                         <p className="text-slate-700"><strong>In simple terms:</strong></p>
                         <p className="text-slate-600 mt-2">Print yield = The number of pages you can expect to print under specific testing conditions.</p>
                         <p className="text-sm text-slate-600 mt-4">Manufacturers rely on controlled testing environments to determine this number. However, everyday usage may differ significantly.</p>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Why Print Yield Is Important</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Why Print Yield Is Important</h2>
                     <p>Understanding print yields helps you:</p>
                     <ul className="text-sm text-slate-600 space-y-2 my-6 ml-4">
                         <li>• Compare ink or toner cartridges accurately</li>
@@ -68,7 +68,7 @@ const PrintYields2026 = () => {
                         <li>• Determine the cost per page of different printers</li>
                     </ul>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">How Manufacturers Calculate Print Yield</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">How Manufacturers Calculate Print Yield</h2>
                     <p>Manufacturers follow strict international testing standards, most commonly:</p>
                     <ul className="text-sm text-slate-600 space-y-2 my-6 ml-4">
                         <li>• <strong>ISO/IEC 24711</strong> (Inkjet Cartridges)</li>
@@ -78,7 +78,7 @@ const PrintYields2026 = () => {
                     <p className="text-sm text-slate-600">These standardized methods ensure consistency across different brands.</p>
 
                     <div className="space-y-4 my-8">
-                        <div className="bg-gradient-to-r from-orange-100 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-100 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">What Happens During ISO Testing?</h4>
                             <p className="text-sm text-slate-600 mb-2"><strong>Inkjet Testing (ISO/IEC 24711)</strong></p>
                             <p className="text-sm text-slate-600">Testers use five standard test pages (mixed text and graphics), print continuously until the cartridge is empty, maintain regulated temperature and humidity, and use the printer's default settings.</p>
@@ -93,11 +93,11 @@ const PrintYields2026 = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Why Actual Print Yields Differ from Packaging</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Why Actual Print Yields Differ from Packaging</h2>
                     <p>Many users wonder why their cartridges don't always match the advertised print yield. Here are the top reasons:</p>
 
                     <div className="space-y-4 my-8">
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">Print Coverage Percentage</h4>
                             <p className="text-sm text-slate-600">The most significant factor is page coverage. ISO standards assume 5% coverage per page (only 5% of the page contains ink or toner). In real life, a typical school assignment may have 10–15% coverage, business documents can have 20–30%, and photos often exceed 80–100% coverage. The more ink or toner used on each page, the fewer pages the cartridge can print.</p>
                         </div>
@@ -112,7 +112,7 @@ const PrintYields2026 = () => {
                             </ul>
                             <p className="text-sm text-slate-600 mt-2">Printing 200 full-color pages will drain a cartridge faster than printing 1,000 black text pages.</p>
                         </div>
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">Printer Settings</h4>
                             <p className="text-sm text-slate-600">Settings also affect ink consumption:</p>
                             <ul className="text-sm text-slate-600 space-y-1 ml-4 mt-2">
@@ -132,7 +132,7 @@ const PrintYields2026 = () => {
                             </ul>
                             <p className="text-sm text-slate-600 mt-2">These factors can vary yield significantly.</p>
                         </div>
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">Printing Frequency</h4>
                             <p className="text-sm text-slate-600">Surprisingly, printing too little can reduce cartridge lifespan due to print head cleaning cycles, ink drying in nozzles, and wasted ink during maintenance tasks. Laser printers are less affected, but frequent on/off cycles can still waste toner.</p>
                         </div>
@@ -142,10 +142,10 @@ const PrintYields2026 = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Standard Yield vs. High-Yield vs. Extra-High-Yield</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Standard Yield vs. High-Yield vs. Extra-High-Yield</h2>
 
                     <div className="space-y-4 my-8">
-                        <div className="bg-gradient-to-br from-white to-orange-50/30 border-2 border-orange-200 p-6 rounded-2xl">
+                        <div className="bg-gradient-to-br from-white to-blue-50/30 border-2 border-blue-200 p-6 rounded-2xl">
                             <h4 className="font-bold text-slate-900 mb-3">Standard Yield Cartridges</h4>
                             <ul className="text-sm text-slate-600 space-y-1">
                                 <li>• Economical upfront</li>
@@ -173,11 +173,11 @@ const PrintYields2026 = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">How to Maximize Your Print Yield</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">How to Maximize Your Print Yield</h2>
                     <p>Here are proven ways to extend your cartridge lifespan and reduce printing costs:</p>
 
                     <div className="space-y-4 my-8">
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">Use Draft Mode for Everyday Printing</h4>
                             <p className="text-sm text-slate-600">Draft mode uses far less ink or toner and is suitable for internal documents, notes, school drafts, and checklists. Switch to higher quality only when necessary.</p>
                         </div>
@@ -185,7 +185,7 @@ const PrintYields2026 = () => {
                             <h4 className="font-bold text-slate-900 mb-2">Avoid Frequent Power Cycling</h4>
                             <p className="text-sm text-slate-600">Turning your printer off and on triggers print head cleaning cycles, which use extra ink. Keep your printer in sleep mode instead of powering it off fully.</p>
                         </div>
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">Print Regularly</h4>
                             <p className="text-sm text-slate-600"><strong>For inkjet users:</strong> Print a small page once a week to prevent nozzle drying and reduce maintenance cycles. Laser users don't need frequent printing but benefit from occasional activity to maintain smooth toner flow.</p>
                         </div>
@@ -193,7 +193,7 @@ const PrintYields2026 = () => {
                             <h4 className="font-bold text-slate-900 mb-2">Use Manufacturer-Recommended Paper</h4>
                             <p className="text-sm text-slate-600">Using recommended or compatible paper ensures better ink absorption, fewer smudges, and more efficient coverage. Photo paper requires more ink, so use it when necessary, not for casual printing.</p>
                         </div>
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">Maintain Your Printer Properly</h4>
                             <p className="text-sm text-slate-600">Proper maintenance includes running automated print head cleaning, keeping the printer dust-free, avoiding high-moisture environments, and handling cartridges carefully. Clean, well-maintained printers use ink more efficiently.</p>
                         </div>
@@ -203,10 +203,10 @@ const PrintYields2026 = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Black vs. Color Print Yield Differences</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Black vs. Color Print Yield Differences</h2>
                     
                     <div className="grid md:grid-cols-2 gap-6 my-8">
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">Black Cartridges</h4>
                             <ul className="text-sm text-slate-600 space-y-1">
                                 <li>• Generally higher yields</li>
@@ -220,10 +220,10 @@ const PrintYields2026 = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Inkjet vs Laser Print Yields</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Inkjet vs Laser Print Yields</h2>
 
                     <div className="space-y-4 my-8">
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">Inkjet Print Yield Characteristics</h4>
                             <p className="text-sm text-slate-600">Inkjet yields are more variable due to ink-based printing, nozzle cleaning cycles, and photo printing demands. Inkjet cartridges often range from 150–600 pages depending on capacity.</p>
                         </div>
@@ -233,12 +233,12 @@ const PrintYields2026 = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Calculate Your True Cost Per Page</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Calculate Your True Cost Per Page</h2>
                     <p>Cost per page (CPP) helps compare printers and cartridges accurately.</p>
 
                     <div className="bg-slate-900 text-white p-6 rounded-2xl my-8 font-mono text-sm">
                         <p className="mb-4"><strong>Formula:</strong></p>
-                        <p className="text-orange-400 mb-6">Cost Per Page = Cartridge Price ÷ Page Yield</p>
+                        <p className="text-blue-400 mb-6">Cost Per Page = Cartridge Price ÷ Page Yield</p>
                         <p className="mb-4"><strong>Example:</strong></p>
                         <p className="text-blue-400 mb-2">Cartridge Price: $40</p>
                         <p className="text-blue-400 mb-2">Yield: 400 pages</p>
@@ -246,10 +246,10 @@ const PrintYields2026 = () => {
                         <p className="text-slate-400 mt-4">This metric helps determine if a printer is economical.</p>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Common Myths About Print Yield</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Common Myths About Print Yield</h2>
 
                     <div className="space-y-4 my-8">
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">❌ Myth 1: "A 1,000-page cartridge will always print 1,000 pages."</h4>
                             <p className="text-sm text-slate-600">✓ False — yield varies based on usage and coverage.</p>
                         </div>
@@ -257,7 +257,7 @@ const PrintYields2026 = () => {
                             <h4 className="font-bold text-slate-900 mb-2">❌ Myth 2: "Laser printers are always cheaper."</h4>
                             <p className="text-sm text-slate-600">✓ Not always, but often cheaper for heavy users.</p>
                         </div>
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h4 className="font-bold text-slate-900 mb-2">❌ Myth 3: "Photo printing uses the same ink as text printing."</h4>
                             <p className="text-sm text-slate-600">✓ Photo prints use significantly more ink.</p>
                         </div>
@@ -267,7 +267,7 @@ const PrintYields2026 = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Tips for Businesses to Manage Print Yield Efficiently</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Tips for Businesses to Manage Print Yield Efficiently</h2>
                     <p>Businesses can optimize print yield through:</p>
                     <ul className="text-sm text-slate-600 space-y-2 my-6 ml-4">
                         <li>• Standardizing printer models</li>
@@ -278,15 +278,15 @@ const PrintYields2026 = () => {
                     </ul>
                     <p className="text-sm text-slate-600">This helps reduce operational printing costs.</p>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Conclusion</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Conclusion</h2>
                     <p>Print yield is an essential factor to consider when choosing a printer or replacing cartridges. While ISO yield standards offer a consistent reference point, real-world results vary based on document type, print quality settings, environmental conditions, and printing habits.</p>
                     <p className="mt-4">By understanding how page yields work and applying the best practices in this guide, you can significantly extend the life of your ink or toner, reduce costs, and improve printing efficiency—whether you're printing at home, school, or in an office.</p>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Explore Related Guides</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Explore Related Guides</h2>
                     <div className="grid md:grid-cols-2 gap-6 mt-8 mb-12">
-                        <Link to="/blogs/inkjet-vs-laser-printers-2026" className="group bg-gradient-to-br from-white to-orange-50/30 border-2 border-slate-100 hover:border-orange-200 p-6 rounded-2xl transition-all duration-300 transform hover:scale-105">
-                            <div className="mb-3 inline-block bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Comparison</div>
-                            <h3 className="font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">Inkjet vs. Laser Printers</h3>
+                        <Link to="/blogs/inkjet-vs-laser-printers-2026" className="group bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 hover:border-blue-200 p-6 rounded-2xl transition-all duration-300 transform hover:scale-105">
+                            <div className="mb-3 inline-block bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Comparison</div>
+                            <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Inkjet vs. Laser Printers</h3>
                             <p className="text-sm text-slate-600">Comprehensive comparison of printer technologies and their yields.</p>
                         </Link>
                         <Link to="/blogs/wireless-printing-easy-modern-printers-2026" className="group bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 hover:border-blue-200 p-6 rounded-2xl transition-all duration-300 transform hover:scale-105">
@@ -296,14 +296,14 @@ const PrintYields2026 = () => {
                         </Link>
                     </div>
 
-                    <div className="bg-gradient-to-br from-orange-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
+                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
                         <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
                             Ready to Maximize Your Printing Value?
                         </h2>
-                        <p className="text-orange-50 text-lg mb-8 max-w-2xl mx-auto">
+                        <p className="text-blue-50 text-lg mb-8 max-w-2xl mx-auto">
                             Now that you understand print yields, find the best cartridges and printers for your needs. Compare options and calculate your true cost per page.
                         </p>
-                        <Link to="/" className="inline-block bg-white text-orange-600 font-bold py-3 px-8 rounded-xl hover:bg-orange-50 transition-colors shadow-lg">
+                        <Link to="/" className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
                             Find Compatible Cartridges
                         </Link>
                     </div>

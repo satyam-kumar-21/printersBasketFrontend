@@ -76,12 +76,12 @@ const ProfilePage = () => {
                 {/* Header Section */}
                 <div className="text-center mb-12">
                     <p className="text-gray-600 mb-4">
-                        <Link to="/" className="text-orange-600 hover:text-orange-700">Home</Link> / Account Settings
+                        <Link to="/" className="text-blue-600 hover:text-blue-700">Home</Link> / Account Settings
                     </p>
-                    <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600 mb-4">
+                    <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-4">
                         Account Settings
                     </h1>
-                    <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto mb-6"></div>
+                    <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto mb-6"></div>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                         Manage your account preferences, update your profile, and track your order history
                     </p>
@@ -93,7 +93,7 @@ const ProfilePage = () => {
                         onClick={() => setActiveTab('settings')}
                         className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                             activeTab === 'settings'
-                                ? 'bg-gradient-to-r from-orange-600 to-blue-600 text-white shadow-lg'
+                                ? 'bg-gradient-to-r from-blue-600 to-blue-600 text-white shadow-lg'
                                 : 'bg-white text-gray-700 shadow-md border border-gray-200 hover:shadow-lg'
                         }`}
                     >
@@ -103,7 +103,7 @@ const ProfilePage = () => {
                         onClick={() => setActiveTab('orders')}
                         className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                             activeTab === 'orders'
-                                ? 'bg-gradient-to-r from-orange-600 to-blue-600 text-white shadow-lg'
+                                ? 'bg-gradient-to-r from-blue-600 to-blue-600 text-white shadow-lg'
                                 : 'bg-white text-gray-700 shadow-md border border-gray-200 hover:shadow-lg'
                         }`}
                     >
@@ -113,7 +113,7 @@ const ProfilePage = () => {
                         onClick={() => setActiveTab('help')}
                         className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                             activeTab === 'help'
-                                ? 'bg-gradient-to-r from-orange-600 to-blue-600 text-white shadow-lg'
+                                ? 'bg-gradient-to-r from-blue-600 to-blue-600 text-white shadow-lg'
                                 : 'bg-white text-gray-700 shadow-md border border-gray-200 hover:shadow-lg'
                         }`}
                     >
@@ -127,19 +127,19 @@ const ProfilePage = () => {
                         {/* User Card */}
                         <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
                             <div className="flex flex-col items-center text-center">
-                                <div className="w-24 h-24 bg-gradient-to-tr from-orange-600 to-blue-600 rounded-full flex items-center justify-center mb-4 text-white shadow-lg">
+                                <div className="w-24 h-24 bg-gradient-to-tr from-blue-600 to-blue-600 rounded-full flex items-center justify-center mb-4 text-white shadow-lg">
                                     <span className="text-3xl font-bold uppercase">{user?.firstName?.charAt(0) || user?.name?.charAt(0)}</span>
                                 </div>
                                 <h2 className="text-xl font-bold text-gray-900">{user?.firstName} {user?.lastName}</h2>
                                 <p className="text-gray-600 text-sm mt-1">{user?.email}</p>
-                                <div className="mt-4 inline-flex items-center px-3 py-1 bg-gradient-to-r from-orange-50 to-blue-50 text-gray-700 text-xs font-bold rounded-full border border-orange-200">
+                                <div className="mt-4 inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-50 to-blue-50 text-gray-700 text-xs font-bold rounded-full border border-blue-200">
                                     {user?.isAdmin ? 'Administrator' : 'Customer'}
                                 </div>
                             </div>
 
                             <div className="mt-8 pt-6 border-t border-gray-100 space-y-4">
                                 <div className="flex items-center justify-between text-gray-600 text-sm">
-                                    <span className="flex items-center gap-2"><Package size={16} className="text-orange-600" /> Orders</span>
+                                    <span className="flex items-center gap-2"><Package size={16} className="text-blue-600" /> Orders</span>
                                     <span className="font-bold text-gray-900">{orders?.length || 0}</span>
                                 </div>
                                 <div className="flex items-center justify-between text-gray-600 text-sm">
@@ -150,13 +150,13 @@ const ProfilePage = () => {
                         </div>
 
                         {/* Quick Help Card */}
-                        <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg shadow-md p-6 border border-orange-200">
+                        <div className="bg-gradient-to-br from-blue-50 to-amber-50 rounded-lg shadow-md p-6 border border-blue-200">
                             <div className="flex items-center gap-2 mb-3">
                                 <span className="text-2xl">💬</span>
-                                <h3 className="font-bold text-orange-900">Need Help?</h3>
+                                <h3 className="font-bold text-blue-900">Need Help?</h3>
                             </div>
                             <p className="text-gray-700 text-sm mb-4">Our support team is available to help you with any questions.</p>
-                            <Link to="/contact-us" className="block w-full text-center py-2 bg-gradient-to-r from-orange-600 to-orange-500 text-white rounded-lg text-sm font-bold hover:shadow-lg transition-all">
+                            <Link to="/contact-us" className="block w-full text-center py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg text-sm font-bold hover:shadow-lg transition-all">
                                 Contact Support
                             </Link>
                         </div>
@@ -167,12 +167,12 @@ const ProfilePage = () => {
                         {activeTab === 'settings' ? (
                             <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
                                 {/* Header */}
-                                <div className="p-6 bg-gradient-to-r from-orange-50 to-blue-50 border-b border-gray-200 flex items-center justify-between">
+                                <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-50 border-b border-gray-200 flex items-center justify-between">
                                     <div>
                                         <h2 className="text-2xl font-bold text-gray-900">Personal Information</h2>
                                         <p className="text-gray-600 text-sm mt-1">Update your profile details and security settings</p>
                                     </div>
-                                    <User className="text-orange-300" size={32} />
+                                    <User className="text-blue-300" size={32} />
                                 </div>
 
                                 <form onSubmit={submitHandler} className="p-6 space-y-6">
@@ -197,7 +197,7 @@ const ProfilePage = () => {
 
                                     {/* Personal Details Section */}
                                     <div className="space-y-4">
-                                        <h3 className="text-sm font-bold text-orange-600 uppercase tracking-widest">Personal Details</h3>
+                                        <h3 className="text-sm font-bold text-blue-600 uppercase tracking-widest">Personal Details</h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div className="space-y-2">
                                                 <label className="text-sm font-semibold text-gray-700">First Name</label>
@@ -205,7 +205,7 @@ const ProfilePage = () => {
                                                     type="text"
                                                     value={firstName}
                                                     onChange={(e) => setFirstName(e.target.value)}
-                                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                                     placeholder="First Name"
                                                 />
                                             </div>
@@ -215,7 +215,7 @@ const ProfilePage = () => {
                                                     type="text"
                                                     value={lastName}
                                                     onChange={(e) => setLastName(e.target.value)}
-                                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                                     placeholder="Last Name"
                                                 />
                                             </div>
@@ -228,7 +228,7 @@ const ProfilePage = () => {
                                                     type="email"
                                                     value={email}
                                                     onChange={(e) => setEmail(e.target.value)}
-                                                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                                     placeholder="Email Address"
                                                 />
                                             </div>
@@ -272,7 +272,7 @@ const ProfilePage = () => {
                                         <button
                                             type="submit"
                                             disabled={loading || updateLoading}
-                                            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-orange-600 to-blue-600 hover:from-orange-700 hover:to-blue-700 text-white font-bold rounded-lg transition-all transform hover:shadow-lg disabled:opacity-50 active:scale-95"
+                                            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white font-bold rounded-lg transition-all transform hover:shadow-lg disabled:opacity-50 active:scale-95"
                                         >
                                             {updateLoading || loading ? (
                                                 <Loader2 className="animate-spin" size={20} />
@@ -300,7 +300,7 @@ const ProfilePage = () => {
                                 <div className="p-6">
                                     {loadingOrders ? (
                                         <div className="flex flex-col items-center justify-center py-12">
-                                            <Loader2 className="animate-spin text-orange-600 mb-4" size={40} />
+                                            <Loader2 className="animate-spin text-blue-600 mb-4" size={40} />
                                             <p className="text-gray-600">Fetching your orders...</p>
                                         </div>
                                     ) : errorOrders ? (
@@ -317,7 +317,7 @@ const ProfilePage = () => {
                                             <p className="text-gray-600 mb-6">Looks like you haven't placed any orders yet.</p>
                                             <Link
                                                 to="/"
-                                                className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-orange-600 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg transition-all"
+                                                className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-600 text-white font-bold rounded-lg hover:shadow-lg transition-all"
                                             >
                                                 Start Shopping
                                             </Link>
@@ -355,7 +355,7 @@ const ProfilePage = () => {
                                                             <td className="py-4 text-right">
                                                                 <Link
                                                                     to={`/order/${order._id}`}
-                                                                    className="inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700 transition-colors"
+                                                                    className="inline-flex items-center gap-1 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors"
                                                                 >
                                                                     Details
                                                                     <ChevronRight size={16} />
@@ -390,7 +390,7 @@ const ProfilePage = () => {
                             </p>
                             <button
                                 onClick={() => setShowConfirmation(false)}
-                                className="w-full px-6 py-3 bg-gradient-to-r from-orange-600 to-blue-600 hover:from-orange-700 hover:to-blue-700 text-white font-bold rounded-lg transition-all transform hover:shadow-lg"
+                                className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white font-bold rounded-lg transition-all transform hover:shadow-lg"
                             >
                                 Got it!
                             </button>

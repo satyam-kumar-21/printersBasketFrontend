@@ -162,7 +162,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                         onClick={() => resetTransientState('login')}
                         className={`flex-1 py-4 text-sm font-medium transition-all ${
                             mode === 'login' || mode === 'forgot-password'
-                                ? 'border-b-2 border-orange-500 text-black'
+                                ? 'border-b-2 border-blue-500 text-black'
                                 : 'text-gray-400'
                         }`}
                     >
@@ -172,7 +172,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                         onClick={() => resetTransientState('signup')}
                         className={`flex-1 py-4 text-sm font-medium transition-all ${
                             mode === 'signup' || mode === 'verify-otp'
-                                ? 'border-b-2 border-orange-500 text-black'
+                                ? 'border-b-2 border-blue-500 text-black'
                                 : 'text-gray-400'
                         }`}
                     >
@@ -202,7 +202,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
@@ -212,7 +212,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type={showPassword ? 'text' : 'password'}
                                     placeholder="Password"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors pr-10"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors pr-10"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
@@ -220,7 +220,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-0 top-2 text-gray-500 hover:text-orange-500"
+                                    className="absolute right-0 top-2 text-gray-500 hover:text-blue-500"
                                 >
                                     {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                                 </button>
@@ -229,7 +229,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <button
                                     type="button"
                                     onClick={() => resetTransientState('forgot-password')}
-                                    className="text-orange-500 cursor-pointer hover:text-orange-600 font-medium"
+                                    className="text-blue-500 cursor-pointer hover:text-blue-600 font-medium"
                                 >
                                     Forgot password?
                                 </button>
@@ -237,7 +237,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
+                                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
                             >
                                 {loading ? 'Logging in...' : 'Login'}
                             </button>
@@ -251,7 +251,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="text"
                                     placeholder="First Name"
-                                    className="border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     required
@@ -259,7 +259,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="text"
                                     placeholder="Last Name"
-                                    className="border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
                                     required
@@ -269,7 +269,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
@@ -279,7 +279,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="password"
                                     placeholder="Password"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
@@ -289,7 +289,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="password"
                                     placeholder="Confirm Password"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
@@ -298,7 +298,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                             <button
                                 type="submit"
                                 disabled={loadingSendOTP}
-                                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md font-semibold flex items-center justify-center gap-2 transition-colors disabled:opacity-70"
+                                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-semibold flex items-center justify-center gap-2 transition-colors disabled:opacity-70"
                             >
                                 {loadingSendOTP ? 'Sending OTP...' : 'Register'}
                             </button>
@@ -309,8 +309,8 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                         /* OTP Verification Form */
                         <form className="space-y-4" onSubmit={submitHandler}>
                             <div className="text-center mb-4">
-                                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <Mail className="text-orange-500" size={20} />
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <Mail className="text-blue-500" size={20} />
                                 </div>
                                 <p className="text-gray-600 text-sm">
                                     We've sent a 6-digit OTP to <strong>{email}</strong>
@@ -320,7 +320,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="text"
                                     placeholder="000000"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors text-center text-lg font-mono"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors text-center text-lg font-mono"
                                     value={otp}
                                     onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
                                     maxLength={6}
@@ -330,7 +330,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                             <button
                                 type="submit"
                                 disabled={loadingVerifyOTP || otp.length !== 6}
-                                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
+                                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
                             >
                                 {loadingVerifyOTP ? 'Verifying...' : 'Verify & Create Account'}
                             </button>
@@ -339,7 +339,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <button
                                     type="button"
                                     onClick={() => resetTransientState('signup')}
-                                    className="text-orange-500 font-bold hover:underline"
+                                    className="text-blue-500 font-bold hover:underline"
                                 >
                                     Try again
                                 </button>
@@ -351,8 +351,8 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                         /* Forgot Password Form */
                         <form className="space-y-4" onSubmit={submitHandler}>
                             <div className="text-center mb-4">
-                                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <Mail className="text-orange-500" size={20} />
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <Mail className="text-blue-500" size={20} />
                                 </div>
                                 <p className="text-gray-600 text-sm">
                                     Enter your email address and we'll send you a reset code
@@ -362,7 +362,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
@@ -371,7 +371,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                             <button
                                 type="submit"
                                 disabled={loadingForgot}
-                                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
+                                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
                             >
                                 {loadingForgot ? 'Sending...' : 'Send Reset Code'}
                             </button>
@@ -380,7 +380,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <button
                                     type="button"
                                     onClick={() => resetTransientState('login')}
-                                    className="text-orange-500 font-bold hover:underline"
+                                    className="text-blue-500 font-bold hover:underline"
                                 >
                                     Sign in
                                 </button>
@@ -392,8 +392,8 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                         /* Reset Password Form */
                         <form className="space-y-4" onSubmit={submitHandler}>
                             <div className="text-center mb-4">
-                                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <Key className="text-orange-500" size={20} />
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <Key className="text-blue-500" size={20} />
                                 </div>
                                 <p className="text-gray-600 text-sm">
                                     Enter the OTP sent to <strong>{email}</strong> and your new password
@@ -403,7 +403,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="text"
                                     placeholder="000000"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors text-center text-lg font-mono"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors text-center text-lg font-mono"
                                     value={otp}
                                     onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
                                     maxLength={6}
@@ -414,7 +414,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="password"
                                     placeholder="New Password"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={newPassword}
                                     onChange={(e) => setNewPassword(e.target.value)}
                                     required
@@ -424,7 +424,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <input
                                     type="password"
                                     placeholder="Confirm New Password"
-                                    className="w-full border-b py-2 outline-none focus:border-orange-500 transition-colors"
+                                    className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     required
@@ -433,7 +433,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                             <button
                                 type="submit"
                                 disabled={loadingReset || otp.length !== 6}
-                                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
+                                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
                             >
                                 {loadingReset ? 'Resetting...' : 'Reset Password'}
                             </button>
@@ -441,7 +441,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                                 <button
                                     type="button"
                                     onClick={() => resetTransientState('forgot-password')}
-                                    className="text-orange-500 font-bold hover:underline"
+                                    className="text-blue-500 font-bold hover:underline"
                                 >
                                     Try different email
                                 </button>

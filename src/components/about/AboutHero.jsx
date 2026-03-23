@@ -2,15 +2,15 @@ import React from "react";
 
 const AboutHero = () => {
   return (
-    <section className="w-full bg-gradient-to-br from-orange-50 via-white to-blue-50 py-20">
+    <section className="w-full bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Heading */}
         <div className="mb-2">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent mb-4">
             About Prints Basket
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-400 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
         </div>
 
         {/* Description */}

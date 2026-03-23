@@ -85,7 +85,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Your name"
           />
         </div>
@@ -99,7 +99,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Your email"
           />
         </div>
@@ -112,7 +112,7 @@ const ContactForm = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Your phone number"
           />
         </div>
@@ -126,7 +126,7 @@ const ContactForm = () => {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Subject of your message"
           />
         </div>
@@ -140,7 +140,7 @@ const ContactForm = () => {
             onChange={handleChange}
             required
             rows="5"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
             placeholder="Your message"
           ></textarea>
         </div>
@@ -154,7 +154,7 @@ const ContactForm = () => {
             className="mt-1 rounded"
           />
           <label htmlFor="privacy" className="ml-2 text-sm text-gray-600">
-            I agree that my data is collected and used for support purposes as outlined in our <a href="/privacy-policy" className="text-orange-600 hover:text-orange-700">Privacy Policy</a>.
+            I agree that my data is collected and used for support purposes as outlined in our <a href="/privacy-policy" className="text-blue-600 hover:text-blue-700">Privacy Policy</a>.
           </label>
         </div>
 
@@ -162,7 +162,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-gradient-to-r from-orange-600 to-blue-600 text-white font-semibold py-3 rounded-lg hover:from-orange-700 hover:to-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-gradient-to-r from-blue-600 to-blue-600 text-white font-semibold py-3 rounded-lg hover:from-blue-700 hover:to-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? 'Sending...' : 'Send Message'}
         </button>

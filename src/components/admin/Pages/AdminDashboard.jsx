@@ -173,7 +173,7 @@ const AdminDashboard = () => {
                                 className="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors border border-transparent hover:border-slate-100 group"
                             >
                                 <div className="flex items-center gap-3">
-                                    <div className="p-2 bg-orange-50 text-orange-600 rounded-lg group-hover:bg-orange-100"><ShoppingBag size={18} /></div>
+                                    <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-100"><ShoppingBag size={18} /></div>
                                     <span className="text-sm font-medium text-slate-600">Processing</span>
                                 </div>
                                 <span className="font-bold text-slate-900">

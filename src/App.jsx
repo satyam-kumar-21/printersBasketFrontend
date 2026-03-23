@@ -22,13 +22,14 @@ import AdminAnalytics from './components/admin/Pages/AdminAnalytics';
 import AdminSettings from './components/admin/Pages/AdminSettings';
 
 // Product Category Imports
-import AllInOne from './components/productsCategories/all_InOne/AllInOne';
-import LargeFormat from './components/productsCategories/largeFormat/LargeFormat';
-import InkjetPrinters from './components/productsCategories/inkjetPrinters/InkjetPrinters';
-import LedPrinters from './components/productsCategories/ledPrinters/LedPrinters';
-import InkToner from './components/productsCategories/inkToner/InkToner';
-import CustomerService from './components/customerService/CustomerService1';
-import LaserPrinters from './components/productsCategories/laserPrinters/LaserPrinters';
+// import AllInOne from './components/productsCategories/all_InOne/AllInOne';
+// import LargeFormat from './components/productsCategories/largeFormat/LargeFormat';
+// import InkjetPrinters from './components/productsCategories/inkjetPrinters/InkjetPrinters';
+// import LedPrinters from './components/productsCategories/ledPrinters/LedPrinters';
+// import InkToner from './components/productsCategories/inkToner/InkToner';
+// import LaserPrinters from './components/productsCategories/laserPrinters/LaserPrinters';
+
+
 import ScrollToTop from './components/ScrollToTop';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
@@ -72,12 +73,12 @@ function App() {
                 <Routes>
                     {/* Public Routes */}
                     <Route path="/" element={<HomeMain />} />
-                    <Route path="/product-category/all-in-one-printers" element={<AllInOne />} />
+                    {/* <Route path="/product-category/all-in-one-printers" element={<AllInOne />} />
                     <Route path="/product-category/large-format-printers" element={<LargeFormat />} />
                     <Route path="/product-category/inkjet-printers" element={<InkjetPrinters />} />
                     <Route path="/product-category/laser-printers" element={<LaserPrinters />} />
                     <Route path="/product-category/led-printers" element={<LedPrinters />} />
-                    <Route path="/product-category/ink-toner" element={<InkToner />} />
+                    <Route path="/product-category/ink-toner" element={<InkToner />} /> */}
                     <Route path="/customer-service" element={<CustomerMain />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/checkout" element={<Checkout />} />
@@ -109,7 +110,6 @@ function App() {
                     <Route path="/return-exchange-policy" element={<ReturnExchangePolicy />} />
                     <Route path="/shipping-policy" element={<ShippingPolicy />} />
                     <Route path="/cookie-policy" element={<CookiePolicy />} />
-                    <Route path="/customer-service" element={<CustomerService />} />
                     <Route path="/ccpa-privacy-policy" element={<CCPAPrivacyPolicy />} />
                     <Route path="/accessibility-statement" element={<AccessibilityStatement />} />
                     <Route path="/disclaimer" element={<Disclaimer />} />
@@ -134,10 +134,6 @@ function App() {
 
                     {/* Placeholder Routes for Public Site */}
                     <Route path="/shop" element={<ShopMain />} />
-                    <Route path="/about" element={<UnderConstruction />} />
-                    <Route path="/support" element={<UnderConstruction />} />
-                    <Route path="/account" element={<UnderConstruction />} />
-                    <Route path="/cart" element={<UnderConstruction />} />
 
                     {/* Catch-all */}
                     <Route path="*" element={<UnderConstruction />} />

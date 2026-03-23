@@ -10,14 +10,14 @@ const ContactMain = () => {
         {/* Breadcrumb */}
         <div className="text-center mb-12">
           <p className="text-gray-600 mb-8">
-            <Link to="/" className="text-orange-600 hover:text-orange-700">Home</Link> / Contact Us
+            <Link to="/" className="text-blue-600 hover:text-blue-700">Home</Link> / Contact Us
           </p>
 
           {/* Header */}
-          <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600 mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-4">
             Contact Us
           </h1>
-          <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto mb-6"></div>
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-700 font-semibold mb-4">Have questions? Get in touch!</p>
           <p className="max-w-2xl mx-auto text-gray-600 text-base">
             At Prints Basket, we are committed to providing clear, helpful, and timely support for all product and order-related inquiries. Whether you need assistance with an order, have questions about a product, or want more information about our policies, our team is here to help.
@@ -48,7 +48,7 @@ const ContactMain = () => {
                   <span className="text-2xl mr-4">📞</span>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
-                    <p className="text-gray-600"><a href="tel:+18883225251" className="text-orange-600 hover:text-orange-700">+1 (888) 322-5251</a></p>
+                    <p className="text-gray-600"><a href="tel:+18883225251" className="text-blue-600 hover:text-blue-700">+1 (888) 322-5251</a></p>
                   </div>
                 </div>
               </div>
@@ -59,7 +59,7 @@ const ContactMain = () => {
                   <span className="text-2xl mr-4">📧</span>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                    <p className="text-gray-600"><a href="mailto:support@printsbasket.com" className="text-orange-600 hover:text-orange-700">support@printsbasket.com</a></p>
+                    <p className="text-gray-600"><a href="mailto:support@printsbasket.com" className="text-blue-600 hover:text-blue-700">support@printsbasket.com</a></p>
                   </div>
                 </div>
               </div>
@@ -104,24 +104,24 @@ const ContactMain = () => {
         </div>
 
         {/* Additional Support Section */}
-        <div className="mt-16 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg shadow-md p-8 border border-orange-200">
+        <div className="mt-16 bg-gradient-to-r from-amber-50 to-blue-50 rounded-lg shadow-md p-8 border border-blue-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Additional Support</h2>
           <p className="text-gray-700 mb-6">You may also contact us if you need help with:</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex items-start">
-              <span className="text-orange-600 mr-3 text-xl">✓</span>
+              <span className="text-blue-600 mr-3 text-xl">✓</span>
               <p className="text-gray-700">Return or refund requests</p>
             </div>
             <div className="flex items-start">
-              <span className="text-orange-600 mr-3 text-xl">✓</span>
+              <span className="text-blue-600 mr-3 text-xl">✓</span>
               <p className="text-gray-700">Shipping or delivery questions</p>
             </div>
             <div className="flex items-start">
-              <span className="text-orange-600 mr-3 text-xl">✓</span>
+              <span className="text-blue-600 mr-3 text-xl">✓</span>
               <p className="text-gray-700">Product details or compatibility</p>
             </div>
             <div className="flex items-start">
-              <span className="text-orange-600 mr-3 text-xl">✓</span>
+              <span className="text-blue-600 mr-3 text-xl">✓</span>
               <p className="text-gray-700">Policy information (Shipping, Returns, Warranty, Privacy)</p>
             </div>
           </div>

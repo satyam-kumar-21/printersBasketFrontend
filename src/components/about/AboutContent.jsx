@@ -31,7 +31,7 @@ const AboutContent = () => {
             {/* Image Section */}
             <div className="order-1 lg:order-2">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-200 to-orange-100 rounded-3xl blur-2xl opacity-30"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-blue-100 rounded-3xl blur-2xl opacity-30"></div>
                 <img
                   src={aboutImage}
                   alt="About Prints Basket"
@@ -45,10 +45,10 @@ const AboutContent = () => {
         {/* Mission & Vision - Two Column */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {/* Mission */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-orange-500 hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-blue-500 hover:shadow-xl transition-shadow">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-3">
-                <Zap className="w-6 h-6 text-orange-600" />
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <Zap className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
             </div>
@@ -76,13 +76,13 @@ const AboutContent = () => {
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">
             What We Offer
           </h3>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-400 mx-auto rounded-full mb-12"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full mb-12"></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Curated Products */}
             <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className="w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-7 h-7 text-orange-600" />
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-4">
+                <CheckCircle2 className="w-7 h-7 text-blue-600" />
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-3">
                 A Curated Product Range
@@ -138,7 +138,7 @@ const AboutContent = () => {
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">
             Why Customers Choose Prints Basket
           </h3>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-400 mx-auto rounded-full mb-12"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full mb-12"></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
@@ -187,7 +187,7 @@ const AboutContent = () => {
         </div>
 
         {/* Microsoft Ads Compliance */}
-        <div className="mb-20 bg-gradient-to-r from-amber-50 via-amber-50 to-orange-50 rounded-2xl p-10 border-2 border-amber-200">
+        <div className="mb-20 bg-gradient-to-r from-amber-50 via-amber-50 to-blue-50 rounded-2xl p-10 border-2 border-amber-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
             Our Commitment to Compliance
           </h3>
@@ -198,23 +198,23 @@ const AboutContent = () => {
             </p>
             <ul className="space-y-3">
               <li className="flex gap-3 text-lg">
-                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
                 <span>We do not claim special pricing, affiliation, or guaranteed performance unless verifiable</span>
               </li>
               <li className="flex gap-3 text-lg">
-                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
                 <span>We clearly identify ourselves as an independent retailer</span>
               </li>
               <li className="flex gap-3 text-lg">
-                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
                 <span>All product descriptions are accurate and based on manufacturer-provided information</span>
               </li>
               <li className="flex gap-3 text-lg">
-                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
                 <span>No services are offered beyond what is explicitly stated (no repair, setup, or troubleshooting)</span>
               </li>
               <li className="flex gap-3 text-lg">
-                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
                 <span>Customer support is limited to product and order-related inquiries only</span>
               </li>
             </ul>
@@ -222,7 +222,7 @@ const AboutContent = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-500 rounded-2xl shadow-xl p-12 text-center text-white">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl shadow-xl p-12 text-center text-white">
           <h3 className="text-3xl font-bold mb-4">
             Ready to Find Your Perfect Printer?
           </h3>
@@ -231,7 +231,7 @@ const AboutContent = () => {
           </p>
           <Link
             to="/shop"
-            className="inline-block bg-white text-orange-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Start Shopping
           </Link>

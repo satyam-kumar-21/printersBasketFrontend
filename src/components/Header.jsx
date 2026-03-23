@@ -76,7 +76,7 @@ const Header = () => {
 
             <button
               onClick={handleSearchClick}
-              className="hover:text-orange-500 transition-colors"
+              className="hover:text-blue-500 transition-colors"
               title="Search products"
             >
               <Search size={22} />
@@ -88,7 +88,7 @@ const Header = () => {
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center gap-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-sm uppercase">
+                  <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm uppercase">
                     {userInfo.firstName?.charAt(0) || userInfo.name?.charAt(0)}
                   </div>
                   <span className="hidden sm:block text-sm font-medium text-gray-700">{userInfo.firstName || userInfo.name}</span>
@@ -103,7 +103,7 @@ const Header = () => {
                     {userInfo.isAdmin ? (
                       <Link
                         to="/admin/dashboard"
-                        className="block px-4 py-2 text-sm text-orange-600 font-bold hover:bg-orange-50 transition-colors"
+                        className="block px-4 py-2 text-sm text-blue-600 font-bold hover:bg-blue-50 transition-colors"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
                         Admin Dashboard
@@ -133,7 +133,7 @@ const Header = () => {
             <div className="relative cursor-pointer">
               <NavLink to="/cart"><ShoppingCart size={22} /></NavLink>
               {cartItems.length > 0 && (
-                <span className="absolute -top-2 -right-2 text-[10px] bg-orange-500 text-white px-1.5 rounded-full font-bold">
+                <span className="absolute -top-2 -right-2 text-[10px] bg-blue-500 text-white px-1.5 rounded-full font-bold">
                   {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                 </span>
               )}
@@ -159,17 +159,17 @@ const Header = () => {
             />
             
             <nav className="flex flex-col gap-4 mt-8 flex-1">
-              <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-500">Home</NavLink>
-              <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-500">About Us</NavLink>
-              <NavLink to="/shop" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-500">Shop</NavLink>
-              <NavLink to="/contact-us" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-orange-500">Contact Us</NavLink>
+              <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-blue-500">Home</NavLink>
+              <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-blue-500">About Us</NavLink>
+              <NavLink to="/shop" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-blue-500">Shop</NavLink>
+              <NavLink to="/contact-us" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-blue-500">Contact Us</NavLink>
             </nav>
 
             {/* Mobile Profile Section */}
             {userInfo ? (
               <div className="mt-auto pt-6 border-t border-gray-200">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-sm uppercase">
+                  <div className="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm uppercase">
                     {userInfo.firstName?.charAt(0) || userInfo.name?.charAt(0)}
                   </div>
                   <div>
@@ -182,7 +182,7 @@ const Header = () => {
                     <Link
                       to="/admin/dashboard"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block w-full px-3 py-2 text-sm text-orange-600 font-bold hover:bg-orange-50 rounded transition-colors"
+                      className="block w-full px-3 py-2 text-sm text-blue-600 font-bold hover:bg-blue-50 rounded transition-colors"
                     >
                       Admin Dashboard
                     </Link>
@@ -213,7 +213,7 @@ const Header = () => {
                     setAuthOpen(true);
                     setMobileMenuOpen(false);
                   }}
-                  className="w-full px-3 py-2 bg-orange-500 text-white rounded font-medium hover:bg-orange-600 transition-colors"
+                  className="w-full px-3 py-2 bg-blue-500 text-white rounded font-medium hover:bg-blue-600 transition-colors"
                 >
                   Login / Register
                 </button>
@@ -255,12 +255,12 @@ const Header = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for printers, ink, toner..."
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
                 autoFocus
               />
               <button
                 type="submit"
-                className="bg-gradient-to-r from-orange-600 to-blue-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all font-semibold flex items-center gap-2"
+                className="bg-gradient-to-r from-blue-600 to-blue-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all font-semibold flex items-center gap-2"
               >
                 <Search size={20} />
                 <span className="hidden sm:inline">Search</span>
@@ -279,7 +279,7 @@ const Header = () => {
                       navigate(`/shop?search=${encodeURIComponent(term)}`);
                       setIsSearchOpen(false);
                     }}
-                    className="px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-700 text-sm font-medium hover:border-orange-500 hover:bg-orange-50 hover:text-orange-600 transition-all duration-200"
+                    className="px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-700 text-sm font-medium hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
                   >
                     {term}
                   </button>

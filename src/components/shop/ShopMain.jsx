@@ -158,16 +158,16 @@ const ShopMain = () => {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto md:px-4 px-2 py-12 text-center">
           <p className="text-gray-600 mb-2">
-            <Link to="/" className="text-orange-600 hover:text-orange-700 font-medium">
+            <Link to="/" className="text-blue-600 hover:text-blue-700 font-medium">
               Home
             </Link>
             {' / '}
             <span className="text-gray-800 font-medium">Shop</span>
           </p>
-          <h1 className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600 mb-4">
+          <h1 className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-4">
             Shop
           </h1>
-          <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 mx-auto"></div>
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto"></div>
         </div>
       </div>
 
@@ -183,11 +183,11 @@ const ShopMain = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search..."
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
                 type="submit"
-                className="bg-gradient-to-r from-orange-600 to-blue-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition"
+                className="bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition"
               >
                 <Search size={18} />
               </button>
@@ -219,7 +219,7 @@ const ShopMain = () => {
                 setSortBy(e.target.value);
                 setCurrentPage(1);
               }}
-              className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 font-medium text-gray-700 cursor-pointer shadow-md hover:shadow-md transition whitespace-nowrap"
+              className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium text-gray-700 cursor-pointer shadow-md hover:shadow-md transition whitespace-nowrap"
             >
               <option value="">Sort by latest</option>
               <option value="lowToHigh">Price: Low to High</option>
@@ -240,11 +240,11 @@ const ShopMain = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Search..."
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <button
                   type="submit"
-                  className="ml-2 bg-gradient-to-r from-orange-600 to-blue-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition"
+                  className="ml-2 bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition"
                 >
                   <Search size={18} />
                 </button>
@@ -268,7 +268,7 @@ const ShopMain = () => {
                 <ChevronDown size={18} />
               </h3>
               <div className="space-y-2">
-                <label className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                   <input
                     type="radio"
                     name="brand"
@@ -278,14 +278,14 @@ const ShopMain = () => {
                       setSelectedBrand(e.target.value);
                       setCurrentPage(1);
                     }}
-                    className="w-4 h-4 text-orange-600"
+                    className="w-4 h-4 text-blue-600"
                   />
                   <span className="text-sm text-gray-700">All Brands</span>
                 </label>
                 {brands.map((brand) => (
                   <label
                     key={brand}
-                    className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition"
+                    className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition"
                   >
                     <input
                       type="radio"
@@ -296,7 +296,7 @@ const ShopMain = () => {
                         setSelectedBrand(e.target.value);
                         setCurrentPage(1);
                       }}
-                      className="w-4 h-4 text-orange-600"
+                      className="w-4 h-4 text-blue-600"
                     />
                     <span className="text-sm text-gray-700">{brand}</span>
                   </label>
@@ -311,7 +311,7 @@ const ShopMain = () => {
                 <ChevronDown size={18} />
               </h3>
               <div className="space-y-2">
-                <label className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                   <input
                     type="radio"
                     name="category"
@@ -321,12 +321,12 @@ const ShopMain = () => {
                       setSelectedCategory(e.target.value);
                       setCurrentPage(1);
                     }}
-                    className="w-4 h-4 text-orange-600"
+                    className="w-4 h-4 text-blue-600"
                   />
                   <span className="text-sm text-gray-700">All Categories</span>
                 </label>
                 {dbCategories.map((cat) => (
-                  <label key={cat} className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                  <label key={cat} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                     <input
                       type="radio"
                       name="category"
@@ -336,7 +336,7 @@ const ShopMain = () => {
                         setSelectedCategory(e.target.value);
                         setCurrentPage(1);
                       }}
-                      className="w-4 h-4 text-orange-600"
+                      className="w-4 h-4 text-blue-600"
                     />
                     <span className="text-sm text-gray-700">{cat}</span>
                   </label>
@@ -348,7 +348,7 @@ const ShopMain = () => {
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
               <h3 className="font-bold text-gray-900 mb-4">Printer Type</h3>
               <div className="space-y-2">
-                <label className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                   <input
                     type="radio"
                     name="technology"
@@ -358,14 +358,14 @@ const ShopMain = () => {
                       setSelectedTechnology(e.target.value);
                       setCurrentPage(1);
                     }}
-                    className="w-4 h-4 text-orange-600"
+                    className="w-4 h-4 text-blue-600"
                   />
                   <span className="text-sm text-gray-700">All Types</span>
                 </label>
                 {technologies.map((tech) => (
                   <label
                     key={tech}
-                    className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition"
+                    className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition"
                   >
                     <input
                       type="radio"
@@ -376,7 +376,7 @@ const ShopMain = () => {
                         setSelectedTechnology(e.target.value);
                         setCurrentPage(1);
                       }}
-                      className="w-4 h-4 text-orange-600"
+                      className="w-4 h-4 text-blue-600"
                     />
                     <span className="text-sm text-gray-700">{tech === 'Laser (B/W)' ? 'Laser Printers (B/W)' : tech + ' Printers'}</span>
                   </label>
@@ -391,13 +391,13 @@ const ShopMain = () => {
                 {usageCategories.map((category) => (
                   <label
                     key={category.value}
-                    className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition"
+                    className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition"
                   >
                     <input
                       type="checkbox"
                       checked={selectedUsageCategory.includes(category.value)}
                       onChange={() => handleUsageCategoryChange(category.value)}
-                      className="w-4 h-4 text-orange-600 rounded"
+                      className="w-4 h-4 text-blue-600 rounded"
                     />
                     <span className="text-sm text-gray-700">{category.label}</span>
                   </label>
@@ -424,9 +424,9 @@ const ShopMain = () => {
                       const value = Math.min(parseInt(e.target.value), priceRange[1]);
                       setPriceRange([value, priceRange[1]]);
                     }}
-                    className="w-full h-2 bg-gradient-to-r from-orange-300 to-blue-300 rounded-lg appearance-none cursor-pointer"
+                    className="w-full h-2 bg-gradient-to-r from-blue-300 to-blue-300 rounded-lg appearance-none cursor-pointer"
                     style={{
-                      background: `linear-gradient(to right, #ea580c 0%, #ea580c ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 100%)`
+                      background: `linear-gradient(to right, #2364eb 0%, #2364eb ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 100%)`
                     }}
                   />
                   <input
@@ -438,9 +438,9 @@ const ShopMain = () => {
                       const value = Math.max(parseInt(e.target.value), priceRange[0]);
                       setPriceRange([priceRange[0], value]);
                     }}
-                    className="w-full h-2 bg-gradient-to-r from-orange-300 to-blue-300 rounded-lg appearance-none cursor-pointer mt-2"
+                    className="w-full h-2 bg-gradient-to-r from-blue-300 to-blue-300 rounded-lg appearance-none cursor-pointer mt-2"
                     style={{
-                      background: `linear-gradient(to right, #ea580c 0%, #ea580c ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db 100%)`
+                      background: `linear-gradient(to right, #2364eb 0%, #2364eb ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db 100%)`
                     }}
                   />
                 </div>
@@ -467,26 +467,26 @@ const ShopMain = () => {
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
               <h3 className="font-bold text-gray-900 mb-4">Filter by Rating</h3>
               <div className="space-y-3">
-                <label className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                   <input
                     type="radio"
                     name="rating"
                     value="0"
                     checked={selectedRating === 0}
                     onChange={() => setSelectedRating(0)}
-                    className="w-4 h-4 text-orange-600"
+                    className="w-4 h-4 text-blue-600"
                   />
                   <span className="text-sm text-gray-700">All Ratings</span>
                 </label>
                 {ratings.map((star) => (
-                  <label key={star} className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                  <label key={star} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                     <input
                       type="radio"
                       name="rating"
                       value={star}
                       checked={selectedRating === star}
                       onChange={() => setSelectedRating(star)}
-                      className="w-4 h-4 text-orange-600"
+                      className="w-4 h-4 text-blue-600"
                     />
                     <div className="flex items-center gap-1">
                       {Array.from({ length: 5 }).map((_, i) => (
@@ -532,7 +532,7 @@ const ShopMain = () => {
                       setSortBy(e.target.value);
                       setCurrentPage(1);
                     }}
-                    className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white font-medium text-gray-700 cursor-pointer"
+                    className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white font-medium text-gray-700 cursor-pointer"
                   >
                     <option value="">Sort by latest</option>
                     <option value="lowToHigh">Price: Low to High</option>
@@ -546,7 +546,7 @@ const ShopMain = () => {
             {loading && (
               <div className="flex items-center justify-center py-32">
                 <div className="text-center">
-                  <Loader2 className="animate-spin text-orange-600 mx-auto mb-4" size={48} />
+                  <Loader2 className="animate-spin text-blue-600 mx-auto mb-4" size={48} />
                   <p className="text-gray-600 font-semibold">Loading products...</p>
                 </div>
               </div>
@@ -583,7 +583,7 @@ const ShopMain = () => {
 
                       {/* Sale Badge */}
                       {product.oldPrice && product.oldPrice > product.price && (
-                        <div className="absolute top-3 left-3 bg-gradient-to-r from-orange-600 to-red-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
+                        <div className="absolute top-3 left-3 bg-gradient-to-r from-blue-600 to-red-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
                           Sale
                         </div>
                       )}
@@ -591,7 +591,7 @@ const ShopMain = () => {
 
                     {/* Product Info */}
                     <div className="p-4">
-                      <h3 className="font-bold text-gray-900 text-sm mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
+                      <h3 className="font-bold text-gray-900 text-sm mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
                         {product.title}
                       </h3>
 
@@ -610,7 +610,7 @@ const ShopMain = () => {
 
                       {/* Price */}
                       <div className="flex items-center justify-between">
-                        <span className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600">
+                        <span className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
                           ${product.price?.toFixed(2) || '0.00'}
                         </span>
                         {product.oldPrice && product.oldPrice > product.price && (
@@ -637,7 +637,7 @@ const ShopMain = () => {
                 <p className="text-gray-600 mb-6">Try adjusting your filters to find what you're looking for.</p>
                 <button
                   onClick={clearFilters}
-                  className="bg-gradient-to-r from-orange-600 to-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:shadow-lg transition"
+                  className="bg-gradient-to-r from-blue-600 to-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:shadow-lg transition"
                 >
                   Clear Filters
                 </button>
@@ -664,7 +664,7 @@ const ShopMain = () => {
                         onClick={() => setCurrentPage(pageNum)}
                         className={`px-4 py-2 rounded-lg font-semibold transition ${
                           currentPage === pageNum
-                            ? 'bg-gradient-to-r from-orange-600 to-blue-600 text-white shadow-md'
+                            ? 'bg-gradient-to-r from-blue-600 to-blue-600 text-white shadow-md'
                             : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
                         }`}
                       >
@@ -680,7 +680,7 @@ const ShopMain = () => {
                 <button
                   onClick={() => setCurrentPage(Math.min(pages, currentPage + 1))}
                   disabled={currentPage === pages}
-                  className="px-6 py-3 bg-gradient-to-r from-orange-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition"
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition"
                 >
                   Next
                 </button>
@@ -733,7 +733,7 @@ const ShopMain = () => {
                     <ChevronDown size={18} />
                   </h3>
                   <div className="space-y-2">
-                    <label className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                    <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                       <input
                         type="radio"
                         name="brand"
@@ -743,14 +743,14 @@ const ShopMain = () => {
                           setSelectedBrand(e.target.value);
                           setCurrentPage(1);
                         }}
-                        className="w-4 h-4 text-orange-600"
+                        className="w-4 h-4 text-blue-600"
                       />
                       <span className="text-sm text-gray-700">All Brands</span>
                     </label>
                     {brands.map((brand) => (
                       <label
                         key={brand}
-                        className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition"
+                        className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition"
                       >
                         <input
                           type="radio"
@@ -761,7 +761,7 @@ const ShopMain = () => {
                             setSelectedBrand(e.target.value);
                             setCurrentPage(1);
                           }}
-                          className="w-4 h-4 text-orange-600"
+                          className="w-4 h-4 text-blue-600"
                         />
                         <span className="text-sm text-gray-700">{brand}</span>
                       </label>
@@ -776,7 +776,7 @@ const ShopMain = () => {
                     <ChevronDown size={18} />
                   </h3>
                   <div className="space-y-2">
-                    <label className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                    <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                       <input
                         type="radio"
                         name="category"
@@ -786,12 +786,12 @@ const ShopMain = () => {
                           setSelectedCategory(e.target.value);
                           setCurrentPage(1);
                         }}
-                        className="w-4 h-4 text-orange-600"
+                        className="w-4 h-4 text-blue-600"
                       />
                       <span className="text-sm text-gray-700">All Categories</span>
                     </label>
                     {dbCategories.map((cat) => (
-                      <label key={cat} className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                      <label key={cat} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                         <input
                           type="radio"
                           name="category"
@@ -801,7 +801,7 @@ const ShopMain = () => {
                             setSelectedCategory(e.target.value);
                             setCurrentPage(1);
                           }}
-                          className="w-4 h-4 text-orange-600"
+                          className="w-4 h-4 text-blue-600"
                         />
                         <span className="text-sm text-gray-700">{cat}</span>
                       </label>
@@ -813,7 +813,7 @@ const ShopMain = () => {
                 <div>
                   <h3 className="font-bold text-gray-900 mb-3">Printer Type</h3>
                   <div className="space-y-2">
-                    <label className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                    <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                       <input
                         type="radio"
                         name="technology"
@@ -823,14 +823,14 @@ const ShopMain = () => {
                           setSelectedTechnology(e.target.value);
                           setCurrentPage(1);
                         }}
-                        className="w-4 h-4 text-orange-600"
+                        className="w-4 h-4 text-blue-600"
                       />
                       <span className="text-sm text-gray-700">All Types</span>
                     </label>
                     {technologies.map((tech) => (
                       <label
                         key={tech}
-                        className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition"
+                        className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition"
                       >
                         <input
                           type="radio"
@@ -841,7 +841,7 @@ const ShopMain = () => {
                             setSelectedTechnology(e.target.value);
                             setCurrentPage(1);
                           }}
-                          className="w-4 h-4 text-orange-600"
+                          className="w-4 h-4 text-blue-600"
                         />
                         <span className="text-sm text-gray-700">{tech === 'Laser (B/W)' ? 'Laser Printers (B/W)' : tech + ' Printers'}</span>
                       </label>
@@ -856,13 +856,13 @@ const ShopMain = () => {
                     {usageCategories.map((category) => (
                       <label
                         key={category.value}
-                        className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition"
+                        className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition"
                       >
                         <input
                           type="checkbox"
                           checked={selectedUsageCategory.includes(category.value)}
                           onChange={() => handleUsageCategoryChange(category.value)}
-                          className="w-4 h-4 text-orange-600 rounded"
+                          className="w-4 h-4 text-blue-600 rounded"
                         />
                         <span className="text-sm text-gray-700">{category.label}</span>
                       </label>
@@ -888,9 +888,9 @@ const ShopMain = () => {
                           const value = Math.min(parseInt(e.target.value), priceRange[1]);
                           setPriceRange([value, priceRange[1]]);
                         }}
-                        className="w-full h-2 bg-gradient-to-r from-orange-300 to-blue-300 rounded-lg appearance-none cursor-pointer"
+                        className="w-full h-2 bg-gradient-to-r from-blue-300 to-blue-300 rounded-lg appearance-none cursor-pointer"
                         style={{
-                          background: `linear-gradient(to right, #ea580c 0%, #ea580c ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 100%)`
+                          background: `linear-gradient(to right, #2364eb 0%, #2364eb ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 100%)`
                         }}
                       />
                       <input
@@ -902,9 +902,9 @@ const ShopMain = () => {
                           const value = Math.max(parseInt(e.target.value), priceRange[0]);
                           setPriceRange([priceRange[0], value]);
                         }}
-                        className="w-full h-2 bg-gradient-to-r from-orange-300 to-blue-300 rounded-lg appearance-none cursor-pointer mt-2"
+                        className="w-full h-2 bg-gradient-to-r from-blue-300 to-blue-300 rounded-lg appearance-none cursor-pointer mt-2"
                         style={{
-                          background: `linear-gradient(to right, #ea580c 0%, #ea580c ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db 100%)`
+                          background: `linear-gradient(to right, #2364eb 0%, #2364eb ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db 100%)`
                         }}
                       />
                     </div>
@@ -915,26 +915,26 @@ const ShopMain = () => {
                 <div>
                   <h3 className="font-bold text-gray-900 mb-3">Filter by Rating</h3>
                   <div className="space-y-3">
-                    <label className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                    <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                       <input
                         type="radio"
                         name="rating"
                         value="0"
                         checked={selectedRating === 0}
                         onChange={() => setSelectedRating(0)}
-                        className="w-4 h-4 text-orange-600"
+                        className="w-4 h-4 text-blue-600"
                       />
                       <span className="text-sm text-gray-700">All Ratings</span>
                     </label>
                     {ratings.map((star) => (
-                      <label key={star} className="flex items-center gap-3 cursor-pointer hover:text-orange-600 transition">
+                      <label key={star} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                         <input
                           type="radio"
                           name="rating"
                           value={star}
                           checked={selectedRating === star}
                           onChange={() => setSelectedRating(star)}
-                          className="w-4 h-4 text-orange-600"
+                          className="w-4 h-4 text-blue-600"
                         />
                         <div className="flex items-center gap-1">
                           {Array.from({ length: 5 }).map((_, i) => (
@@ -957,7 +957,7 @@ const ShopMain = () => {
                 {/* Close Button */}
                 <button
                   onClick={() => setIsFilterDrawerOpen(false)}
-                  className="w-full bg-gradient-to-r from-orange-600 to-blue-600 text-white py-3 rounded-lg font-bold hover:shadow-lg transition mt-6"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-600 text-white py-3 rounded-lg font-bold hover:shadow-lg transition mt-6"
                 >
                   Apply Filters
                 </button>

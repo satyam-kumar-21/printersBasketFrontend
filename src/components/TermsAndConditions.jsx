@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 
 const TermsAndConditions = () => {
   return (
-    <section className="w-full bg-gradient-to-b from-orange-50 via-white to-blue-50 min-h-screen py-16">
+    <section className="w-full bg-gradient-to-b from-blue-50 via-white to-blue-50 min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb Navigation */}
         <div className="flex justify-center items-center gap-2 text-sm text-gray-600">
-          <Link to="/" className="hover:text-orange-600 transition">Home</Link>
+          <Link to="/" className="hover:text-blue-600 transition">Home</Link>
           <span>/</span>
           <span className="text-gray-900 font-medium">Terms & Conditions</span>
         </div>
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
             Terms & Conditions
           </h1>
-          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-500 rounded-full mx-auto"></div>
+          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full mx-auto"></div>
           <p className="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
             Last Updated: January 21, 2026
           </p>
@@ -27,7 +27,7 @@ const TermsAndConditions = () => {
         <div className="space-y-10">
 
           {/* Introduction */}
-          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-orange-500">
+          <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-blue-500">
             <p className="text-gray-700 leading-relaxed text-lg">
               Please read these terms carefully before using our services.
             </p>
@@ -119,7 +119,7 @@ const TermsAndConditions = () => {
             <p className="text-gray-600 leading-relaxed mb-4">
               By placing an order with Prints Basket, you agree to the following:
             </p>
-            <div className="bg-gradient-to-r from-orange-50 to-blue-50 rounded-lg p-4 border border-gray-200">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-50 rounded-lg p-4 border border-gray-200">
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>All orders are subject to acceptance and product availability</li>
                 <li>We may cancel or refuse an order for any reason, including suspected fraud or incorrect information</li>
@@ -239,12 +239,12 @@ const TermsAndConditions = () => {
           </div>
 
           {/* 12. Contact Us */}
-          <div className="space-y-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-6 text-white">
+          <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
             <h2 className="text-2xl font-semibold">12. Contact Us</h2>
             <p className="leading-relaxed">
               If you have questions about these Terms & Conditions, please contact:
             </p>
-            <div className="space-y-2 text-orange-50">
+            <div className="space-y-2 text-blue-50">
               <p>📧 <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
               <p>📍 <strong>Address:</strong> 95 Broadacre Dr, Kitchener, ON N2R 0S5, Canada</p>
             </div>

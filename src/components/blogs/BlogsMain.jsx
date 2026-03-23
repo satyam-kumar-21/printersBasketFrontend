@@ -71,7 +71,7 @@ const BlogsMain = () => {
         <div className="w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen pt-24 pb-12">
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200/10 to-transparent rounded-full blur-3xl"></div>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
             </div>
 
@@ -79,10 +79,10 @@ const BlogsMain = () => {
 
                 {/* Header */}
                 <div className="text-center mb-12 md:mb-16">
-                    <h1 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mb-4 uppercase tracking-tight">
+                    <h1 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-4 uppercase tracking-tight">
                         Latest Insights & Guides
                     </h1>
-                    <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full mx-auto my-4"></div>
+                    <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto my-4"></div>
                     <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
                         Expert advice, buying guides, and tips to help you get the most out of your printing experience.
                     </p>
@@ -91,7 +91,7 @@ const BlogsMain = () => {
                 {/* Blog Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {blogs.map((blog) => (
-                        <article key={blog.id} className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl overflow-hidden shadow-lg shadow-blue-100/30 border-2 border-slate-100 hover:shadow-2xl hover:border-orange-200 transition-all duration-300 group backdrop-blur-sm">
+                        <article key={blog.id} className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl overflow-hidden shadow-lg shadow-blue-100/30 border-2 border-slate-100 hover:shadow-2xl hover:border-blue-200 transition-all duration-300 group backdrop-blur-sm">
                             {/* Image */}
                             <div className="relative h-56 md:h-64 overflow-hidden">
                                 <Link to={`/blogs/${blog.slug}`}>
@@ -100,7 +100,7 @@ const BlogsMain = () => {
                                         alt={blog.title}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                     />
-                                    <div className="absolute top-3 left-4 bg-gradient-to-r from-orange-600 to-blue-600 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-widest shadow-md">
+                                    <div className="absolute top-3 left-4 bg-gradient-to-r from-blue-600 to-blue-600 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-widest shadow-md">
                                         {blog.category}
                                     </div>
                                 </Link>
@@ -118,7 +118,7 @@ const BlogsMain = () => {
                                 </div>
 
                                 <Link to={`/blogs/${blog.slug}`}>
-                                    <h2 className="text-lg md:text-xl font-black text-slate-900 mb-3 group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent transition-all line-clamp-2">
+                                    <h2 className="text-lg md:text-xl font-black text-slate-900 mb-3 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent transition-all line-clamp-2">
                                         {blog.title}
                                     </h2>
                                 </Link>
@@ -129,7 +129,7 @@ const BlogsMain = () => {
 
                                 <Link
                                     to={`/blogs/${blog.slug}`}
-                                    className="inline-flex items-center gap-2 text-sm font-bold text-orange-600 hover:text-orange-700 uppercase tracking-widest group-hover:gap-4 transition-all"
+                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 uppercase tracking-widest group-hover:gap-4 transition-all"
                                 >
                                     Read Article <ArrowRight size={16} />
                                 </Link>

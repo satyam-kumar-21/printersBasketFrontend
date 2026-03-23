@@ -6,20 +6,20 @@ const TrustedRetailers2026 = () => {
     return (
         <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen md:pt-24 pt-5 md:pb-12 pb-5 relative overflow-hidden">
             {/* Fixed blur patterns */}
-            <div className="fixed top-0 right-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl -z-10"></div>
+            <div className="fixed top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             <div className="fixed bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 {/* Back Link */}
                 <div className="mb-8">
-                    <Link to="/blogs" className="inline-flex items-center gap-2 text-sm font-bold text-orange-600 hover:text-orange-700 uppercase tracking-widest transition-colors">
+                    <Link to="/blogs" className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 uppercase tracking-widest transition-colors">
                         <ArrowLeft size={16} /> Back to Insights
                     </Link>
                 </div>
 
                 {/* Header */}
                 <header className="mb-12 text-center md:text-left">
-                    <div className="inline-block bg-gradient-to-r from-orange-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-orange-200/30">
+                    <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-blue-200/30">
                         Shopping Guide
                     </div>
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
@@ -28,15 +28,15 @@ const TrustedRetailers2026 = () => {
                     
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-slate-500 border-b border-slate-200 pb-8">
                         <div className="flex items-center gap-2">
-                            <Calendar size={16} className="text-orange-600" />
+                            <Calendar size={16} className="text-blue-600" />
                             <span>January 26, 2026</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Clock size={16} className="text-orange-600" />
+                            <Clock size={16} className="text-blue-600" />
                             <span>Updated: January 28, 2026</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <User size={16} className="text-orange-600" />
+                            <User size={16} className="text-blue-600" />
                             <span>By Smart ePrinting</span>
                         </div>
                     </div>
@@ -49,10 +49,10 @@ const TrustedRetailers2026 = () => {
                         In 2026, the market for printing supplies is flooded with options—some legitimate, some questionable. While it's tempting to buy from whoever offers the lowest price, purchasing from trusted retailers matters more than ever. Here's why, and how to identify genuine supplies.
                     </p>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">The Counterfeit Supply Problem</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">The Counterfeit Supply Problem</h2>
                     <p>Counterfeit ink and toner cartridges are a multi-million-dollar industry. According to industry reports, counterfeit supplies account for 10-15% of the global cartridge market.</p>
 
-                    <div className="bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-300 p-6 rounded-2xl my-8">
+                    <div className="bg-gradient-to-br from-red-50 to-blue-50 border-2 border-red-300 p-6 rounded-2xl my-8">
                         <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
                             <AlertCircle size={20} className="text-red-600" /> Risks of Counterfeit Cartridges
                         </h3>
@@ -66,10 +66,10 @@ const TrustedRetailers2026 = () => {
                         </ul>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">How to Spot Counterfeit Supplies</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">How to Spot Counterfeit Supplies</h2>
                     
                     <div className="space-y-4 my-8">
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h3 className="font-bold text-slate-900">Packaging Clues</h3>
                             <p className="text-sm text-slate-600 mt-2">Check for spelling errors, poor print quality, or blurry logos. Legitimate packaging is professional and precise. Compare against official photos on manufacturer sites.</p>
                         </div>
@@ -77,7 +77,7 @@ const TrustedRetailers2026 = () => {
                             <h3 className="font-bold text-slate-900">Price Red Flags</h3>
                             <p className="text-sm text-slate-600 mt-2">If the price is significantly lower than market average (often 30%+ cheaper), be suspicious. Legitimate retailers offer competitive but realistic pricing.</p>
                         </div>
-                        <div className="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 pl-6 py-4">
+                        <div className="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 pl-6 py-4">
                             <h3 className="font-bold text-slate-900">Serial Numbers</h3>
                             <p className="text-sm text-slate-600 mt-2">Most cartridges have security codes. Visit manufacturer's website to verify authenticity. If the site doesn't have a verification tool, that's a red flag.</p>
                         </div>
@@ -87,7 +87,7 @@ const TrustedRetailers2026 = () => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Benefits of Trusted Retailers</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Benefits of Trusted Retailers</h2>
                     
                     <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-300 p-6 rounded-2xl my-8">
                         <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
@@ -121,10 +121,10 @@ const TrustedRetailers2026 = () => {
                         </ul>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Alternative Supply Options Beyond Originals</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Alternative Supply Options Beyond Originals</h2>
                     
                     <div className="space-y-4 my-8">
-                        <div className="bg-gradient-to-br from-white to-orange-50/30 border-2 border-slate-100 p-6 rounded-2xl">
+                        <div className="bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 p-6 rounded-2xl">
                             <h3 className="text-lg font-bold text-slate-900 mb-3">Original/Genuine Cartridges</h3>
                             <p className="text-slate-600 text-sm mb-3">Direct from printer manufacturer (HP, Canon, Epson, Brother, etc.). Most expensive but guaranteed quality and compatibility.</p>
                             <p className="text-xs text-green-600 font-bold">✓ Best choice for professionals and businesses</p>
@@ -132,49 +132,49 @@ const TrustedRetailers2026 = () => {
                         <div className="bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 p-6 rounded-2xl">
                             <h3 className="text-lg font-bold text-slate-900 mb-3">Remanufactured Cartridges</h3>
                             <p className="text-slate-600 text-sm mb-3">Returned cartridges professionally refilled, cleaned, and tested. Usually 20-40% cheaper than originals. Good for budget-conscious users.</p>
-                            <p className="text-xs text-orange-600 font-bold">✓ Buy from certified remanufacturers only</p>
+                            <p className="text-xs text-blue-600 font-bold">✓ Buy from certified remanufacturers only</p>
                         </div>
-                        <div className="bg-gradient-to-br from-white to-orange-50/30 border-2 border-slate-100 p-6 rounded-2xl">
+                        <div className="bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 p-6 rounded-2xl">
                             <h3 className="text-lg font-bold text-slate-900 mb-3">Compatible (Third-Party) Supplies</h3>
                             <p className="text-slate-600 text-sm mb-3">Non-OEM but compatible cartridges. 30-50% savings. Quality varies widely—buy only from reputable third-party manufacturers.</p>
                             <p className="text-xs text-blue-600 font-bold">✓ Check reviews and warranty terms carefully</p>
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">How to Find Trusted Retailers</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">How to Find Trusted Retailers</h2>
                     
-                    <div className="bg-gradient-to-br from-orange-100 to-orange-50 border-2 border-orange-300 p-6 rounded-2xl">
+                    <div className="bg-gradient-to-br from-blue-100 to-blue-50 border-2 border-blue-300 p-6 rounded-2xl">
                         <ul className="space-y-3 text-slate-700">
                             <li className="flex gap-3 items-start">
-                                <span className="text-orange-600 font-bold">✓</span>
+                                <span className="text-blue-600 font-bold">✓</span>
                                 <div>
                                     <p className="font-bold">Official manufacturer websites</p>
                                     <p className="text-sm text-slate-600">HP.com, CanonUSA.com, etc. - Most reliable source</p>
                                 </div>
                             </li>
                             <li className="flex gap-3 items-start">
-                                <span className="text-orange-600 font-bold">✓</span>
+                                <span className="text-blue-600 font-bold">✓</span>
                                 <div>
                                     <p className="font-bold">Authorized retailers with verification badges</p>
                                     <p className="text-sm text-slate-600">Look for "Official Partner" or "Authorized Retailer" seals</p>
                                 </div>
                             </li>
                             <li className="flex gap-3 items-start">
-                                <span className="text-orange-600 font-bold">✓</span>
+                                <span className="text-blue-600 font-bold">✓</span>
                                 <div>
                                     <p className="font-bold">Major retailers with good reviews</p>
                                     <p className="text-sm text-slate-600">Amazon, Best Buy, Staples, local office supply stores</p>
                                 </div>
                             </li>
                             <li className="flex gap-3 items-start">
-                                <span className="text-orange-600 font-bold">✓</span>
+                                <span className="text-blue-600 font-bold">✓</span>
                                 <div>
                                     <p className="font-bold">Specialized printing supply stores</p>
                                     <p className="text-sm text-slate-600">Local or regional stores with established reputations</p>
                                 </div>
                             </li>
                             <li className="flex gap-3 items-start">
-                                <span className="text-orange-600 font-bold">✓</span>
+                                <span className="text-blue-600 font-bold">✓</span>
                                 <div>
                                     <p className="font-bold">Check customer reviews</p>
                                     <p className="text-sm text-slate-600">Look for consistent 4+ star ratings and verified purchases</p>
@@ -183,7 +183,7 @@ const TrustedRetailers2026 = () => {
                         </ul>
                     </div>
 
-                    <h2 className="text-2xl font-black bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Red Flags for Unreliable Retailers</h2>
+                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mt-12 mb-6 uppercase tracking-tighter">Red Flags for Unreliable Retailers</h2>
                     
                     <div className="space-y-3">
                         <div className="bg-red-50 border-l-4 border-red-500 pl-4 py-3 text-sm text-slate-700">
@@ -203,14 +203,14 @@ const TrustedRetailers2026 = () => {
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-orange-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
+                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
                         <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
                             Shop Smart, Print Better
                         </h2>
-                        <p className="text-orange-50 text-lg mb-8 max-w-2xl mx-auto">
+                        <p className="text-blue-50 text-lg mb-8 max-w-2xl mx-auto">
                             Protect your investment in genuine printing supplies. Shop with us and enjoy guaranteed authentic products, expert support, and total satisfaction.
                         </p>
-                        <Link to="/" className="inline-block bg-white text-orange-600 font-bold py-3 px-8 rounded-xl hover:bg-orange-50 transition-colors shadow-lg">
+                        <Link to="/" className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
                             Shop Genuine Supplies
                         </Link>
                     </div>
