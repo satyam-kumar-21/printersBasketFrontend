@@ -53,6 +53,7 @@ const HomeMain = () => {
             <Categories />
             {/* <WelcomeSection /> */}
             <Home />
+            
             <PrinterBanners />
             <Reviews />
             <WhyChooseUs />

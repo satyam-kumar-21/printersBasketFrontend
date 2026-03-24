@@ -28,6 +28,7 @@ const Checkout = () => {
     const [selectedRate, setSelectedRate] = useState(null);
     const [loading, setLoading] = useState(false);
     const [clover, setClover] = useState(null);
+    const [agreeToTerms, setAgreeToTerms] = useState(false);
 
     useEffect(() => {
         if (!userInfo || cartItems.length === 0) {
@@ -442,11 +443,26 @@ const Checkout = () => {
                                         <Lock size={10} />
                                         <span>Instant Payment Processing. No OTP required for supported cards.</span>
                                     </div>
+
+                                    {/* Terms & Conditions Checkbox */}
+                                    <div className="mt-6 p-4 bg-blue-50/50 border border-blue-200 rounded-xl space-y-3">
+                                        <label className="flex items-start gap-3 cursor-pointer group">
+                                            <input
+                                                type="checkbox"
+                                                checked={agreeToTerms}
+                                                onChange={(e) => setAgreeToTerms(e.target.checked)}
+                                                className="w-5 h-5 mt-0.5 accent-blue-600 cursor-pointer rounded border-slate-300 focus:ring-2 focus:ring-blue-500"
+                                            />
+                                            <span className="text-xs leading-relaxed text-slate-700 font-medium group-hover:text-slate-900">
+                                                By placing your order, you confirm that you have read and agree to our <a href="/terms-and-conditions" target="_blank" className="text-blue-600 hover:text-blue-700 underline font-semibold">Terms & Conditions</a> and understand how your personal information is collected and used as described in our <a href="/privacy-policy" target="_blank" className="text-blue-600 hover:text-blue-700 underline font-semibold">Privacy Policy</a>.
+                                            </span>
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <button
                                     onClick={initPayment}
-                                    disabled={loading}
+                                    disabled={loading || !agreeToTerms}
                                     className="w-full mt-6 bg-gradient-to-r from-blue-600 to-blue-600 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest hover:shadow-lg hover:shadow-blue-200/50 transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-700 hover:to-blue-700"
                                 >
                                     {loading ? <Loader2 className="animate-spin" size={18} /> : <>Pay Now <ShieldCheck size={18} /></>}

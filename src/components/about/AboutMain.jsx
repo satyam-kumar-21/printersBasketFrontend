@@ -1,12 +1,12 @@
 import React from "react";
 import AboutHero from "./AboutHero";
-import AboutContent from "./AboutContent";
+import AboutUs from "./AboutUs";
 
 const AboutMain = () => {
   return (
     <>
        <AboutHero/>
-       <AboutContent/>
+       <AboutUs/>
     </>
   );
 };
