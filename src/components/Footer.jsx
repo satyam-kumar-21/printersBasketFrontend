@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone } from "lucide-react";
 import logo from "../../public/logo-bgremove.png";
 
 const Footer = () => {
+// useEffect(() => {
+//     const script = document.createElement("script");
+//     script.src = "https://seal.godaddy.com/getSealBasic?sealID=fA5q8U4ngWQoJeQEXnOBnpptwPqM7bmoMSuTzJZg8anUXt6Iwh86nBMt5ys1";
+//     script.async = true;
+//     document.getElementById("siteseal").appendChild(script);
+
+//     return () => {
+//       if (script.parentNode) script.parentNode.removeChild(script);
+//     };
+//   }, []);
+
+
+useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://seal.godaddy.com/getSealBasic?sealID=3cUA1XaqHzZ1nqhWZ2f3ZtcXx4KUQ725FR4F4VIpr8rZBF6Wd5EZMgSqErsT";
+    script.async = true;
+    document.getElementById("siteseal").appendChild(script);
+
+    return () => {
+      if (script.parentNode) script.parentNode.removeChild(script);
+    };
+  }, []);
   return (
-    <footer className="bg-gradient-to-br from-black via-[#0b0b0b] to-[#3b1f00] text-white pt-16 pb-8">
+    <footer className="bg-gradient-to-br from-black via-[#0b0b0b] to-[#3b1f00] text-white pt-16 pb-8 w-full min-h-40">
 
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-10">
 
         {/* LOGO + DESC */}
-        <div>
+        <div className="h-full">
           <img
             src={logo}
             alt="Prints Basket"
-            className="h-12 mb-4  rounded-md p-1"
+            className="h-12 w-12 mb-4 rounded-md p-1 object-cover"
           />
 
-          <p className="text-gray-300 text-sm leading-relaxed">
+          <p className="text-gray-300 text-sm leading-relaxed line-clamp-6">
             Prints Basket is built with simplicity in mind. From browsing to checkout,
             we aim to make every step user-friendly, secure, and efficient—so you can shop
             with confidence and peace of mind. Whether you're upgrading your workspace or
@@ -26,9 +48,9 @@ const Footer = () => {
         </div>
 
         {/* POLICIES */}
-        <div>
-          <h3 className="font-semibold mb-4">Policies</h3>
-          <ul className="space-y-2 text-gray-300 text-sm">
+        <div className="h-full min-h-48">
+          <h3 className="font-semibold mb-4 text-base h-6">Policies</h3>
+          <ul className="space-y-2 text-gray-300 text-sm h-auto">
             <li><Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
             <li><Link to="/terms-and-conditions" className="hover:text-white transition">Terms & Conditions</Link></li>
             <li><Link to="/return-exchange-policy" className="hover:text-white transition">Return & Exchange</Link></li>
@@ -39,13 +61,13 @@ const Footer = () => {
         </div>
 
         {/* LINKS */}
-        <div>
-          <h3 className="font-semibold mb-4">Links</h3>
-          <ul className="space-y-2 text-gray-300 text-sm">
+        <div className="h-full min-h-48">
+          <h3 className="font-semibold mb-4 text-base h-6">Links</h3>
+          <ul className="space-y-2 text-gray-300 text-sm h-auto">
             <li><Link to="/shop" className="hover:text-white transition">Shop</Link></li>
             <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
             <li><Link to="/disclaimer" className="hover:text-white transition">Disclaimer</Link></li>
-             <li><Link to="/blogs" className="hover:text-white transition">Blogs</Link></li>
+            <li><Link to="/blogs" className="hover:text-white transition">Blogs</Link></li>
             {/* <li><Link to="/ccpa-privacy-policy" className="hover:text-white transition">CCPA Privacy</Link></li> */}
             <li><Link to="/faq" className="hover:text-white transition">FAQ</Link></li>
             <li><Link to="/track-order" className="hover:text-white transition">Track Your Order</Link></li>
@@ -55,10 +77,10 @@ const Footer = () => {
         </div>
 
         {/* CONTACT */}
-        <div>
-          <h3 className="font-semibold mb-4">Quick Contacts</h3>
+        <div className="h-full min-h-48">
+          <h3 className="font-semibold mb-4 text-base h-6">Quick Contacts</h3>
 
-          <div className="space-y-3 text-gray-300 text-sm">
+          <div className="space-y-3 text-gray-300 text-sm h-auto">
 
             <div className="flex items-start gap-2">
               <MapPin size={16} className="mt-1" />
@@ -76,16 +98,16 @@ const Footer = () => {
             </div>
 
             {/* SECURITY BADGE */}
-            <div className="mt-4 bg-white text-black rounded-md px-3 py-2 inline-flex items-center gap-2 shadow">
-              <span>🔒</span>
-              <div>
-                <p className="text-xs font-semibold">Site Encryption</p>
-                <p className="text-xs">Verified</p>
+            <div className="mt-4 bg-white text-black rounded-md px-4 py-3 inline-flex items-center gap-3 shadow-lg h-16 w-44">
+              <span className="text-2xl flex-shrink-0">🔒</span>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-bold truncate leading-tight">Site Encryption</p>
+                <p className="text-sm font-bold">Verified</p>
               </div>
             </div>
 
-            <p className="text-xs text-gray-400">
-              Verified Date 03/19/2026
+            <p className="text-xs text-white font-semibold">
+              Verified Date 03/24/2026
             </p>
 
           </div>
@@ -94,11 +116,16 @@ const Footer = () => {
       </div>
 
       {/* BOTTOM */}
-      <div className="max-w-7xl mx-auto px-4 mt-12 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+      <div className="max-w-7xl mx-auto px-4 mt-12 py-4 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm gap-4 min-h-16">
 
-        <p>PrintsBasket © 2026. All rights reserved.</p>
+        <p className="h-6 whitespace-nowrap">PrintsBasket © 2026. All rights reserved.</p>
 
-        <div className="flex gap-4 mt-3 md:mt-0">
+        {/* GoDaddy Security Seal Container */}
+        <div className="bg-white p-2 rounded-xl flex justify-center items-center">
+          <div id="siteseal" className="text-white"></div>
+        </div>
+
+        <div className="flex gap-4 mt-3 md:mt-0 whitespace-nowrap">
           <Link to="/do-not-sell" className="hover:text-white transition">
             Do Not Sell
           </Link>
