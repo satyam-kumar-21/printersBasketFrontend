@@ -244,7 +244,7 @@ const Checkout = () => {
                     <div className="lg:col-span-3">
                         {step === 1 ? (
                             <form onSubmit={submitShippingHandler} className="bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm">
-                                <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-8 flex items-center gap-3 uppercase tracking-tighter">
+                                <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-8 flex flex-col sm:flex-row items-center gap-3 uppercase tracking-tighter text-center sm:text-left">
                                     <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-100 rounded-full flex items-center justify-center text-blue-600">
                                         <Truck size={20} />
                                     </div>
@@ -374,7 +374,7 @@ const Checkout = () => {
                             <div className="bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
                                 {/* Payment Header */}
                                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
                                         <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-100 rounded-full flex items-center justify-center text-blue-600">
                                             <CreditCard size={20} />
                                         </div>

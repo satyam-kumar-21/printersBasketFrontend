@@ -46,7 +46,7 @@ const Categories = () => {
 
         {/* HEADER */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-800 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-semibold text-gray-800 tracking-tight text-center">
             Explore Printer Categories
           </h2>
 

@@ -5,16 +5,14 @@ const Reviews = () => {
   const [activeDot, setActiveDot] = useState(0);
 
   const reviews = [
-    { name: "Sandra K.", location: "Miami, FL", title: "Good Pricing", quote: "The prices were fair, and checkout was easy. My order arrived within the estimated delivery window.", rating: 5 },
-    { name: "Lucas W.", location: "Calgary, AB", title: "Great Experience", quote: "I bought a multifunction printer, and the product was exactly as listed. Delivery was on time.", rating: 5 },
-    { name: "Emily R.", location: "Toronto, ON", title: "Smooth Shopping", quote: "I ordered a home printer from Prints Basket and the entire process was simple and quick.", rating: 5 },
-    { name: "Jonathan D.", location: "New York, NY", title: "Reliable Service", quote: "My office printer died and I needed a replacement fast. These guys delivered exactly.", rating: 5 },
-    { name: "Isabella R.", location: "Leeds, UK", title: "Value for Money", quote: "I have already saved a significant amount on refilling ink cartridges. Very happy.", rating: 5 },
-    { name: "Madison W.", location: "Austin, TX", title: "Vibrant Prints", quote: "Surprisingly, the photo prints were bright and vibrant. For the price point, I wasn't expecting this.", rating: 5 },
-    { name: "Harry W.", location: "Birmingham, UK", title: "Small Office Hero", quote: "This is an easy-to-use printer that can handle the workload without becoming overwhelmed.", rating: 5 },
-    { name: "Sophia L.", location: "Seattle, WA", title: "Fast Shipping", quote: "I was worried about shipping a heavy printer, but it was packed perfectly. Arrived early.", rating: 5 },
-    { name: "Mark T.", location: "London, UK", title: "Excellent Support", quote: "Had a small question about the driver and the support team responded within minutes.", rating: 5 },
-    { name: "Chloe M.", location: "Sydney, AU", title: "Compact and Quiet", quote: "The printer is much quieter than my old one and fits perfectly on my small desk.", rating: 5 },
+    { name: "Williams Roney", location: "Denver, CO", title: "Straightforward Process", quote: "The ordering process was straightforward, and the product arrived within the expected delivery timeframe.", rating: 5 },
+    { name: "Mary Serdachny", location: "Vancouver, BC", title: "Clear Information", quote: "Product information was clearly presented, which made it easier to choose the right printer.", rating: 5 },
+    { name: "Judith Diamond", location: "Boston, MA", title: "Secure Packaging", quote: "The packaging was secure, and the item was delivered in good condition.", rating: 5 },
+    { name: "Pamela Duff", location: "Calgary, AB", title: "Easy Navigation", quote: "The website layout is simple and easy to navigate, especially when comparing different printer options.", rating: 5 },
+    { name: "Marty Veldman", location: "Phoenix, AZ", title: "Helpful Updates", quote: "Delivery updates were helpful, and tracking information was provided as expected.", rating: 5 },
+    { name: "Patricia Grunow", location: "Toronto, ON", title: "Matched Description", quote: "The product matched the description, and setup instructions were easy to follow.", rating: 5 },
+    { name: "William B Adams Jr", location: "Portland, OR", title: "Smooth Checkout", quote: "The checkout process was smooth, and there were no unexpected issues during ordering.", rating: 5 },
+    { name: "Jennifer Thompson", location: "Montreal, QC", title: "Well Organized", quote: "Product categories are well organized, making it easier to find suitable options.", rating: 5 },
   ];
 
   const handleScrollTo = (index) => {

@@ -17,7 +17,7 @@ const AboutUs = () => {
       {/* An Independent eCommerce Retailer */}
       <section className="py-8 sm:py-12 lg:py-16 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center sm:text-left">
             An Independent eCommerce Retailer
           </h2>
 
@@ -93,7 +93,7 @@ const AboutUs = () => {
       <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8 mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Business Information</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center sm:text-left">Business Information</h2>
             <a
               href="https://ised-isde.canada.ca/cc/lgcy/fdrlCrpDtls.html?lang=eng&corpId=16904599"
               target="_blank"
@@ -201,7 +201,7 @@ const AboutUs = () => {
       {/* How We Work */}
       <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-indigo-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">How We Work</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 text-center sm:text-left">How We Work</h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
             Every part of the process is built around clarity and consistency—from product selection to post-purchase support.
           </p>
@@ -245,7 +245,7 @@ const AboutUs = () => {
       {/* What Makes Prints Basket Different */}
       <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8 text-center sm:text-left">
             What Makes Prints Basket Different
           </h2>
 

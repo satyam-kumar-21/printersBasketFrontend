@@ -8,10 +8,10 @@ const HomeInfoSections = () => {
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 text-center sm:text-left">
               An Independent eCommerce Retailer
             </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto sm:mx-0"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -61,10 +61,10 @@ const HomeInfoSections = () => {
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 text-center sm:text-left">
               What We Sell
             </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto sm:mx-0"></div>
             <p className="text-gray-600 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed">
               We offer a focused selection of printers and essential printing supplies designed to meet the needs of both home users and business environments. Our product range is carefully organized to help customers find the right solution based on usage, performance, and reliability.
             </p>
@@ -91,10 +91,10 @@ const HomeInfoSections = () => {
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 text-center sm:text-left">
               Who We Serve
             </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto sm:mx-0"></div>
             <p className="text-gray-600 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed">
               Our platform is designed to support a wide range of customers with different printing needs, from everyday use to professional environments.
             </p>
@@ -120,10 +120,10 @@ const HomeInfoSections = () => {
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 text-center sm:text-left">
               Why Choose Us
             </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto sm:mx-0"></div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-8">
@@ -163,10 +163,10 @@ const HomeInfoSections = () => {
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 text-center sm:text-left">
               Our Service Commitment
             </h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto sm:mx-0"></div>
             <p className="text-gray-600 text-sm sm:text-base lg:text-lg mt-4 leading-relaxed">
               We focus on providing a reliable and transparent experience at every step — from ordering to delivery and ongoing support.
             </p>
@@ -200,8 +200,8 @@ const HomeInfoSections = () => {
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">Business Information</h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 rounded-full"></div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-center sm:text-left">Business Information</h2>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 rounded-full mx-auto sm:mx-0"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
