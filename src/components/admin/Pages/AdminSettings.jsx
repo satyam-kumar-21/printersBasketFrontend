@@ -17,16 +17,16 @@ const AdminSettings = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-sm font-semibold text-slate-700 mb-2">Store Name</label>
-                            <input type="text" defaultValue="Smart ePrinting" className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
+                            <input type="text" defaultValue="Prints Basket" className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
                         </div>
                         <div>
                             <label className="block text-sm font-semibold text-slate-700 mb-2">Support Email</label>
-                            <input type="email" defaultValue="support@smarteprinting.com" className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
+                            <input type="email" defaultValue="support@printsbasket.com" className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
                         </div>
                     </div>
                     <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-2">Address</label>
-                        <input type="text" defaultValue="Smart ePrinting
+                        <input type="text" defaultValue="Prints Basket
 17807 Lakecrest View Drive, #1205
 Cypress, TX 77433
  United States" className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
