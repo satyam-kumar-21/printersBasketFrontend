@@ -15,7 +15,7 @@ const ReturnExchangePolicy = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-3">
-            Return & Exchange Policy – Prints Basket
+            Return & Exchange Policy
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto mb-4"></div>
           <p className="text-gray-600 text-xs sm:text-sm md:text-base">Last Updated: March 25, 2026</p>

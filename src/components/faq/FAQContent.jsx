@@ -85,7 +85,7 @@ const FAQContent = () => {
             />
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            FAQs â€“ Prints Basket
+            FAQs
           </h1>
           <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg">
             Find quick answers to common questions about our products, printers, setup, shipping, and more. If you need help, our team is here to assist you.
@@ -135,11 +135,15 @@ const FAQContent = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-gray-700">
             <div className="flex items-center">
-              <span className="mr-2 text-lg">ðŸ“§</span>
+              <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
               <span className="font-medium">support@printsbasket.com</span>
             </div>
             <div className="flex items-center">
-              <span className="mr-2 text-lg">ðŸŒ</span>
+              <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
               <span className="font-medium">www.printsbasket.com</span>
             </div>
           </div>

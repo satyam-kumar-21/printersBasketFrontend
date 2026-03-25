@@ -44,7 +44,6 @@ import ReturnExchangePolicy from './components/privacyPolicy/ReturnExchangePolic
 import ShippingPolicy from './components/privacyPolicy/ShippingPolicy';
 import CookiePolicy from './components/privacyPolicy/CookiePolicy';
 import CCPAPrivacyPolicy from './components/privacyPolicy/CCPAPrivacyPolicy';
-import AccessibilityStatement from './components/privacyPolicy/AccessibilityStatement';
 import Disclaimer from './components/privacyPolicy/Disclaimer';
 import ContactMain from './components/contact/ContactMain';
 import EULA from './components/policies/EULA';
@@ -111,7 +110,6 @@ function App() {
                     <Route path="/shipping-policy" element={<ShippingPolicy />} />
                     <Route path="/cookie-policy" element={<CookiePolicy />} />
                     {/* <Route path="/ccpa-privacy-policy" element={<CCPAPrivacyPolicy />} /> */}
-                    <Route path="/accessibility-statement" element={<AccessibilityStatement />} />
                     <Route path="/disclaimer" element={<Disclaimer />} />
                     <Route path="/contact-us" element={<ContactMain />} />
                     <Route path="/eula" element={<EULA />} />

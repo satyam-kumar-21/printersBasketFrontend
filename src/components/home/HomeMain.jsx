@@ -4,14 +4,11 @@ import { useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../../redux/actions/productActions';
 import Hero from "./Hero";
-import WelcomeSection from "./WelcomeSection";
+
 import Home from "./Home";
-import LatestTips from "./LatestTips";
+
 import Reviews from "./Reviews";
-import StatsCircles from "./StatsCircles";
-import WhyChooseSection from "./WhyChooseSection";
-import OurPromiseSection from "./OurPromiseSection";
-import ImportantInfoSection from "./ImportantInfoSection";
+
 import ProductGrid from "../productsCategories/ProductGrid";
 import Categories from '../Categories';
 import WhyChooseUs from './WhyChooseUs';

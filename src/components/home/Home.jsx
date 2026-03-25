@@ -12,13 +12,13 @@ const Home = () => {
             {/* Main Content */}
             <div className="max-w-[1920px] mx-auto px-0 py-0">
 
-               
+
 
                 {/* Explore Categories Section */}
-              
-                 {/* Home Info Sections */}
+
+                {/* Home Info Sections */}
                 <HomeInfoSections />
-  <ExploreCategoriesSection />
+                <ExploreCategoriesSection />
                 {/* Product List */}
                 <div className="px-4 md:px-8 lg:px-12 py-8">
                     <HomeProductList enableFlowLayout={false} />

@@ -8,13 +8,37 @@ const Footer = () => {
 
 
 useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://seal.godaddy.com/getSealBasic?sealID=3cUA1XaqHzZ1nqhWZ2f3ZtcXx4KUQ725FR4F4VIpr8rZBF6Wd5EZMgSqErsT";
-    script.async = true;
-    document.getElementById("siteseal").appendChild(script);
+    const sealDiv = document.getElementById("siteseal");
+    if (!sealDiv) return;
+
+    // Prevent multiple script loads
+    if (window._godaddySealLoaded || sealDiv.innerHTML.trim() !== '') return;
+    
+    try {
+      const script = document.createElement("script");
+      script.src = "https://seal.godaddy.com/getSealBasic?sealID=3cUA1XaqHzZ1nqhWZ2f3ZtcXx4KUQ725FR4F4VIpr8rZBF6Wd5EZMgSqErsT";
+      script.async = true;
+      script.onerror = () => console.error("Failed to load GoDaddy seal");
+      
+      script.onload = () => {
+        window._godaddySealLoaded = true;
+      };
+      
+      sealDiv.appendChild(script);
+    } catch (error) {
+      console.error("Error loading GoDaddy seal:", error);
+    }
 
     return () => {
-      if (script.parentNode) script.parentNode.removeChild(script);
+      // Cleanup on unmount
+      if (sealDiv && window._godaddySealLoaded) {
+        const scripts = sealDiv.querySelectorAll('script');
+        scripts.forEach(s => {
+          if (s.src.includes('godaddy')) {
+            try { s.parentNode?.removeChild(s); } catch (e) {}
+          }
+        });
+      }
     };
   }, []);
   return (

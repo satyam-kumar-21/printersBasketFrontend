@@ -1,12 +1,4 @@
 import React, { useState } from "react";
-import {
-  EnvelopeIcon,
-  ClockIcon,
-  ChatBubbleLeftRightIcon,
-  MapPinIcon,
-  ArrowRightOnRectangleIcon,
-} from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
 

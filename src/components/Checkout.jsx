@@ -103,11 +103,11 @@ const Checkout = () => {
                 setDistance(data.distance || null);
                                 // Debug: log raw rates from backend
                                 // console.log('Raw rates from backend:', rates); 
-                                if (Array.isArray(rates)) {
-                                    rates.forEach((rate, idx) => {
-                                        console.log(`Rate #${idx}: carrier=${rate.carrier}, account_id=${rate.carrier_account_id}, service=${rate.service}`);
-                                    });
-                                }
+                                // if (Array.isArray(rates)) {
+                                //     rates.forEach((rate, idx) => {
+                                //         console.log(`Rate #${idx}: carrier=${rate.carrier}, account_id=${rate.carrier_account_id}, service=${rate.service}`);
+                                //     });
+                                // }
 
                                 // Only show Canada Post, FedEx, UPS, USPS shipping methods (strict carrier name and account id)
                                 const allowedAccounts = [
