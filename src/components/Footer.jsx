@@ -4,16 +4,7 @@ import { MapPin, Mail, Phone } from "lucide-react";
 import logo from "../../public/logo-bgremove.png";
 
 const Footer = () => {
-// useEffect(() => {
-//     const script = document.createElement("script");
-//     script.src = "https://seal.godaddy.com/getSealBasic?sealID=fA5q8U4ngWQoJeQEXnOBnpptwPqM7bmoMSuTzJZg8anUXt6Iwh86nBMt5ys1";
-//     script.async = true;
-//     document.getElementById("siteseal").appendChild(script);
 
-//     return () => {
-//       if (script.parentNode) script.parentNode.removeChild(script);
-//     };
-//   }, []);
 
 
 useEffect(() => {
@@ -75,6 +66,9 @@ useEffect(() => {
         <div>
           <h3 className="font-semibold mb-4 text-base sm:text-lg">Contact Us</h3>
           <div className="space-y-3 text-gray-300 text-sm sm:text-base">
+            <div>
+              <p className="font-semibold text-white">Prints Basket (16904599 CANADA INC.)</p>
+            </div>
             <div className="flex items-start gap-2">
               <MapPin size={14} className="mt-0.5 flex-shrink-0" />
               <p>95 Broadacre Dr, Kitchener, ON N2R 0S5, Canada</p>

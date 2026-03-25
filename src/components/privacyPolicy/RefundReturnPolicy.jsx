@@ -15,12 +15,12 @@ const RefundReturnPolicy = () => {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
             Refund Policy
           </h1>
           <div className="mt-2 h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full mx-auto"></div>
-          <p className="mt-6 text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-            Last Updated: January 21, 2026
+          <p className="mt-6 text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+            Last Updated: March 25, 2026
           </p>
         </div>
 
@@ -28,286 +28,276 @@ const RefundReturnPolicy = () => {
 
           {/* Introduction */}
           <div className="space-y-4 bg-white rounded-lg p-6 shadow-sm border-l-4 border-blue-500">
-            <p className="text-gray-700 leading-relaxed text-lg">
-              Your satisfaction matters to us. Prints Basket offers a transparent and customer-friendly return and refund process designed to protect your rights and ensure a smooth shopping experience.
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-base">
+              At Prints Basket, we are committed to providing a fair, transparent, and customer-friendly refund process. This policy outlines the conditions under which refunds are issued and how returns are handled.
             </p>
           </div>
 
           {/* 1. 30-Day Return Window */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">1. 30-Day Return Window</h2>
-            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
-              <p className="text-gray-600 leading-relaxed">
-                Eligible items may be returned within 30 days of delivery. Returns outside this timeframe cannot be accepted unless required by local consumer protection laws.
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">1. 30-Day Return Window</h2>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Eligible items may be returned within 30 days of delivery.</li>
+              <li>Returns outside this timeframe may not be accepted unless required under applicable consumer protection laws.</li>
+            </ul>
+          </div>
+
+          {/* 2. Condition of Returned Items */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">2. Condition of Returned Items</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              To qualify for a refund, items must be:
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Unused and in original condition</li>
+              <li>In original packaging</li>
+              <li>Complete with all accessories, manuals, and components</li>
+            </ul>
+            <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-500 mt-3">
+              <p className="text-gray-600 text-sm sm:text-base">
+                <strong>Exception:</strong> Defective or damaged items may be returned even if opened, subject to inspection.
               </p>
             </div>
           </div>
 
-          {/* 2. Original Condition Requirement */}
+          {/* 3. Refund Processing */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">2. Original Condition Requirement</h2>
-            <p className="text-gray-600 leading-relaxed mb-3">
-              Returned products must be:
-            </p>
-            <div className="bg-amber-50 rounded-lg p-4 border-l-4 border-amber-500">
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>Unused and undamaged</li>
-                <li>In their original packaging</li>
-                <li>Complete with manuals, accessories, and all included components</li>
-              </ul>
-            </div>
-            <p className="text-gray-600 mt-4">
-              Defective items may be returned even if opened, subject to inspection.
-            </p>
-          </div>
-
-          {/* 3. Full Refund After Inspection */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">3. Full Refund After Inspection</h2>
-            <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
-              <p className="text-gray-600 leading-relaxed">
-                Refunds are issued to the original payment method once the returned item is received and approved. Refund processing typically takes <strong>3–5 business days</strong> after inspection.
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">3. Refund Processing</h2>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Refunds are issued after the returned item is received and inspected</li>
+              <li>Approved refunds are processed within 3–5 business days</li>
+              <li>Refunds are issued to the original payment method</li>
+            </ul>
+            <div className="bg-yellow-50 rounded-lg p-4 border-l-4 border-yellow-500 mt-3">
+              <p className="text-gray-600 text-sm sm:text-base">
+                <strong>⚠️ Warning:</strong> Processing times may vary depending on your bank or payment provider.
               </p>
             </div>
           </div>
 
           {/* 4. Return Eligibility */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">4. Return Eligibility</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              We stand behind the quality of our products. Items may be returned under the following conditions:
-            </p>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">4. Return Eligibility</h2>
             
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">✓ Returnable Items</h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">✔️ Returnable Items</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
                   <li>Unused and unopened printers</li>
-                  <li>Sealed ink or toner cartridges</li>
+                  <li>Sealed ink and toner cartridges</li>
                   <li>Accessories in original condition</li>
                   <li>Defective or malfunctioning products</li>
-                  <li>Items sent in error</li>
+                  <li>Incorrect items received</li>
                 </ul>
               </div>
 
               <div className="bg-red-50 rounded-lg p-4 border-l-4 border-red-400">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">✗ Non-Returnable Items</h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-2">
-                  <li>Opened or partially used ink/toner (unless defective)</li>
-                  <li>Items damaged by the customer</li>
-                  <li>Products returned without original packaging</li>
-                  <li>Customized or special-order items</li>
-                  <li>Items returned after 30 days</li>
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">❌ Non-Returnable Items</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
+                  <li>Opened or used ink/toner cartridges (unless defective)</li>
+                  <li>Items damaged due to misuse or improper handling</li>
+                  <li>Products returned without original packaging or missing components</li>
+                  <li>Customized, personalized, or special-order items</li>
+                  <li>Items returned after the 30-day return period</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* 5. How to Return Items */}
+          {/* 5. How to Request a Return */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">5. How to Return Items</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">5. How to Request a Return</h2>
             
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="bg-white rounded-lg p-4 border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Step 1: Submit a Return Request</h3>
-                <p className="text-gray-600 mb-2">Email us at <a href="mailto:support@printsbasket.com" className="text-blue-600 underline">support@printsbasket.com</a> and include:</p>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  <li>Order number and purchase date</li>
-                  <li>Product name and condition</li>
-                  <li>Reason for return (defective, wrong item, unwanted, etc.)</li>
-                  <li>Preferred resolution (refund or exchange)</li>
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">Step 1: Submit a Request</h3>
+                <p className="text-gray-600 text-sm sm:text-base mb-2">Email us at <a href="mailto:support@printsbasket.com" className="text-blue-600 underline">support@printsbasket.com</a> with:</p>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
+                  <li>Order number</li>
+                  <li>Product details and condition</li>
+                  <li>Reason for return</li>
+                  <li>Preferred resolution (refund or replacement)</li>
                 </ul>
               </div>
 
               <div className="bg-white rounded-lg p-4 border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Step 2: Receive Authorization</h3>
-                <p className="text-gray-600 mb-2">If eligible, you will receive:</p>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">Step 2: Receive Authorization</h3>
+                <p className="text-gray-600 text-sm sm:text-base mb-2">If approved, you will receive:</p>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
                   <li>A Return Merchandise Authorization (RMA) number</li>
-                  <li>A prepaid return shipping label for qualifying returns</li>
                   <li>Return instructions</li>
+                  <li>A prepaid return label (if applicable)</li>
                 </ul>
-                <p className="text-gray-600 mt-2 text-sm italic">Authorization is required before sending any items back.</p>
+                <p className="text-gray-600 text-sm sm:text-base italic mt-2">⚠️ Returns without prior authorization may not be accepted.</p>
               </div>
 
               <div className="bg-white rounded-lg p-4 border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Step 3: Prepare and Ship the Item</h3>
-                <p className="text-gray-600 mb-2">Please:</p>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  <li>Pack the product securely to avoid damage</li>
-                  <li>Include the original packaging, manuals, and accessories</li>
-                  <li>Display the RMA number clearly on the package</li>
-                  <li>Include the order receipt inside the box</li>
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">Step 3: Ship the Item</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
+                  <li>Pack the item securely to prevent damage</li>
+                  <li>Include all original contents</li>
+                  <li>Clearly label the RMA number</li>
                 </ul>
               </div>
 
               <div className="bg-white rounded-lg p-4 border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Step 4: Inspection & Refund</h3>
-                <p className="text-gray-600 mb-2">Once your return arrives:</p>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  <li>We inspect the item within 2 business days</li>
-                  <li>Approved refunds are issued within 3–5 business days</li>
-                  <li>Refunds are sent to the original payment method</li>
-                  <li>If the item is defective or incorrect, original shipping costs may also be refunded.</li>
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">Step 4: Inspection & Refund</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
+                  <li>Items are inspected within 2 business days of receipt</li>
+                  <li>Approved refunds are processed within 3–5 business days</li>
+                  <li>If applicable, original shipping charges may be refunded for defective or incorrect items.</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* 6. Refund Types & Processing Times */}
+          {/* 6. Refund Timeframes */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">6. Refund Types & Processing Times</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">6. Refund Timeframes</h2>
             <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
-              <table className="w-full">
+              <table className="w-full text-sm">
                 <thead className="bg-blue-100 border-b border-gray-200">
                   <tr>
                     <th className="px-4 py-3 text-left font-semibold text-gray-800">Payment Method</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-800">Refund Timeframe</th>
+                    <th className="px-4 py-3 text-left font-semibold text-gray-800">Estimated Time</th>
                     <th className="px-4 py-3 text-left font-semibold text-gray-800">Notes</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-gray-200">
-                    <td className="px-4 py-3 text-gray-600">Credit Card</td>
-                    <td className="px-4 py-3 text-gray-600">3–5 business days</td>
-                    <td className="px-4 py-3 text-gray-600 text-sm">May take 1–2 billing cycles to appear</td>
+                    <td className="px-4 py-3 text-gray-600 text-sm">Credit Card</td>
+                    <td className="px-4 py-3 text-gray-600 text-sm">3–5 business days</td>
+                    <td className="px-4 py-3 text-gray-600 text-xs">May take additional billing cycle</td>
                   </tr>
                   <tr className="border-b border-gray-200">
-                    <td className="px-4 py-3 text-gray-600">Debit Card</td>
-                    <td className="px-4 py-3 text-gray-600">3–5 business days</td>
-                    <td className="px-4 py-3 text-gray-600 text-sm">Reflected directly in bank account</td>
+                    <td className="px-4 py-3 text-gray-600 text-sm">Debit Card</td>
+                    <td className="px-4 py-3 text-gray-600 text-sm">3–5 business days</td>
+                    <td className="px-4 py-3 text-gray-600 text-xs">Reflected in bank account</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 text-gray-600">PayPal</td>
-                    <td className="px-4 py-3 text-gray-600">1–3 business days</td>
-                    <td className="px-4 py-3 text-gray-600 text-sm">Usually the fastest option</td>
+                    <td className="px-4 py-3 text-gray-600 text-sm">PayPal</td>
+                    <td className="px-4 py-3 text-gray-600 text-sm">1–3 business days</td>
+                    <td className="px-4 py-3 text-gray-600 text-xs">Typically faster</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-gray-600 text-sm mt-3">
-              <strong>Note:</strong> Processing times may vary depending on your bank.
-            </p>
           </div>
 
-          {/* 7. Return Shipping */}
+          {/* 7. Return Shipping Responsibility */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">7. Return Shipping</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">7. Return Shipping Responsibility</h2>
             
             <div className="space-y-3">
               <div className="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">✓ Return Shipping Covered by Prints Basket</h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">✔️ Covered by Prints Basket</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
                   <li>Defective or damaged items</li>
-                  <li>Wrong item received</li>
-                  <li>Orders valued at $100 or more</li>
+                  <li>Incorrect items shipped</li>
+                  <li>Approved returns where required by law</li>
                 </ul>
               </div>
 
               <div className="bg-amber-50 rounded-lg p-4 border-l-4 border-amber-500">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">⚠ Return Shipping Paid by Customer</h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">⚠ Customer Responsibility</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
                   <li>Change-of-mind returns</li>
                   <li>Non-defective items</li>
-                  <li>Orders below $100</li>
                 </ul>
-              </div>
-
-              <div className="bg-white rounded-lg p-4 border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Estimated Return Shipping Costs:</h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  <li>Small items: $8.99</li>
-                  <li>Printers: $15.99 (average)</li>
-                </ul>
+                <p className="text-gray-600 text-sm mt-2">Shipping costs may vary depending on location and carrier. Exact costs are communicated during return authorization.</p>
               </div>
             </div>
           </div>
 
           {/* 8. Exchanges */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">8. Exchanges</h2>
-            <div className="bg-indigo-50 rounded-lg p-4 border-l-4 border-indigo-500">
-              <p className="text-gray-600 leading-relaxed mb-3">
-                We currently prioritize refunds over direct exchanges for faster processing.
-              </p>
-              <p className="text-gray-700 font-medium mb-2">To exchange an item:</p>
-              <ol className="list-decimal list-inside text-gray-600 space-y-1">
-                <li>Return the original item under our return guidelines</li>
-                <li>Place a new order for the preferred product</li>
-              </ol>
-              <p className="text-gray-600 mt-3 text-sm">
-                This ensures accurate availability and faster delivery of your replacement item.
-              </p>
-            </div>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">8. Exchanges</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              We primarily process refunds instead of direct exchanges to ensure faster resolution.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              To exchange a product:
+            </p>
+            <ol className="list-decimal list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Return the original item following this policy</li>
+              <li>Place a new order for the desired item</li>
+            </ol>
           </div>
 
           {/* 9. Damaged or Defective Items */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">9. Damaged or Defective Items</h2>
-            <div className="bg-white rounded-lg p-4 border border-gray-200">
-              <p className="text-gray-600 leading-relaxed mb-3">
-                If your order arrives damaged or defective:
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>Contact us within 48 hours of delivery</li>
-                <li>Provide photos of the damage (product + packaging)</li>
-                <li>We will expedite a resolution—replacement or refund</li>
-              </ul>
-              <p className="text-gray-600 mt-3 font-medium">
-                There are no restocking fees for defective items or errors on our part.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-4 border border-gray-200 mt-3">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Manufacturer Defects</h3>
-              <p className="text-gray-600">
-                If a product has a manufacturer defect covered by warranty, we can assist in determining the best solution, including warranty claim support.
-              </p>
-            </div>
-          </div>
-
-          {/* 10. Order Cancellations */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">10. Order Cancellations</h2>
-            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
-              <p className="text-gray-600 leading-relaxed mb-3">
-                You may cancel your order before it ships:
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>Contact us as soon as possible</li>
-                <li>Provide your order number and request</li>
-                <li>Most orders are processed within 2–4 hours</li>
-              </ul>
-              <p className="text-gray-600 mt-3">
-                If the order has already shipped, the standard return process applies.
-              </p>
-            </div>
-          </div>
-
-          {/* 11. International Returns */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">11. International Returns</h2>
-            <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-400">
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>30-day return window</li>
-                <li>Customer is responsible for return shipping</li>
-                <li>Customs duties or import taxes are non-refundable</li>
-                <li>Refunds issued in original currency</li>
-                <li>Additional processing time of 5–10 business days may apply</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* 12. Need Help */}
-          <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
-            <h2 className="text-2xl font-semibold">Need Help With a Return?</h2>
-            <p className="leading-relaxed">
-              We're here to assist you with any return or refund questions.
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">9. Damaged or Defective Items</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              If your order arrives damaged or defective:
             </p>
-            <div className="space-y-2 text-blue-50">
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Contact us within 48 hours of delivery</li>
+              <li>Provide photos of the item and packaging</li>
+              <li>We will provide a prompt resolution, including replacement or refund.</li>
+              <li>No restocking fees apply for defective or incorrect items.</li>
+            </ul>
+          </div>
+
+          {/* 10. Manufacturer Warranty */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">10. Manufacturer Warranty</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              Some products may be covered under the manufacturer's warranty.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              We can assist you in initiating a warranty claim where applicable.
+            </p>
+          </div>
+
+          {/* 11. Order Cancellations */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">11. Order Cancellations</h2>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Orders may be canceled before shipment only</li>
+              <li>Once shipped, cancellations are not possible</li>
+              <li>Customers may return the item after delivery per this policy</li>
+            </ul>
+          </div>
+
+          {/* 12. International Returns */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">12. International Returns</h2>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>30-day return window applies</li>
+              <li>Customers are responsible for return shipping costs</li>
+              <li>Customs duties and import fees are non-refundable</li>
+              <li>Refunds are issued in the original currency</li>
+              <li>Additional processing time may apply</li>
+            </ul>
+          </div>
+
+          {/* 13. Compliance & Transparency */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">13. Compliance & Transparency</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              We are committed to fair and transparent refund practices in accordance with applicable consumer protection laws and advertising standards.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              This policy clearly outlines eligibility, timelines, and responsibilities to avoid confusion or misleading expectations.
+            </p>
+          </div>
+
+          {/* 14. Contact Us */}
+          <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">14. Contact Us</h2>
+            <p className="leading-relaxed text-sm sm:text-base md:text-base">
+              For any refund-related inquiries, return requests, or assistance, please contact us:
+            </p>
+            <div className="space-y-2 text-blue-50 text-sm sm:text-base">
+              <p><strong>Prints Basket (16904599 CANADA INC)</strong></p>
               <p>📧 <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
+              <p>📞 <strong>Phone:</strong> +1 (888) 322-5251</p>
+              <p>📍 <strong>Registered Address:</strong><br/>95 Broadacre Dr<br/>Kitchener, ON N2R 0S5<br/>Canada</p>
               <p>💬 <strong>Live Chat:</strong> Available on <a href="https://www.printsbasket.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">www.printsbasket.com</a></p>
             </div>
+            <p className="text-blue-50 text-sm leading-relaxed mt-3">
+              We are committed to responding promptly and assisting you with all refund and return-related concerns.
+            </p>
           </div>
 
         </div>

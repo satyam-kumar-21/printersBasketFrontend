@@ -1,20 +1,30 @@
-import React from "react";
+﻿import React from "react";
+import { Link } from "react-router-dom";
 
 const CCPAPrivacyPolicy = () => {
   return (
-    <section className="w-full bg-gray-50 min-h-screen py-16">
+    <section className="w-full bg-gradient-to-b from-blue-50 via-white to-blue-50 min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+        {/* Breadcrumb Navigation */}
+        <div className="flex justify-center items-center gap-2 text-sm text-gray-600">
+          <Link to="/" className="hover:text-blue-600 transition">Home</Link>
+          <span>/</span>
+          <span className="text-gray-900 font-medium">CCPA Privacy Notice</span>
+        </div>
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Do Not Sell or Share My Personal Information (CCPA/CPRA) — Smart ePrinting
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+            Do Not Sell or Share My Personal Information
           </h1>
-          <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
-            Last Updated: January 31, 2026
+          <div className="mt-2 h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full mx-auto"></div>
+          <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl mx-auto mt-2"><strong>CCPA/CPRA Notice</strong></p>
+          <p className="mt-6 text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+            Last Updated: March 25, 2026
           </p>
-          <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
-            This page is provided in accordance with the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA). These laws give California residents specific rights regarding their personal information, including the right to opt out of its sale or sharing. Smart ePrinting does not sell or share personal information for monetary or marketing purposes, but this page ensures full transparency and allows you to exercise your privacy rights if desired.
+          <p className="mt-4 text-gray-600 text-sm sm:text-base md:text-base leading-relaxed max-w-3xl mx-auto">
+            This page is provided in accordance with the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA). These laws provide California residents with specific rights regarding their personal information.
           </p>
         </div>
 
@@ -22,180 +32,180 @@ const CCPAPrivacyPolicy = () => {
 
           {/* 1. Our Commitment to Your Privacy */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">1. Our Commitment to Your Privacy</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Smart ePrinting is committed to maintaining high standards of data privacy, transparency, and security. We strictly limit the collection and use of your personal information to essential business functions such as:
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">1. Our Commitment to Your Privacy</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              Prints Basket respects your privacy and is committed to transparent data practices.
             </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Processing orders</li>
-              <li>Shipping products</li>
-              <li>Customer communication</li>
-              <li>Website functionality</li>
-              <li>Fraud prevention</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed">
-              We do not sell, trade, rent, or share personal information with third parties for advertising or behavioral tracking.
-            </p>
-          </div>
-
-          {/* 2. Definitions Under CCPA/CPRA */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">2. Definitions Under CCPA/CPRA</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Understanding key definitions:
-            </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li><strong>“Sell”</strong>: Transfer of personal information to a third party for value (monetary or otherwise).</li>
-              <li><strong>“Share”</strong>: Transfer of personal information to a third party for cross-context behavioral advertising.</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed">
-              Important Statement: Smart ePrinting does NOT sell or share your personal information as defined under CCPA/CPRA. We do not use cross-site tracking, profiling, third-party marketing cookies, or advertising pixels.
-            </p>
-          </div>
-
-          {/* 3. Your CCPA/CPRA Rights */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">3. Your CCPA/CPRA Rights</h2>
-            <p className="text-gray-600 leading-relaxed">
-              California residents have the right to:
-            </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>✔ <strong>Right to Know:</strong> Request what personal information we collect, use, or disclose.</li>
-              <li>✔ <strong>Right to Delete:</strong> Request deletion of personal information (with legal exceptions).</li>
-              <li>✔ <strong>Right to Correct:</strong> Request correction of inaccurate information.</li>
-              <li>✔ <strong>Right to Opt-Out:</strong> Opt out of the “sale” or “sharing” of personal information.</li>
-              <li>✔ <strong>Right to Limit Use of Sensitive Personal Information:</strong> We do not collect or use sensitive personal information.</li>
-              <li>✔ <strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your privacy rights.</li>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>We do NOT sell personal information</li>
+              <li>We do NOT share personal information for cross-context behavioral advertising</li>
+              <li>We do NOT use advertising cookies, tracking pixels, or profiling technologies</li>
+              <li>Even though we do not sell or share data, California residents have the right to submit requests under applicable laws.</li>
             </ul>
           </div>
 
-          {/* 4. How to Submit a Do Not Sell/Share Request */}
+          {/* 2. Your Rights Under CCPA/CPRA */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">4. How to Submit a Do Not Sell/Share Request</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Even though we do not sell or share personal information, you may submit a request:
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">2. Your Rights Under CCPA/CPRA</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              California residents have the following specific rights:
             </p>
-            <p className="text-gray-600 leading-relaxed">
-              📧 Email: <a href="mailto:support@smarteprinting.com" className="text-indigo-600 underline">support@smarteprinting.com</a><br/>
-              Subject Line: CCPA Privacy Request
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Include: Full name, Email address used to place the order, and whether you request an opt-out, deletion, correction, or access request. We will respond within the legally required timeframe (typically within 45 days).
-            </p>
-          </div>
-
-          {/* 5. Verification Process */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">5. Verification Process</h2>
-            <p className="text-gray-600 leading-relaxed">
-              To protect your data, we may verify your identity before fulfilling certain requests. Verification may involve:
-            </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Confirming your email address</li>
-              <li>Confirming recent order details</li>
-              <li>Matching information stored in our system</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed">
-              We will never request sensitive information such as Social Security numbers, full credit card numbers, or government IDs.
-            </p>
-          </div>
-
-          {/* 6. Authorized Agents */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">6. Authorized Agents</h2>
-            <p className="text-gray-600 leading-relaxed">
-              You may assign an authorized agent to submit a request on your behalf. The agent must provide:
-            </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Written authorization</li>
-              <li>Proof of their identity</li>
-              <li>Proof of your identity (for verification)</li>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li><strong>Right to Know:</strong> Request and receive information about the personal information we collect, use, or share.</li>
+              <li><strong>Right to Delete:</strong> Request deletion of your personal information (subject to legal exceptions).</li>
+              <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information.</li>
+              <li><strong>Right to Opt-Out:</strong> Opt out of the "sale" or "sharing" of personal information (though we don't engage in these practices).</li>
+              <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> Direct us to limit the use of sensitive personal information to necessary business purposes (we do not use sensitive data).</li>
+              <li><strong>Right to Non-Discrimination:</strong> Exercise these rights without experiencing discrimination, including denial of service or different pricing.</li>
+              <li><strong>Right to Exercise Rights at Anytime:</strong> You may submit requests at any time, and we will respond within the timeframes mandated by law (typically 45 days).</li>
             </ul>
           </div>
 
-          {/* 7. Categories of Personal Information We Collect */}
+          {/* 3. Our Data Practices */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">7. Categories of Personal Information We Collect</h2>
-            <p className="text-gray-600 leading-relaxed">
-              We may collect the following categories for legitimate business purposes only:
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">3. Our Data Practices</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              Prints Basket adheres to strict data protection practices:
             </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>✔ Identifiers: Name, email, phone number, address</li>
-              <li>✔ Transaction Information: Order history, items purchased</li>
-              <li>✔ Device Information: Browser type, device type, basic session data</li>
-              <li>✔ Payment Information: Processed securely by third-party payment processors (we do not store full card numbers)</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed">
-              We do not collect or process sensitive personal information.
-            </p>
-          </div>
-
-          {/* 8. Categories of Information We Share (Operational Only) */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">8. Categories of Information We Share (Operational Only)</h2>
-            <p className="text-gray-600 leading-relaxed">
-              We only share personal information with trusted service providers for essential functions:
-            </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Payment processors</li>
-              <li>Shipping carriers</li>
-              <li>Security/fraud prevention tools</li>
-              <li>Email service providers</li>
-              <li>IT/hosting providers</li>
-            </ul>
-            <p className="text-gray-600 leading-relaxed">
-              These service providers may only use information to perform services on our behalf and are contractually prohibited from using it for advertising.
-            </p>
-          </div>
-
-          {/* 9. No Sale or Sharing Statement (Required) */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">9. No Sale or Sharing Statement (Required)</h2>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>✓ Smart ePrinting does NOT sell personal information.</li>
-              <li>✓ Smart ePrinting does NOT share personal information for advertising.</li>
-              <li>✓ Smart ePrinting has not sold or shared personal information in the past 12 months.</li>
-              <li>✓ Smart ePrinting does not knowingly collect or sell the information of minors under 16.</li>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>We do NOT sell personal information to third parties.</li>
+              <li>We do NOT share personal information for advertising purposes.</li>
+              <li>We only disclose information to trusted service providers under strict contractual obligations.</li>
+              <li>We maintain industry-standard security measures to protect your data at all times.</li>
             </ul>
           </div>
 
-          {/* 10. Data Retention */}
+          {/* 4. Categories of Personal Information We Collect */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">10. Data Retention</h2>
-            <p className="text-gray-600 leading-relaxed">
-              We retain personal information only as long as necessary to:
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">4. Categories of Personal Information We Collect</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              We collect only limited information required for our eCommerce operations, including:
             </p>
-            <ul className="list-disc list-inside text-gray-600 space-y-1">
-              <li>Complete orders</li>
-              <li>Maintain transaction records</li>
-              <li>Support customer service</li>
-              <li>Meet legal obligations</li>
-              <li>Prevent fraud</li>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Contact information (name, email address, phone number)</li>
+              <li>Billing and shipping address</li>
+              <li>Order details and transaction history</li>
+              <li>Customer support communications</li>
+              <li>Essential technical/session data (e.g., cookies for cart and security)</li>
+              <li>We do not use or disclose sensitive personal information for advertising purposes.</li>
             </ul>
-            <p className="text-gray-600 leading-relaxed">
-              When information is no longer needed, it is securely deleted or anonymized.
+          </div>
+
+          {/* 5. No Sale or Sharing of Personal Information */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">5. No Sale or Sharing of Personal Information</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              In the preceding 12 months, Prints Basket has:
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Not sold personal information</li>
+              <li>Not shared personal information for cross-context behavioral advertising</li>
+              <li>Only disclosed information to trusted service providers (e.g., payment processors, shipping partners) strictly for business operations</li>
+              <li>All service providers are contractually required to use data only for authorized purposes.</li>
+            </ul>
+          </div>
+
+          {/* 6. Cookies & Tracking Technologies */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">6. Cookies & Tracking Technologies</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              Prints Basket does not use:
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Advertising or tracking cookies</li>
+              <li>Analytics tools or behavioral profiling technologies</li>
+              <li>Third-party marketing or retargeting pixels</li>
+            </ul>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base mt-2">
+              We only use strictly necessary cookies required for:
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Cart functionality</li>
+              <li>Secure checkout</li>
+              <li>Account login</li>
+              <li>Website security and performance</li>
+            </ul>
+          </div>
+
+          {/* 7. How to Submit a Request */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">7. How to Submit a Request</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              You may submit a request to exercise your rights using the method below:
+            </p>
+            <div className="bg-white rounded-lg p-4 border border-gray-200 mt-3">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">Email Request</h3>
+              <p className="text-gray-600 text-sm sm:text-base mb-2">Send your request to: <a href="mailto:support@printsbasket.com" className="text-blue-600 underline">support@printsbasket.com</a></p>
+              <p className="text-gray-600 text-sm sm:text-base mb-2"><strong>Subject Line:</strong> "CCPA Request"</p>
+              <p className="text-gray-600 text-sm sm:text-base mb-2">Please include:</p>
+              <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm sm:text-base">
+                <li>Full name</li>
+                <li>Email address</li>
+                <li>Order number (if applicable)</li>
+                <li>Type of request (Access, Delete, Correct, or Opt-Out)</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 8. Verification Process */}
+          <div className="space-y-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">8. Verification Process</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              To protect your personal information, we may verify your identity by requesting:
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Email confirmation</li>
+              <li>Order details or transaction history</li>
+              <li>Basic account information</li>
+            </ul>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base mt-2">
+              We will respond to verified requests within 45 days, as required by law.
             </p>
           </div>
 
-          {/* 11. Updates to This CCPA/CPRA Notice */}
+          {/* 9. Authorized Agents */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">11. Updates to This CCPA/CPRA Notice</h2>
-            <p className="text-gray-600 leading-relaxed">
-              We may revise this page to reflect changes in laws or our data practices. The “Last Updated” date will always indicate the latest version.
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">9. Authorized Agents</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              You may designate an authorized agent to submit a request on your behalf.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              We may require proof of authorization and identity verification before processing such requests.
             </p>
           </div>
 
-          {/* 12. Contact Us Regarding Your Privacy Rights */}
+          {/* 10. Non-Discrimination Statement */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">12. Contact Us Regarding Your Privacy Rights</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Smart ePrinting<br />
-              17807 Lakecrest View Drive, #1205<br />
-              Cypress, TX 77433, United States<br />
-              Email: <a href="mailto:support@smarteprinting.com" className="text-indigo-600 underline">support@smarteprinting.com</a><br />
-              Website: <a href="https://www.smarteprinting.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline">www.smarteprinting.com</a>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">10. Non-Discrimination Statement</h2>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-base">
+              Prints Basket will not:
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm sm:text-base md:text-base">
+              <li>Deny goods or services</li>
+              <li>Charge different prices</li>
+              <li>Provide a lower level of service</li>
+              <li>Discriminate against you in any way</li>
+              <li>â€¦for exercising your privacy rights under applicable laws.</li>
+            </ul>
+          </div>
+
+          {/* 11. Contact Us */}
+          <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">11. Contact Us</h2>
+            <p className="leading-relaxed text-sm sm:text-base md:text-base">
+              For any questions about this notice or your privacy rights, please contact us:
+            </p>
+            <div className="space-y-2 text-blue-50 text-sm sm:text-base">
+              <p><strong>Prints Basket (16904599 CANADA INC)</strong></p>
+              <p>ðŸ“§ <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
+              <p>ðŸ“ž <strong>Phone:</strong> +1 (888) 322-5251</p>
+              <p>ðŸ“ <strong>Registered Address:</strong><br/>95 Broadacre Dr<br/>Kitchener, ON N2R 0S5<br/>Canada</p>
+            </div>
+            <p className="text-blue-50 text-sm leading-relaxed mt-3">
+              We are committed to handling all privacy-related requests promptly and in accordance with applicable data protection laws.
             </p>
           </div>
+
 
         </div>
       </div>

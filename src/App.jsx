@@ -110,12 +110,12 @@ function App() {
                     <Route path="/return-exchange-policy" element={<ReturnExchangePolicy />} />
                     <Route path="/shipping-policy" element={<ShippingPolicy />} />
                     <Route path="/cookie-policy" element={<CookiePolicy />} />
-                    <Route path="/ccpa-privacy-policy" element={<CCPAPrivacyPolicy />} />
+                    {/* <Route path="/ccpa-privacy-policy" element={<CCPAPrivacyPolicy />} /> */}
                     <Route path="/accessibility-statement" element={<AccessibilityStatement />} />
                     <Route path="/disclaimer" element={<Disclaimer />} />
                     <Route path="/contact-us" element={<ContactMain />} />
                     <Route path="/eula" element={<EULA />} />
-                    <Route path="/do-not-sell" element={<DoNotSell />} />
+                    <Route path="/do-not-sell" element={<CCPAPrivacyPolicy /> } />
 
                     {/* Admin Routes */}
                     <Route path="/admin/login" element={<AdminLogin />} />

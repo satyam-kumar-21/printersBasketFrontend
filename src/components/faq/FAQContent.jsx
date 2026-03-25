@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 const heroImage = "/assets/printer.png";
 
 const FAQContent = () => {
@@ -8,62 +8,66 @@ const FAQContent = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const faqData = [
+    const faqData = [
     {
-      q: "What type of printer is suitable for home use?",
-      a: "Inkjet printers are commonly preferred for home environments because they can handle everyday documents as well as photo printing with good quality."
+      q: "What is Prints Basket?",
+      a: "Prints Basket is an independent online retailer operated by 16904599 CANADA INC, offering printers and printing supplies for home, office, and business use across the United States and Canada."
     },
     {
-      q: "Which printer is recommended for small offices?",
-      a: "Laser printers are typically used in office settings since they offer faster printing speeds and efficient cost-per-page performance."
+      q: "Are you affiliated with brands like HP, Canon, or Epson?",
+      a: "No. Prints Basket operates independently and is not affiliated with or endorsed by any manufacturer unless explicitly stated. All brand names and trademarks are used for identification purposes only."
     },
     {
-      q: "Do your printers support wireless or mobile printing?",
-      a: "Many printers available on Prints Basket include wireless features such as Wi-Fi, AirPrint, and mobile app compatibility. Please check the product description for specific connectivity options."
+      q: "Where do you ship?",
+      a: "We currently ship across the United States and Canada. Shipping availability may vary based on location and carrier service."
     },
     {
-      q: "What is duplex printing?",
-      a: "Duplex printing allows a printer to automatically print on both sides of the paper. This feature helps reduce paper usage and can save time during large print jobs."
+      q: "Do you offer free shipping?",
+      a: "Yes, free shipping may be available on qualifying orders. Shipping eligibility and conditions are shown at checkout."
     },
     {
-      q: "How do I know which ink or toner works with my printer?",
-      a: "You can find the compatible ink or toner model in the product description or in your printer's user manual. Always check compatibility information before purchasing."
+      q: "How long does delivery take?",
+      a: "Estimated delivery times: United States 3–7 business days, Canada 3–8 business days. Delivery times are estimates and may vary depending on location, carrier delays, or external factors."
     },
     {
-      q: "Are refillable ink tank printers cost-effective?",
-      a: "Refillable ink tank printers can be economical for users who print frequently, as the refill bottles generally last longer compared to traditional cartridges."
+      q: "How can I track my order?",
+      a: "Once your order is shipped, you will receive a tracking number via email. You can use this to track your shipment through the carrier's website."
     },
     {
-      q: "How often should ink or toner be replaced?",
-      a: "Replacement frequency depends on printing volume. Your printer will usually display a low-ink or low-toner notification, or you may notice a decline in print quality when supplies need replacing."
+      q: "What is your return policy?",
+      a: "We offer a 30-day return window for eligible items. Products must be unused and in original packaging unless defective. For full details, please refer to our Return & Refund Policy."
     },
     {
-      q: "Are the printers easy to set up?",
-      a: "Most printers include step-by-step setup instructions and support both USB and wireless installation. Additional setup details can be found in the product manual."
+      q: "How long does it take to receive a refund?",
+      a: "Refunds are processed within 3–5 business days after the returned item is received and inspected. Final timing may depend on your payment provider."
     },
     {
-      q: "Can I set up a printer without using a computer?",
-      a: "Yes, many printers support setup through a smartphone using the manufacturer’s mobile app. Features vary by model, so please refer to the product specifications."
+      q: "What if I receive a damaged or incorrect item?",
+      a: "If your order arrives damaged or incorrect: Contact us within 48 hours of delivery, Provide photos of the product and packaging, and We will arrange a replacement or refund as appropriate."
     },
     {
-      q: "How do I connect a printer to a wireless network?",
-      a: "Navigate to the printer’s wireless or network settings, select your Wi-Fi network, and enter the password. Many modern printers also offer guided setup through their touchscreen interface or companion app."
+      q: "Can I cancel my order?",
+      a: "Orders can be canceled before shipment only. Once shipped, cancellations are not possible, but you may return the item according to our policy."
     },
     {
-      q: "Do you provide support for product issues?",
-      a: "Prints Basket provides assistance for product inquiries, order updates, and general purchase-related questions. Product setup, troubleshooting, or repair services are not offered."
+      q: "Do your products come with a warranty?",
+      a: "Yes, most products include a manufacturer warranty, where applicable. Warranty terms are provided by the respective brand."
     },
     {
-      q: "Where do your products ship from?",
-      a: "Orders are fulfilled through authorized distribution partners within the United States and Canada. Delivery times vary based on product availability and location."
+      q: "Do you provide technical support?",
+      a: "We offer general product guidance and assistance, but we do not provide official manufacturer technical support. For detailed technical issues or warranty claims, customers may need to contact the manufacturer directly."
     },
     {
-      q: "Are the products new and authentic?",
-      a: "Yes. All products are sourced through authorized distributors and include standard manufacturer warranties where applicable."
+      q: "How is my personal information protected?",
+      a: "We take privacy seriously and only collect necessary information to process orders and provide support. We do not sell or share personal data for advertising purposes. For more details, please review our Privacy Policy."
     },
     {
-      q: "Do you offer returns?",
-      a: "Eligible unopened items may be returned within 30 days of delivery. Defective items may also be returned within the same period for inspection. Please refer to our Return Policy for full details."
+      q: "Do you use cookies or tracking technologies?",
+      a: "We use essential cookies only to ensure website functionality, such as cart and checkout. We do not use advertising or tracking cookies."
+    },
+    {
+      q: "How can I contact customer support?",
+      a: "Prints Basket (16904599 CANADA INC) - Email: support@printsbasket.com, Phone: +1 (888) 322-5251, Live Chat: Available on www.printsbasket.com"
     }
   ];
 
@@ -81,7 +85,7 @@ const FAQContent = () => {
             />
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            FAQs – Prints Basket
+            FAQs â€“ Prints Basket
           </h1>
           <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg">
             Find quick answers to common questions about our products, printers, setup, shipping, and more. If you need help, our team is here to assist you.
@@ -131,11 +135,11 @@ const FAQContent = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-gray-700">
             <div className="flex items-center">
-              <span className="mr-2 text-lg">📧</span>
+              <span className="mr-2 text-lg">ðŸ“§</span>
               <span className="font-medium">support@printsbasket.com</span>
             </div>
             <div className="flex items-center">
-              <span className="mr-2 text-lg">🌐</span>
+              <span className="mr-2 text-lg">ðŸŒ</span>
               <span className="font-medium">www.printsbasket.com</span>
             </div>
           </div>
@@ -147,3 +151,4 @@ const FAQContent = () => {
 };
 
 export default FAQContent;
+

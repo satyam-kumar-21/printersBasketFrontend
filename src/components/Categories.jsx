@@ -51,8 +51,7 @@ const Categories = () => {
           </h2>
 
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            Browse commonly requested printer-related categories to quickly find
-            relevant information and appointment options.
+            Browse our carefully curated printer categories to find the perfect solution for your home, office, or business needs.
           </p>
         </div>
 

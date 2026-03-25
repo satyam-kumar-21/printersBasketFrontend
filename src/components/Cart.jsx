@@ -37,10 +37,10 @@ const Cart = () => {
                 {/* Header */}
                 <section className="w-full bg-gradient-to-br from-white to-blue-50/30 rounded-3xl border-2 border-slate-100 p-8 md:p-12 mb-12 shadow-lg shadow-blue-100/30 backdrop-blur-sm">
                     <div className="text-center space-y-3">
-                        <h1 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Shopping Hub</h1>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Shopping Hub</h1>
                         <div className="h-1 w-16 mx-auto bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
-                        <p className="text-sm font-bold text-slate-600 uppercase tracking-widest">
-                            You have <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent font-black text-lg">{cartItems.reduce((acc, item) => acc + item.qty, 0)}</span> items in your inventory
+                        <p className="text-xs sm:text-sm font-bold text-slate-600 uppercase tracking-widest">
+                            You have <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent font-black text-base sm:text-lg">{cartItems.reduce((acc, item) => acc + item.qty, 0)}</span> items in your inventory
                         </p>
                     </div>
                 </section>
