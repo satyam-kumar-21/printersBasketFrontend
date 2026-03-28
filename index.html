@@ -11,6 +11,9 @@
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
     <meta http-equiv="Cross-Origin-Embedder-Policy" content="unsafe-none" />
   
+  <!-- Font Preload (Inter Regular only for critical path) -->
+  <link rel="preload" as="font" href="https://fonts.bunny.net/inter/inter-400-normal.woff2" type="font/woff2" crossorigin />
+  
   <!-- Essential Meta Tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <meta name="language" content="English" />
@@ -102,14 +105,21 @@
   }
   </script>
   
-  <!-- Analytics & Tracking (Load after Termly) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
+  <!-- Deferred Analytics & Tracking (Load after page interactive) -->
   <script>
+    // Defer GTM loading until after page interactive
     window.addEventListener('load', function() {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'YOUR_GA_ID', { 'anonymize_ip': true });
+      setTimeout(function() {
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID';
+        script.async = true;
+        document.head.appendChild(script);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_GA_ID', { 'anonymize_ip': true });
+      }, 2000);
     });
   </script>
   <script>

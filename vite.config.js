@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
+    minify: 'esbuild', // Use esbuild (default, already included)
+    target: 'esnext',  // Target modern browsers
     rollupOptions: {
       output: {
         manualChunks: {

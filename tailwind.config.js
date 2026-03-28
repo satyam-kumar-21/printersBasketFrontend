@@ -22,7 +22,7 @@ export default {
                 }
             },
             fontFamily: {
-                sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
             },
             animation: {
                 blob: "blob 7s infinite",
