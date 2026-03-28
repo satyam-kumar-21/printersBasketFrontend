@@ -1,13 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/cartActions";
 
 const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = false }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const userLogin = useSelector((state) => state.userLogin);
-    const { userInfo } = userLogin;
 
     const renderStars = (rating) => {
         return (
@@ -29,10 +27,6 @@ const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = f
     const handleAddToCart = (e, product) => {
         e.preventDefault();
         e.stopPropagation();
-        if (!userInfo) {
-            alert("Please login to add to cart");
-            return;
-        }
         dispatch(addToCart(product.slug || product._id, 1));
         navigate('/cart');
     };
@@ -40,12 +34,8 @@ const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = f
     const handleBuyNow = (e, product) => {
         e.preventDefault();
         e.stopPropagation();
-        if (!userInfo) {
-            alert("Please login to purchase");
-            return;
-        }
         dispatch(addToCart(product.slug || product._id, 1));
-        navigate('/cart?redirect=shipping');
+        navigate('/cart');
     };
 
     return (

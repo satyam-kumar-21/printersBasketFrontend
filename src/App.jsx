@@ -1,4 +1,8 @@
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllProducts } from './redux/actions/productActions';
+import { fetchCartFromDB } from './redux/actions/cartActions';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -62,6 +66,23 @@ import ShopMain from './components/shop/ShopMain';
 function App() {
     const location = useLocation();
     const isAdminRoute = location.pathname.startsWith('/admin');
+    const dispatch = useDispatch();
+    const { allLoaded } = useSelector((state) => state.productList);
+    const { userInfo } = useSelector((state) => state.userLogin);
+
+    // Prefetch all products in background on app mount (any route)
+    useEffect(() => {
+        if (!allLoaded) {
+            dispatch(fetchAllProducts());
+        }
+    }, [dispatch, allLoaded]);
+
+    // Restore cart from DB if user is logged in (e.g. page refresh)
+    useEffect(() => {
+        if (userInfo?.token) {
+            dispatch(fetchCartFromDB());
+        }
+    }, [dispatch, userInfo?.token]);
 
     return (
         <div className="flex flex-col min-h-screen">

@@ -8,19 +8,26 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false, 
     const dispatch = useDispatch();
 
     const productList = useSelector((state) => state.productList);
-    const { loading, error, products, page, pages } = productList;
+    const { loading, error, products, page, pages, allProducts = [], allLoaded } = productList;
 
+    // Only fetch from API if allProducts isn't loaded yet
     useEffect(() => {
-        dispatch(listProducts('', categoryName, 1, '', '', '', [], '', '', []));
-    }, [dispatch, categoryName]);
-
-    const loadMoreHandler = () => {
-        if (page < pages) {
-            dispatch(listProducts('', categoryName, page + 1, '', '', '', [], '', '', []));
+        if (!allLoaded) {
+            dispatch(listProducts('', categoryName, 1, '', '', '', [], '', '', []));
         }
-    };
+    }, [dispatch, categoryName, allLoaded]);
 
-    const safeProducts = Array.isArray(products) ? products : [];
+    // Use allProducts if available, filtering by category; fall back to paginated products
+    const sourceProducts = allLoaded
+        ? (categoryName
+            ? allProducts.filter(p => {
+                const catName = p.category?.name || '';
+                return catName.toLowerCase() === categoryName.toLowerCase();
+            })
+            : allProducts)
+        : (Array.isArray(products) ? products : []);
+
+    const safeProducts = sourceProducts;
     const displayProducts = itemLimit ? safeProducts.slice(0, itemLimit) : safeProducts;
     const formattedProducts = displayProducts.map(product => ({
         ...product,
@@ -32,9 +39,9 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false, 
         link: `/product/${product.slug || product._id}`
     }));
 
-    if (error) return <div className="py-20 text-center font-black uppercase text-[10px] tracking-[0.3em] text-red-500">{error}</div>;
+    if (error && !allLoaded) return <div className="py-20 text-center font-black uppercase text-[10px] tracking-[0.3em] text-red-500">{error}</div>;
 
-    if (!loading && safeProducts.length === 0) {
+    if (!loading && !allLoaded && safeProducts.length === 0) {
         return (
             <div className="max-w-7xl mx-auto px-4 py-20 text-center">
                 <h2 className="text-3xl font-semibold text-gray-900 mb-6">{heading || categoryName}</h2>
@@ -53,27 +60,6 @@ const CategoryProductList = ({ categoryName, heading, enableFlowLayout = false, 
                 products={formattedProducts}
                 enableFlowLayout={enableFlowLayout}
             />
-            
-            {!itemLimit && (
-                <>
-                    {loading && page >= 1 && (
-                        <div className="py-8 text-center font-black uppercase text-[10px] tracking-[0.3em] text-slate-400 animate-pulse">
-                            Loading More Items...
-                        </div>
-                    )}
-
-                    {!loading && page < pages && (
-                        <div className="flex justify-center mb-16">
-                            <button 
-                                onClick={loadMoreHandler}
-                                className="px-8 py-3 bg-slate-900 text-white rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-blue-600 transition-colors shadow-lg"
-                            >
-                                See More Products ({page}/{pages})
-                            </button>
-                        </div>
-                    )}
-                </>
-            )}
         </div>
     );
 };

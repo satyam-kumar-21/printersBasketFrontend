@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { removeFromCart, addToCart } from "../redux/actions/cartActions";
+import AuthDrawer from "./AuthDrawer";
+import { ShieldCheck } from "lucide-react";
 const printerImg = "/assets/printer.png";
 
 const Cart = () => {
@@ -10,8 +12,11 @@ const Cart = () => {
 
     const cart = useSelector((state) => state.cart);
     const { cartItems } = cart;
+    const { userInfo } = useSelector((state) => state.userLogin);
 
     const [giftWrap, setGiftWrap] = useState(false);
+    const [showAuth, setShowAuth] = useState(false);
+    const [showLoginPrompt, setShowLoginPrompt] = useState(false);
 
     const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
     const totalWithGift = subtotal + (giftWrap ? 10 : 0);
@@ -20,7 +25,21 @@ const Cart = () => {
         dispatch(removeFromCart(id));
     };
 
+    // After login from AuthDrawer, proceed to checkout
+    useEffect(() => {
+        if (showAuth && userInfo) {
+            setShowAuth(false);
+            setShowLoginPrompt(false);
+            navigate('/checkout');
+        }
+    }, [userInfo, showAuth, navigate]);
+
     const checkoutHandler = () => {
+        if (!userInfo) {
+            setShowLoginPrompt(true);
+            setShowAuth(true);
+            return;
+        }
         navigate('/checkout');
     };
 
@@ -80,8 +99,11 @@ const Cart = () => {
                                                 <div className="w-20 h-20 bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-100 rounded-2xl p-2 flex-shrink-0 flex items-center justify-center shadow-md">
                                                     <img
                                                         src={item.image ? (item.image.startsWith('http') ? item.image : `http://localhost:5000${item.image}`) : printerImg}
-                                                        alt={item.title}
+                                                        alt={item.title || 'Product image'}
+                                                        width="80"
+                                                        height="80"
                                                         className="w-full h-full object-contain"
+                                                        loading="lazy"
                                                     />
                                                 </div>
                                                 <div className="space-y-2 flex-1">
@@ -103,11 +125,13 @@ const Cart = () => {
                                                     <button 
                                                         onClick={() => dispatch(addToCart(item.product, Math.max(1, item.qty - 1)))}
                                                         className="px-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 text-slate-500 hover:text-blue-600 font-bold transition-all"
-                                                    >−</button>
+                                                        aria-label={`Decrease quantity for ${item.title}`}
+                                                    ></button>
                                                     <span className="px-3 text-sm font-black text-slate-900">{item.qty}</span>
                                                     <button 
                                                         onClick={() => dispatch(addToCart(item.product, Math.min(item.countInStock, item.qty + 1)))}
                                                         className="px-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 text-slate-500 hover:text-blue-600 font-bold transition-all"
+                                                        aria-label={`Increase quantity for ${item.title}`}
                                                     >+</button>
                                                 </div>
                                             </div>
@@ -117,6 +141,7 @@ const Cart = () => {
                                                 <button 
                                                     onClick={() => removeFromCartHandler(item.product)}
                                                     className="p-3 text-rose-500 hover:bg-gradient-to-r hover:from-rose-50 hover:to-red-50 rounded-xl transition-all hover:shadow-md"
+                                                    aria-label={`Remove ${item.title} from cart`}
                                                 >
                                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-4v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -160,14 +185,20 @@ const Cart = () => {
                                 </div>
 
                                 <div className="space-y-3 pt-4">
+                                    {showLoginPrompt && !userInfo && (
+                                        <div className="p-3 bg-gradient-to-r from-amber-50 to-yellow-50 text-amber-700 rounded-xl text-xs font-bold text-center border border-amber-200 animate-pulse">
+                                            🔒 Please login to proceed to checkout
+                                        </div>
+                                    )}
                                     <button 
                                         onClick={checkoutHandler}
                                         className="w-full bg-gradient-to-r from-blue-600 to-blue-600 text-white py-5 rounded-2xl font-black uppercase text-[12px] tracking-widest hover:shadow-lg hover:shadow-blue-200/50 transition-all shadow-lg active:scale-95 hover:from-blue-700 hover:to-blue-700"
+                                        aria-label="Proceed to Checkout"
                                     >
-                                        ✓ Proceed to Checkout
+                                        <ShieldCheck className="w-4 h-4 inline-block mr-2 -mt-0.5" /> Proceed to Checkout
                                     </button>
                                     <div className="flex flex-col items-center justify-center gap-3 py-4 px-4 bg-gradient-to-r from-slate-50 to-blue-50/30 rounded-2xl border-2 border-slate-100 hover:border-slate-200 transition-all">
-                                        <img src="https://razorpay.com/assets/razorpay-glyph.svg" alt="Razorpay" className="h-4 opacity-70" />
+                                        <img src="https://razorpay.com/assets/razorpay-glyph.svg" alt="Razorpay" width="40" height="16" className="h-4 opacity-70" loading="lazy" />
                                         <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">🔒 Verified Secure Payment</span>
                                     </div>
                                 </div>
@@ -176,6 +207,8 @@ const Cart = () => {
                     </div>
                 )}
             </div>
+
+            <AuthDrawer isOpen={showAuth} onClose={() => setShowAuth(false)} />
         </div>
     );
 };

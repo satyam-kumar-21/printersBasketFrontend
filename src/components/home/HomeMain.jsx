@@ -1,8 +1,7 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { listProducts } from '../../redux/actions/productActions';
+import { useSelector } from 'react-redux';
 import Hero from "./Hero";
 
 import Home from "./Home";
@@ -17,25 +16,28 @@ import PrinterBanners from './PrinterBanners';
 const HomeMain = () => {
     const [searchParams] = useSearchParams();
     const searchQuery = searchParams.get('search');
-    const dispatch = useDispatch();
-    const productList = useSelector((state) => state.productList);
-    const { loading, products } = productList;
+    const { allProducts = [], allLoading } = useSelector((state) => state.productList);
 
-    useEffect(() => {
-        if (searchQuery) {
-            dispatch(listProducts(searchQuery));
-        }
-    }, [dispatch, searchQuery]);
+    // Filter from allProducts cache for instant search
+    const searchResults = useMemo(() => {
+        if (!searchQuery) return [];
+        const q = searchQuery.toLowerCase();
+        return allProducts.filter(p =>
+            p.title?.toLowerCase().includes(q) ||
+            p.brand?.toLowerCase().includes(q) ||
+            p.description?.toLowerCase().includes(q)
+        );
+    }, [searchQuery, allProducts]);
 
     if (searchQuery) {
         return (
             <div className="min-h-screen bg-slate-50/50">
                 <div className="max-w-7xl mx-auto px-4 py-8">
                     <h1 className="text-3xl font-bold mb-8">Search Results for "{searchQuery}"</h1>
-                    {loading ? (
+                    {allLoading && allProducts.length === 0 ? (
                         <div className="text-center py-12">Loading...</div>
-                    ) : products && products.length > 0 ? (
-                        <ProductGrid products={products} />
+                    ) : searchResults.length > 0 ? (
+                        <ProductGrid products={searchResults} />
                     ) : (
                         <div className="text-center py-12">No products found for "{searchQuery}"</div>
                     )}

@@ -27,6 +27,8 @@ import {
     USER_UPDATE_PROFILE_SUCCESS,
     USER_UPDATE_PROFILE_FAIL,
 } from '../constants/userConstants';
+import { CART_CLEAR_ITEMS } from '../constants/cartConstants';
+import { fetchCartFromDB } from './cartActions';
 
 export const login = (email, password, isAdminLogin = false) => async (dispatch) => {
     try {
@@ -50,6 +52,9 @@ export const login = (email, password, isAdminLogin = false) => async (dispatch)
         });
 
         localStorage.setItem('userInfo', JSON.stringify(data));
+
+        // Restore user's cart from DB after login
+        dispatch(fetchCartFromDB());
     } catch (error) {
         dispatch({
             type: USER_LOGIN_FAIL,
@@ -63,6 +68,8 @@ export const login = (email, password, isAdminLogin = false) => async (dispatch)
 
 export const logout = () => (dispatch) => {
     localStorage.removeItem('userInfo');
+    localStorage.removeItem('cartItems');
+    dispatch({ type: CART_CLEAR_ITEMS });
     dispatch({ type: USER_LOGOUT });
     dispatch({ type: USER_DETAILS_RESET });
 };
@@ -94,6 +101,9 @@ export const register = (firstName, lastName, email, password) => async (dispatc
         });
 
         localStorage.setItem('userInfo', JSON.stringify(data));
+
+        // Restore cart from DB for newly registered user
+        dispatch(fetchCartFromDB());
     } catch (error) {
         dispatch({
             type: USER_REGISTER_FAIL,

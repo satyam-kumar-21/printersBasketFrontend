@@ -3,6 +3,9 @@ import {
     PRODUCT_LIST_REQUEST,
     PRODUCT_LIST_SUCCESS,
     PRODUCT_LIST_FAIL,
+    PRODUCT_ALL_REQUEST,
+    PRODUCT_ALL_SUCCESS,
+    PRODUCT_ALL_FAIL,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL,
@@ -41,20 +44,20 @@ export const listProducts = (
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST });
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/products`, {
-            params: {
-                search,
-                category,
-                page: pageNumber,
-                sort,
-                brand,
-                technology,
-                usageCategory: usageCategory.join(','),
-                allInOneType,
-                wireless,
-                mainFunction: mainFunction.join(',')
-            }
-        });
+        const params = {
+            search,
+            category,
+            page: pageNumber,
+            sort,
+            brand,
+            technology,
+            usageCategory: usageCategory.join(','),
+            allInOneType,
+            wireless,
+            mainFunction: mainFunction.join(',')
+        };
+
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/products`, { params });
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
@@ -63,6 +66,30 @@ export const listProducts = (
     } catch (error) {
         dispatch({
             type: PRODUCT_LIST_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
+
+// Fetch ALL products at once for client-side filtering in shop
+export const fetchAllProducts = () => async (dispatch) => {
+    try {
+        dispatch({ type: PRODUCT_ALL_REQUEST });
+
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/products`, {
+            params: { limit: 10000 }
+        });
+
+        dispatch({
+            type: PRODUCT_ALL_SUCCESS,
+            payload: data.products,
+        });
+    } catch (error) {
+        dispatch({
+            type: PRODUCT_ALL_FAIL,
             payload:
                 error.response && error.response.data.message
                     ? error.response.data.message

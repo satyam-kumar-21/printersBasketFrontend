@@ -48,8 +48,8 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
 
           {/* LOGO */}
-          <NavLink to="/">
-            <img src={logo} alt="Prints Basket Logo" className="w-32 object-contain" />
+          <NavLink to="/" aria-label="Go to homepage">
+            <img src={logo} alt="Prints Basket Logo" width="128" height="40" className="w-32 object-contain" loading="eager" />
           </NavLink>
 
           {/* DESKTOP NAV */}

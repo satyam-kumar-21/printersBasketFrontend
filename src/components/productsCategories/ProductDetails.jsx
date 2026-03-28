@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { listProductDetails, listProducts } from "../../redux/actions/productActions";
+import { listProductDetails } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/actions/cartActions";
 import { Star, ShoppingCart, Heart, Truck, Shield, RotateCcw } from "lucide-react";
 
@@ -17,19 +17,41 @@ const ProductDetails = () => {
     const [activeTab, setActiveTab] = useState("overview");
     const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
     const [isZooming, setIsZooming] = useState(false);
-    const [showLoginMessage, setShowLoginMessage] = useState(false);
     const [showReviewLoginMessage, setShowReviewLoginMessage] = useState(false);
     const [showEligibilityMessage, setShowEligibilityMessage] = useState(false);
     const [canReview, setCanReview] = useState(false);
 
     const productDetails = useSelector((state) => state.productDetails);
-    const { loading, error, product } = productDetails;
+    const { loading: detailsLoading, error, product: detailProduct } = productDetails;
+
+    const { allProducts = [] } = useSelector((state) => state.productList);
+
+    // Try to find product from allProducts cache for instant display
+    const cachedProduct = allProducts.find(
+        (p) => p.slug === productSlug || p._id === productSlug
+    );
+    // Use cached product immediately, then swap to full details once loaded
+    const product = detailProduct && (detailProduct.slug === productSlug || detailProduct._id === productSlug)
+        ? detailProduct
+        : cachedProduct || detailProduct;
+    const loading = !product && detailsLoading;
 
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
     const productList = useSelector((state) => state.productList);
-    const { products: relatedProducts } = productList;
+    const { allProducts: allProductsForRelated = [] } = productList;
+
+    // Get related products from allProducts cache
+    const relatedProducts = product && product.category
+        ? allProductsForRelated.filter(
+            (p) => {
+                const catName = p.category?.name || '';
+                const productCatName = product.category?.name || product.category || '';
+                return catName.toLowerCase() === productCatName.toString().toLowerCase() && p._id !== product._id;
+            }
+        ).slice(0, 8)
+        : [];
 
     useEffect(() => {
         const checkEligibility = async () => {
@@ -55,32 +77,19 @@ const ProductDetails = () => {
         }
     }, [dispatch, productSlug]);
 
+    // Reset active image when product changes
     useEffect(() => {
-        if (product && product.category) {
-            const categoryName = product.category.name || product.category;
-            // Fetch related products (page 1)
-            dispatch(listProducts('', categoryName, 1));
-        }
-    }, [dispatch, product]);
+        setActiveImage(0);
+    }, [productSlug]);
 
     const addToCartHandler = () => {
-        if (!userInfo) {
-            setShowLoginMessage(true);
-            setTimeout(() => setShowLoginMessage(false), 3000);
-            return;
-        }
         dispatch(addToCart(product.slug || product._id, qty));
         navigate('/cart');
     };
 
     const buyNowHandler = () => {
-        if (!userInfo) {
-            setShowLoginMessage(true);
-            setTimeout(() => setShowLoginMessage(false), 3000);
-            return;
-        }
         dispatch(addToCart(product.slug || product._id, qty));
-        navigate('/cart?redirect=shipping');
+        navigate('/cart');
     };
 
     const handleMouseEnter = () => {
@@ -301,11 +310,6 @@ const handleWriteReview = () => {
 
                             {product.countInStock > 0 && (
                                 <>
-                                    {showLoginMessage && (
-                                        <div className="p-4 bg-gradient-to-r from-red-50 to-rose-50 text-red-600 rounded-xl text-xs font-bold text-center border border-red-200 animate-pulse">
-                                            Please login to add items to cart
-                                        </div>
-                                    )}
                                     <div className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-100">
                                         <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest whitespace-nowrap">Quantity:</span>
                                         <div className="flex items-center border-2 border-slate-200 rounded-xl overflow-hidden bg-slate-50 ml-auto">

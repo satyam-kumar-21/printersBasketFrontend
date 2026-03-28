@@ -2,6 +2,9 @@ import {
     PRODUCT_LIST_REQUEST,
     PRODUCT_LIST_SUCCESS,
     PRODUCT_LIST_FAIL,
+    PRODUCT_ALL_REQUEST,
+    PRODUCT_ALL_SUCCESS,
+    PRODUCT_ALL_FAIL,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL,
@@ -22,20 +25,27 @@ import {
     PRODUCT_CREATE_REVIEW_RESET,
 } from '../constants/productConstants';
 
-export const productListReducer = (state = { products: [] }, action) => {
+export const productListReducer = (state = { products: [], allProducts: [], allLoading: false, allError: null }, action) => {
     switch (action.type) {
         case PRODUCT_LIST_REQUEST:
-            return { loading: true, products: state.products || [] };
+            return { ...state, loading: true };
         case PRODUCT_LIST_SUCCESS:
             return {
+                ...state,
                 loading: false,
-                products: action.payload.page === 1 ? action.payload.products : [...state.products, ...action.payload.products],
+                products: action.payload.products,
                 page: action.payload.page,
                 pages: action.payload.pages,
-                total: action.payload.total
+                total: action.payload.total,
             };
         case PRODUCT_LIST_FAIL:
-            return { loading: false, error: action.payload, products: [] };
+            return { ...state, loading: false, error: action.payload };
+        case PRODUCT_ALL_REQUEST:
+            return { ...state, allLoading: true, allError: null };
+        case PRODUCT_ALL_SUCCESS:
+            return { ...state, allLoading: false, allProducts: action.payload, allLoaded: true };
+        case PRODUCT_ALL_FAIL:
+            return { ...state, allLoading: false, allError: action.payload };
         default:
             return state;
     }

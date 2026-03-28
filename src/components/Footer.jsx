@@ -51,8 +51,11 @@ useEffect(() => {
         <div>
           <img
             src={logo}
-            alt="Prints Basket"
+            alt="Prints Basket Logo"
+            width="128"
+            height="40"
             className="w-32 mb-4 object-contain"
+            loading="lazy"
           />
           <h4 className="font-bold text-base sm:text-lg mb-2">Prints Basket</h4>
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed">

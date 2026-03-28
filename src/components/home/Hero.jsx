@@ -15,6 +15,15 @@ const Hero = () => {
 
         {/* BACKGROUND - Dark Blue Tech Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#000d2e] via-[#0a1f5e] to-[#001a4d]"></div>
+        {/* HERO IMAGE */}
+        <img
+          src={printer}
+          alt="Featured printer"
+          width="400"
+          height="300"
+          className="absolute right-8 bottom-0 w-64 h-48 object-contain drop-shadow-xl hidden md:block"
+          loading="lazy"
+        />
 
         {/* ANIMATED WAVE PATTERN EFFECT */}
         <div className="absolute inset-0 opacity-30">

@@ -64,23 +64,24 @@ const Categories = () => {
                 onClick={() => handleCategoryClick(item.filterType, item.filterValue)}
                 key={index}
                 className="text-center group cursor-pointer bg-transparent border-none p-0"
+                aria-label={`View ${item.title} category`}
               >
-
                 {/* IMAGE CARD */}
                 <div className="bg-white rounded-2xl p-6 shadow-sm 
                                 transition-all duration-300 
                                 group-hover:shadow-lg 
                                 group-hover:-translate-y-2">
-
                   <img
                     src={item.image}
                     alt={item.title}
+                    width="160"
+                    height="160"
                     className="w-full h-32 md:h-40 object-contain mx-auto 
                                transition duration-300 
                                group-hover:scale-110"
+                    loading="lazy"
                   />
                 </div>
-
                 {/* TITLE */}
                 <h3 className="mt-5 text-gray-800 font-medium text-sm md:text-base 
                                transition duration-300 

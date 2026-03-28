@@ -411,30 +411,30 @@ const Checkout = () => {
 
                                     {/* Card Number */}
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold text-slate-500 uppercase tracking-wider px-1">Card Number</label>
-                                        <div className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900 focus-within:border-transparent transition-all">
-                                            <div id="card-number" className="w-full h-5"></div>
+                                        <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">Card Number</label>
+                                        <div className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900 focus-within:border-transparent transition-all">
+                                            <div id="card-number" className="w-full h-[22px]"></div>
                                         </div>
                                     </div>
 
                                     {/* Expiry, CVV, Zip - Responsive Grid */}
-                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider px-1">Expiry</label>
-                                            <div className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900 focus-within:border-transparent transition-all">
-                                                <div id="card-date" className="w-full h-5"></div>
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">Expiry</label>
+                                            <div className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900 focus-within:border-transparent transition-all">
+                                                <div id="card-date" className="w-full h-[22px]"></div>
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider px-1">CVV</label>
-                                            <div className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900 focus-within:border-transparent transition-all">
-                                                <div id="card-cvv" className="w-full h-5"></div>
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">CVV</label>
+                                            <div className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900 focus-within:border-transparent transition-all">
+                                                <div id="card-cvv" className="w-full h-[22px]"></div>
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider px-1">Zip Code</label>
-                                            <div className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900 focus-within:border-transparent transition-all">
-                                                <div id="card-postal-code" className="w-full h-5"></div>
+                                            <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">Zip Code</label>
+                                            <div className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus-within:bg-white focus-within:ring-2 focus-within:ring-slate-900 focus-within:border-transparent transition-all">
+                                                <div id="card-postal-code" className="w-full h-[22px]"></div>
                                             </div>
                                         </div>
                                     </div>

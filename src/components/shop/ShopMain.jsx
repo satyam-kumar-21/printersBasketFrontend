@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Search, Loader2, Star, X, Filter } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listProducts } from '../../redux/actions/productActions';
+import { fetchAllProducts } from '../../redux/actions/productActions';
 
 const ShopMain = () => {
   const dispatch = useDispatch();
@@ -11,28 +11,29 @@ const ShopMain = () => {
   const [sortBy, setSortBy] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBrand, setSelectedBrand] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedTechnology, setSelectedTechnology] = useState('');
   const [selectedUsageCategory, setSelectedUsageCategory] = useState([]);
+  const [selectedWireless, setSelectedWireless] = useState('');
+  const [selectedMainFunction, setSelectedMainFunction] = useState([]);
   const [selectedRating, setSelectedRating] = useState(0);
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
 
   const productList = useSelector((state) => state.productList);
-  const { products = [], loading, error, page, pages, total } = productList;
+  const { allProducts = [], allLoading: loading, allError: error, allLoaded } = productList;
 
   // Filter options
   const brands = ['Brother', 'Canon', 'Epson', 'HP'];
-  const dbCategories = ['ELEX Shipping Calculator', 'Uncategorized'];
   const technologies = ['Inkjet', 'Laser', 'Laser (B/W)'];
   const usageCategories = [
-    { label: 'Home & Office', value: 'Home' },
-    { label: 'Home Printers', value: 'Home' },
+    { label: 'Home', value: 'Home' },
     { label: 'Office', value: 'Office' },
     { label: 'Mobile', value: 'Mobile' },
     { label: 'Photo', value: 'Photo' }
   ];
+  const wirelessOptions = ['Yes', 'No'];
+  const mainFunctions = ['Print', 'Scan', 'Copy', 'Fax', 'Print Only'];
   const ratings = [5, 4, 3, 2, 1];
 
   // Debounce search term (wait 500ms after user stops typing)
@@ -43,32 +44,43 @@ const ShopMain = () => {
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
-  // Fetch products when filters change (using debounced search)
+  // allProducts prefetched by App.jsx — only fetch if somehow missed
   useEffect(() => {
-    dispatch(
-      listProducts(
-        debouncedSearchTerm,
-        selectedCategory,
-        currentPage,
-        sortBy,
-        selectedBrand,
-        selectedTechnology,
-        selectedUsageCategory,
-        '',
-        '',
-        []
-      )
-    );
-  }, [
-    dispatch,
-    currentPage,
-    sortBy,
-    debouncedSearchTerm,
-    selectedBrand,
-    selectedCategory,
-    selectedTechnology,
-    selectedUsageCategory,
-  ]);
+    if (!allLoaded) {
+      dispatch(fetchAllProducts());
+    }
+  }, [dispatch, allLoaded]);
+
+  // Reset to page 1 when any filter changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [debouncedSearchTerm, selectedBrand, selectedTechnology, selectedUsageCategory, selectedWireless, selectedMainFunction, selectedRating, priceRange, sortBy]);
+
+  // Filter products client-side for instant UI
+  const getFilteredProducts = () => {
+    let filtered = allProducts;
+    if (debouncedSearchTerm) {
+      filtered = filtered.filter(p => p.title?.toLowerCase().includes(debouncedSearchTerm.toLowerCase()));
+    }
+    if (selectedBrand) {
+      filtered = filtered.filter(p => p.brand?.toLowerCase() === selectedBrand.toLowerCase());
+    }
+    if (selectedTechnology) {
+      filtered = filtered.filter(p => Array.isArray(p.technology) ? p.technology.includes(selectedTechnology) : p.technology === selectedTechnology);
+    }
+    if (selectedUsageCategory.length > 0) {
+      filtered = filtered.filter(p => Array.isArray(p.usageCategory) && selectedUsageCategory.some(cat => p.usageCategory.includes(cat)));
+    }
+    if (selectedWireless) {
+      filtered = filtered.filter(p => p.wireless === selectedWireless);
+    }
+    if (selectedMainFunction.length > 0) {
+      filtered = filtered.filter(p => Array.isArray(p.mainFunction) && selectedMainFunction.some(f => p.mainFunction.includes(f)));
+    }
+    return filtered;
+  };
+
+  const productsToShow = getFilteredProducts();
 
   // Handle URL query parameters on mount
   useEffect(() => {
@@ -87,9 +99,6 @@ const ShopMain = () => {
     if (params.has('brand')) {
       setSelectedBrand(params.get('brand'));
     }
-    if (params.has('category')) {
-      setSelectedCategory(params.get('category'));
-    }
   }, [location.search]);
 
   const handleUsageCategoryChange = (category) => {
@@ -97,6 +106,14 @@ const ShopMain = () => {
       prev.includes(category)
         ? prev.filter((c) => c !== category)
         : [...prev, category]
+    );
+    setCurrentPage(1);
+  };
+  const handleMainFunctionChange = (func) => {
+    setSelectedMainFunction((prev) =>
+      prev.includes(func)
+        ? prev.filter((f) => f !== func)
+        : [...prev, func]
     );
     setCurrentPage(1);
   };
@@ -110,9 +127,10 @@ const ShopMain = () => {
     setSortBy('');
     setSearchTerm('');
     setSelectedBrand('');
-    setSelectedCategory('');
     setSelectedTechnology('');
     setSelectedUsageCategory([]);
+    setSelectedWireless('');
+    setSelectedMainFunction([]);
     setSelectedRating(0);
     setPriceRange([0, 1000]);
     setCurrentPage(1);
@@ -135,22 +153,38 @@ const ShopMain = () => {
     );
   };
 
-  const filteredByPrice = products.filter(
+  const filteredByPrice = productsToShow.filter(
     (p) => p.price >= priceRange[0] && p.price <= priceRange[1]
   );
 
-  const filteredByRating = filteredByPrice.filter(
-    (p) => selectedRating === 0 || Math.round(p.rating || 0) === selectedRating
+  const filteredByRatingUnsorted = filteredByPrice.filter(
+    (p) => selectedRating === 0 || Math.round(p.rating || 0) >= selectedRating
+  );
+
+  const filteredByRating = [...filteredByRatingUnsorted].sort((a, b) => {
+    if (sortBy === 'lowToHigh') return a.price - b.price;
+    if (sortBy === 'highToLow') return b.price - a.price;
+    return 0;
+  });
+
+  const itemsPerPage = 12;
+  const totalPages = Math.ceil(filteredByRating.length / itemsPerPage);
+  const paginatedProducts = filteredByRating.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
   );
 
   const hasActiveFilters =
     sortBy ||
     searchTerm ||
     selectedBrand ||
-    selectedCategory ||
     selectedTechnology ||
     selectedUsageCategory.length > 0 ||
-    selectedRating > 0;
+    selectedWireless ||
+    selectedMainFunction.length > 0 ||
+    selectedRating > 0 ||
+    priceRange[0] > 0 ||
+    priceRange[1] < 1000;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -304,46 +338,6 @@ const ShopMain = () => {
               </div>
             </div>
 
-            {/* Category Filter */}
-            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-              <h3 className="font-bold text-gray-900 mb-4 flex items-center justify-between">
-                Category
-                <ChevronDown size={18} />
-              </h3>
-              <div className="space-y-2">
-                <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
-                  <input
-                    type="radio"
-                    name="category"
-                    value=""
-                    checked={selectedCategory === ''}
-                    onChange={(e) => {
-                      setSelectedCategory(e.target.value);
-                      setCurrentPage(1);
-                    }}
-                    className="w-4 h-4 text-blue-600"
-                  />
-                  <span className="text-sm text-gray-700">All Categories</span>
-                </label>
-                {dbCategories.map((cat) => (
-                  <label key={cat} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
-                    <input
-                      type="radio"
-                      name="category"
-                      value={cat}
-                      checked={selectedCategory === cat}
-                      onChange={(e) => {
-                        setSelectedCategory(e.target.value);
-                        setCurrentPage(1);
-                      }}
-                      className="w-4 h-4 text-blue-600"
-                    />
-                    <span className="text-sm text-gray-700">{cat}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
             {/* Technology Filter */}
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
               <h3 className="font-bold text-gray-900 mb-4">Printer Type</h3>
@@ -405,61 +399,91 @@ const ShopMain = () => {
               </div>
             </div>
 
-            {/* Price Filter */}
+            {/* Wireless Filter */}
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-4">Wireless</h3>
+              <div className="space-y-2">
+                <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
+                  <input
+                    type="radio"
+                    name="wireless"
+                    value=""
+                    checked={selectedWireless === ''}
+                    onChange={() => setSelectedWireless('')}
+                    className="w-4 h-4 text-blue-600"
+                  />
+                  <span className="text-sm text-gray-700">All</span>
+                </label>
+                {wirelessOptions.map((opt) => (
+                  <label key={opt} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
+                    <input
+                      type="radio"
+                      name="wireless"
+                      value={opt}
+                      checked={selectedWireless === opt}
+                      onChange={() => setSelectedWireless(opt)}
+                      className="w-4 h-4 text-blue-600"
+                    />
+                    <span className="text-sm text-gray-700">{opt}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Main Function Filter */}
+            <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-4">Main Function</h3>
+              <div className="space-y-2">
+                {mainFunctions.map((func) => (
+                  <label key={func} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
+                    <input
+                      type="checkbox"
+                      checked={selectedMainFunction.includes(func)}
+                      onChange={() => handleMainFunctionChange(func)}
+                      className="w-4 h-4 text-blue-600 rounded"
+                    />
+                    <span className="text-sm text-gray-700">{func}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Price Range Filter */}
             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
               <h3 className="font-bold text-gray-900 mb-4">Price Range</h3>
-              <div className="space-y-4">
-                {/* Range Slider */}
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm text-gray-700 font-semibold mb-3">
-                    <span>${priceRange[0]}</span>
-                    <span>${priceRange[1]}</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="0"
-                    max="1000"
-                    value={priceRange[0]}
-                    onChange={(e) => {
-                      const value = Math.min(parseInt(e.target.value), priceRange[1]);
-                      setPriceRange([value, priceRange[1]]);
-                    }}
-                    className="w-full h-2 bg-gradient-to-r from-blue-300 to-blue-300 rounded-lg appearance-none cursor-pointer"
-                    style={{
-                      background: `linear-gradient(to right, #2364eb 0%, #2364eb ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 100%)`
-                    }}
-                  />
-                  <input
-                    type="range"
-                    min="0"
-                    max="1000"
-                    value={priceRange[1]}
-                    onChange={(e) => {
-                      const value = Math.max(parseInt(e.target.value), priceRange[0]);
-                      setPriceRange([priceRange[0], value]);
-                    }}
-                    className="w-full h-2 bg-gradient-to-r from-blue-300 to-blue-300 rounded-lg appearance-none cursor-pointer mt-2"
-                    style={{
-                      background: `linear-gradient(to right, #2364eb 0%, #2364eb ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[0] - 0) / 1000) * 100}%, #3b82f6 ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db ${((priceRange[1] - 0) / 1000) * 100}%, #d1d5db 100%)`
-                    }}
-                  />
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm text-gray-700 font-semibold mb-3">
+                  <span>${priceRange[0]}</span>
+                  <span>${priceRange[1]}</span>
                 </div>
-
-                {/* Min/Max Input Fields (read-only for display) */}
-                <div className="flex gap-4 pt-2 border-t border-gray-200">
-                  <div className="flex-1">
-                    <label className="text-xs text-gray-600 font-semibold block mb-1">Min</label>
-                    <div className="px-3 py-2 border border-gray-300 rounded bg-gray-50 text-sm text-gray-700 font-semibold">
-                      ${priceRange[0]}
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <label className="text-xs text-gray-600 font-semibold block mb-1">Max</label>
-                    <div className="px-3 py-2 border border-gray-300 rounded bg-gray-50 text-sm text-gray-700 font-semibold">
-                      ${priceRange[1]}
-                    </div>
-                  </div>
-                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="1000"
+                  value={priceRange[0]}
+                  onChange={(e) => {
+                    const value = Math.min(parseInt(e.target.value), priceRange[1]);
+                    setPriceRange([value, priceRange[1]]);
+                  }}
+                  className="w-full h-2 bg-gradient-to-r from-blue-300 to-blue-300 rounded-lg appearance-none cursor-pointer"
+                  style={{
+                    background: `linear-gradient(to right, #2364eb 0%, #2364eb ${((priceRange[0]) / 1000) * 100}%, #3b82f6 ${((priceRange[0]) / 1000) * 100}%, #3b82f6 100%)`
+                  }}
+                />
+                <input
+                  type="range"
+                  min="0"
+                  max="1000"
+                  value={priceRange[1]}
+                  onChange={(e) => {
+                    const value = Math.max(parseInt(e.target.value), priceRange[0]);
+                    setPriceRange([priceRange[0], value]);
+                  }}
+                  className="w-full h-2 bg-gradient-to-r from-blue-300 to-blue-300 rounded-lg appearance-none cursor-pointer mt-2"
+                  style={{
+                    background: `linear-gradient(to right, #2364eb 0%, #2364eb ${((priceRange[0]) / 1000) * 100}%, #3b82f6 ${((priceRange[0]) / 1000) * 100}%, #3b82f6 ${((priceRange[1]) / 1000) * 100}%, #d1d5db ${((priceRange[1]) / 1000) * 100}%, #d1d5db 100%)`
+                  }}
+                />
               </div>
             </div>
 
@@ -470,7 +494,7 @@ const ShopMain = () => {
                 <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                   <input
                     type="radio"
-                    name="rating"
+                    name="desktopRating"
                     value="0"
                     checked={selectedRating === 0}
                     onChange={() => setSelectedRating(0)}
@@ -482,7 +506,7 @@ const ShopMain = () => {
                   <label key={star} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
                     <input
                       type="radio"
-                      name="rating"
+                      name="desktopRating"
                       value={star}
                       checked={selectedRating === star}
                       onChange={() => setSelectedRating(star)}
@@ -516,10 +540,10 @@ const ShopMain = () => {
                   <p className="text-gray-700 font-semibold">
                     Showing{' '}
                     <span className="font-bold text-gray-900">
-                      {filteredByRating.length > 0 ? (currentPage - 1) * 12 + 1 : 0}–
-                      {Math.min(currentPage * 12, filteredByRating.length)}
+                      {filteredByRating.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0}–
+                      {Math.min(currentPage * itemsPerPage, filteredByRating.length)}
                     </span>{' '}
-                    of <span className="font-bold text-gray-900">{total}</span> results
+                    of <span className="font-bold text-gray-900">{filteredByRating.length}</span> results
                   </p>
                   {hasActiveFilters && (
                     <p className="text-xs text-gray-500 mt-1">Filters applied</p>
@@ -542,13 +566,20 @@ const ShopMain = () => {
               </div>
             </div>
 
-            {/* Loading State */}
-            {loading && (
-              <div className="flex items-center justify-center py-32">
-                <div className="text-center">
-                  <Loader2 className="animate-spin text-blue-600 mx-auto mb-4" size={48} />
-                  <p className="text-gray-600 font-semibold">Loading products...</p>
-                </div>
+            {/* Loading State - Skeleton Cards */}
+            {loading && allProducts.length === 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {Array.from({ length: 12 }).map((_, i) => (
+                  <div key={i} className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden animate-pulse">
+                    <div className="bg-gray-200 h-60"></div>
+                    <div className="p-4 space-y-3">
+                      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                      <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                      <div className="h-3 bg-gray-200 rounded w-1/3"></div>
+                      <div className="h-5 bg-gray-200 rounded w-1/4"></div>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
 
@@ -563,7 +594,7 @@ const ShopMain = () => {
             {/* Products Grid */}
             {!loading && filteredByRating.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                {filteredByRating.slice(0, 12).map((product) => (
+                {paginatedProducts.map((product) => (
                   <Link
                     key={product._id}
                     to={`/product/${product.slug || product._id}`}
@@ -645,7 +676,7 @@ const ShopMain = () => {
             )}
 
             {/* Pagination */}
-            {!loading && pages > 1 && filteredByRating.length > 0 && (
+            {!loading && totalPages > 1 && filteredByRating.length > 0 && (
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 pb-8">
                 <button
                   onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
@@ -656,7 +687,7 @@ const ShopMain = () => {
                 </button>
 
                 <div className="flex items-center gap-2">
-                  {Array.from({ length: Math.min(pages, 5) }).map((_, idx) => {
+                  {Array.from({ length: Math.min(totalPages, 5) }).map((_, idx) => {
                     const pageNum = idx + 1;
                     return (
                       <button
@@ -672,14 +703,14 @@ const ShopMain = () => {
                       </button>
                     );
                   })}
-                  {pages > 5 && (
-                    <span className="text-gray-600 font-semibold">... Page {currentPage} of {pages}</span>
+                  {totalPages > 5 && (
+                    <span className="text-gray-600 font-semibold">... Page {currentPage} of {totalPages}</span>
                   )}
                 </div>
 
                 <button
-                  onClick={() => setCurrentPage(Math.min(pages, currentPage + 1))}
-                  disabled={currentPage === pages}
+                  onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+                  disabled={currentPage === totalPages}
                   className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition"
                 >
                   Next
@@ -769,46 +800,6 @@ const ShopMain = () => {
                   </div>
                 </div>
 
-                {/* Category Filter */}
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-3 flex items-center justify-between">
-                    Category
-                    <ChevronDown size={18} />
-                  </h3>
-                  <div className="space-y-2">
-                    <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
-                      <input
-                        type="radio"
-                        name="category"
-                        value=""
-                        checked={selectedCategory === ''}
-                        onChange={(e) => {
-                          setSelectedCategory(e.target.value);
-                          setCurrentPage(1);
-                        }}
-                        className="w-4 h-4 text-blue-600"
-                      />
-                      <span className="text-sm text-gray-700">All Categories</span>
-                    </label>
-                    {dbCategories.map((cat) => (
-                      <label key={cat} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
-                        <input
-                          type="radio"
-                          name="category"
-                          value={cat}
-                          checked={selectedCategory === cat}
-                          onChange={(e) => {
-                            setSelectedCategory(e.target.value);
-                            setCurrentPage(1);
-                          }}
-                          className="w-4 h-4 text-blue-600"
-                        />
-                        <span className="text-sm text-gray-700">{cat}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Technology Filter */}
                 <div>
                   <h3 className="font-bold text-gray-900 mb-3">Printer Type</h3>
@@ -865,6 +856,55 @@ const ShopMain = () => {
                           className="w-4 h-4 text-blue-600 rounded"
                         />
                         <span className="text-sm text-gray-700">{category.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Wireless Filter */}
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-3">Wireless</h3>
+                  <div className="space-y-2">
+                    <label className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
+                      <input
+                        type="radio"
+                        name="mobileWireless"
+                        value=""
+                        checked={selectedWireless === ''}
+                        onChange={() => setSelectedWireless('')}
+                        className="w-4 h-4 text-blue-600"
+                      />
+                      <span className="text-sm text-gray-700">All</span>
+                    </label>
+                    {wirelessOptions.map((opt) => (
+                      <label key={opt} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
+                        <input
+                          type="radio"
+                          name="mobileWireless"
+                          value={opt}
+                          checked={selectedWireless === opt}
+                          onChange={() => setSelectedWireless(opt)}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <span className="text-sm text-gray-700">{opt}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Main Function Filter */}
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-3">Main Function</h3>
+                  <div className="space-y-2">
+                    {mainFunctions.map((func) => (
+                      <label key={func} className="flex items-center gap-3 cursor-pointer hover:text-blue-600 transition">
+                        <input
+                          type="checkbox"
+                          checked={selectedMainFunction.includes(func)}
+                          onChange={() => handleMainFunctionChange(func)}
+                          className="w-4 h-4 text-blue-600 rounded"
+                        />
+                        <span className="text-sm text-gray-700">{func}</span>
                       </label>
                     ))}
                   </div>
