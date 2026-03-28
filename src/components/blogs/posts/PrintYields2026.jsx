@@ -22,7 +22,7 @@ const PrintYields2026 = () => {
                     <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-blue-200/30">
                         Technical Guide
                     </div>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
                         Understanding Print Yields: What Page Counts Really Mean for Everyday Users (2026 Guide)
                     </h1>
                     
@@ -43,7 +43,7 @@ const PrintYields2026 = () => {
                 </header>
 
                 {/* Content */}
-                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
+                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-4 sm:p-6 md:p-8 lg:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
                     
                     <p className="lead text-lg text-slate-600">
                         If you've ever compared ink or toner cartridges while shopping, you've probably seen terms like "150 pages," "500 pages," "1,500 pages," or "high-yield (XL)" printed on the packaging. These numbers refer to something called print yield, which is an estimated number of pages a cartridge can produce. However, many users quickly notice that the actual number of pages they print rarely matches the number printed on the box. This in-depth, 2,000-word guide explains everything you need to know about print yields in 2026, written in simple and accurate language to help everyday users make smarter printing decisions.
@@ -296,7 +296,7 @@ const PrintYields2026 = () => {
                         </Link>
                     </div>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
+                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 text-center text-white relative z-10 mt-12">
                         <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
                             Ready to Maximize Your Printing Value?
                         </h2>

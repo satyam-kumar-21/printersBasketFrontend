@@ -52,17 +52,17 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-            <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">Frequently Asked Questions</h1>
+        <div className="max-w-3xl mx-auto p-3 sm:p-4 lg:p-6 bg-white rounded-lg shadow-lg">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">Frequently Asked Questions</h1>
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
                 {faqs.map((faq, index) => (
                     <div key={index} className="border-b last:border-none">
                         <div
                             onClick={() => toggleAnswer(index)}
                             className="flex justify-between items-center py-4 cursor-pointer"
                         >
-                            <h2 className="text-xl font-semibold text-gray-800">{faq.question}</h2>
+                            <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">{faq.question}</h2>
                             <span className="text-indigo-600">
                                 {activeIndex === index ? (
                                     <FaChevronUp className="w-5 h-5" />

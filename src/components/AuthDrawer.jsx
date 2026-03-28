@@ -247,7 +247,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                     {mode === 'signup' && (
                         /* Signup Form */
                         <form className="space-y-4" onSubmit={submitHandler}>
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-3">
                                 <input
                                     type="text"
                                     placeholder="First Name"

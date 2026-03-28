@@ -51,7 +51,7 @@ const TrackOrder = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 py-12 pb-24">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 py-8 sm:py-10 lg:py-12 pb-24">
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
@@ -60,7 +60,7 @@ const TrackOrder = () => {
 
             <div className="relative z-10 max-w-4xl mx-auto px-4">
                 <div className="mb-10">
-                    <h1 className="text-4xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-2 uppercase tracking-tighter">Track Your Order</h1>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-2 uppercase tracking-tighter">Track Your Order</h1>
                     <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
                 </div>
 
@@ -83,7 +83,7 @@ const TrackOrder = () => {
 
                 {/* Order Details */}
                 {orderDetails && (
-                    <div className="bg-gradient-to-br from-white to-blue-50/30 shadow-lg shadow-blue-100/30 rounded-3xl p-8 md:p-10 border-2 border-slate-100 space-y-8 backdrop-blur-sm">
+                    <div className="bg-gradient-to-br from-white to-blue-50/30 shadow-lg shadow-blue-100/30 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-slate-100 space-y-6 sm:space-y-8 backdrop-blur-sm">
                         {/* Order Summary */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div className="space-y-3">
@@ -126,7 +126,7 @@ const TrackOrder = () => {
 
                         {/* Products */}
                         <div>
-                            <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-6 uppercase tracking-tighter">Products</h2>
+                            <h2 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-6 uppercase tracking-tighter">Products</h2>
                             <div className="space-y-3">
                                 {orderDetails.products.map((prod, index) => (
                                     <div
@@ -154,7 +154,7 @@ const TrackOrder = () => {
 
                         {/* Tracking Timeline */}
                         <div>
-                            <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-8 uppercase tracking-tighter">Tracking History</h2>
+                            <h2 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-8 uppercase tracking-tighter">Tracking History</h2>
                             <div className="relative pl-8">
                                 {/* Timeline Line */}
                                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-200 via-blue-100 to-blue-200 rounded-full"></div>

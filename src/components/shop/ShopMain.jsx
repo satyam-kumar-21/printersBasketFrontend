@@ -190,7 +190,7 @@ const ShopMain = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto md:px-4 px-2 py-12 text-center">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 lg:py-12 text-center">
           <p className="text-gray-600 mb-2">
             <Link to="/" className="text-blue-600 hover:text-blue-700 font-medium">
               Home
@@ -198,7 +198,7 @@ const ShopMain = () => {
             {' / '}
             <span className="text-gray-800 font-medium">Shop</span>
           </p>
-          <h1 className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-4">
             Shop
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto"></div>
@@ -206,7 +206,7 @@ const ShopMain = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12 md:pt-20 pt-5">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 md:pt-12 lg:pt-20 pt-5">
         {/* Mobile Search and Filter Bar */}
         <div className="lg:hidden mb-6 space-y-3">
           {/* Mobile Search Bar */}
@@ -571,7 +571,7 @@ const ShopMain = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {Array.from({ length: 12 }).map((_, i) => (
                   <div key={i} className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden animate-pulse">
-                    <div className="bg-gray-200 h-60"></div>
+                    <div className="bg-gray-200 aspect-[4/3] sm:aspect-square"></div>
                     <div className="p-4 space-y-3">
                       <div className="h-4 bg-gray-200 rounded w-3/4"></div>
                       <div className="h-3 bg-gray-200 rounded w-1/2"></div>
@@ -601,7 +601,7 @@ const ShopMain = () => {
                     className="group bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                   >
                     {/* Product Image Container */}
-                    <div className="relative bg-gray-100 h-60 overflow-hidden">
+                    <div className="relative bg-white aspect-[4/3] sm:aspect-square overflow-hidden flex items-center justify-center p-2.5 sm:p-3">
                       <img
                         src={
                           product.images && product.images[0]
@@ -609,7 +609,10 @@ const ShopMain = () => {
                             : '/assets/placeholder.png'
                         }
                         alt={product.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        width="320"
+                        height="320"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
                       />
 
                       {/* Sale Badge */}

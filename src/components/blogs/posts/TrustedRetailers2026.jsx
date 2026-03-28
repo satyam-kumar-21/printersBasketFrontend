@@ -22,7 +22,7 @@ const TrustedRetailers2026 = () => {
                     <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-blue-200/30">
                         Shopping Guide
                     </div>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
                         Why It's Important to Buy Printing Supplies from Trusted Retailers (2026 Guide)
                     </h1>
                     
@@ -43,7 +43,7 @@ const TrustedRetailers2026 = () => {
                 </header>
 
                 {/* Content */}
-                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
+                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-4 sm:p-6 md:p-8 lg:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
                     
                     <p className="lead text-lg text-slate-600">
                         In 2026, the market for printing supplies is flooded with options—some legitimate, some questionable. While it's tempting to buy from whoever offers the lowest price, purchasing from trusted retailers matters more than ever. Here's why, and how to identify genuine supplies.
@@ -203,7 +203,7 @@ const TrustedRetailers2026 = () => {
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
+                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 text-center text-white relative z-10 mt-12">
                         <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
                             Shop Smart, Print Better
                         </h2>

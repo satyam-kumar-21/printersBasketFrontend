@@ -39,11 +39,11 @@ const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = f
     };
 
     return (
-        <div className={`max-w-7xl mx-auto px-4 py-12 ${enableFlowLayout ? '' : ''}`}>
+        <div className={`max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 lg:py-12 ${enableFlowLayout ? '' : ''}`}>
             {/* Heading */}
-            <div className="flex flex-col gap-4 mb-8">
+            <div className="flex flex-col gap-4 mb-6 sm:mb-8">
                 <div className="flex items-center justify-between flex-col sm:flex-row gap-4 sm:gap-0">
-                    <h2 className="text-3xl font-semibold text-gray-900">{heading}</h2>
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900">{heading}</h2>
                 </div>
             </div>
 
@@ -69,6 +69,9 @@ const ProductGrid = ({ heading = "Products", products = [], enableFlowLayout = f
                                             : '/assets/placeholder.png')
                                     }
                                     alt={product.title}
+                                    loading="lazy"
+                                    width="300"
+                                    height="300"
                                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 p-4"
                                     onError={(e) => e.target.src = '/assets/placeholder.png'}
                                 />

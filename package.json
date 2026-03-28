@@ -30,7 +30,11 @@
     "redux-thunk": "^3.1.0",
     "slick-carousel": "^1.8.1",
     "socket.io-client": "^4.8.3",
-    "tailwind-merge": "^2.2.0"
+    "tailwind-merge": "^2.2.0",
+    "cwebp-bin": "^8.0.0",
+    "imagemin": "^9.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

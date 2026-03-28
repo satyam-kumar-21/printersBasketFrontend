@@ -71,24 +71,24 @@ const ProfilePage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-24 pb-12 px-4">
+        <div className="min-h-screen bg-gray-50 pt-24 pb-12 px-3 sm:px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-12">
                     <p className="text-gray-600 mb-4">
                         <Link to="/" className="text-blue-600 hover:text-blue-700">Home</Link> / Account Settings
                     </p>
-                    <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-4">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-4">
                         Account Settings
                     </h1>
                     <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-500 mx-auto mb-6"></div>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
                         Manage your account preferences, update your profile, and track your order history
                     </p>
                 </div>
 
                 {/* Tab Navigation */}
-                <div className="flex flex-wrap justify-center gap-3 mb-12">
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
                     <button
                         onClick={() => setActiveTab('settings')}
                         className={`px-6 py-3 rounded-lg font-semibold transition-all ${
@@ -121,7 +121,7 @@ const ProfilePage = () => {
                     </button>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                     {/* Left Sidebar */}
                     <div className="lg:col-span-1 space-y-6">
                         {/* User Card */}

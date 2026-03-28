@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import printer from "../../../public/assets/printer-white-hp-without-bg.png"; // replace with your image
+
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -10,14 +10,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="w-full mt-2 px-4">
+    <section className="w-full mt-2 px-2 sm:px-4">
       <div className="md:max-w-[90%] max-w-[100%] mx-auto rounded-3xl overflow-hidden relative">
 
         {/* BACKGROUND - Dark Blue Tech Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#000d2e] via-[#0a1f5e] to-[#001a4d]"></div>
         {/* HERO IMAGE */}
         <img
-          src={printer}
+          src="/assets/printer-white-hp-without-bg.png"
           alt="Featured printer"
           width="400"
           height="300"
@@ -48,31 +48,31 @@ const Hero = () => {
         </div>
 
         {/* GLOWING ORBS BACKGROUND EFFECT */}
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-40 hidden sm:block" aria-hidden="true">
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
           <div className="absolute bottom-0 left-20 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-15"></div>
           <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
         {/* CONTENT */}
-        <div className="relative z-10 grid md:grid-cols-2 items-center px-8 md:px-12 py-12 md:py-20 gap-4 md:gap-2">
+        <div className="relative z-10 grid md:grid-cols-2 items-center px-5 sm:px-8 md:px-12 py-8 sm:py-12 md:py-20 gap-6 md:gap-8">
 
           {/* LEFT CONTENT */}
           <div className="text-white space-y-6 md:space-y-8 md:pr-8 text-center md:text-left">
             <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-2">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2">
                 Smart Printing
               </h1>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
                 Starts Here
               </h1>
             </div>
 
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-sm md:max-w-none font-medium mx-auto md:mx-0">
+            <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm md:max-w-none font-medium mx-auto md:mx-0">
               Discover dependable printers and printing supplies designed to keep your workflow running smoothly.
             </p>
 
-            <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-sm md:max-w-none mx-auto md:mx-0">
+            <p className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm md:max-w-none mx-auto md:mx-0">
               Experience effortless shopping and fast delivery with Prints Basket.
             </p>
 
@@ -92,8 +92,11 @@ const Hero = () => {
               {/* GLOW EFFECT BEHIND IMAGE */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur-2xl opacity-20 -z-10"></div>
               <img
-                src={printer}
+                src="/assets/printer-white-hp-without-bg.webp"
                 alt="HP Printer"
+                width="450"
+                height="450"
+                fetchpriority="high"
                 className="w-[300px] md:w-[450px] object-contain drop-shadow-2xl filter brightness-110"
               />
             </div>

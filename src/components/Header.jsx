@@ -3,7 +3,6 @@ import { ShoppingCart, Search, User, X, Menu } from "lucide-react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/actions/userActions";
-import logo from "../../public/logo-bgremove.png";
 import AuthDrawer from "./AuthDrawer";
 
 const Header = () => {
@@ -45,15 +44,15 @@ const Header = () => {
   return (
     <>
       <header className="w-full bg-white border-b">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-4 lg:px-6 py-3 sm:py-4 lg:py-5">
 
           {/* LOGO */}
           <NavLink to="/" aria-label="Go to homepage">
-            <img src={logo} alt="Prints Basket Logo" width="128" height="40" className="w-32 object-contain" loading="eager" />
+            <img src="/logo-bgremove-224.png" alt="Prints Basket Logo" width="224" height="54" className="block w-32 h-auto object-contain" loading="eager" />
           </NavLink>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden md:flex gap-10 text-gray-700 font-medium text-[15px]">
+          <nav className="hidden md:flex gap-6 lg:gap-10 text-gray-700 font-medium text-[15px]">
             <NavLink to="/" className={({ isActive }) =>
               `${navItem} ${isActive ? "text-black after:w-full" : "hover:text-[#2364EB]"}`
             }>Home</NavLink>
@@ -77,7 +76,7 @@ const Header = () => {
             <button
               onClick={handleSearchClick}
               className="hover:text-blue-500 transition-colors"
-              title="Search products"
+              aria-label="Search products"
             >
               <Search size={22} />
             </button>
@@ -127,11 +126,13 @@ const Header = () => {
                 )}
               </div>
             ) : (
-              <User size={22} className="cursor-pointer" onClick={() => setAuthOpen(true)} />
+              <button aria-label="Login or register" className="bg-transparent border-none p-0 cursor-pointer" onClick={() => setAuthOpen(true)}>
+                <User size={22} />
+              </button>
             )}
 
             <div className="relative cursor-pointer">
-              <NavLink to="/cart"><ShoppingCart size={22} /></NavLink>
+              <NavLink to="/cart" aria-label="Shopping cart"><ShoppingCart size={22} /></NavLink>
               {cartItems.length > 0 && (
                 <span className="absolute -top-2 -right-2 text-[10px] bg-blue-500 text-white px-1.5 rounded-full font-bold">
                   {cartItems.reduce((acc, item) => acc + item.qty, 0)}
@@ -140,11 +141,13 @@ const Header = () => {
             </div>
 
             {/* MOBILE MENU ICON */}
-            <Menu
-              size={22}
-              className="md:hidden cursor-pointer"
+            <button
+              aria-label="Open menu"
+              className="md:hidden cursor-pointer bg-transparent border-none p-0"
               onClick={() => setMobileMenuOpen(true)}
-            />
+            >
+              <Menu size={22} />
+            </button>
           </div>
         </div>
       </header>
@@ -153,10 +156,13 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-black/40 z-50 flex">
           <div className="bg-white w-3/4 max-w-xs h-full p-6 relative flex flex-col">
-            <X
-              className="absolute top-4 right-4 cursor-pointer text-gray-500"
+            <button
+              aria-label="Close menu"
+              className="absolute top-4 right-4 cursor-pointer text-gray-500 bg-transparent border-none p-0"
               onClick={() => setMobileMenuOpen(false)}
-            />
+            >
+              <X size={24} />
+            </button>
             
             <nav className="flex flex-col gap-4 mt-8 flex-1">
               <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 font-medium hover:text-blue-500">Home</NavLink>
@@ -233,7 +239,7 @@ const Header = () => {
       {/* SEARCH MODAL */}
       {isSearchOpen && (
         <div className="fixed inset-0 bg-black/40 z-[60] flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl p-6 relative animate-in fade-in zoom-in-95 duration-200">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl p-4 sm:p-6 relative animate-in fade-in zoom-in-95 duration-200">
             {/* Close Button */}
             <button
               onClick={() => {
@@ -241,12 +247,13 @@ const Header = () => {
                 setSearchQuery("");
               }}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+              aria-label="Close search"
             >
               <X size={24} />
             </button>
 
             {/* Search Title */}
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Search Products</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Search Products</h2>
 
             {/* Search Form */}
             <form onSubmit={handleSearchSubmit} className="flex gap-3">

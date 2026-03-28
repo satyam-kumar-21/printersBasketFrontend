@@ -31,10 +31,8 @@ const Checkout = () => {
     const [agreeToTerms, setAgreeToTerms] = useState(false);
 
     useEffect(() => {
-        if (!userInfo || cartItems.length === 0) {
-            navigate('/cart');
-        } else if (step === 2 && window.Clover) {
-             setTimeout(() => {
+        const mountCloverElements = () => {
+            setTimeout(() => {
                 const numberEl = document.querySelector('#card-number');
                 const dateEl = document.querySelector('#card-date');
                 const cvvEl = document.querySelector('#card-cvv');
@@ -42,42 +40,62 @@ const Checkout = () => {
 
                 // Check if containers exist and are empty
                 if (numberEl && !numberEl.hasChildNodes()) {
-                     const cloverInstance = new window.Clover(import.meta.env.VITE_CLOVER_PUBLIC_KEY);
-                     const elements = cloverInstance.elements();
-                     
-                     const styles = { 
-                         body: { 
-                             fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', 
-                             fontSize: '14px',
-                             color: '#334155', // slate-700
-                             fontWeight: '500', 
-                             margin: '0',
-                             padding: '0',
-                             width: '100%'
-                         },
-                         input: {
-                             padding: '0', 
-                             margin: '0',
-                             width: '100%'
-                         },
-                         'input::placeholder': {
-                             color: '#94a3b8' // slate-400
-                         }
-                     };
+                    const cloverInstance = new window.Clover(import.meta.env.VITE_CLOVER_PUBLIC_KEY);
+                    const elements = cloverInstance.elements();
 
-                     const cardNumber = elements.create('CARD_NUMBER', { styles });
-                     const cardDate = elements.create('CARD_DATE', { styles });
-                     const cardCvv = elements.create('CARD_CVV', { styles });
-                     const cardPostalCode = elements.create('CARD_POSTAL_CODE', { styles });
+                    const styles = {
+                        body: {
+                            fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                            fontSize: '14px',
+                            color: '#334155', // slate-700
+                            fontWeight: '500',
+                            margin: '0',
+                            padding: '0',
+                            width: '100%'
+                        },
+                        input: {
+                            padding: '0',
+                            margin: '0',
+                            width: '100%'
+                        },
+                        'input::placeholder': {
+                            color: '#94a3b8' // slate-400
+                        }
+                    };
 
-                     cardNumber.mount('#card-number');
-                     cardDate.mount('#card-date');
-                     cardCvv.mount('#card-cvv');
-                     cardPostalCode.mount('#card-postal-code');
+                    const cardNumber = elements.create('CARD_NUMBER', { styles });
+                    const cardDate = elements.create('CARD_DATE', { styles });
+                    const cardCvv = elements.create('CARD_CVV', { styles });
+                    const cardPostalCode = elements.create('CARD_POSTAL_CODE', { styles });
 
-                     setClover(cloverInstance);
+                    cardNumber.mount('#card-number');
+                    cardDate.mount('#card-date');
+                    cardCvv.mount('#card-cvv');
+                    cardPostalCode.mount('#card-postal-code');
+
+                    setClover(cloverInstance);
                 }
-             }, 100);
+            }, 100);
+        };
+
+        if (!userInfo || cartItems.length === 0) {
+            navigate('/cart');
+        } else if (step === 2) {
+            if (window.Clover) {
+                mountCloverElements();
+                return;
+            }
+
+            let script = document.getElementById('clover-sdk');
+            if (!script) {
+                script = document.createElement('script');
+                script.id = 'clover-sdk';
+                script.src = 'https://checkout.clover.com/sdk.js';
+                script.defer = true;
+                document.body.appendChild(script);
+            }
+
+            script.addEventListener('load', mountCloverElements, { once: true });
         }
     }, [userInfo, cartItems, navigate, step]);
 
@@ -101,40 +119,19 @@ const Checkout = () => {
                 
                 const rates = data.rates || (Array.isArray(data) ? data : []);
                 setDistance(data.distance || null);
-                                // Debug: log raw rates from backend
-                                // console.log('Raw rates from backend:', rates); 
-                                // if (Array.isArray(rates)) {
-                                //     rates.forEach((rate, idx) => {
-                                //         console.log(`Rate #${idx}: carrier=${rate.carrier}, account_id=${rate.carrier_account_id}, service=${rate.service}`);
-                                //     });
-                                // }
 
-                                // Only show Canada Post, FedEx, UPS, USPS shipping methods (strict carrier name and account id)
-                                const allowedAccounts = [
-                                        'ca_e3cbd16a6eb84914985d90875a6ec074', // Canada Post
-                                        'ca_76d0939dc1ce4c99870bbc2844d8d02b', // FedEx Wallet
-                                        'ca_c5f03a14c10d4fbab837e8a35b01c7df'  // UPS
-                                ];
-                                // Only show Canada Post, FedEx (FedExDefault), UPS (UPSDAP), and USPS
-                                const allowedCarrierMap = {
-                                    'ca_e3cbd16a6eb84914985d90875a6ec074': 'Canada Post',
-                                    'ca_76d0939dc1ce4c99870bbc2844d8d02b': 'FedExDefault',
-                                    'ca_c5f03a14c10d4fbab837e8a35b01c7df': 'UPSDAP',
-                                    'ca_b82a2962176446d09a48bc649977f467': 'USPS',
-                                    'ca_fb3ad562209b4e7d930bd0f31f44f2fe': 'DHLExpress'
-                                };
-                                const filteredRates = rates.filter(
-                                    rate => allowedCarrierMap[rate.carrier_account_id] && rate.carrier === allowedCarrierMap[rate.carrier_account_id]
-                                );
-                                // Only show the lowest-priced rate per carrier/account
-                                const bestRatesMap = {};
-                                filteredRates.forEach(rate => {
-                                    const key = rate.carrier_account_id;
-                                    if (!bestRatesMap[key] || Number(rate.rate) < Number(bestRatesMap[key].rate)) {
-                                        bestRatesMap[key] = rate;
+                                // Deduplicate by carrier + service, keep cheapest of each
+                                const uniqueMap = {};
+                                rates.forEach(rate => {
+                                    const key = `${rate.carrier}_${rate.service}`;
+                                    if (!uniqueMap[key] || Number(rate.rate) < Number(uniqueMap[key].rate)) {
+                                        uniqueMap[key] = rate;
                                     }
                                 });
-                                const bestRates = Object.values(bestRatesMap).sort((a, b) => Number(a.rate) - Number(b.rate));
+                                // Sort by price and show up to 4 best options
+                                const bestRates = Object.values(uniqueMap)
+                                    .sort((a, b) => Number(a.rate) - Number(b.rate))
+                                    .slice(0, 4);
                                 setShippingRates(bestRates);
                                 if (bestRates.length > 0) setSelectedRate(bestRates[0]);
             } catch (error) {
@@ -165,6 +162,11 @@ const Checkout = () => {
             const result = await clover.createToken();
             if (result.errors) {
                  alert('Payment Error: ' + Object.values(result.errors).join(', '));
+                 setLoading(false);
+                 return;
+            }
+            if (!result.token) {
+                 alert('Failed to create payment token. Please check your card details.');
                  setLoading(false);
                  return;
             }
@@ -238,13 +240,13 @@ const Checkout = () => {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
 
                     {/* LEFT */}
                     <div className="lg:col-span-3">
                         {step === 1 ? (
-                            <form onSubmit={submitShippingHandler} className="bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm">
-                                <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-8 flex flex-col sm:flex-row items-center gap-3 uppercase tracking-tighter text-center sm:text-left">
+                            <form onSubmit={submitShippingHandler} className="bg-gradient-to-br from-white to-blue-50/30 p-4 sm:p-6 md:p-8 lg:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm">
+                                <h2 className="text-xl sm:text-2xl lg:text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-6 sm:mb-8 flex flex-col sm:flex-row items-center gap-3 uppercase tracking-tighter text-center sm:text-left">
                                     <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-100 rounded-full flex items-center justify-center text-blue-600">
                                         <Truck size={20} />
                                     </div>
@@ -371,14 +373,14 @@ const Checkout = () => {
                                 </button>
                             </form>
                         ) : (
-                            <div className="bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
+                            <div className="bg-gradient-to-br from-white to-blue-50/30 p-4 sm:p-6 md:p-8 lg:p-10 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-6 sm:space-y-8">
                                 {/* Payment Header */}
                                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                                     <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
                                         <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-100 rounded-full flex items-center justify-center text-blue-600">
                                             <CreditCard size={20} />
                                         </div>
-                                        <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Payment</h2>
+                                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Payment</h2>
                                     </div>
                                     <button onClick={() => setStep(1)} className="text-xs font-bold text-slate-400 hover:text-slate-600 whitespace-nowrap">
                                         Edit Shipping
@@ -472,8 +474,8 @@ const Checkout = () => {
                     </div>
 
                     {/* RIGHT */}
-                    <div className="lg:col-span-2 bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 p-10 rounded-3xl h-fit shadow-lg shadow-blue-100/30 backdrop-blur-sm">
-                        <h3 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-8 uppercase tracking-tighter">Summary</h3>
+                    <div className="lg:col-span-2 bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 p-4 sm:p-6 md:p-8 lg:p-10 rounded-3xl h-fit shadow-lg shadow-blue-100/30 backdrop-blur-sm">
+                        <h3 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-6 sm:mb-8 uppercase tracking-tighter">Summary</h3>
                         
                         <div className="space-y-4 font-medium">
                             <div className="flex justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -503,7 +505,7 @@ const Checkout = () => {
                         
                         <div className="flex justify-between items-center">
                             <span className="font-bold text-slate-600 text-lg">Total:</span>
-                            <span className="text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">${totalPrice.toFixed(2)}</span>
+                            <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">${totalPrice.toFixed(2)}</span>
                         </div>
 
                         <p className="text-xs text-slate-500 mt-8 font-medium leading-relaxed px-4 py-3 bg-slate-50 rounded-xl border border-slate-100">

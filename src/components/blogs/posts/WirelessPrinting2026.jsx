@@ -22,7 +22,7 @@ const WirelessPrinting2026 = () => {
                     <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-blue-200/30">
                         Setup Guide
                     </div>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
                         Wireless Printing Made Easy: How Modern Printers Connect to Your Devices (2026 Guide)
                     </h1>
                     
@@ -43,7 +43,7 @@ const WirelessPrinting2026 = () => {
                 </header>
 
                 {/* Content */}
-                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
+                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-4 sm:p-6 md:p-8 lg:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
                     
                     <p className="lead text-lg text-slate-600">
                         Wireless printing has become a standard expectation among home users, students, remote workers, and office environments. In 2026, the ability to print from smartphones, laptops, and tablets without plugging in cables is not just a convenience—it's essential for modern workflow flexibility. This guide explains how wireless printing works, how to set it up, the types of wireless technologies available, and practical troubleshooting tips—all in simple, non-technical language.
@@ -375,7 +375,7 @@ const WirelessPrinting2026 = () => {
                         </Link>
                     </div>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
+                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 text-center text-white relative z-10 mt-12">
                         <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
                             Ready to Go Wireless?
                         </h2>

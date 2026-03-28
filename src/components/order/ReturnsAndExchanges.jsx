@@ -37,18 +37,18 @@ const ReturnsAndExchanges = () => {
     ];
 
     return (
-        <div className="max-w-5xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-            <h1 className="text-3xl font-bold text-gray-900 mb-6">Returns & Exchanges</h1>
-            <p className="text-gray-700 mb-8">
+        <div className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8 bg-white rounded-lg shadow-lg">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Returns & Exchanges</h1>
+            <p className="text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base">
                 We want you to be completely satisfied with your purchase. Follow these simple steps for hassle-free returns or exchanges.
             </p>
 
             {/* Steps */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {steps.map((step, idx) => (
                     <div
                         key={idx}
-                        className="flex items-start gap-4 p-4 border rounded-lg hover:shadow-lg transition"
+                        className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 border rounded-lg hover:shadow-lg transition"
                     >
                         {/* Icon */}
                         <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-indigo-100 rounded-full">
@@ -57,7 +57,7 @@ const ReturnsAndExchanges = () => {
 
                         {/* Content */}
                         <div className="flex-1">
-                            <h3 className="text-lg font-semibold text-gray-800">{step.title}</h3>
+                            <h3 className="text-base sm:text-lg font-semibold text-gray-800">{step.title}</h3>
                             <p className="text-gray-600 mt-1 text-sm">{step.description}</p>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ const ReturnsAndExchanges = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="mt-8 text-center text-gray-700">
+            <div className="mt-6 sm:mt-8 text-center text-gray-700">
                 <p>
                     For urgent queries, contact our <Link to="/customer-service"><span className="font-medium text-indigo-600">Customer Service</span></Link> team.
                 </p>

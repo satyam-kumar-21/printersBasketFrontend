@@ -44,19 +44,19 @@ const Cart = () => {
     };
 
     return (
-        <div className="w-full min-h-screen py-10 bg-gradient-to-br from-slate-50 via-white to-blue-50/20">
+        <div className="w-full min-h-screen py-6 sm:py-8 lg:py-10 bg-gradient-to-br from-slate-50 via-white to-blue-50/20">
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
 
                 {/* Header */}
-                <section className="w-full bg-gradient-to-br from-white to-blue-50/30 rounded-3xl border-2 border-slate-100 p-8 md:p-12 mb-12 shadow-lg shadow-blue-100/30 backdrop-blur-sm">
+                <section className="w-full bg-gradient-to-br from-white to-blue-50/30 rounded-3xl border-2 border-slate-100 p-5 sm:p-8 md:p-12 mb-6 sm:mb-8 lg:mb-12 shadow-lg shadow-blue-100/30 backdrop-blur-sm">
                     <div className="text-center space-y-3">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Shopping Hub</h1>
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Shopping Hub</h1>
                         <div className="h-1 w-16 mx-auto bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
                         <p className="text-xs sm:text-sm font-bold text-slate-600 uppercase tracking-widest">
                             You have <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent font-black text-base sm:text-lg">{cartItems.reduce((acc, item) => acc + item.qty, 0)}</span> items in your inventory
@@ -65,14 +65,14 @@ const Cart = () => {
                 </section>
 
                 {cartItems.length === 0 ? (
-                    <div className="bg-white border-2 border-dashed border-slate-200 rounded-3xl p-20 text-center flex flex-col items-center justify-center space-y-6 shadow-lg">
-                        <div className="w-28 h-28 bg-gradient-to-br from-blue-50 to-blue-50 rounded-full flex items-center justify-center border-2 border-slate-100">
+                    <div className="bg-white border-2 border-dashed border-slate-200 rounded-3xl p-8 sm:p-12 lg:p-20 text-center flex flex-col items-center justify-center space-y-6 shadow-lg">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-blue-50 to-blue-50 rounded-full flex items-center justify-center border-2 border-slate-100">
                             <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
                         </div>
                         <div className="space-y-3">
-                            <h2 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Your Cart is Empty</h2>
+                            <h2 className="text-xl sm:text-2xl lg:text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Your Cart is Empty</h2>
                             <p className="text-slate-500 font-medium text-base">Ready to start printing? Explore our premium hardware collection.</p>
                         </div>
                         <Link to="/" className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-2xl font-black uppercase text-[11px] tracking-widest hover:shadow-lg hover:shadow-blue-200/50 transition-all hover:scale-105">
@@ -179,7 +179,7 @@ const Cart = () => {
                                 <div className="pt-2 border-t-2 border-slate-100">
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="text-xs font-black text-slate-600 uppercase tracking-widest">Invoice Total</span>
-                                        <span className="text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent tracking-tighter">${totalWithGift.toFixed(2)}</span>
+                                        <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent tracking-tighter">${totalWithGift.toFixed(2)}</span>
                                     </div>
                                     <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center bg-slate-50 py-2 rounded-lg">Taxes & Logistics at checkout</p>
                                 </div>

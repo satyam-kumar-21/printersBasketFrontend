@@ -7,10 +7,10 @@ const ProductRouteHeading = ({
 }) => {
     return (
         <section className="relative bg-gradient-to-b from-gray-50 via-white to-gray-100 border-b">
-            <div className="max-w-7xl mx-auto px-4 py-16 md:py-20 text-center">
+            <div className="max-w-7xl mx-auto px-4 py-10 sm:py-14 md:py-20 text-center">
 
                 {/* Title */}
-                <h1 className="text-3xl md:text-4xl font-semibold text-gray-900">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
                     {title}
                 </h1>
 

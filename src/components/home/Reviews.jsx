@@ -29,11 +29,11 @@ const Reviews = () => {
   };
 
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-4">What Customers Say</h2>
-          <p className="text-gray-500">Real experiences shared by our community.</p>
+    <section className="bg-white py-10 sm:py-14 lg:py-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 mb-4">What Customers Say</h2>
+          <p className="text-gray-500 text-sm sm:text-base">Real experiences shared by our community.</p>
         </div>
 
         {/* Scrollable Container */}
@@ -42,7 +42,7 @@ const Reviews = () => {
             <div
               id={`review-card-${index}`} // Critical for the scroll to work
               key={index}
-              className="min-w-[90%] md:min-w-[calc(50%-12px)] bg-white rounded-2xl p-8 border border-gray-100 shadow-sm snap-start flex flex-col h-[280px]"
+              className="min-w-[85%] sm:min-w-[70%] md:min-w-[calc(50%-12px)] bg-white rounded-2xl p-5 sm:p-6 lg:p-8 border border-gray-100 shadow-sm snap-start flex flex-col min-h-[240px] sm:min-h-[260px] lg:min-h-[280px]"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -65,6 +65,7 @@ const Reviews = () => {
             <button
               key={i}
               onClick={() => handleScrollTo(i)}
+              aria-label={`Go to review group ${i + 1}`}
               className={`h-2.5 rounded-full transition-all duration-500 ${
                 activeDot === i ? 'bg-blue-500 w-8' : 'bg-gray-200 w-2.5'
               }`}

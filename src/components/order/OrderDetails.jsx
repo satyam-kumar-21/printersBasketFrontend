@@ -76,7 +76,7 @@ const OrderDetails = () => {
     const currentStepIndex = statusSteps.findIndex(step => step.status === order.status);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 py-12 pb-24">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 py-8 sm:py-10 lg:py-12 pb-24">
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
@@ -94,20 +94,20 @@ const OrderDetails = () => {
                         <span className="text-[10px] font-black uppercase tracking-widest">Return to Dashboard</span>
                     </Link>
                     <div className="text-right">
-                        <h1 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Order #ORD-{order._id.toUpperCase()}</h1>
+                        <h1 className="text-xl sm:text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Order #ORD-{order._id.toUpperCase()}</h1>
                         <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest flex items-center justify-end gap-1">
                             <Calendar size={12} /> {new Date(order.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                         </p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                     
                     {/* Left Column: Progress & Items */}
                     <div className="lg:col-span-2 space-y-8">
                         
                         {/* Progress Tracker */}
-                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 overflow-hidden relative backdrop-blur-sm">
+                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 overflow-hidden relative backdrop-blur-sm">
                             {/* Decorative Background Element */}
                             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-transparent rounded-bl-[5rem] -mr-16 -mt-16 pointer-events-none"></div>
                             
@@ -116,7 +116,7 @@ const OrderDetails = () => {
                                     <Truck size={24} />
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Logistics Status</h2>
+                                    <h2 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Logistics Status</h2>
                                     <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Real-time transmission tracking</p>
                                 </div>
                             </div>
@@ -124,12 +124,15 @@ const OrderDetails = () => {
                             <div className="relative">
                                 {/* Connector Line */}
                                 <div className="absolute left-[19px] top-4 bottom-4 w-0.5 bg-slate-200 md:left-4 md:right-4 md:top-[19px] md:bottom-auto md:w-auto md:h-0.5 pointer-events-none"></div>
+                                {/* Vertical progress (mobile) */}
                                 <div 
-                                    className="absolute left-[19px] top-4 w-0.5 bg-gradient-to-r from-blue-600 to-blue-600 transition-all duration-1000 md:left-4 md:top-[19px] md:h-0.5 md:w-0" 
-                                    style={{ 
-                                        width: window.innerWidth > 768 ? `calc(${(currentStepIndex / (statusSteps.length - 1)) * 100}% - 8px)` : '2px',
-                                        height: window.innerWidth > 768 ? '2px' : `calc(${(currentStepIndex / (statusSteps.length - 1)) * 100}% - 8px)`
-                                    }}
+                                    className="absolute left-[19px] top-4 w-0.5 bg-gradient-to-b from-blue-600 to-blue-600 transition-all duration-1000 md:hidden" 
+                                    style={{ height: `calc(${(currentStepIndex / (statusSteps.length - 1)) * 100}% - 8px)` }}
+                                ></div>
+                                {/* Horizontal progress (desktop) */}
+                                <div 
+                                    className="absolute left-4 top-[19px] h-0.5 bg-gradient-to-r from-blue-600 to-blue-600 transition-all duration-1000 hidden md:block" 
+                                    style={{ width: `calc(${(currentStepIndex / (statusSteps.length - 1)) * 100}% - 8px)` }}
                                 ></div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
@@ -182,12 +185,12 @@ const OrderDetails = () => {
                         </div>
 
                         {/* Order Items */}
-                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm">
+                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm">
                             <div className="flex items-center gap-4 mb-8">
                                 <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-100 rounded-2xl flex items-center justify-center text-blue-600">
                                     <Package size={24} />
                                 </div>
-                                <h2 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Inventory Detailed</h2>
+                                <h2 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Inventory Detailed</h2>
                             </div>
 
                             <div className="divide-y divide-slate-100">
@@ -226,8 +229,8 @@ const OrderDetails = () => {
                     <div className="space-y-8 h-fit lg:sticky lg:top-24">
                         
                         {/* Cost Analysis */}
-                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
-                            <h3 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Cost Analysis</h3>
+                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
+                            <h3 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Cost Analysis</h3>
                             
                             <div className="space-y-4">
                                 <div className="flex justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -245,7 +248,7 @@ const OrderDetails = () => {
                                 <div className="pt-6 border-t-2 border-gradient-to-r from-blue-200 to-blue-200">
                                     <div className="flex justify-between items-baseline">
                                         <span className="text-sm font-black uppercase tracking-tight text-slate-600">Net Total</span>
-                                        <span className="text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent tracking-tighter">${(order.totalPrice || 0).toFixed(2)}</span>
+                                        <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent tracking-tighter">${(order.totalPrice || 0).toFixed(2)}</span>
                                     </div>
                                 </div>
                             </div>
@@ -257,7 +260,7 @@ const OrderDetails = () => {
                         </div>
 
                         {/* Settlement Details */}
-                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
+                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-100 rounded-2xl flex items-center justify-center text-blue-600">
                                     <CreditCard size={20} />
@@ -285,7 +288,7 @@ const OrderDetails = () => {
                         </div>
 
                         {/* Delivery Endpoint */}
-                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-8 md:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
+                        <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-lg shadow-blue-100/30 border-2 border-slate-100 backdrop-blur-sm space-y-8">
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-100 rounded-2xl flex items-center justify-center text-blue-600">
                                     <MapPin size={20} />

@@ -78,27 +78,30 @@ const BlogsMain = () => {
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
-                <div className="text-center mb-12 md:mb-16">
-                    <h1 className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-4 uppercase tracking-tight">
+                <div className="text-center mb-8 sm:mb-12 md:mb-16">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-4 uppercase tracking-tight">
                         Latest Insights & Guides
                     </h1>
                     <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto my-4"></div>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
+                    <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto font-medium">
                         Expert advice, buying guides, and tips to help you get the most out of your printing experience.
                     </p>
                 </div>
 
                 {/* Blog Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     {blogs.map((blog) => (
                         <article key={blog.id} className="bg-gradient-to-br from-white to-blue-50/30 rounded-3xl overflow-hidden shadow-lg shadow-blue-100/30 border-2 border-slate-100 hover:shadow-2xl hover:border-blue-200 transition-all duration-300 group backdrop-blur-sm">
                             {/* Image */}
-                            <div className="relative h-56 md:h-64 overflow-hidden">
+                            <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                                 <Link to={`/blogs/${blog.slug}`}>
                                     <img
                                         src={blog.image}
                                         alt={blog.title}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                        loading="lazy"
+                                        width="400"
+                                        height="256"
                                     />
                                     <div className="absolute top-3 left-4 bg-gradient-to-r from-blue-600 to-blue-600 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-widest shadow-md">
                                         {blog.category}
@@ -107,7 +110,7 @@ const BlogsMain = () => {
                             </div>
 
                             {/* Content */}
-                            <div className="p-6 md:p-8">
+                            <div className="p-4 sm:p-6 md:p-8">
                                 <div className="flex items-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
                                     <span className="flex items-center gap-1">
                                         <Calendar size={14} /> {blog.date}

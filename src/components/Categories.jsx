@@ -4,25 +4,25 @@ import { useNavigate } from "react-router-dom";
 const categories = [
   {
     title: "Home Printers",
-    image: "/categories/homePrinter.jpg",
+    image: "/categories/homePrinter-220.jpg",
     filterType: "usage",
     filterValue: "Home"
   },
   {
     title: "Office Printers",
-    image: "/categories/officePrinter.jpg",
+    image: "/categories/officePrinter-220.jpg",
     filterType: "usage",
     filterValue: "Office"
   },
   {
     title: "Inkjet Printers",
-    image: "/assets/inkjet.png",
+    image: "/assets/inkjet.webp",
     filterType: "technology",
     filterValue: "Inkjet"
   },
   {
     title: "Laser Printers",
-    image: "/categories/laserPrinter.jpg",
+    image: "/categories/laserPrinter-220.jpg",
     filterType: "technology",
     filterValue: "Laser"
   },
@@ -40,23 +40,23 @@ const Categories = () => {
   };
 
   return (
-    <section className="bg-[#f5f6f8] py-20">
+    <section className="bg-[#f5f6f8] py-10 sm:py-14 lg:py-20">
 
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4">
 
         {/* HEADER */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-800 tracking-tight text-center">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 tracking-tight text-center">
             Explore Printer Categories
           </h2>
 
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-gray-500 mt-3 sm:mt-4 max-w-2xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed">
             Browse our carefully curated printer categories to find the perfect solution for your home, office, or business needs.
           </p>
         </div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5 md:gap-8">
 
           {categories.map((item, index) => {
             return (
@@ -67,7 +67,7 @@ const Categories = () => {
                 aria-label={`View ${item.title} category`}
               >
                 {/* IMAGE CARD */}
-                <div className="bg-white rounded-2xl p-6 shadow-sm 
+                <div className="bg-white rounded-2xl p-3 sm:p-4 lg:p-6 shadow-sm 
                                 transition-all duration-300 
                                 group-hover:shadow-lg 
                                 group-hover:-translate-y-2">
@@ -76,7 +76,7 @@ const Categories = () => {
                     alt={item.title}
                     width="160"
                     height="160"
-                    className="w-full h-32 md:h-40 object-contain mx-auto 
+                    className="w-full h-24 sm:h-28 md:h-32 lg:h-40 object-contain mx-auto 
                                transition duration-300 
                                group-hover:scale-110"
                     loading="lazy"

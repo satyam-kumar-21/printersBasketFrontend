@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckCircle2, Globe, Package, Users, Zap, Shield, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -306,9 +307,9 @@ const AboutUs = () => {
           <p className="text-xs sm:text-sm lg:text-base mb-6 sm:mb-8 opacity-95 max-w-2xl mx-auto">
             Discover a focused selection of quality printers backed by our commitment to accuracy, reliability, and clear communication.
           </p>
-          <a href="/shop" className="inline-block bg-white text-blue-600 font-semibold px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm sm:text-base">
+          <Link to="/shop" className="inline-block bg-white text-blue-600 font-semibold px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm sm:text-base">
             Shop Now
-          </a>
+          </Link>
         </div>
       </section>
     </div>

@@ -22,7 +22,7 @@ const HowChoosePrinter2026 = () => {
                     <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-blue-200/30">
                         Buying Guide
                     </div>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
                         How to Choose the Right Printer for Your Home or Office: The Complete 2026 Buying Guide
                     </h1>
                     
@@ -43,7 +43,7 @@ const HowChoosePrinter2026 = () => {
                 </header>
 
                 {/* Content */}
-                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
+                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-4 sm:p-6 md:p-8 lg:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
                     
                     <p className="lead text-lg text-slate-600">
                         Choosing the right printer in 2026 is more than just picking any device off the shelf. With advances in technology, cloud connectivity, and eco-friendly options, the decision requires understanding your specific needs, budget, and use case. This complete guide will walk you through everything you need to know.
@@ -301,7 +301,7 @@ const HowChoosePrinter2026 = () => {
                         </Link>
                     </div>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
+                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 text-center text-white relative z-10 mt-12">
                         <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
                             Ready to Find Your Perfect Printer?
                         </h2>

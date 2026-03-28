@@ -104,12 +104,12 @@ const HelpSupport = () => {
         <div className="space-y-6">
             {/* Header */}
             <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">Help & Support</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Help & Support</h2>
                 <p className="text-slate-600">Get assistance with your orders and account</p>
             </div>
 
             {/* Contact Options */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <div className="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-md transition-shadow">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
                         <MessageCircle size={24} />
@@ -149,8 +149,8 @@ const HelpSupport = () => {
             </div>
 
             {/* FAQs */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <div className="bg-white rounded-xl border border-slate-200 p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
                     <HelpCircle size={24} className="text-blue-600" />
                     Frequently Asked Questions
                 </h3>
@@ -175,7 +175,7 @@ const HelpSupport = () => {
 
             {/* Live Chat Widget */}
             {chatOpen && (
-                <div className="fixed bottom-4 right-4 w-96 h-[500px] bg-white rounded-xl shadow-2xl border border-slate-200 flex flex-col z-50 max-w-[calc(100vw-2rem)]">
+                <div className="fixed bottom-4 right-4 w-[calc(100vw-2rem)] sm:w-96 h-[400px] sm:h-[500px] bg-white rounded-xl shadow-2xl border border-slate-200 flex flex-col z-50">
                     {/* Chat Header */}
                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-xl flex items-center justify-between">
                         <div className="flex items-center gap-3">

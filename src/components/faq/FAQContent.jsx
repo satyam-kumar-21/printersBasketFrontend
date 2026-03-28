@@ -73,18 +73,18 @@ const FAQContent = () => {
 
   return (
     <section className="w-full bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <div className="mb-6">
             <img
               src={heroImage}
               alt="Prints Basket FAQ"
-              className="w-full max-w-sm mx-auto h-40 object-cover rounded-lg shadow-md"
+              className="w-full max-w-sm mx-auto h-32 sm:h-36 lg:h-40 object-cover rounded-lg shadow-md"
             />
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             FAQs
           </h1>
           <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg">
@@ -103,7 +103,7 @@ const FAQContent = () => {
                     onClick={() => toggleFAQ(faqIndex)}
                     className="w-full text-left flex justify-between items-center hover:bg-gray-50 p-2 rounded transition-colors"
                   >
-                    <h3 className="text-base font-medium text-gray-900 pr-4">
+                    <h3 className="text-sm sm:text-base font-medium text-gray-900 pr-4">
                       {faq.q}
                     </h3>
                     <span className={`transform transition-transform text-gray-500 ${isOpen ? 'rotate-180' : ''}`}>
@@ -126,8 +126,8 @@ const FAQContent = () => {
         </div>
 
         {/* Contact Section */}
-        <div className="mt-8 bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-200 p-6 rounded-lg text-center">
-          <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-3">
+        <div className="mt-6 sm:mt-8 bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+          <h3 className="text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600 mb-3">
             Still Need Help?
           </h3>
           <p className="text-gray-700 mb-4">

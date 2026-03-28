@@ -25,24 +25,27 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto font-sans">
+    <section className="py-10 sm:py-14 lg:py-16 px-3 sm:px-4 max-w-7xl mx-auto font-sans">
       {/* Header Section */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-4">
+      <div className="text-center mb-10 sm:mb-14 lg:mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-4">
           Why Choose Our Printer Store
         </h2>
-        <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+        <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
           We are committed to delivering quality, transparency, and customer satisfaction at every stage of the experience.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
         {/* Left Side: Product Image */}
         <div className="flex justify-center">
           <img 
             src={whyUs}
-            alt="HP Printer" 
+            alt="Why choose Prints Basket" 
+            width="448"
+            height="448"
             className="w-full max-w-md h-auto object-contain"
+            loading="lazy"
           />
         </div>
 
@@ -54,7 +57,7 @@ const WhyChooseUs = () => {
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                 className="w-full py-5 flex justify-between items-center text-left transition-colors hover:bg-gray-50 px-2"
               >
-                <span className={`text-lg font-medium ${openIndex === index ? 'text-gray-900' : 'text-gray-700'}`}>
+                <span className={`text-sm sm:text-base lg:text-lg font-medium ${openIndex === index ? 'text-gray-900' : 'text-gray-700'}`}>
                   {faq.question}
                 </span>
                 {openIndex === index ? (

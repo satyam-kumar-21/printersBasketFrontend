@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone } from "lucide-react";
-import logo from "../../public/logo-bgremove.png";
 
 const Footer = () => {
 
@@ -14,22 +13,36 @@ useEffect(() => {
     // Prevent multiple script loads
     if (window._godaddySealLoaded || sealDiv.innerHTML.trim() !== '') return;
     
-    try {
-      const script = document.createElement("script");
-      script.src = "https://seal.godaddy.com/getSealBasic?sealID=3cUA1XaqHzZ1nqhWZ2f3ZtcXx4KUQ725FR4F4VIpr8rZBF6Wd5EZMgSqErsT";
-      script.async = true;
-      script.onerror = () => console.error("Failed to load GoDaddy seal");
-      
-      script.onload = () => {
-        window._godaddySealLoaded = true;
-      };
-      
-      sealDiv.appendChild(script);
-    } catch (error) {
-      console.error("Error loading GoDaddy seal:", error);
-    }
+    const loadSeal = () => {
+      try {
+        const script = document.createElement("script");
+        script.src = "https://seal.godaddy.com/getSealBasic?sealID=3cUA1XaqHzZ1nqhWZ2f3ZtcXx4KUQ725FR4F4VIpr8rZBF6Wd5EZMgSqErsT";
+        script.async = true;
+        script.onerror = () => console.error("Failed to load GoDaddy seal");
+
+        script.onload = () => {
+          window._godaddySealLoaded = true;
+        };
+
+        sealDiv.appendChild(script);
+      } catch (error) {
+        console.error("Error loading GoDaddy seal:", error);
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          loadSeal();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(sealDiv);
 
     return () => {
+      observer.disconnect();
       // Cleanup on unmount
       if (sealDiv && window._godaddySealLoaded) {
         const scripts = sealDiv.querySelectorAll('script');
@@ -42,7 +55,7 @@ useEffect(() => {
     };
   }, []);
   return (
-    <footer className="bg-gradient-to-br from-black via-[#0b0b0b] to-[#3b1f00] text-white pt-12 pb-8 w-full">
+    <footer className="bg-gradient-to-br from-black via-[#0b0b0b] to-[#3b1f00] text-white pt-8 sm:pt-10 lg:pt-12 pb-6 sm:pb-8 w-full">
 
       {/* TOP SECTION - Main Links & Contact */}
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
@@ -50,11 +63,11 @@ useEffect(() => {
         {/* LOGO + COMPANY INFO */}
         <div>
           <img
-            src={logo}
+            src="/logo-bgremove-224.png"
             alt="Prints Basket Logo"
-            width="128"
-            height="40"
-            className="w-32 mb-4 object-contain"
+            width="224"
+            height="54"
+            className="block w-32 h-auto mb-4 object-contain"
             loading="lazy"
           />
           <h4 className="font-bold text-base sm:text-lg mb-2">Prints Basket</h4>
@@ -112,7 +125,7 @@ useEffect(() => {
 
           {/* Security Badge */}
           <div className="mt-4">
-            <div id="siteseal"></div>
+            <div id="siteseal" className="min-h-[62px]"></div>
           </div>
         </div>
 

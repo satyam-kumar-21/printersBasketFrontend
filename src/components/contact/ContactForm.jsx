@@ -59,9 +59,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200">
-      <h2 className="text-2xl font-bold text-gray-900 mb-2">Send us a Message</h2>
-      <p className="text-gray-600 mb-6">How can we help you? Feel free to get in touch!</p>
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8 border border-gray-200">
+      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Send us a Message</h2>
+      <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">How can we help you? Feel free to get in touch!</p>
 
       {success && (
         <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">

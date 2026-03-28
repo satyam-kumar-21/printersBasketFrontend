@@ -213,7 +213,7 @@ const handleWriteReview = () => {
                             )}
 
                             {isZooming && (
-                                <div className="hidden lg:block absolute top-0 -right-96 w-[28rem] h-[28rem] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl overflow-hidden z-30 backdrop-blur-xl">
+                                <div className="hidden xl:block absolute top-0 -right-96 w-[28rem] h-[28rem] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl overflow-hidden z-30 backdrop-blur-xl">
                                     <div
                                         className="w-full h-full"
                                         style={{
@@ -261,7 +261,7 @@ const handleWriteReview = () => {
                         {/* Title */}
                         <div className="space-y-4">
                             <div className="space-y-2">
-                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent leading-tight tracking-tighter uppercase drop-shadow-lg">
+                                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent leading-tight tracking-tighter uppercase drop-shadow-lg">
                                     {product.title}
                                 </h1>
                                 <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
@@ -288,11 +288,11 @@ const handleWriteReview = () => {
                         )}
 
                         {/* Pricing & Actions */}
-                        <div className="space-y-6 p-6 md:p-8 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 rounded-3xl border-2 border-slate-200 backdrop-blur-sm shadow-lg shadow-blue-100/30 hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-300">
+                            <div className="space-y-6 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 rounded-3xl border-2 border-slate-200 backdrop-blur-sm shadow-lg shadow-blue-100/30 hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-300">
                             {/* Price */}
                             <div className="space-y-3">
-                                <div className="flex items-baseline gap-4">
-                                    <span className="text-6xl font-black bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent tracking-tighter">
+                                <div className="flex items-baseline gap-3 sm:gap-4 flex-wrap">
+                                    <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent tracking-tighter">
                                         ${product.price?.toFixed(2)}
                                     </span>
                                     {product.oldPrice > 0 && product.oldPrice > product.price && (
@@ -521,10 +521,10 @@ const handleWriteReview = () => {
 
                 {/* Related Products Section */}
                 {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
-                    <div className="mt-24 pt-16 border-t-2 border-slate-100">
-                        <div className="mb-12">
-                            <h3 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-2">You Might Also Like</h3>
-                            <p className="text-slate-600 text-base font-medium">Explore other products in the same category</p>
+                    <div className="mt-12 sm:mt-16 lg:mt-24 pt-8 sm:pt-12 lg:pt-16 border-t-2 border-slate-100">
+                        <div className="mb-6 sm:mb-8 lg:mb-12">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-2">You Might Also Like</h3>
+                            <p className="text-slate-600 text-sm sm:text-base font-medium">Explore other products in the same category</p>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                             {relatedProducts.filter(p => p && p._id !== product._id && p.slug !== (product.slug || productSlug)).slice(0, 4).map((item) => (

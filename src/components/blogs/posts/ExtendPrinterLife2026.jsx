@@ -22,7 +22,7 @@ const ExtendPrinterLife2026 = () => {
                     <div className="inline-block bg-gradient-to-r from-blue-600 to-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-lg shadow-blue-200/30">
                         Maintenance Guide
                     </div>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
                         Tips to Extend the Life of Your Printer and Keep It Running Smoothly (2026 Guide)
                     </h1>
                     
@@ -43,7 +43,7 @@ const ExtendPrinterLife2026 = () => {
                 </header>
 
                 {/* Content */}
-                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-8 md:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
+                <div className="prose prose-lg prose-slate max-w-none bg-gradient-to-br from-white to-blue-50/30 p-4 sm:p-6 md:p-8 lg:p-12 rounded-3xl shadow-lg shadow-blue-100/30 border-2 border-slate-100">
                     
                     <p className="lead text-lg text-slate-600">
                         A printer is an essential tool for homes, small businesses, and work-from-home setups. Whether you print occasionally or handle regular document tasks, taking care of your printer can significantly extend its lifespan and ensure consistent performance. In 2026, printers are more advanced, efficient, and reliable than ever—but like any electronic device, they need proper care to function optimally. The good news is that maintaining a printer is simple. With a few practical habits and regular checks, you can avoid breakdowns, reduce ink and toner waste, and save money on repairs or replacements.
@@ -292,7 +292,7 @@ const ExtendPrinterLife2026 = () => {
                         </Link>
                     </div>
 
-                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white relative z-10 mt-12">
+                    <div className="bg-gradient-to-br from-blue-600 to-blue-600 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 text-center text-white relative z-10 mt-12">
                         <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">
                             Keep Your Printer in Top Shape
                         </h2>

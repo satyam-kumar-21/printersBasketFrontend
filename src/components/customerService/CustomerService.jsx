@@ -43,10 +43,10 @@ const CustomerService = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
+    <div className="max-w-7xl mx-auto px-4 py-8 sm:py-10 lg:py-12 space-y-10 sm:space-y-14 lg:space-y-16">
       {/* Header Section */}
       <div className="text-center space-y-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
           Contact Us – Smart ePrinting
         </h1>
         <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">
@@ -60,12 +60,12 @@ const CustomerService = () => {
       </div>
 
       {/* Info Cards Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
         {/* Left Column: Static Info */}
         <div className="space-y-8">
           {/* Mailing Address */}
-          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 space-y-6">
-            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight">
+          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-4 sm:p-6 lg:p-8 space-y-6">
+            <h2 className="text-lg sm:text-xl font-black text-slate-900 uppercase tracking-tight">
               📍 Mailing Address
             </h2>
             <p className="text-slate-900 font-medium">
@@ -80,8 +80,8 @@ const CustomerService = () => {
           </div>
 
           {/* Email Support */}
-          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 space-y-6">
-            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight">
+          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-4 sm:p-6 lg:p-8 space-y-6">
+            <h2 className="text-lg sm:text-xl font-black text-slate-900 uppercase tracking-tight">
               📧 Email Support
             </h2>
             <p className="text-slate-900 font-medium">
@@ -99,8 +99,8 @@ const CustomerService = () => {
           </div>
 
           {/* Website */}
-          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 space-y-6">
-            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight">
+          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-4 sm:p-6 lg:p-8 space-y-6">
+            <h2 className="text-lg sm:text-xl font-black text-slate-900 uppercase tracking-tight">
               🌐 Website
             </h2>
             <p className="text-slate-900 font-medium">
@@ -119,8 +119,8 @@ const CustomerService = () => {
           </div>
 
           {/* How We Can Help */}
-          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 space-y-4">
-            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight">
+          <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-4 sm:p-6 lg:p-8 space-y-4">
+            <h2 className="text-lg sm:text-xl font-black text-slate-900 uppercase tracking-tight">
               💬 How We Can Help
             </h2>
             <ul className="list-disc pl-5 space-y-1 text-slate-900 font-medium">
@@ -152,7 +152,7 @@ const CustomerService = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 p-8 md:p-12 relative overflow-hidden">
+          <div className="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50/50 rounded-bl-full -z-10"></div>
 
             <h2 className="text-2xl font-black mb-2 text-slate-900 uppercase tracking-tighter">

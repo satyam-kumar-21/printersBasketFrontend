@@ -42,14 +42,14 @@ const ExploreCategoriesSection = () => {
   };
 
   return (
-    <div className="w-full bg-white border-t border-b border-gray-200 py-16">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+    <div className="w-full bg-white border-t border-b border-gray-200 py-10 sm:py-14 lg:py-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="mb-8 sm:mb-10 lg:mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Explore Printer<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600"> Categories</span>
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
             Browse commonly requested printer-related categories to quickly find relevant information and options.
           </p>
         </div>
@@ -59,7 +59,7 @@ const ExploreCategoriesSection = () => {
           {/* Home Printers */}
           <button
             onClick={() => handleCategoryClick('Home', 'usage')}
-            className="group relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 text-left border border-blue-200 hover:border-blue-400"
+            className="group relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-4 sm:p-5 lg:p-6 text-left border border-blue-200 hover:border-blue-400"
           >
             <div className="absolute top-0 right-0 w-20 h-20 bg-blue-200 rounded-full opacity-50 -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-300"></div>
             <div className="relative z-10">
@@ -75,7 +75,7 @@ const ExploreCategoriesSection = () => {
           {/* Office Printers */}
           <button
             onClick={() => handleCategoryClick('Office', 'usage')}
-            className="group relative bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 text-left border border-purple-200 hover:border-purple-400"
+            className="group relative bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-4 sm:p-5 lg:p-6 text-left border border-purple-200 hover:border-purple-400"
           >
             <div className="absolute top-0 right-0 w-20 h-20 bg-purple-200 rounded-full opacity-50 -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-300"></div>
             <div className="relative z-10">
@@ -91,7 +91,7 @@ const ExploreCategoriesSection = () => {
           {/* Inkjet Printers */}
           <button
             onClick={() => handleCategoryClick('Inkjet', 'technology')}
-            className="group relative bg-gradient-to-br from-rose-50 to-rose-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 text-left border border-rose-200 hover:border-rose-400"
+            className="group relative bg-gradient-to-br from-rose-50 to-rose-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-4 sm:p-5 lg:p-6 text-left border border-rose-200 hover:border-rose-400"
           >
             <div className="absolute top-0 right-0 w-20 h-20 bg-rose-200 rounded-full opacity-50 -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-300"></div>
             <div className="relative z-10">
@@ -107,7 +107,7 @@ const ExploreCategoriesSection = () => {
           {/* Laser Printers */}
           <button
             onClick={() => handleCategoryClick('Laser', 'technology')}
-            className="group relative bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 text-left border border-amber-200 hover:border-amber-400"
+            className="group relative bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-4 sm:p-5 lg:p-6 text-left border border-amber-200 hover:border-amber-400"
           >
             <div className="absolute top-0 right-0 w-20 h-20 bg-amber-200 rounded-full opacity-50 -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-300"></div>
             <div className="relative z-10">
