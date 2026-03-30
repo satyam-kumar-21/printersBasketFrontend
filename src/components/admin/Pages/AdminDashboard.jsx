@@ -11,6 +11,7 @@ import {
     CreditCard
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { DashboardSkeleton } from '../../common/Skeleton';
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
@@ -87,7 +88,7 @@ const AdminDashboard = () => {
             {/* Stats Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {loading ? (
-                    <div className="col-span-full text-center py-10 text-slate-400">Loading analytics...</div>
+                    <DashboardSkeleton />
                 ) : error ? (
                     <div className="col-span-full text-center py-10 text-red-500">{error}</div>
                 ) : statsDisplay.map((stat, i) => (
@@ -130,7 +131,7 @@ const AdminDashboard = () => {
                                     <tr><td colSpan="5" className="py-10 text-center text-slate-400">Loading orders...</td></tr>
                                 ) : analytics && analytics.recentOrders && analytics.recentOrders.length > 0 ? (
                                     analytics.recentOrders.map((order) => (
-                                        <tr key={order._id} className="hover:bg-slate-50/50 transition-colors cursor-pointer" onClick={() => navigate('/admin/orders')}>
+                                        <tr key={order._id} className="hover:bg-slate-50/50 transition-colors cursor-pointer" onClick={() => navigate('/admin/orders')} onKeyDown={(e) => e.key === 'Enter' && navigate('/admin/orders')} tabIndex={0} role="link">
                                             <td className="px-6 py-4 font-bold text-slate-700">ORD-{order._id.substring(order._id.length - 4).toUpperCase()}</td>
                                             <td className="px-6 py-4">
                                                 <div className="font-medium text-slate-800">{order.user?.name || 'Guest'}</div>
@@ -158,19 +159,21 @@ const AdminDashboard = () => {
                     <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                         <h3 className="font-bold text-slate-800 mb-4">Quick Stats</h3>
                         <div className="space-y-4">
-                            <div
+                            <button
+                                type="button"
                                 onClick={() => navigate('/admin/orders')}
-                                className="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors border border-transparent hover:border-slate-100 group"
+                                className="w-full flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors border border-transparent hover:border-slate-100 group"
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-100"><CreditCard size={18} /></div>
                                     <span className="text-sm font-medium text-slate-600">Total Orders</span>
                                 </div>
                                 <span className="font-bold text-slate-900">{analytics?.orders.total || 0}</span>
-                            </div>
-                            <div
+                            </button>
+                            <button
+                                type="button"
                                 onClick={() => navigate('/admin/orders')}
-                                className="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors border border-transparent hover:border-slate-100 group"
+                                className="w-full flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors border border-transparent hover:border-slate-100 group"
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-100"><ShoppingBag size={18} /></div>
@@ -179,17 +182,18 @@ const AdminDashboard = () => {
                                 <span className="font-bold text-slate-900">
                                     {analytics?.ordersByStatus?.find(s => s._id === 'Processing')?.count || 0}
                                 </span>
-                            </div>
-                            <div
+                            </button>
+                            <button
+                                type="button"
                                 onClick={() => navigate('/admin/customers')}
-                                className="flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors border border-transparent hover:border-slate-100 group"
+                                className="w-full flex items-center justify-between p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors border border-transparent hover:border-slate-100 group"
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="p-2 bg-purple-50 text-purple-600 rounded-lg group-hover:bg-purple-100"><Users size={18} /></div>
                                     <span className="text-sm font-medium text-slate-600">Total Customers</span>
                                 </div>
                                 <span className="font-bold text-slate-900">{analytics?.customers.total || 0}</span>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>

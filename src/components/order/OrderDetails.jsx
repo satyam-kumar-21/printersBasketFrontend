@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
+import api from '../../lib/api';
+import { OrderDetailSkeleton } from '../common/Skeleton';
 import { 
     Package, 
     Truck, 
@@ -28,9 +29,7 @@ const OrderDetails = () => {
         const fetchOrder = async () => {
             try {
                 setLoading(true);
-                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/orders/${id}`, {
-                    headers: { Authorization: `Bearer ${userInfo.token}` }
-                });
+                const { data } = await api.get(`/orders/${id}`);
                 setOrder(data);
                 setLoading(false);
             } catch (err) {
@@ -44,12 +43,7 @@ const OrderDetails = () => {
         }
     }, [id, userInfo]);
 
-    if (loading) return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50/20 gap-4">
-            <div className="w-12 h-12 border-4 border-slate-200 border-t-blue-600 rounded-full animate-spin"></div>
-            <p className="text-slate-500 font-black uppercase tracking-widest text-[10px]">Accessing Order Databank...</p>
-        </div>
-    );
+    if (loading) return <OrderDetailSkeleton />;
 
     if (error) return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50/20 gap-6 p-4">

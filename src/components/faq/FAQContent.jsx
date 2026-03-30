@@ -1,5 +1,4 @@
 ﻿import React, { useState } from "react";
-const heroImage = "/assets/printer.png";
 
 const FAQContent = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -77,13 +76,13 @@ const FAQContent = () => {
 
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <img
               src={heroImage}
               alt="Prints Basket FAQ"
               className="w-full max-w-sm mx-auto h-32 sm:h-36 lg:h-40 object-cover rounded-lg shadow-md"
             />
-          </div>
+          </div> */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             FAQs
           </h1>

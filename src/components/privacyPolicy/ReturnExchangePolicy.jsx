@@ -1,9 +1,11 @@
 import React from "react";
 import ReturnExchangeForm from "./ReturnExchangeForm";
+import SEO from '../common/SEO';
 
 const ReturnExchangePolicy = () => {
   return (
     <section className="w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen py-16">
+      <SEO title="Return & Exchange Policy | Prints Basket" description="Learn about the Prints Basket return and exchange policy. Start a return or exchange request easily." canonical="/return-exchange-policy" />
       {/* Background Patterns */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>

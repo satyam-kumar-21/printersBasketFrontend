@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Search, Loader2, Star, X, Filter } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllProducts } from '../../redux/actions/productActions';
+import SEO from '../common/SEO';
 
 const ShopMain = () => {
   const dispatch = useDispatch();
@@ -188,6 +189,11 @@ const ShopMain = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO
+          title="Shop Printers & Supplies"
+          description="Browse our full collection of inkjet, laser, and all-in-one printers. Filter by brand, technology, and price. Free shipping on orders."
+          canonical="/shop"
+      />
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 lg:py-12 text-center">

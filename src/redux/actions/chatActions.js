@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../../lib/api';
 
 export const CHAT_LIST_REQUEST = 'CHAT_LIST_REQUEST';
 export const CHAT_LIST_SUCCESS = 'CHAT_LIST_SUCCESS';
@@ -31,7 +31,7 @@ export const fetchAllChats = () => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/chats`, config);
+        const { data } = await api.get(`/chats`, config);
 
         dispatch({
             type: CHAT_LIST_SUCCESS,
@@ -62,7 +62,7 @@ export const fetchUserChat = () => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/chats/my`, config);
+        const { data } = await api.get(`/chats/my`, config);
 
         dispatch({
             type: CHAT_DETAILS_SUCCESS,
@@ -93,7 +93,7 @@ export const fetchChatById = (id) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/chats/${id}`, config);
+        const { data } = await api.get(`/chats/${id}`, config);
 
         dispatch({
             type: CHAT_DETAILS_SUCCESS,
@@ -125,8 +125,8 @@ export const sendChatMessage = (chatId, message) => async (dispatch, getState) =
             },
         };
 
-        const { data } = await axios.post(
-            `${import.meta.env.VITE_API_URL}/chats/${chatId}/messages`,
+        const { data } = await api.post(
+            `/chats/${chatId}/messages`,
             { message },
             config
         );
@@ -166,7 +166,7 @@ export const markChatAsRead = (chatId) => async (dispatch, getState) => {
             },
         };
 
-        await axios.put(`${import.meta.env.VITE_API_URL}/chats/${chatId}/read`, {}, config);
+        await api.put(`/chats/${chatId}/read`, {}, config);
 
         dispatch({
             type: CHAT_MARK_READ_SUCCESS,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../lib/api';
 
 
 const TrackOrder = () => {
@@ -21,7 +21,7 @@ const TrackOrder = () => {
             setError(null);
             // We'll try to fetch without token first if they are on a public page
             // If it fails with 401, we know it's protected
-            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/orders/${cleanId}`);
+            const { data } = await api.get(`/orders/${cleanId}`);
             
             // Format order data for tracking display
             const formattedOrder = {

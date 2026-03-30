@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, Clock, CheckCircle2 } from 'lucide-react';
+import SEO from '../../common/SEO';
 
 const WirelessPrinting2026 = () => {
     return (
         <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen md:pt-24 pt-5 md:pb-12 pb-5 relative overflow-hidden">
+            <SEO title="Wireless Printing Made Easy - 2026 Guide" description="Everything you need to know about wireless printing in 2026. Setup tips, troubleshooting, and best wireless printers." canonical="/blogs/wireless-printing-easy-modern-printers-2026" type="article" />
             {/* Fixed blur patterns */}
             <div className="fixed top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             <div className="fixed bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>

@@ -12,6 +12,7 @@ import ProductGrid from "../productsCategories/ProductGrid";
 import Categories from '../Categories';
 import WhyChooseUs from './WhyChooseUs';
 import PrinterBanners from './PrinterBanners';
+import SEO from '../common/SEO';
 
 const HomeMain = () => {
     const [searchParams] = useSearchParams();
@@ -48,6 +49,11 @@ const HomeMain = () => {
 
     return (
         <>
+            <SEO
+                title="Home"
+                description="Shop PrintsBasket for high-quality printers, ink cartridges, and toner at affordable prices. Inkjet, laser, and all-in-one printers for home and office. Free shipping across North America."
+                canonical="/"
+            />
             <Hero />
             <Categories />
             {/* <WelcomeSection /> */}

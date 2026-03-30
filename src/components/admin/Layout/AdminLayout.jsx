@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../../lib/api';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUserProfile, logout } from '../../../redux/actions/userActions';
@@ -102,11 +102,11 @@ const AdminLayout = () => {
             };
 
             // Fetch Chats (Admin sees all chats)
-            const { data: chats } = await axios.get(`${import.meta.env.VITE_API_URL}/chats`, config);
+            const { data: chats } = await api.get(`/chats`);
             const unreadChats = chats.filter(c => c.unreadCount > 0);
 
             // Fetch Orders (Recent & Processing)
-            const { data: ordersData } = await axios.get(`${import.meta.env.VITE_API_URL}/orders?limit=10&page=1`, config);
+            const { data: ordersData } = await api.get(`/orders?limit=10&page=1`);
             const recentOrders = ordersData.orders || [];
 
             // Filter for 'Processing' or simply new orders (e.g. created in last 24h)

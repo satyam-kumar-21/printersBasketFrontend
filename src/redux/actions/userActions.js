@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../../lib/api';
 import {
     USER_LOGIN_REQUEST,
     USER_LOGIN_SUCCESS,
@@ -40,8 +40,8 @@ export const login = (email, password, isAdminLogin = false) => async (dispatch)
             },
         };
 
-        const { data } = await axios.post(
-            `${import.meta.env.VITE_API_URL}/auth/login`,
+        const { data } = await api.post(
+            `/auth/login`,
             { email, password, isAdminLogin },
             config
         );
@@ -84,8 +84,8 @@ export const register = (firstName, lastName, email, password) => async (dispatc
             },
         };
 
-        const { data } = await axios.post(
-            `${import.meta.env.VITE_API_URL}/auth/register`,
+        const { data } = await api.post(
+            `/auth/register`,
             { firstName, lastName, email, password },
             config
         );
@@ -125,8 +125,8 @@ export const sendRegistrationOTP = (firstName, lastName, email, password) => asy
             },
         };
 
-        const { data } = await axios.post(
-            `${import.meta.env.VITE_API_URL}/auth/send-registration-otp`,
+        const { data } = await api.post(
+            `/auth/send-registration-otp`,
             { firstName, lastName, email, password },
             config
         );
@@ -156,8 +156,8 @@ export const verifyRegistrationOTP = (email, otp) => async (dispatch) => {
             },
         };
 
-        const { data } = await axios.post(
-            `${import.meta.env.VITE_API_URL}/auth/verify-registration-otp`,
+        const { data } = await api.post(
+            `/auth/verify-registration-otp`,
             { email, otp },
             config
         );
@@ -187,8 +187,8 @@ export const forgotPassword = (email) => async (dispatch) => {
             },
         };
 
-        const { data } = await axios.post(
-            `${import.meta.env.VITE_API_URL}/auth/forgot-password`,
+        const { data } = await api.post(
+            `/auth/forgot-password`,
             { email },
             config
         );
@@ -218,8 +218,8 @@ export const resetPassword = (email, otp, newPassword) => async (dispatch) => {
             },
         };
 
-        const { data } = await axios.post(
-            `${import.meta.env.VITE_API_URL}/auth/reset-password`,
+        const { data } = await api.post(
+            `/auth/reset-password`,
             { email, otp, newPassword },
             config
         );
@@ -252,7 +252,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/auth/profile`, config);
+        const { data } = await api.get(`/auth/profile`, config);
 
         dispatch({
             type: USER_DETAILS_SUCCESS,
@@ -284,7 +284,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/auth/profile`, user, config);
+        const { data } = await api.put(`/auth/profile`, user, config);
 
         dispatch({
             type: USER_UPDATE_PROFILE_SUCCESS,

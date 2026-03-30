@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Printer } from 'lucide-react';
+import SEO from '../common/SEO';
 import howtochooseblog from "../../assets/howtochooseblog.jpg";
 import importanttobuy from "../../assets/importanttobuy.jpg";
 import inkjetvslaser from "../../assets/inkjetvslaser.jpg";
@@ -69,6 +70,11 @@ const BlogsMain = () => {
 
     return (
         <div className="w-full bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen pt-24 pb-12">
+            <SEO
+                title="Blog - Printer Tips & Guides"
+                description="Read expert articles on choosing printers, inkjet vs laser, print yields, wireless printing, and tips to extend your printer life."
+                canonical="/blogs"
+            />
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>

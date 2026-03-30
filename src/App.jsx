@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeMain from './components/home/HomeMain';
 import ScrollToTop from './components/ScrollToTop';
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 // Lazy loaded routes
 const ProfilePage = lazy(() => import('./components/profile/ProfilePage'));
@@ -82,6 +83,7 @@ function App() {
 
             <main className={`flex-grow ${isAdminRoute ? 'h-screen overflow-hidden' : ''}`}>
                 <Suspense fallback={<div className="flex items-center justify-center min-h-[60vh]"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div>}>
+                <ErrorBoundary>
                 <Routes>
                     {/* Public Routes */}
                     <Route path="/" element={<HomeMain />} />
@@ -149,6 +151,7 @@ function App() {
                     {/* Catch-all */}
                     <Route path="*" element={<UnderConstruction />} />
                 </Routes>
+                </ErrorBoundary>
                 </Suspense>
             </main>
 

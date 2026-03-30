@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { removeFromCart, addToCart } from "../redux/actions/cartActions";
 import AuthDrawer from "./AuthDrawer";
 import { ShieldCheck } from "lucide-react";
+import SEO from './common/SEO';
 const printerImg = "/assets/printer.png";
 
 const Cart = () => {
@@ -45,6 +46,7 @@ const Cart = () => {
 
     return (
         <div className="w-full min-h-screen py-6 sm:py-8 lg:py-10 bg-gradient-to-br from-slate-50 via-white to-blue-50/20">
+            <SEO title="Shopping Cart" description="Review items in your cart. Secure checkout with free shipping options." canonical="/cart" />
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
@@ -122,13 +124,13 @@ const Cart = () => {
                                             {/* Quantity */}
                                             <div className="flex justify-center">
                                                 <div className="flex items-center border-2 border-slate-200 rounded-xl bg-white overflow-hidden h-10 shadow-sm">
-                                                    <button 
+                                                    <button
                                                         onClick={() => dispatch(addToCart(item.product, Math.max(1, item.qty - 1)))}
                                                         className="px-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 text-slate-500 hover:text-blue-600 font-bold transition-all"
                                                         aria-label={`Decrease quantity for ${item.title}`}
                                                     ></button>
                                                     <span className="px-3 text-sm font-black text-slate-900">{item.qty}</span>
-                                                    <button 
+                                                    <button
                                                         onClick={() => dispatch(addToCart(item.product, Math.min(item.countInStock, item.qty + 1)))}
                                                         className="px-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-50 text-slate-500 hover:text-blue-600 font-bold transition-all"
                                                         aria-label={`Increase quantity for ${item.title}`}
@@ -138,7 +140,7 @@ const Cart = () => {
 
                                             {/* Action */}
                                             <div className="text-right">
-                                                <button 
+                                                <button
                                                     onClick={() => removeFromCartHandler(item.product)}
                                                     className="p-3 text-rose-500 hover:bg-gradient-to-r hover:from-rose-50 hover:to-red-50 rounded-xl transition-all hover:shadow-md"
                                                     aria-label={`Remove ${item.title} from cart`}
@@ -158,22 +160,22 @@ const Cart = () => {
                         <div className="space-y-6">
                             <div className="bg-gradient-to-br from-white to-blue-50/30 border-2 border-slate-100 rounded-3xl p-8 shadow-lg shadow-blue-100/30 backdrop-blur-sm space-y-6 h-fit lg:sticky lg:top-24 hover:shadow-xl transition-all">
                                 <h3 className="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter">Order Summary</h3>
-                                
+
                                 <div className="space-y-3">
                                     <div className="flex items-center justify-between py-3 px-4 bg-slate-50 rounded-xl border border-slate-100">
                                         <span className="text-[11px] font-black text-slate-600 uppercase tracking-widest">Subtotal</span>
                                         <span className="text-lg font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">${subtotal.toFixed(2)}</span>
                                     </div>
 
-                                    <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-50 rounded-xl border-2 border-blue-100 group cursor-pointer hover:border-blue-200 hover:shadow-md transition-all" onClick={() => setGiftWrap(!giftWrap)}>
+                                    <button type="button" className="w-full flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-50 rounded-xl border-2 border-blue-100 group cursor-pointer hover:border-blue-200 hover:shadow-md transition-all" onClick={() => setGiftWrap(!giftWrap)}>
                                         <div className="flex items-center gap-3">
                                             <div className={`w-6 h-6 rounded-lg border-2 transition-all flex items-center justify-center flex-shrink-0 ${giftWrap ? 'bg-gradient-to-r from-blue-500 to-blue-500 border-transparent' : 'border-slate-300 hover:border-blue-400'}`}>
-                                                {giftWrap && <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>}
+                                                {giftWrap && <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" /></svg>}
                                             </div>
                                             <span className="text-[11px] font-black text-slate-700 uppercase tracking-widest">🎁 Premium Gift Packing</span>
                                         </div>
                                         <span className="text-sm font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">$10.00</span>
-                                    </div>
+                                    </button>
                                 </div>
 
                                 <div className="pt-2 border-t-2 border-slate-100">
@@ -190,7 +192,7 @@ const Cart = () => {
                                             🔒 Please login to proceed to checkout
                                         </div>
                                     )}
-                                    <button 
+                                    <button
                                         onClick={checkoutHandler}
                                         className="w-full bg-gradient-to-r from-blue-600 to-blue-600 text-white py-5 rounded-2xl font-black uppercase text-[12px] tracking-widest hover:shadow-lg hover:shadow-blue-200/50 transition-all shadow-lg active:scale-95 hover:from-blue-700 hover:to-blue-700"
                                         aria-label="Proceed to Checkout"
@@ -198,8 +200,35 @@ const Cart = () => {
                                         <ShieldCheck className="w-4 h-4 inline-block mr-2 -mt-0.5" /> Proceed to Checkout
                                     </button>
                                     <div className="flex flex-col items-center justify-center gap-3 py-4 px-4 bg-gradient-to-r from-slate-50 to-blue-50/30 rounded-2xl border-2 border-slate-100 hover:border-slate-200 transition-all">
-                                        <img src="https://razorpay.com/assets/razorpay-glyph.svg" alt="Razorpay" width="40" height="16" className="h-4 opacity-70" loading="lazy" />
-                                        <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">🔒 Verified Secure Payment</span>
+
+                                        <div className="flex items-center gap-2 opacity-80">
+
+                                            {/* VISA */}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" viewBox="0 0 24 24">
+                                                <rect x="2" y="5" width="20" height="14" rx="2" fill="#1A1F71" />
+                                                <line x1="2" y1="10" x2="22" y2="10" stroke="white" strokeWidth="1" />
+                                                <text x="12" y="16" textAnchor="middle" fontSize="5" fill="white">VISA</text>
+                                            </svg>
+
+                                            {/* MASTERCARD */}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" viewBox="0 0 24 24">
+                                                <rect x="2" y="5" width="20" height="14" rx="2" fill="#000" />
+                                                <circle cx="10" cy="12" r="3" fill="#EB001B" />
+                                                <circle cx="14" cy="12" r="3" fill="#F79E1B" />
+                                            </svg>
+
+                                            {/* AMEX */}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" viewBox="0 0 24 24">
+                                                <rect x="2" y="5" width="20" height="14" rx="2" fill="#2E77BB" />
+                                                <text x="12" y="15" textAnchor="middle" fontSize="4" fill="white">AMEX</text>
+                                            </svg>
+
+                                        </div>
+
+                                        <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">
+                                            🔒 Verified Secure Payment
+                                        </span>
+
                                     </div>
                                 </div>
                             </div>

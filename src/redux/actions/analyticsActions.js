@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../../lib/api';
 
 export const ANALYTICS_REQUEST = 'ANALYTICS_REQUEST';
 export const ANALYTICS_SUCCESS = 'ANALYTICS_SUCCESS';
@@ -18,7 +18,7 @@ export const fetchAnalytics = () => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/dashboard/analytics`, config);
+        const { data } = await api.get(`/dashboard/analytics`, config);
 
         dispatch({
             type: ANALYTICS_SUCCESS,

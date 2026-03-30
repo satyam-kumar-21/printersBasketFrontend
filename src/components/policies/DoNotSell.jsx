@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from '../common/SEO';
 
 const DoNotSell = () => {
   return (
     <section className="w-full bg-gradient-to-b from-blue-50 via-white to-blue-50 min-h-screen py-16">
+      <SEO title="Do Not Sell My Personal Information | Prints Basket" description="Learn about your rights regarding the sale or sharing of personal information under CCPA/CPRA at Prints Basket." canonical="/do-not-sell" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb Navigation */}
@@ -190,19 +192,22 @@ const DoNotSell = () => {
           </div>
 
           {/* 11. Contact Us */}
-          <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">11. Contact Us</h2>
-            <p className="leading-relaxed text-sm sm:text-base md:text-base">
-              For any questions about this notice or your privacy rights, please contact us:
+            <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">13. Contact Us</h2>
+            <p className="leading-relaxed text-sm sm:text-base">
+              For any questions, concerns, or requests related to these Terms & Conditions, you may contact us using the details below:
             </p>
             <div className="space-y-2 text-blue-50 text-sm sm:text-base">
               <p><strong>Prints Basket (16904599 CANADA INC)</strong></p>
-              <p>ðŸ“§ <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
-              <p>ðŸ“ž <strong>Phone:</strong> +1 (888) 322-5251</p>
-              <p>ðŸ“ <strong>Registered Address:</strong><br/>95 Broadacre Dr<br/>Kitchener, ON N2R 0S5<br/>Canada</p>
+              <p>📧 <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
+              <p>📞 <strong>Phone:</strong> +1 (888) 322-5251</p>
+              <p>📍 <strong>Registered Address:</strong>
+                <br/>95 Broadacre Dr
+                <br/>Kitchener, ON N2R 0S5
+                <br/>Canada</p>
             </div>
-            <p className="text-blue-50 text-sm leading-relaxed mt-3">
-              We are committed to handling all privacy-related requests promptly and in accordance with applicable data protection laws.
+            <p className="text-blue-100 mt-4 text-sm sm:text-base">
+              We are committed to responding promptly and handling all inquiries in accordance with applicable laws and standard business practices.
             </p>
           </div>
 

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../../lib/api';
 import {
     CART_ADD_ITEM,
     CART_REMOVE_ITEM,
@@ -12,8 +12,8 @@ const syncCartToDB = async (getState) => {
     const { userLogin: { userInfo }, cart: { cartItems } } = getState();
     if (!userInfo?.token) return;
     try {
-        await axios.put(
-            `${import.meta.env.VITE_API_URL}/cart`,
+        await api.put(
+            `/cart`,
             { items: cartItems },
             { headers: { Authorization: `Bearer ${userInfo.token}` } }
         );
@@ -41,7 +41,7 @@ export const addToCart = (idOrSlug, qty) => async (dispatch, getState) => {
             qty,
         };
     } else {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/products/${idOrSlug}`);
+        const { data } = await api.get(`/products/${idOrSlug}`);
         item = {
             product: data._id,
             title: data.title,
@@ -74,7 +74,7 @@ export const fetchCartFromDB = () => async (dispatch, getState) => {
         // Capture guest cart items before overwriting
         const guestItems = [...getState().cart.cartItems];
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/cart`, {
+        const { data } = await api.get(`/cart`, {
             headers: { Authorization: `Bearer ${userInfo.token}` }
         });
 

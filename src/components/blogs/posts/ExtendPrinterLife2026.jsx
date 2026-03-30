@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, Clock, AlertCircle } from 'lucide-react';
+import SEO from '../../common/SEO';
 
 const ExtendPrinterLife2026 = () => {
     return (
         <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen md:pt-24 pt-5 md:pb-12 pb-5 relative overflow-hidden">
+            <SEO title="Tips to Extend Your Printer's Life" description="Expert tips to keep your printer running smoothly and extend its lifespan. Maintenance, cleaning, and care guide for 2026." canonical="/blogs/tips-extend-printer-life-running-smoothly-2026" type="article" />
             {/* Fixed blur patterns */}
             <div className="fixed top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             <div className="fixed bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>

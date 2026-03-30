@@ -27,7 +27,7 @@ const AdminChat = () => {
             dispatch(fetchAllChats());
 
             // Initialize Socket.io
-            const newSocket = io('https://printersbackend.onrender.com', {
+            const newSocket = io(import.meta.env.VITE_SOCKET_URL, {
                 auth: { token: userInfo.token }
             });
 
@@ -132,10 +132,11 @@ const AdminChat = () => {
                         <div className="p-4 text-center text-slate-400">No chats found</div>
                     ) : (
                         filteredChats.map(chat => (
-                            <div
+                            <button
+                                type="button"
                                 key={chat._id}
                                 onClick={() => handleChatSelect(chat)}
-                                className={`p-4 flex gap-3 hover:bg-slate-50 cursor-pointer transition-colors border-b border-slate-50 ${activeChat?._id === chat._id ? 'bg-blue-50/50' : ''}`}
+                                className={`w-full text-left p-4 flex gap-3 hover:bg-slate-50 cursor-pointer transition-colors border-b border-slate-50 ${activeChat?._id === chat._id ? 'bg-blue-50/50' : ''}`}
                             >
                                 <div className="relative">
                                     <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
@@ -159,7 +160,7 @@ const AdminChat = () => {
                                         </span>
                                     </div>
                                 )}
-                            </div>
+                            </button>
                         ))
                     )}
                 </div>

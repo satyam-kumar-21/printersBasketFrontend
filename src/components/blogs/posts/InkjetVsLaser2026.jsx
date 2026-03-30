@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, Clock, CheckCircle2 } from 'lucide-react';
+import SEO from '../../common/SEO';
 
 const InkjetVsLaser2026 = () => {
     return (
         <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen md:pt-24 pt-5 md:pb-12 pb-5 relative overflow-hidden">
+            <SEO title="Inkjet vs Laser Printers - 2026 Comparison" description="Detailed comparison of inkjet and laser printers in 2026. Find out which type suits your needs and budget." canonical="/blogs/inkjet-vs-laser-printers-2026" type="article" />
             {/* Fixed blur patterns */}
             <div className="fixed top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             <div className="fixed bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>

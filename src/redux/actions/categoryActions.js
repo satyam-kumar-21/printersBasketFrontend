@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../../lib/api';
 import {
     CATEGORY_LIST_REQUEST,
     CATEGORY_LIST_SUCCESS,
@@ -18,7 +18,7 @@ export const listCategories = () => async (dispatch) => {
     try {
         dispatch({ type: CATEGORY_LIST_REQUEST });
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/categories`);
+        const { data } = await api.get(`/categories`);
 
         dispatch({
             type: CATEGORY_LIST_SUCCESS,
@@ -47,7 +47,7 @@ export const createCategory = (categoryData) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/categories`, categoryData, config);
+        const { data } = await api.post(`/categories`, categoryData, config);
 
         dispatch({
             type: CATEGORY_CREATE_SUCCESS,
@@ -76,7 +76,7 @@ export const updateCategory = (id, categoryData) => async (dispatch, getState) =
             },
         };
 
-        const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/categories/${id}`, categoryData, config);
+        const { data } = await api.put(`/categories/${id}`, categoryData, config);
 
         dispatch({
             type: CATEGORY_UPDATE_SUCCESS,
@@ -105,7 +105,7 @@ export const deleteCategory = (id) => async (dispatch, getState) => {
             },
         };
 
-        await axios.delete(`${import.meta.env.VITE_API_URL}/categories/${id}`, config);
+        await api.delete(`/categories/${id}`, config);
 
         dispatch({
             type: CATEGORY_DELETE_SUCCESS,

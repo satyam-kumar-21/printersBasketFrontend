@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../../lib/api';
+import { TableSkeleton } from '../../common/Skeleton';
 import { useSelector } from 'react-redux';
 import {
     Users,
@@ -51,9 +52,7 @@ const AdminCustomers = () => {
             setError(null);
             
             // Get Users with pagination
-            const { data: userData } = await axios.get(`${import.meta.env.VITE_API_URL}/auth/users?search=${keyword}&page=${pageNumber}&limit=20`, {
-                headers: { Authorization: `Bearer ${userInfo.token}` }
-            });
+            const { data: userData } = await api.get(`/auth/users?search=${keyword}&page=${pageNumber}&limit=20`);
 
             // Handle potential differing response structure if something failed, but expected { users, page, pages, total }
             const users = userData.users || [];
@@ -62,9 +61,7 @@ const AdminCustomers = () => {
 
             // Fetch ALL orders to calculate customer stats accurately (with high limit)
             // Or fetch limited orders and accept inaccuracies. Using high limit for now.
-            const { data: orderData } = await axios.get(`${import.meta.env.VITE_API_URL}/orders?limit=5000`, {
-                headers: { Authorization: `Bearer ${userInfo.token}` }
-            });
+            const { data: orderData } = await api.get(`/orders?limit=5000`);
             const orders = orderData.orders || orderData; // Handle paginated or non-paginated return
 
             // Calculate stats for each customer
@@ -117,9 +114,7 @@ const AdminCustomers = () => {
         if (!userInfo) return;
 
         try {
-            await axios.delete(`${import.meta.env.VITE_API_URL}/auth/users/${confirmModal.userId}`, {
-                headers: { Authorization: `Bearer ${userInfo.token}` }
-            });
+            await api.delete(`/auth/users/${confirmModal.userId}`);
             setConfirmModal({ show: false, type: '', userId: null, userName: '' });
             fetchCustomers();
         } catch (err) {
@@ -135,9 +130,7 @@ const AdminCustomers = () => {
         }
 
         try {
-            const response = await axios.put(`${import.meta.env.VITE_API_URL}/auth/users/${confirmModal.userId}/block`, {}, {
-                headers: { Authorization: `Bearer ${userInfo.token}` }
-            });
+            const response = await api.put(`/auth/users/${confirmModal.userId}/block`, {});
             setConfirmModal({ show: false, type: '', userId: null, userName: '' });
             fetchCustomers();
         } catch (err) {
@@ -155,9 +148,7 @@ const AdminCustomers = () => {
     const handleUnblockUser = async (userId) => {
         if (!userInfo) return;
         try {
-            await axios.put(`${import.meta.env.VITE_API_URL}/auth/users/${userId}/unblock`, {}, {
-                headers: { Authorization: `Bearer ${userInfo.token}` }
-            });
+            await api.put(`/auth/users/${userId}/unblock`, {});
             fetchCustomers(searchTerm, 1, false); // Refresh list
         } catch (err) {
             console.error('Unblock user error:', err);
@@ -169,9 +160,7 @@ const AdminCustomers = () => {
         if (!userInfo) return;
 
         try {
-            await axios.put(`${import.meta.env.VITE_API_URL}/auth/users/${confirmModal.userId}/unblock`, {}, {
-                headers: { Authorization: `Bearer ${userInfo.token}` }
-            });
+            await api.put(`/auth/users/${confirmModal.userId}/unblock`, {});
             setConfirmModal({ show: false, type: '', userId: null, userName: '' });
             fetchCustomers();
         } catch (err) {
@@ -236,7 +225,7 @@ const AdminCustomers = () => {
                         </thead>
                         <tbody className="divide-y divide-slate-100">
                             {loading ? (
-                                <tr><td colSpan="7" className="py-10 text-center text-slate-400 font-bold uppercase tracking-widest text-xs">Loading Customers...</td></tr>
+                                <TableSkeleton rows={5} cols={7} />
                             ) : error ? (
                                 <tr><td colSpan="7" className="py-10 text-center text-red-500 font-bold uppercase tracking-widest text-xs">{error}</td></tr>
                             ) : filteredCustomers.map((customer) => (

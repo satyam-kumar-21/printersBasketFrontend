@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { saveShippingAddress } from '../redux/actions/cartActions';
-import axios from 'axios';
+import api from '../lib/api';
 import { Loader2, ShieldCheck, Truck, CreditCard, ChevronRight, Lock } from 'lucide-react';
+import SEO from './common/SEO';
 
 const Checkout = () => {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const Checkout = () => {
     const [address, setAddress] = useState(shippingAddress.address || '');
     const [city, setCity] = useState(shippingAddress.city || '');
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode || '');
-    const [country, setCountry] = useState(shippingAddress.country || '');
+    const [country, setCountry] = useState(shippingAddress.country || 'US');
     const [province, setProvince] = useState(shippingAddress.state || '');
     const [phone, setPhone] = useState(shippingAddress.phone || '');
 
@@ -27,6 +28,7 @@ const Checkout = () => {
     const [distance, setDistance] = useState(null);
     const [selectedRate, setSelectedRate] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [ratesFetched, setRatesFetched] = useState(false);
     const [clover, setClover] = useState(null);
     const [agreeToTerms, setAgreeToTerms] = useState(false);
 
@@ -111,10 +113,9 @@ const Checkout = () => {
         if (shippingRates.length === 0) {
             try {
                 setLoading(true);
-                const { data } = await axios.post(
-                    `${import.meta.env.VITE_API_URL}/shipping/rates`,
-                    { address, city, postalCode, country, state: province, phone, cartItems },
-                    { headers: { Authorization: `Bearer ${userInfo.token}` } }
+                const { data } = await api.post(
+                    `/shipping/rates`,
+                    { address, city, postalCode, country, state: province, phone, cartItems }
                 );
                 
                 const rates = data.rates || (Array.isArray(data) ? data : []);
@@ -133,6 +134,7 @@ const Checkout = () => {
                                     .sort((a, b) => Number(a.rate) - Number(b.rate))
                                     .slice(0, 4);
                                 setShippingRates(bestRates);
+                                setRatesFetched(true);
                                 if (bestRates.length > 0) setSelectedRate(bestRates[0]);
             } catch (error) {
                 alert(error.response?.data?.message || 'Error fetching shipping rates');
@@ -190,21 +192,19 @@ const Checkout = () => {
                 totalPrice,
             };
 
-            const { data: createdOrder } = await axios.post(
-                `${import.meta.env.VITE_API_URL}/orders`,
-                orderData,
-                { headers: { Authorization: `Bearer ${userInfo.token}` } }
+            const { data: createdOrder } = await api.post(
+                `/orders`,
+                orderData
             );
 
             // 2. Clover payment (backend)
-            await axios.post(
-                `${import.meta.env.VITE_API_URL}/orders/clover/pay`,
+            await api.post(
+                `/orders/clover/pay`,
                 {
                     amount: totalPrice,
                     orderId: createdOrder._id,
                     source: result.token
-                },
-                { headers: { Authorization: `Bearer ${userInfo.token}` } }
+                }
             );
 
             navigate('/profile');
@@ -219,6 +219,7 @@ const Checkout = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 py-12">
+            <SEO title="Checkout" description="Complete your order securely. Enter shipping details and payment information." canonical="/checkout" />
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>
@@ -258,7 +259,7 @@ const Checkout = () => {
                                         <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">Street Address</label>
                                         <input 
                                             value={address} 
-                                            onChange={(e) => setAddress(e.target.value)} 
+                                            onChange={(e) => { setAddress(e.target.value); setRatesFetched(false); setShippingRates([]); setSelectedRate(null); }} 
                                             required 
                                             placeholder="123 Main St" 
                                             className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-slate-900 focus:border-transparent outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400" 
@@ -270,7 +271,7 @@ const Checkout = () => {
                                             <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">City</label>
                                             <input 
                                                 value={city} 
-                                                onChange={(e) => setCity(e.target.value)} 
+                                                onChange={(e) => { setCity(e.target.value); setRatesFetched(false); setShippingRates([]); setSelectedRate(null); }} 
                                                 required 
                                                 placeholder="New York" 
                                                 className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-slate-900 focus:border-transparent outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400" 
@@ -280,7 +281,7 @@ const Checkout = () => {
                                             <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">State / Province</label>
                                             <input 
                                                 value={province} 
-                                                onChange={(e) => setProvince(e.target.value)} 
+                                                onChange={(e) => { setProvince(e.target.value); setRatesFetched(false); setShippingRates([]); setSelectedRate(null); }} 
                                                 required
                                                 placeholder="NY" 
                                                 className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-slate-900 focus:border-transparent outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400" 
@@ -290,7 +291,7 @@ const Checkout = () => {
                                             <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">Postal Code</label>
                                             <input 
                                                 value={postalCode} 
-                                                onChange={(e) => setPostalCode(e.target.value)} 
+                                                onChange={(e) => { setPostalCode(e.target.value); setRatesFetched(false); setShippingRates([]); setSelectedRate(null); }} 
                                                 required 
                                                 placeholder="10001" 
                                                 className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-slate-900 focus:border-transparent outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400" 
@@ -301,13 +302,15 @@ const Checkout = () => {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">Country</label>
-                                            <input 
+                                            <select 
                                                 value={country} 
-                                                onChange={(e) => setCountry(e.target.value)} 
+                                                onChange={(e) => { setCountry(e.target.value); setRatesFetched(false); setShippingRates([]); setSelectedRate(null); }} 
                                                 required 
-                                                placeholder="United States" 
-                                                className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-slate-900 focus:border-transparent outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400" 
-                                            />
+                                                className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-slate-900 focus:border-transparent outline-none transition-all font-medium text-slate-700"
+                                            >
+                                                <option value="US">United States</option>
+                                                <option value="CA">Canada</option>
+                                            </select>
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold text-slate-500 uppercase tracking-wilder ml-1">Phone Number</label>
@@ -334,10 +337,11 @@ const Checkout = () => {
                                         </div>
                                         <div className="space-y-3">
                                             {shippingRates.map((rate) => (
-                                                <div 
+                                                <button 
+                                                    type="button"
                                                     key={rate.id}
                                                     onClick={() => setSelectedRate(rate)}
-                                                    className={`p-4 rounded-xl border-2 cursor-pointer flex justify-between items-center transition-all flex-wrap sm:flex-nowrap ${
+                                                    className={`w-full p-4 rounded-xl border-2 cursor-pointer flex justify-between items-center transition-all flex-wrap sm:flex-nowrap ${
                                                         selectedRate?.id === rate.id 
                                                             ? 'border-slate-900 bg-slate-50' 
                                                             : 'border-slate-100 hover:border-slate-300'
@@ -350,15 +354,21 @@ const Checkout = () => {
                                                     <div className="font-bold text-slate-900 text-right mt-2 sm:mt-0 min-w-[80px]">
                                                         ${Number(rate.rate).toFixed(2)} {rate.currency}
                                                     </div>
-                                                </div>
+                                                </button>
                                             ))}
                                         </div>
                                     </div>
                                 )}
 
-                                {shippingRates.length === 0 && !loading && (
+                                {shippingRates.length === 0 && !loading && !ratesFetched && (
                                      <div className="mt-8 p-4 bg-yellow-50 text-yellow-800 rounded-xl text-sm border border-yellow-200">
                                         Please enter your address above and click Calculate Shipping to see available rates.
+                                     </div>
+                                )}
+
+                                {shippingRates.length === 0 && !loading && ratesFetched && (
+                                     <div className="mt-8 p-4 bg-red-50 text-red-800 rounded-xl text-sm border border-red-200">
+                                        No shipping rates available for this address. Please verify your address details and try again.
                                      </div>
                                 )}
 

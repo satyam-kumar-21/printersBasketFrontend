@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import api from "../../lib/api";
 import { listProductDetails } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/actions/cartActions";
 import { Star, ShoppingCart, Heart, Truck, Shield, RotateCcw } from "lucide-react";
+import SEO from '../common/SEO';
+import { ProductDetailSkeleton } from '../common/Skeleton';
 
 
 const ProductDetails = () => {
@@ -60,8 +62,7 @@ const ProductDetails = () => {
                     const config = {
                         headers: { Authorization: `Bearer ${userInfo.token}` },
                     };
-                    const baseUrl = import.meta.env.VITE_API_URL || '/api';
-                    const { data } = await axios.get(`${baseUrl}/orders/check-review-eligibility/${product._id}`, config);
+                    const { data } = await api.get(`/orders/check-review-eligibility/${product._id}`);
                     setCanReview(data.canReview);
                 } catch (error) {
                     setCanReview(false);
@@ -122,15 +123,7 @@ const handleWriteReview = () => {
         // Logic to open review form would go here
     };
 
-    if (loading) return (
-        <div className="min-h-[70vh] flex flex-col items-center justify-center p-8 space-y-6">
-            <div className="w-16 h-16 border-4 border-slate-100 border-t-slate-900 rounded-full animate-spin"></div>
-            <div className="text-center">
-                <p className="font-black uppercase text-[10px] tracking-[0.4em] text-slate-400 animate-pulse">Synchronizing Hardware Details</p>
-                <p className="text-slate-300 text-[9px] font-bold uppercase mt-2 tracking-widest">Bridging with Central Inventory...</p>
-            </div>
-        </div>
-    );
+    if (loading) return <ProductDetailSkeleton />;
 
     if (error || !product) return (
         <div className="min-h-[70vh] flex flex-col items-center justify-center p-8 text-center space-y-8">
@@ -160,6 +153,12 @@ const handleWriteReview = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20">
+            <SEO
+                title={product.title}
+                description={product.description ? product.description.replace(/<[^>]*>/g, '').substring(0, 160) : `Buy ${product.title} at PrintsBasket. Best prices with free shipping.`}
+                canonical={`/product/${product.slug}`}
+                type="product"
+            />
             {/* Background Patterns */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full blur-3xl"></div>

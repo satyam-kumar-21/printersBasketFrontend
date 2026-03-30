@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "../../lib/api";
 import { Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
 
 const ReturnExchangeForm = () => {
@@ -34,7 +34,7 @@ const ReturnExchangeForm = () => {
     setSuccess(false);
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/contact`, {
+      await api.post(`/contact`, {
         type: "return-exchange",
         ...formData,
       });

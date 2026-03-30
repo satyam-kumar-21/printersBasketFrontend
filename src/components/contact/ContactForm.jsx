@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../lib/api';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -29,8 +29,8 @@ const ContactForm = () => {
     setSuccess(false);
 
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/contact`,
+      const response = await api.post(
+        `/contact`,
         {
           name: formData.name,
           email: formData.email,

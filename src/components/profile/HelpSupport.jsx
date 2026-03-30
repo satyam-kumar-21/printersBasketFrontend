@@ -22,7 +22,7 @@ const HelpSupport = () => {
             dispatch(fetchUserChat());
 
             // Initialize Socket.io
-            const newSocket = io('https://printersbackend.onrender.com', {
+            const newSocket = io(import.meta.env.VITE_SOCKET_URL, {
                 auth: { token: userInfo.token }
             });
 

@@ -80,7 +80,9 @@ const AuthDrawer = ({ isOpen, onClose }) => {
         setSuccessMessage(null);
 
         if (mode === 'signup') {
-            if (password !== confirmPassword) {
+            if (password.length < 6) {
+                setErrorMessage('Password must be at least 6 characters');
+            } else if (password !== confirmPassword) {
                 setErrorMessage('Passwords do not match');
             } else {
                 dispatch(sendRegistrationOTP(firstName, lastName, email.trim(), password));
@@ -90,7 +92,9 @@ const AuthDrawer = ({ isOpen, onClose }) => {
         } else if (mode === 'forgot-password') {
             dispatch(forgotPassword(email.trim()));
         } else if (mode === 'reset-password') {
-            if (newPassword !== confirmPassword) {
+            if (newPassword.length < 6) {
+                setErrorMessage('Password must be at least 6 characters');
+            } else if (newPassword !== confirmPassword) {
                 setErrorMessage('Passwords do not match');
             } else {
                 dispatch(resetPassword(email.trim(), otp, newPassword));
@@ -278,11 +282,12 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                             <div>
                                 <input
                                     type="password"
-                                    placeholder="Password"
+                                    placeholder="Password (min 6 characters)"
                                     className="w-full border-b py-2 outline-none focus:border-blue-500 transition-colors"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
+                                    minLength={6}
                                 />
                             </div>
                             <div>
@@ -450,7 +455,7 @@ const AuthDrawer = ({ isOpen, onClose }) => {
                     )}
                 </div>
             </div>
-            <div className="absolute inset-0 -z-10" onClick={handleClose}></div>
+            <div className="absolute inset-0 -z-10" onClick={handleClose} onKeyDown={(e) => e.key === 'Escape' && handleClose()} role="button" tabIndex={-1} aria-label="Close dialog"></div>
         </div>
     );
 };

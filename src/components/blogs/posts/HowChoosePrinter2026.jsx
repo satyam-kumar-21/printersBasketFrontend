@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, Clock, CheckCircle2, AlertCircle } from 'lucide-react';
+import SEO from '../../common/SEO';
 
 const HowChoosePrinter2026 = () => {
     return (
         <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50/20 min-h-screen md:pt-24 pt-5 md:pb-12 pb-5 relative overflow-hidden">
+            <SEO
+                title="How to Choose the Right Printer - 2026 Buying Guide"
+                description="Complete 2026 guide to choosing the right printer for your home or office. Compare inkjet, laser, and all-in-one printers."
+                canonical="/blogs/how-choose-right-printer-2026-guide"
+                type="article"
+            />
             {/* Fixed blur patterns */}
             <div className="fixed top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>
             <div className="fixed bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -z-10"></div>

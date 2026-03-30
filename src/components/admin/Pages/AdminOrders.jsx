@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../../lib/api';
+import { TableSkeleton } from '../../common/Skeleton';
 import { useSelector } from 'react-redux';
 import {
     Search,
@@ -40,9 +41,7 @@ const AdminOrders = () => {
     const fetchOrders = async (keyword = '', pageNumber = 1, append = false) => {
         try {
             setLoading(true);
-            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/orders?search=${keyword}&page=${pageNumber}&limit=20`, {
-                headers: { Authorization: `Bearer ${userInfo.token}` }
-            });
+            const { data } = await api.get(`/orders?search=${keyword}&page=${pageNumber}&limit=20`);
             
             // Handle both legacy (array) and new (paginated object) responses
             const newOrders = data.orders || data; 
@@ -121,9 +120,7 @@ const AdminOrders = () => {
     const handleUpdateSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`https://printersbackend.onrender.com/api/orders/${selectedOrder._id}/status`, updateForm, {
-                headers: { Authorization: `Bearer ${userInfo.token}` }
-            });
+            await api.put(`/orders/${selectedOrder._id}/status`, updateForm);
             fetchOrders();
             setIsUpdateModalOpen(false);
         } catch (err) {
@@ -178,7 +175,7 @@ const AdminOrders = () => {
                         </thead>
                         <tbody className="divide-y divide-slate-100">
                             {loading && (!filteredOrders || filteredOrders.length === 0) ? (
-                                <tr><td colSpan="6" className="py-10 text-center text-slate-400 font-bold uppercase tracking-widest text-xs">Synchronizing Inventory Data...</td></tr>
+                                <TableSkeleton rows={5} cols={6} />
                             ) : error ? (
                                 <tr><td colSpan="6" className="py-10 text-center text-red-500 font-bold uppercase tracking-widest text-xs">{error}</td></tr>
                             ) : (

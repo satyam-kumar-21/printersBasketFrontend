@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from '../common/SEO';
 
 const CookiePolicy = () => {
   return (
     <section className="w-full bg-gradient-to-b from-blue-50 via-white to-blue-50 min-h-screen py-16">
+      <SEO title="Cookie Policy | Prints Basket" description="Learn how Prints Basket uses cookies and similar technologies. Understand your choices regarding cookie usage on our website." canonical="/cookie-policy" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Breadcrumb Navigation */}

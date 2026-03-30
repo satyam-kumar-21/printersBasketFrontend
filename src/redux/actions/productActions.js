@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../../lib/api';
 import {
     PRODUCT_LIST_REQUEST,
     PRODUCT_LIST_SUCCESS,
@@ -57,7 +57,7 @@ export const listProducts = (
             mainFunction: mainFunction.join(',')
         };
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/products`, { params });
+        const { data } = await api.get(`/products`, { params });
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
@@ -79,7 +79,7 @@ export const fetchAllProducts = () => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_ALL_REQUEST });
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/products`, {
+        const { data } = await api.get(`/products`, {
             params: { limit: 10000 }
         });
 
@@ -102,7 +102,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/products/${id}`);
+        const { data } = await api.get(`/products/${id}`);
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -131,7 +131,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
             },
         };
 
-        await axios.delete(`${import.meta.env.VITE_API_URL}/products/${id}`, config);
+        await api.delete(`/products/${id}`, config);
 
         dispatch({ type: PRODUCT_DELETE_SUCCESS });
     } catch (error) {
@@ -158,7 +158,7 @@ export const createProduct = (productData) => async (dispatch, getState) => {
             },
         };
 
-        const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/products`, productData, config);
+        const { data } = await api.post(`/products`, productData, config);
 
         dispatch({
             type: PRODUCT_CREATE_SUCCESS,
@@ -187,8 +187,8 @@ export const updateProduct = (id, productData) => async (dispatch, getState) => 
             },
         };
 
-        const { data } = await axios.put(
-            `${import.meta.env.VITE_API_URL}/products/${id}`,
+        const { data } = await api.put(
+            `/products/${id}`,
             productData,
             config
         );
@@ -224,7 +224,7 @@ export const createProductReview = (productId, review) => async (dispatch, getSt
             },
         };
 
-        await axios.post(`${import.meta.env.VITE_API_URL}/products/${productId}/reviews`, review, config);
+        await api.post(`/products/${productId}/reviews`, review, config);
 
         dispatch({
             type: PRODUCT_CREATE_REVIEW_SUCCESS,
@@ -255,7 +255,7 @@ export const updateProductReview = (productId, review) => async (dispatch, getSt
             },
         };
 
-        await axios.put(`${import.meta.env.VITE_API_URL}/products/${productId}/reviews`, review, config);
+        await api.put(`/products/${productId}/reviews`, review, config);
 
         dispatch({
             type: PRODUCT_UPDATE_REVIEW_SUCCESS,
@@ -285,7 +285,7 @@ export const deleteProductReview = (productId) => async (dispatch, getState) => 
             },
         };
 
-        await axios.delete(`${import.meta.env.VITE_API_URL}/products/${productId}/reviews`, config);
+        await api.delete(`/products/${productId}/reviews`, config);
 
         dispatch({
             type: PRODUCT_DELETE_REVIEW_SUCCESS,
