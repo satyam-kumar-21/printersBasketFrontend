@@ -35,12 +35,10 @@ const OrderDetails = lazy(() => import('./components/order/OrderDetails'));
 const TrackOrder = lazy(() => import('./components/order/TrackOrder'));
 const ReturnsAndExchanges = lazy(() => import('./components/order/ReturnsAndExchanges'));
 const FAQMain = lazy(() => import('./components/faq/FAQMain'));
-const CustomerMain = lazy(() => import('./components/customerService/CustomerMain'));
 const RefundReturnPolicy = lazy(() => import('./components/privacyPolicy/RefundReturnPolicy'));
 const ReturnExchangePolicy = lazy(() => import('./components/privacyPolicy/ReturnExchangePolicy'));
 const ShippingPolicy = lazy(() => import('./components/privacyPolicy/ShippingPolicy'));
 const CookiePolicy = lazy(() => import('./components/privacyPolicy/CookiePolicy'));
-const CCPAPrivacyPolicy = lazy(() => import('./components/privacyPolicy/CCPAPrivacyPolicy'));
 const Disclaimer = lazy(() => import('./components/privacyPolicy/Disclaimer'));
 const ContactMain = lazy(() => import('./components/contact/ContactMain'));
 const EULA = lazy(() => import('./components/policies/EULA'));
@@ -93,7 +91,7 @@ function App() {
                     <Route path="/product-category/laser-printers" element={<LaserPrinters />} />
                     <Route path="/product-category/led-printers" element={<LedPrinters />} />
                     <Route path="/product-category/ink-toner" element={<InkToner />} /> */}
-                    <Route path="/customer-service" element={<CustomerMain />} />
+                    {/* <Route path="/customer-service" element={<CustomerMain />} /> */}
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/order/:id" element={<OrderDetails />} />
@@ -128,7 +126,7 @@ function App() {
                     <Route path="/disclaimer" element={<Disclaimer />} />
                     <Route path="/contact-us" element={<ContactMain />} />
                     <Route path="/eula" element={<EULA />} />
-                    <Route path="/do-not-sell" element={<CCPAPrivacyPolicy /> } />
+                    <Route path="/do-not-sell" element={<DoNotSell /> } />
 
                     {/* Admin Routes */}
                     <Route path="/admin/login" element={<AdminLogin />} />

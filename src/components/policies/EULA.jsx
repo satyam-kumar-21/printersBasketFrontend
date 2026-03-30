@@ -39,7 +39,7 @@ const EULA = () => {
               You may not transfer, sublicense, or assign your access rights without prior written consent.
             </p>
           </div>
-aske
+          aske
           {/* 2. User Responsibilities */}
           <div className="space-y-4">
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">2. User Responsibilities</h2>
@@ -199,7 +199,7 @@ aske
               <p><strong>Prints Basket (16904599 CANADA INC)</strong></p>
               <p>📧 <strong>Email:</strong> <a href="mailto:support@printsbasket.com" className="underline hover:text-white">support@printsbasket.com</a></p>
               <p>📞 <strong>Phone:</strong> +1 (888) 322-5251</p>
-              <p>📍 <strong>Registered Address:</strong><br/>95 Broadacre Dr<br/>Kitchener, ON N2R 0S5<br/>Canada</p>
+              <p>📍 <strong>Registered Address:</strong><br />95 Broadacre Dr<br />Kitchener, ON N2R 0S5<br />Canada</p>
             </div>
             <p className="text-blue-50 text-sm leading-relaxed mt-3">
               We are committed to responding promptly and assisting with any inquiries.
