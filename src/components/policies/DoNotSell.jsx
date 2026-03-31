@@ -193,7 +193,7 @@ const DoNotSell = () => {
 
           {/* 11. Contact Us */}
             <div className="space-y-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">13. Contact Us</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">11. Contact Us</h2>
             <p className="leading-relaxed text-sm sm:text-base">
               For any questions, concerns, or requests related to these Terms & Conditions, you may contact us using the details below:
             </p>
