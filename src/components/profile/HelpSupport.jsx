@@ -27,7 +27,6 @@ const HelpSupport = () => {
             });
 
             newSocket.on('connect', () => {
-                console.log('User connected to chat');
             });
 
             newSocket.on('new-message', (data) => {

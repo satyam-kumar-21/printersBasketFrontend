@@ -32,7 +32,6 @@ const AdminChat = () => {
             });
 
             newSocket.on('connect', () => {
-                console.log('Admin connected to chat');
             });
 
             newSocket.on('new-message', (data) => {
