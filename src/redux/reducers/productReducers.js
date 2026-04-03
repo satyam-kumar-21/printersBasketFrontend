@@ -25,7 +25,7 @@ import {
     PRODUCT_CREATE_REVIEW_RESET,
 } from '../constants/productConstants';
 
-export const productListReducer = (state = { products: [], allProducts: [], allLoading: false, allError: null }, action) => {
+export const productListReducer = (state = { products: [], allProducts: [], allLoading: false, allLoaded: false, allError: null }, action) => {
     switch (action.type) {
         case PRODUCT_LIST_REQUEST:
             return { ...state, loading: true };
@@ -41,7 +41,7 @@ export const productListReducer = (state = { products: [], allProducts: [], allL
         case PRODUCT_LIST_FAIL:
             return { ...state, loading: false, error: action.payload };
         case PRODUCT_ALL_REQUEST:
-            return { ...state, allLoading: true, allError: null };
+            return { ...state, allLoading: true, allError: null, allLoaded: state.allLoaded || false };
         case PRODUCT_ALL_SUCCESS:
             return { ...state, allLoading: false, allProducts: action.payload, allLoaded: true };
         case PRODUCT_ALL_FAIL:
@@ -52,16 +52,16 @@ export const productListReducer = (state = { products: [], allProducts: [], allL
 };
 
 export const productDetailsReducer = (
-    state = { product: { reviews: [] } },
+    state = { product: null },
     action
 ) => {
     switch (action.type) {
         case PRODUCT_DETAILS_REQUEST:
-            return { ...state, loading: true };
+            return { loading: true, product: null, error: null };
         case PRODUCT_DETAILS_SUCCESS:
             return { loading: false, product: action.payload };
         case PRODUCT_DETAILS_FAIL:
-            return { loading: false, error: action.payload };
+            return { loading: false, product: null, error: action.payload };
         default:
             return state;
     }

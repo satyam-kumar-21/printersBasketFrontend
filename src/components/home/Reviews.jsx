@@ -1,13 +1,13 @@
 import React, { useRef, useState } from "react";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const Reviews = () => {
   const [activeDot, setActiveDot] = useState(0);
 
   const reviews = [
-    { name: "Williams Roney", location: "Denver, CO", title: "Straightforward Process", quote: "The ordering process was straightforward, and the product arrived within the expected delivery timeframe.", rating: 5 },
+    { name: "Williams Roney", location: "Denver, CO", title: "Straightforward Process", quote: "The ordering process was straightforward, and the product arrived within the expected delivery timeframe.", rating: 4 },
     { name: "Mary Serdachny", location: "Vancouver, BC", title: "Clear Information", quote: "Product information was clearly presented, which made it easier to choose the right printer.", rating: 5 },
-    { name: "Judith Diamond", location: "Boston, MA", title: "Secure Packaging", quote: "The packaging was secure, and the item was delivered in good condition.", rating: 5 },
+    { name: "Judith Diamond", location: "Boston, MA", title: "Secure Packaging", quote: "The packaging was secure, and the item was delivered in good condition.", rating: 4.5 },
     { name: "Pamela Duff", location: "Calgary, AB", title: "Easy Navigation", quote: "The website layout is simple and easy to navigate, especially when comparing different printer options.", rating: 5 },
     { name: "Marty Veldman", location: "Phoenix, AZ", title: "Helpful Updates", quote: "Delivery updates were helpful, and tracking information was provided as expected.", rating: 5 },
     { name: "Patricia Grunow", location: "Toronto, ON", title: "Matched Description", quote: "The product matched the description, and setup instructions were easy to follow.", rating: 5 },
@@ -45,9 +45,11 @@ const Reviews = () => {
               className="min-w-[85%] sm:min-w-[70%] md:min-w-[calc(50%-12px)] bg-white rounded-2xl p-5 sm:p-6 lg:p-8 border border-gray-100 shadow-sm snap-start flex flex-col min-h-[240px] sm:min-h-[260px] lg:min-h-[280px]"
             >
               <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} className="text-blue-400 w-4 h-4" />
-                ))}
+                {[...Array(5)].map((_, i) => {
+                  if (i < Math.floor(review.rating)) return <FaStar key={i} className="text-blue-400 w-4 h-4" />;
+                  if (i < review.rating) return <FaStarHalfAlt key={i} className="text-blue-400 w-4 h-4" />;
+                  return <FaRegStar key={i} className="text-gray-300 w-4 h-4" />;
+                })}
               </div>
               <h4 className="text-gray-700 font-bold mb-2">{review.title}</h4>
               <p className="text-gray-500 text-sm italic flex-grow">"{review.quote}"</p>

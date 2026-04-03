@@ -3,13 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-    <!-- Security & Performance Headers (meta) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https://app.termly.io https://www.googletagmanager.com https://checkout.clover.com https://seal.godaddy.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://seal.godaddy.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://img6.wsimg.com; connect-src 'self' http://localhost:5001 https://printersbasketbackend.onrender.com https://www.google-analytics.com https://checkout.clover.com https://app.termly.io; frame-src 'self' https://checkout.clover.com; object-src 'none'; base-uri 'self'; form-action 'self';" />
-    <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload" />
+    <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
-    <meta http-equiv="Cross-Origin-Embedder-Policy" content="unsafe-none" />
   
   <!-- Font Preload (Inter Regular only for critical path) -->
   <link rel="preload" as="font" href="https://fonts.bunny.net/inter/inter-400-normal.woff2" type="font/woff2" crossorigin />
@@ -78,79 +74,7 @@
 <body>
   <div id="root"></div>
   
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "PrintsBasket",
-    "url": "https://www.printsbasket.com",
-    "logo": "https://www.printsbasket.com/logo.png",
-    "description": "Leading online retailer for printers, ink cartridges, and toner supplies",
-    "email": "support@printsbasket.com",
-    "telephone": "+1-888-322-5251",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "95 Broadacre Dr",
-      "addressLocality": "Kitchener",
-      "addressRegion": "ON",
-      "postalCode": "N2R 0S5",
-      "addressCountry": "CA"
-    },
-    "sameAs": [
-      "https://www.facebook.com/printsbasket",
-      "https://www.twitter.com/printsbasket",
-      "https://www.instagram.com/printsbasket"
-    ]
-  }
-  </script>
-  
-  <!-- Deferred Analytics & Tracking (Load after page interactive) -->
-  <script>
-    // Defer GTM loading until after page interactive
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        const script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID';
-        script.async = true;
-        document.head.appendChild(script);
-        
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'YOUR_GA_ID', { 'anonymize_ip': true });
-      }, 2000);
-    });
-  </script>
-  <script>
-    window.addEventListener('load', function() {
-      const loadTermly = function() {
-        if (document.getElementById('termly-resource-blocker')) return;
-        const script = document.createElement('script');
-        script.id = 'termly-resource-blocker';
-        script.src = 'https://app.termly.io/resource-blocker/d2ac01a3-b750-4c9b-9b7a-84e84afddb99?autoBlock=on';
-        script.async = true;
-        document.head.appendChild(script);
-      };
 
-      let loaded = false;
-      const onceLoad = function() {
-        if (loaded) return;
-        loaded = true;
-        loadTermly();
-        window.removeEventListener('pointerdown', onceLoad);
-        window.removeEventListener('keydown', onceLoad);
-        window.removeEventListener('touchstart', onceLoad);
-      };
-
-      window.addEventListener('pointerdown', onceLoad, { once: true, passive: true });
-      window.addEventListener('keydown', onceLoad, { once: true });
-      window.addEventListener('touchstart', onceLoad, { once: true, passive: true });
-
-      // Late fallback so consent resources still initialize even without interaction
-      setTimeout(onceLoad, 8000);
-    });
-  </script>
   <script type="module" src="/src/main.jsx" defer></script>
 </body>
 

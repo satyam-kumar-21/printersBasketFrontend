@@ -3,7 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Search, Loader2, Star, X, Filter } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllProducts } from '../../redux/actions/productActions';
+import { useImagePreload } from '../../lib/ImagePreloadContext';
+import ProductImage from '../common/ProductImage';
 import SEO from '../common/SEO';
+
+const ITEMS_PER_PAGE = 12;
 
 const ShopMain = () => {
   const dispatch = useDispatch();
@@ -20,6 +24,9 @@ const ShopMain = () => {
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
+
+  // Use global image preload context (images start preloading on app mount)
+  const { getImageUrl: getProductImageUrl } = useImagePreload();
 
   const productList = useSelector((state) => state.productList);
   const { allProducts = [], allLoading: loading, allError: error, allLoaded } = productList;
@@ -168,7 +175,7 @@ const ShopMain = () => {
     return 0;
   });
 
-  const itemsPerPage = 12;
+  const itemsPerPage = ITEMS_PER_PAGE;
   const totalPages = Math.ceil(filteredByRating.length / itemsPerPage);
   const paginatedProducts = filteredByRating.slice(
     (currentPage - 1) * itemsPerPage,
@@ -573,9 +580,9 @@ const ShopMain = () => {
             </div>
 
             {/* Loading State - Skeleton Cards */}
-            {loading && allProducts.length === 0 && (
+            {loading && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                {Array.from({ length: 12 }).map((_, i) => (
+                {Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
                   <div key={i} className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden animate-pulse">
                     <div className="bg-gray-200 aspect-[4/3] sm:aspect-square"></div>
                     <div className="p-4 space-y-3">
@@ -607,26 +614,16 @@ const ShopMain = () => {
                     className="group bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                   >
                     {/* Product Image Container */}
-                    <div className="relative bg-white aspect-[4/3] sm:aspect-square overflow-hidden flex items-center justify-center p-2.5 sm:p-3">
-                      <img
-                        src={
-                          product.images && product.images[0]
-                            ? product.images[0]
-                            : '/assets/placeholder.png'
-                        }
-                        alt={product.title}
-                        width="320"
-                        height="320"
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
-                      />
+                    <div className="relative bg-gray-50 aspect-[4/3] sm:aspect-square overflow-hidden flex items-center justify-center p-2.5 sm:p-3">
+                        <ProductImage
+                          src={getProductImageUrl(product) || '/assets/printer.png'}
+                          alt={product.title}
+                          width="320"
+                          height="320"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        />
 
-                      {/* Sale Badge */}
-                      {product.oldPrice && product.oldPrice > product.price && (
-                        <div className="absolute top-3 left-3 bg-gradient-to-r from-blue-600 to-red-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
-                          Sale
-                        </div>
-                      )}
+
                     </div>
 
                     {/* Product Info */}
@@ -638,26 +635,11 @@ const ShopMain = () => {
                       {/* Category */}
                       <p className="text-xs text-gray-500 mb-2">{product.category?.name || 'Uncategorized'}</p>
 
-                      {/* Rating */}
-                      {product.rating > 0 && (
-                        <div className="flex items-center gap-1 mb-3">
-                          {renderStars(product.rating)}
-                          <span className="text-xs text-gray-500 ml-1">
-                            ({product.numReviews || 0})
-                          </span>
-                        </div>
-                      )}
-
                       {/* Price */}
                       <div className="flex items-center justify-between">
                         <span className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
                           ${product.price?.toFixed(2) || '0.00'}
                         </span>
-                        {product.oldPrice && product.oldPrice > product.price && (
-                          <span className="text-xs text-gray-500 line-through">
-                            ${product.oldPrice?.toFixed(2)}
-                          </span>
-                        )}
                       </div>
                     </div>
                   </Link>

@@ -3,6 +3,7 @@ import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllProducts } from './redux/actions/productActions';
 import { fetchCartFromDB } from './redux/actions/cartActions';
+import { ImagePreloadProvider } from './lib/ImagePreloadContext';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -62,12 +63,13 @@ function App() {
     const { allLoaded } = useSelector((state) => state.productList);
     const { userInfo } = useSelector((state) => state.userLogin);
 
-    // Prefetch all products in background on app mount (any route)
+    // Prefetch all products in background on app mount (once)
     useEffect(() => {
         if (!allLoaded) {
             dispatch(fetchAllProducts());
         }
-    }, [dispatch, allLoaded]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch]);
 
     // Restore cart from DB if user is logged in (e.g. page refresh)
     useEffect(() => {
@@ -77,6 +79,7 @@ function App() {
     }, [dispatch, userInfo?.token]);
 
     return (
+        <ImagePreloadProvider>
         <div className="flex flex-col min-h-screen">
             {!isAdminRoute && <Header />}
             <ScrollToTop />
@@ -157,6 +160,7 @@ function App() {
 
             {!isAdminRoute && <Footer />}
         </div>
+        </ImagePreloadProvider>
     );
 }
 

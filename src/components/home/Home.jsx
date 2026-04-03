@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import HomeProductList from "./HomeProductList";
-import ExploreCategoriesSection from "./ExploreCategoriesSection";
 import HomeInfoSections from "./HomeInfoSections";
 
 const Home = () => {
@@ -18,7 +17,6 @@ const Home = () => {
 
                 {/* Home Info Sections */}
                 <HomeInfoSections />
-                <ExploreCategoriesSection />
                 {/* Product List */}
                 <div className="px-4 md:px-8 lg:px-12 py-8">
                     <HomeProductList enableFlowLayout={false} />

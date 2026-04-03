@@ -195,47 +195,6 @@ const HomeInfoSections = () => {
           </div>
         </div>
       </section>
-
-      {/* Business Information */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-center sm:text-left">Business Information</h2>
-            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 rounded-full mx-auto sm:mx-0"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-white/10 backdrop-blur rounded-lg sm:rounded-xl p-4 sm:p-6 border border-white/20">
-              <h3 className="text-lg sm:text-xl font-semibold mb-4">Company</h3>
-              <p className="text-sm sm:text-base leading-relaxed text-blue-100 font-semibold">16904599 CANADA INC</p>
-              <p className="text-sm sm:text-base leading-relaxed text-blue-100">DBA Prints Basket</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur rounded-lg sm:rounded-xl p-4 sm:p-6 border border-white/20">
-              <h3 className="text-lg sm:text-xl font-semibold mb-4">Address</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-blue-100">
-                95 Broadacre Dr<br />
-                Kitchener, ON N2R 0S5<br />
-                Canada
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur rounded-lg sm:rounded-xl p-4 sm:p-6 border border-white/20">
-              <h3 className="text-lg sm:text-xl font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 sm:space-y-3">
-                <p className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-blue-100">
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  support@printsbasket.com
-                </p>
-                <p className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-blue-100">
-                  <Phone className="w-4 h-4 flex-shrink-0" />
-                  +1 (888) 322-5251
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

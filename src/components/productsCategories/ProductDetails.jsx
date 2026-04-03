@@ -6,6 +6,7 @@ import { listProductDetails } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/actions/cartActions";
 import { Star, ShoppingCart, Heart, Truck, Shield, RotateCcw } from "lucide-react";
 import SEO from '../common/SEO';
+import ProductImage from '../common/ProductImage';
 import { ProductDetailSkeleton } from '../common/Skeleton';
 
 
@@ -181,7 +182,7 @@ const handleWriteReview = () => {
                         ? 'border-blue-500 shadow-lg shadow-blue-200' 
                         : 'border-slate-100 hover:border-slate-300 hover:shadow-md'}`}
                                 >
-                                    <img src={img} alt={`${product.title} ${index}`} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
+                                    <ProductImage src={img} alt={`${product.title} ${index}`} className="w-full h-full object-contain group-hover:scale-105 transition-transform" />
                                 </button>
                             ))}
                         </div>
@@ -189,7 +190,7 @@ const handleWriteReview = () => {
                         {/* Main Image */}
                         <div className="flex-1 aspect-[4/5] bg-white rounded-3xl border border-slate-100 shadow-2xl shadow-slate-200/50 flex items-center justify-center p-8 overflow-hidden group order-1 md:order-2 relative backdrop-blur-sm">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-100/5 to-blue-100/5 z-0"></div>
-                            <img
+                            <ProductImage
                                 src={productImages[activeImage]}
                                 alt={product.title}
                                 className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 relative z-10"
@@ -265,14 +266,7 @@ const handleWriteReview = () => {
                                 </h1>
                                 <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
                             </div>
-                            <div className="flex items-center gap-4 pt-2">
-                                <div className="flex gap-1">
-                                    {[1, 2, 3, 4, 5].map(star => (
-                                        <Star key={star} size={20} className={`${product.rating >= star ? 'fill-blue-400 text-blue-400' : 'text-slate-200'}`} />
-                                    ))}
-                                </div>
-                                <span className="text-sm font-bold text-slate-700 bg-blue-50/50 px-3 py-1 rounded-full border border-blue-200">{product.rating?.toFixed(1) || '0.0'} / 5.0 ({product.numReviews || 0} reviews)</span>
-                            </div>
+
                         </div>
 
                         {/* Short Details */}
@@ -294,17 +288,7 @@ const handleWriteReview = () => {
                                     <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent tracking-tighter">
                                         ${product.price?.toFixed(2)}
                                     </span>
-                                    {product.oldPrice > 0 && product.oldPrice > product.price && (
-                                        <span className="text-2xl text-slate-300 line-through font-bold">
-                                            ${product.oldPrice?.toFixed(2)}
-                                        </span>
-                                    )}
                                 </div>
-                                {product.oldPrice > product.price && (
-                                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-red-50 to-rose-50 text-red-700 rounded-full text-xs font-bold border-2 border-red-200 shadow-md">
-                                        💰 Save {Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}% off
-                                    </div>
-                                )}
                             </div>
 
                             {product.countInStock > 0 && (
@@ -461,14 +445,7 @@ const handleWriteReview = () => {
                                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b-2 border-slate-100">
                                     <div>
                                         <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase tracking-tighter mb-4">Verified Feedback</h2>
-                                        <div className="flex items-center gap-4">
-                                            <div className="flex gap-1">
-                                                {[1, 2, 3, 4, 5].map(star => (
-                                                    <Star key={star} size={22} className={`${product.rating >= star ? 'fill-blue-400 text-blue-400' : 'text-slate-200'}`} />
-                                                ))}
-                                            </div>
-                                            <span className="text-lg font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent uppercase">{product.rating ? product.rating.toFixed(1) : '0.0'} / 5.0</span>
-                                        </div>
+
                                     </div>
                                     <div className="w-full md:w-auto flex flex-col items-end gap-2">
                                         {showReviewLoginMessage && (
@@ -508,11 +485,7 @@ const handleWriteReview = () => {
                                             </div>
                                         ))}
                                     </div>
-                                ) : (
-                                    <div className="p-12 bg-gradient-to-br from-slate-50 to-slate-100/50 text-center rounded-3xl border-2 border-dashed border-slate-200">
-                                        <p className="text-slate-400 font-black uppercase text-[11px] tracking-widest">Be the first to share your experience</p>
-                                    </div>
-                                )}
+                                ) : null}
                             </div>
                         )}
                     </div>
@@ -534,7 +507,7 @@ const handleWriteReview = () => {
                                     onClick={() => window.scrollTo(0, 0)}
                                 >
                                     <div className="aspect-square bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl mb-4 overflow-hidden p-4 flex items-center justify-center">
-                                        <img 
+                                        <ProductImage 
                                             src={item.image || (item.images && item.images.length > 0 ? (item.images[0].startsWith('http') ? item.images[0] : `${import.meta.env.VITE_API_URL?.replace('/api', '') || ''}${item.images[0]}`) : '/assets/printer.png')} 
                                             alt={item.title} 
                                             className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
@@ -543,10 +516,6 @@ const handleWriteReview = () => {
                                     <h4 className="font-bold text-slate-900 text-sm line-clamp-2 mb-2 group-hover:text-blue-600 transition-colors">{item.title}</h4>
                                     <div className="flex items-center justify-between">
                                         <span className="text-lg font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">${item.price?.toFixed(2)}</span>
-                                        <div className="flex items-center gap-1">
-                                            <Star size={14} className="fill-blue-400 text-blue-400" />
-                                            <span className="text-xs font-bold text-slate-600">{item.rating?.toFixed(1) || '0'}</span>
-                                        </div>
                                     </div>
                                 </Link>
                             ))}

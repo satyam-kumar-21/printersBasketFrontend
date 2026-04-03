@@ -75,8 +75,12 @@ export const listProducts = (
 };
 
 // Fetch ALL products at once for client-side filtering in shop
-export const fetchAllProducts = () => async (dispatch) => {
+export const fetchAllProducts = () => async (dispatch, getState) => {
     try {
+        const { productList } = getState();
+        // Skip if already loaded or currently loading
+        if (productList.allLoaded || productList.allLoading) return;
+
         dispatch({ type: PRODUCT_ALL_REQUEST });
 
         const { data } = await api.get(`/products`, {

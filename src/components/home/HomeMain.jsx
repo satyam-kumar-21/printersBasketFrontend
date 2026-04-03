@@ -12,12 +12,13 @@ import ProductGrid from "../productsCategories/ProductGrid";
 import Categories from '../Categories';
 import WhyChooseUs from './WhyChooseUs';
 import PrinterBanners from './PrinterBanners';
+import ExploreCategoriesSection from './ExploreCategoriesSection';
 import SEO from '../common/SEO';
 
 const HomeMain = () => {
     const [searchParams] = useSearchParams();
     const searchQuery = searchParams.get('search');
-    const { allProducts = [], allLoading } = useSelector((state) => state.productList);
+    const { allProducts = [], allLoading, allLoaded } = useSelector((state) => state.productList);
 
     // Filter from allProducts cache for instant search
     const searchResults = useMemo(() => {
@@ -35,7 +36,7 @@ const HomeMain = () => {
             <div className="min-h-screen bg-slate-50/50">
                 <div className="max-w-7xl mx-auto px-4 py-8">
                     <h1 className="text-3xl font-bold mb-8">Search Results for "{searchQuery}"</h1>
-                    {allLoading && allProducts.length === 0 ? (
+                    {(!allLoaded || allLoading) && allProducts.length === 0 ? (
                         <div className="text-center py-12">Loading...</div>
                     ) : searchResults.length > 0 ? (
                         <ProductGrid products={searchResults} />
@@ -55,13 +56,14 @@ const HomeMain = () => {
                 canonical="/"
             />
             <Hero />
-            <Categories />
+            <ExploreCategoriesSection />
+            {/* <Categories /> */}
             {/* <WelcomeSection /> */}
             <Home />
             
             <PrinterBanners />
             <Reviews />
-            <WhyChooseUs />
+            {/* <WhyChooseUs /> */}
          
 
             
